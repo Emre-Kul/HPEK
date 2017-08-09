@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACF,MAAM,EAAG,CAAC;EACV,OAAO,EAAG,CAAC;;AAEb,CAAC;EACC,eAAe,EAAE,IAAI",
+"sources": ["../../../src/common/common.scss"],
+"names": [],
+"file": "common.css"
+}

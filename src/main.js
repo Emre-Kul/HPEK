@@ -1,16 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Footer from "./common/footer.jsx";
+import SearchPage from "./search/page/search-page.jsx";
 
-const searchPageElement = (
-    <div>
-        <h1>searchPage</h1>
-        <Footer />
-    </div>
-);
+
 document.addEventListener("DOMContentLoaded", function(){
   ReactDOM.render(
-    searchPageElement,
+    <SearchPage />,
     document.getElementById('root')
   );
 });

@@ -1,0 +1,229 @@
+{"env": {
+    "browser": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "babel"
+  ],
+  "rules": {
+    //core
+    "no-constant-condition": [
+      "error",
+      {
+        "checkLoops": false
+      }
+    ],
+    "multiline-ternary": "warn",
+    "no-nested-ternary": "warn",
+    "class-methods-use-this": [
+      "warn",
+      {
+        "exceptMethods": [
+          "render",
+          "shouldComponentUpdate"
+        ]
+      }
+    ],
+    "max-lines": [
+      "error",
+      1000
+    ],
+    //babel
+    "babel/no-invalid-this": "error",
+    //react-jsx
+    "react/prefer-es6-class": [
+      "error",
+      "always"
+    ],
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": "error",
+    //"react/no-multi-comp": "warn",
+    "react/sort-comp": [
+      "error",
+      {
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "everything-else",
+          "rendering"
+        ],
+        "groups": {
+          "rendering": [
+            "/^render.+$/",
+            "render"
+          ]
+        }
+      }
+    ],
+    "react/require-render-return": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-did-mount-set-state": [
+      "error",
+      "disallow-in-func"
+    ],
+    "react/no-did-update-set-state": [
+      "error",
+      "disallow-in-func"
+    ],
+    "react/no-is-mounted": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-array-index-key": "error",
+    "react/no-children-prop": "error",
+    "react/no-unknown-property": "error",
+    "react/no-find-dom-node": "error",
+    "react/void-dom-elements-no-children": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-deprecated": "error",
+    "react/no-unused-prop-types": [
+      "error",
+      {
+        "skipShapeProps": true
+      }
+    ],
+    "react/react-in-jsx-scope": "error",
+    "react/no-redundant-should-component-update": "error",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/default-props-match-prop-types": [
+      "error",
+      {
+        "allowRequiredDefaults": true
+      }
+    ],
+    "react/display-name": [
+      "error",
+      {
+        "ignoreTranspilerName": false
+      }
+    ],
+    "react/forbid-foreign-prop-types": "error",
+    "react/prop-types": [
+      "error",
+      {
+        "skipUndeclared": true
+      }
+    ],
+    "react/jsx-boolean-value": [
+      "error",
+      "always"
+    ],
+    "react/jsx-closing-bracket-location": [
+      "error",
+      {
+        "nonEmpty": "after-props",
+        "selfClosing": "after-props"
+      }
+    ],
+    "react/jsx-curly-spacing": [
+      "error",
+      "never",
+      {
+        "allowMultiline": true,
+        "spacing": {
+          "objectLiterals": "never"
+        }
+      }
+    ],
+    "react/jsx-equals-spacing": [
+      "error",
+      "never"
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".jsx"
+        ]
+      }
+    ],
+    "react/jsx-first-prop-new-line": [
+      "error",
+      "never"
+    ],
+    "react/jsx-handler-names": [
+      "error",
+      {
+        "eventHandlerPrefix": "handle",
+        "eventHandlerPropPrefix": "on"
+      }
+    ],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    //"react/jsx-indent-props": ["error", 2],
+    "react/jsx-key": "error",
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "ignoreRefs": false,
+        "allowArrowFunctions": false,
+        "allowBind": false
+      }
+    ],
+    "react/jsx-no-duplicate-props": [
+      "error",
+      {
+        "ignoreCase": false
+      }
+    ],
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-literals": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": false,
+        "shorthandFirst": false,
+        "shorthandLast": false,
+        "ignoreCase": false,
+        "noSortAlphabetically": true
+      }
+    ],
+    "react/jsx-pascal-case": [
+      "error",
+      {
+        "allowAllCaps": false
+      }
+    ],
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "never",
+        "afterOpening": "never"
+      }
+    ],
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-wrap-multilines": "error",
+    "react/jsx-max-props-per-line": [
+      "error",
+      {
+        "maximum": 1,
+        "when": "always"
+      }
+    ],
+    "react/jsx-no-undef": [
+      "error",
+      {
+        "allowGlobals": false
+      }
+    ]
+  }
+}

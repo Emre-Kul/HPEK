@@ -1,16 +1,18 @@
 import React from "react";
 import Footer from "../../common/footer/footer.jsx";
+import SearcForm from "../component/search-form.jsx";
 
 export class SearchPage extends React.Component{
     constructor(){
-        super();
+      super();
     }
     render(){
-        return (
-          <div>
-            <h1>{'Search Page-Index'}</h1>
-            <Footer/>
-          </div>
+      return (
+        <div>
+          <SearcForm/>
+          <h1>{'Search Page-Index'}</h1>
+          <Footer/>
+        </div>
         );
     }
 }

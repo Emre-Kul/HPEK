@@ -8,7 +8,8 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "./node_modules/.bin/eslint ./src/* --ext .jsx,.js",
-    "eslint:fix": "./node_modules/.bin/eslint ./src --fix --ext .jsx,.js"
+    "eslint:fix": "./node_modules/.bin/eslint ./src --fix --ext .jsx,.js",
+    "sass:watch" : "sass --watch src/:public/style/"
   },
   "keywords": [],
   "author": "",

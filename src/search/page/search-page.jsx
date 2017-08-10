@@ -1,18 +1,47 @@
 import React from "react";
 import Footer from "../../common/footer/footer.jsx";
-import SearcForm from "../component/search-form/search-form.jsx";
+import SearchForm from "../component/search-form/search-form.jsx";
 
 //stylesheet
 require("./search-page.scss");
 
 export class SearchPage extends React.Component{
    constructor(){
-      super();
-      this.notInHome = false;
-      console.log(SearcForm);
+     super();
+
+     this.state = {
+       homeActive : true
+     };
+
     }
+
+    makeSearch(e){
+      e.preventDefault();
+      if(this.state.homeActive) {
+        this.setState({
+          homeActive: false
+        });
+      }
+      
+    }
+
     render(){
-      if(this.notInHome){
+      if(this.state.homeActive){
+        return (
+          <div>
+            <div id="search-home-container">
+              <img id="search-home-logo" src="img/index-logo.png"/>
+              <h1>{'Lorem ipsum dolor sit!'}</h1>
+              <p>
+                {'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+              </p>
+              <SearchForm searchButtonClick={this.makeSearch.bind(this)}/>
+            </div>
+            <Footer/>
+          </div>
+        );
+      }
+      else {
         return (
           <div>
             <div id="search-header-container">
@@ -22,28 +51,13 @@ export class SearchPage extends React.Component{
                     <img id="search-header-logo" src="img/index-logo.png"/>
                   </div>
                   <div className="col-6">
-                    <SearcForm/>
+                    <SearchForm searchButtonClick={this.makeSearch.bind(this)}/>
                   </div>
                 </div>
               </div>
             </div>
             <div className="container" id="search-content">
               {'aaa'}
-            </div>
-            <Footer/>
-          </div>
-        );
-      }
-      else {
-        return (
-          <div>
-            <div id="search-home-container">
-              <img id="search-home-logo" src="img/index-logo.png"/>
-              <h1>{'Lorem ipsum dolor sit!'}</h1>
-              <p>
-                {'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
-              </p>
-              <SearcForm/>
             </div>
             <Footer/>
           </div>

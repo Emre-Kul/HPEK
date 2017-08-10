@@ -3,11 +3,12 @@
   max-width: 600px;
 }
 .search-input-text{
-  width: 90%;
+  width: 200px;
   padding-left: 10px;
   display: inline-block;
   height: 40px;
   border-radius: 4px;
+  margin-left : 10px;
 }
 #search-button{
   display: inline-block;
@@ -21,4 +22,5 @@
 
   width: 77px;
   height: 45px;
+  margin-left:10px;
 }

@@ -23,3 +23,28 @@ a {
 .col-6{
   min-width: 50%;
 }
+.color-effect-blue-red{
+  background-image: linear-gradient(97deg, #1e0db4, #e44747);
+}
+//**I will create common/header.jsx,scss for this its temporary
+.header{
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid;
+  text-align: center;
+  color : #ffffff;
+}
+.header-big{
+  min-height: 600px;
+  .logo{
+    max-width: 100%;
+  }
+}
+.header-small{
+  max-height: 150px;
+  .logo{
+    max-height: 124px;
+  }
+}
+

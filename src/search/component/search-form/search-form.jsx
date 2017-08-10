@@ -6,6 +6,11 @@ require("./search-form.scss");
 export class SearchForm extends React.Component{
   constructor(){
     super();
+    this.clickSearchButton = this.clickSearchButton.bind(this);
+  }
+  clickSearchButton(e){
+    e.preventDefault();
+    console.log("Search Button Clicked")
   }
   render(){
     return (
@@ -22,7 +27,7 @@ export class SearchForm extends React.Component{
               placeholder="Istanbul"/>
           </div>
           <div className="col-3">
-            <button id="search-button">{'Search'}</button>
+            <button id="search-button" onClick={this.clickSearchButton}>{'Search'}</button>
           </div>
         </div>
       </form>

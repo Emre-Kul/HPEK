@@ -12,8 +12,14 @@ export class SearchPage extends React.Component{
     render(){
       return (
         <div>
-          <SearcForm/>
-          <h1>{'Search Page-Index'}</h1>
+          <div id="search-index-container">
+            <img id="search-index-logo" src="img/index-logo.png" />
+            <h1>{'Lorem ipsum dolor sit!'}</h1>
+              <p>
+                {'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+              </p>
+            <SearcForm/>
+          </div>
           <Footer/>
         </div>
         );

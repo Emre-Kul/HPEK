@@ -2,6 +2,9 @@ import React from "react";
 import Footer from "../../common/footer/footer.jsx";
 import SearcForm from "../component/search-form/search-form.jsx";
 
+//stylesheet
+require("./search-page.scss");
+
 export class SearchPage extends React.Component{
     constructor(){
       super();

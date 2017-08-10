@@ -6,16 +6,15 @@ export class SearchForm extends React.Component{
   }
   render(){
     return (
-      <form>
-        <div className="input-container div-center">
+      <form className="search-form-container div-center">
           <div className="row">
             <div className="col-3">
-              <input className="input-text"
+              <input className="search-input-text"
                 type="text"
                 placeholder="I'm looking for"/>
             </div>
             <div className="col-3">
-              <input className="input-text"
+              <input className="search-input-text"
                 type="text"
                 placeholder="Istanbul"/>
             </div>
@@ -23,7 +22,6 @@ export class SearchForm extends React.Component{
               <button id="search-button">{'Search'}</button>
             </div>
           </div>
-        </div>
       </form>
     );
   }

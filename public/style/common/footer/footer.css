@@ -5,6 +5,12 @@ footer {
   line-height: 150px;
   border: solid 1px; }
   footer a {
-    margin-left: 10px; }
+    margin-left: 10px;
+    font-family: "Gotham-Medium";
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #9b9b9b; }
+    footer a:hover {
+      color: #4d4d4d; }
 
 /*# sourceMappingURL=footer.css.map */

@@ -5,7 +5,7 @@ import SearchPage from "./search/page/search-page.jsx";
 
 document.addEventListener("DOMContentLoaded", function(){
   ReactDOM.render(
-    <SearchPage />,
+    <SearchPage/>,
     document.getElementById('root')
   );
 });

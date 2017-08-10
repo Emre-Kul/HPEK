@@ -7,10 +7,10 @@ export class SearchPage extends React.Component{
     }
     render(){
         return (
-            <div>
-                <h1>Search Page-Index</h1>
-                <Footer />
-            </div>
+          <div>
+            <h1>{'Search Page-Index'}</h1>
+            <Footer/>
+          </div>
         );
     }
 }

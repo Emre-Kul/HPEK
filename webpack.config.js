@@ -9,6 +9,11 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
   },
+  devServer: {
+    publicPath: "/",
+    contentBase: "./public",
+    hot: true
+  },
   module: {
     rules: [
       {

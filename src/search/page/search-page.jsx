@@ -13,7 +13,7 @@ export class SearchPage extends React.Component{
      super();
 
      this.state = {
-       homeActive : false,
+       homeActive : true,
        searchResults : []
      };
       this.makeSearch = this.makeSearch.bind(this);
@@ -29,8 +29,8 @@ export class SearchPage extends React.Component{
       fsApiHandler.searchVenues(searchFormQuery,searchFormLocation,10)
         .then((response) => {
           this.setState({
-              homeActive: false,
-              searchResults : response
+            homeActive: false,
+            searchResults : response
           });
         })
         .catch(console.log);

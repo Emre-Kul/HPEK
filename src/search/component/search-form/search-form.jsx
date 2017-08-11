@@ -14,9 +14,11 @@ export class SearchForm extends React.Component{
         <div className="row">
           <input className="search-input-text"
             type="text"
+            id="search-form-query"
             placeholder="I'm looking for"/>
           <input className="search-input-text"
             type="text"
+            id="search-form-location"
             placeholder="Place"/>
           <button id="search-button"
             onClick={this.props.handleSearchButtonClick}>{'Search'}</button>

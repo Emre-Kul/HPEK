@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../common/footer/footer.jsx";
 import SearchForm from "../component/search-form/search-form.jsx";
-
+import FsApiHandler from "../../api/foursquare-api-handler.js";
 //stylesheet
 require("./search-page.scss");
 
@@ -10,18 +10,30 @@ export class SearchPage extends React.Component{
      super();
 
      this.state = {
-       homeActive : true
+       homeActive : true,
+       searchResults : ""
      };
       this.makeSearch = this.makeSearch.bind(this);
     }
 
     makeSearch(e){
       e.preventDefault();
-      if(this.state.homeActive) {
-        this.setState({
-          homeActive: false
-        });
-      }
+
+      let searchFormQuery = document.getElementById('search-form-query').value.toString();
+      let searchFormLocation = document.getElementById('search-form-location').value.toString();
+
+      let fsApiHandler = new FsApiHandler();
+      fsApiHandler.searchVenues(searchFormQuery,searchFormLocation,10)
+        .then((response) => {
+          console.dir(response);
+          if(this.state.homeActive) {
+            this.setState({
+              homeActive: false,
+              searchResults : "response loggod"
+            });
+          }
+        })
+        .catch(console.log);
     }
 
     render(){
@@ -59,7 +71,7 @@ export class SearchPage extends React.Component{
             </div>
             <div className="container"
                 id="search-content">
-              {'aaa'}
+              {this.state.searchResults}
             </div>
             <Footer/>
           </div>

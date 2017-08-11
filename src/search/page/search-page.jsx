@@ -13,7 +13,7 @@ export class SearchPage extends React.Component{
      super();
 
      this.state = {
-       homeActive : true,
+       homeActive : false,
        searchResults : []
      };
       this.makeSearch = this.makeSearch.bind(this);

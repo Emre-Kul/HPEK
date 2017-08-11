@@ -52,7 +52,8 @@ export const FsApiHandler = function(){
               {
                 venueId : item.venue.id,
                 venueName : item.venue.name,
-                venueStats : item.venue.stats,
+                venueHereNow : item.venue.hereNow.count,
+                venuePriceTier : item.venue.price.tier,
                 venueRating : item.venue.rating
               });
           });

@@ -12,9 +12,12 @@ export class SearchVenueContainer extends React.Component{
     let venueData = this.props.venueData;
     return (
       <div className="col-3 search-venue-div">
-        <p>{venueData.venueId}</p>
-        <p>{venueData.venueName}</p>
-        <p>{venueData.venueRating}</p>
+        <div className="venue-info-div">
+          <div className="venue-name">{venueData.venueName}</div>
+          <div className="venue-herenow">{venueData.venueHereNow}</div>
+          <div className="venue-price-tier">{venueData.venuePriceTier}</div>
+          <div className="venue-rating">{venueData.venueRating}</div>
+        </div>
       </div>
     );
   }

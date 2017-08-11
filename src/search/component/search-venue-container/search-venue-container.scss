@@ -1,5 +1,32 @@
 .search-venue-div{
+  position: relative;
   min-height : 290px;
   border : 1px solid;
   margin : 20px;
+
+  .venue-info-div{
+    position:absolute;
+    bottom:20%;
+    left:18px;
+    display: flex;
+    flex-wrap: wrap;
+    .venue-name{
+      min-width: 100%;
+      font-size: 25px;
+    }
+    .venue-herenow{
+      border-top: 1px solid;
+      min-width: 30%;
+    }
+    .venue-price-tier{
+      margin-left : 20px;
+      min-width: 30%;
+    }
+    .venue-raiting{
+      background-color: #776cee;
+      text-align: center;
+      min-width: 30%;
+    }
+  }
+
 }

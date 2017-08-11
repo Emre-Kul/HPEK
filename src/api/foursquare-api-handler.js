@@ -9,6 +9,7 @@ export const FsApiHandler = function(){
     "&v=20180101";
 
   this.makeRequest = function(method,url){
+    console.log("Requesting : " + url);
     return new Promise((resolve,reject) =>{
       let request = new XMLHttpRequest();
       request.open(method,url);

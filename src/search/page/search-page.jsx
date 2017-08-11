@@ -12,7 +12,7 @@ export class SearchPage extends React.Component{
      this.state = {
        homeActive : true
      };
-
+      this.makeSearch = this.makeSearch.bind(this);
     }
 
     makeSearch(e){
@@ -29,12 +29,13 @@ export class SearchPage extends React.Component{
         return (
           <div>
             <div className="header header-big color-effect-blue-red">
-              <img className="logo" src="img/index-logo.png"/>
+              <img className="logo"
+                src="img/index-logo.png"/>
               <h1>{'Lorem ipsum dolor sit!'}</h1>
               <p>
                 {'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
               </p>
-              <SearchForm searchButtonClick={this.makeSearch.bind(this)}/>
+              <SearchForm handleSearchButtonClick={this.makeSearch}/>
             </div>
             <Footer/>
           </div>
@@ -47,15 +48,17 @@ export class SearchPage extends React.Component{
               <div className="container">
                 <div className="row">
                   <div className="col-6">
-                    <img className="logo" src="img/index-logo.png"/>
+                    <img className="logo"
+                      src="img/index-logo.png"/>
                   </div>
                   <div className="col-6">
-                    <SearchForm searchButtonClick={this.makeSearch.bind(this)}/>
+                    <SearchForm handleSearchButtonClick={this.makeSearch}/>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="container" id="search-content">
+            <div className="container"
+                id="search-content">
               {'aaa'}
             </div>
             <Footer/>

@@ -12,13 +12,14 @@ export class SearchForm extends React.Component{
     return (
       <form className="search-form-container div-center">
         <div className="row">
-            <input className="search-input-text"
-              type="text"
-              placeholder="I'm looking for"/>
-            <input className="search-input-text"
-              type="text"
-              placeholder="Place"/>
-            <button id="search-button" onClick={this.props.searchButtonClick}>Search</button>
+          <input className="search-input-text"
+            type="text"
+            placeholder="I'm looking for"/>
+          <input className="search-input-text"
+            type="text"
+            placeholder="Place"/>
+          <button id="search-button"
+            onClick={this.props.handleSearchButtonClick}>{'Search'}</button>
         </div>
       </form>
     );

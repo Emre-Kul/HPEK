@@ -12,10 +12,10 @@ export class ResultPage extends React.Component{
     return(
       <div>
         <div className="header header-big ">
-          <img className="logo" src="img/index-logo.png"/>
-          <div id="result-contact-container" className="color-effect-blue-red">
-
-          </div>
+          <img className="logo"
+            src="img/index-logo.png"/>
+          <div id="result-contact-container"
+            className="color-effect-blue-red"/>
         </div>
         <Footer/>
       </div>

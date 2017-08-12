@@ -36,7 +36,6 @@ export const FsApiHandler = function(){
       "query="+query+
       "&near="+place+
       "&limit="+limit+
-      "&venuePhotos=1"+
       "&" + this.auth;
     /*
     return this.makeRequest("get",url);
@@ -48,14 +47,19 @@ export const FsApiHandler = function(){
           let jsonResponse = JSON.parse(response);
           let venues = [];
           jsonResponse.response.groups[0].items.forEach( (item) => {
-            venues.push(
-              {
-                venueId : item.venue.id,
-                venueName : item.venue.name,
-                venueHereNow : item.venue.hereNow.count,
-                venuePriceTier : item.venue.price.tier,
-                venueRating : item.venue.rating
-              });
+            try {
+              venues.push(
+                {
+                  venueId: item.venue.id,
+                  venueName: item.venue.name,
+                  venueHereNow: item.venue.hereNow.count,
+                  venuePriceTier: item.venue.price.tier,
+                  venueRating: item.venue.rating
+                });
+            }
+            catch(e){
+              console.log("Error At : " + item.venue.name)
+            }
           });
           resolve(venues);
         })
@@ -63,6 +67,22 @@ export const FsApiHandler = function(){
     });
   }
 
+  this.getDetailOfVenue = function(venueId){
+     let url = "https://api.foursquare.com/v2/venues/"+
+       venueId +
+       "?" +
+       this.auth;
+     return new Promise((resolve,reject) => {
+       this.makeRequest("get",url).then( (response)=>{
+         let venue = JSON.parse(response).response.venue;
+         resolve({
+           venueId : venue.id,
+           venueName : venue.name,
+           venueLocation : venue.location
+         });
+       }).catch(reject);
+     });
+  }
 };
 
 export default FsApiHandler;

@@ -8,11 +8,12 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
+    publicPath: '/'
   },
   devServer: {
-    publicPath: "/",
     contentBase: "./public",
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   module: {
     rules: [

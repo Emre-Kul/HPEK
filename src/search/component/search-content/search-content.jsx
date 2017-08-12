@@ -9,6 +9,14 @@ export class SearchContent extends React.Component{
   }
 
   render() {
+    if(this.props.warning.length > 0){
+      return (<p>Warning...</p>);
+    }
+    if(this.props.venuesData.length == 0){
+      return (
+        <p>Loading...</p>
+      );
+    }
     return (
       <div className="row">
         {

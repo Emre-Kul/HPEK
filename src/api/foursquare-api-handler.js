@@ -53,12 +53,13 @@ export const FsApiHandler = function(){
                   venueId: item.venue.id,
                   venueName: item.venue.name,
                   venueHereNow: item.venue.hereNow.count,
-                  venuePriceTier: item.venue.price.tier,
+                  venuePriceTier:
+                    ( (typeof item.venue.price === "undefined") ? -1 : item.venue.price.tier),
                   venueRating: item.venue.rating
                 });
             }
             catch(e){
-              console.log("Error At : " + item.venue.name)
+              console.log(e + " Error At : " + item.venue.name);
             }
           });
           resolve(venues);

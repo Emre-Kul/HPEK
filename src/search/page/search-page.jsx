@@ -12,25 +12,35 @@ export class SearchPage extends React.Component{
     constructor(){
       super();
       this.state = {
+        lastSearch : "",
         venuesData : "",
         warning : ""
       }
-    }
-    componentDidMount(){
 
+      this.makeSearch = this.makeSearch.bind(this);
+    }
+    makeSearch(){
+      /*When Error Occurs on fsApiHandler this goes infinite loop,
+      i have to change lastSearch in catch to*/
       let query = this.props.match.params.query;
       let location = this.props.match.params.location;
+      if (query + location === this.state.lastSearch) {
+        return;
+      }
+      console.log("Search For : " + query + " : " + location);
       let fsApiHandler = new FsApiHandler();
         fsApiHandler.searchVenues(query,location,10)
           .then((venuesData) => {
             this.setState({
+              lastSearch : query+location,
               venuesData : venuesData,
               warning : ""
             });
           })
           .catch(()=>{
             this.setState({
-              warning : "warning"
+              warning : "warning",
+              lastSearch : query+location
             });
             console.log("catched");
             })
@@ -54,6 +64,7 @@ export class SearchPage extends React.Component{
         );
       }
       else {
+        this.makeSearch();
         return (
           <div>
             <div className="header header-small color-effect-blue-red">

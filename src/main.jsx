@@ -7,7 +7,7 @@ import SearchPage from "./search/page/search-page.jsx";
 import DetailPage from "./detail/page/detail-page.jsx";
 
 //stylesheet
-require("./main.scss");
+import "./main.scss";
 
 document.addEventListener("DOMContentLoaded", function(){
   ReactDOM.render(

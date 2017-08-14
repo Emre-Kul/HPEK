@@ -1,7 +1,4 @@
-
-
 //FoursquareApiHandler
-
 export const FsApiHandler = function(){
 
   this.auth = "client_id=V131V0IPODZOAI4DH0TXB0W1VF4R1QCAHASGHJI35D3KJLWK" +
@@ -9,7 +6,7 @@ export const FsApiHandler = function(){
     "&v=20180101";
 
   this.makeRequest = function(method,url){
-    console.log("Requesting : " + url);
+    console.log(`Requesting : ${url}`);
     return new Promise((resolve,reject) =>{
       let request = new XMLHttpRequest();
       request.open(method,url);
@@ -32,16 +29,12 @@ export const FsApiHandler = function(){
   }
 
   this.searchVenues = function(query,place,photoSize,limit){
-    let url = "https://api.foursquare.com/v2/venues/explore?"+
-      "query="+query+
-      "&near="+place+
-      "&limit="+limit+
-      "&venuePhotos=1"+
-      "&" + this.auth;
-    /*
-    return this.makeRequest("get",url);
-    I cant return this directly i should process response
-    */
+    let url = `https://api.foursquare.com/v2/venues/explore?
+      query=${query}
+      &near=${place}
+      &limit=${limit}
+      &venuePhotos=1
+      &${this.auth}`;
     return new Promise( (resolve,reject) => {
       this.makeRequest("get",url)
         .then( (response) => {
@@ -49,9 +42,8 @@ export const FsApiHandler = function(){
           let venues = [];
           jsonResponse.response.groups[0].items.forEach( (item) => {
             try {
-              //console.log(item.venue.photos.groups[0].items[0]);
-              let venuePhotoPrefix = item.venue.photos.groups[0].items[0].prefix;
-              let venuePhotoSuffix = item.venue.photos.groups[0].items[0].suffix;
+              let venuePhotoPrefix = item.venue.featuredPhotos.items[0].prefix;
+              let venuePhotoSuffix = item.venue.featuredPhotos.items[0].suffix;
               venues.push(
                 {
                   venueId: item.venue.id,
@@ -64,7 +56,7 @@ export const FsApiHandler = function(){
                 });
             }
             catch(e){
-              console.log(e + " Error At : " + item.venue.name);
+              console.log(`${e} Error At : ${item.venue.name}`);
             }
           });
           resolve(venues);
@@ -73,18 +65,18 @@ export const FsApiHandler = function(){
     });
   }
 
-  this.getDetailOfVenue = function(venueId){
-     let url = "https://api.foursquare.com/v2/venues/"+
-       venueId +
-       "?" +
-       this.auth;
+  this.getDetailOfVenue = function(venueId,photoSize){
+     let url = `https://api.foursquare.com/v2/venues/${venueId}?${this.auth}`;
      return new Promise((resolve,reject) => {
        this.makeRequest("get",url).then( (response)=>{
          let venue = JSON.parse(response).response.venue;
+         let venuePhotoPrefix = venue.bestPhoto.source.prefix;
+         let venuePhotoSuffix = venue.bestPhoto.source.suffix;
          resolve({
            venueId : venue.id,
            venueName : venue.name,
-           venueLocation : venue.location
+           venueLocation : venue.location,
+           venuePhoto : `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
          });
        }).catch(reject);
      });

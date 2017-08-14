@@ -2,11 +2,10 @@ import React from "react";
 import Footer from "../../common/footer/footer.jsx";
 import SearchForm from "../component/search-form/search-form.jsx";
 import SearchContent from "../component/search-content/search-content.jsx";
-import {Redirect} from "react-router-dom";
 
 import FsApiHandler from "../../api/foursquare-api-handler.js";
 //stylesheet
-require("./search-page.scss");
+import "./search-page.scss";
 
 export class SearchPage extends React.Component{
     constructor(){
@@ -20,14 +19,12 @@ export class SearchPage extends React.Component{
       this.makeSearch = this.makeSearch.bind(this);
     }
     makeSearch(){
-      /*When Error Occurs on fsApiHandler this goes infinite loop,
-      i have to change lastSearch in catch to*/
       let query = this.props.match.params.query;
       let location = this.props.match.params.location;
       if (query + location === this.state.lastSearch) {
         return;
       }
-      console.log("Search For : " + query + " : " + location);
+      console.log(`Search For :  ${query} : ${location}`);
       let fsApiHandler = new FsApiHandler();
         fsApiHandler.searchVenues(query,location,"400x400",10)
           .then((venuesData) => {
@@ -52,7 +49,7 @@ export class SearchPage extends React.Component{
           <div>
             <div className="header header-big color-effect-blue-red">
               <img className="logo"
-                src="img/index-logo.png"/>
+                src="/img/index-logo.png"/>
               <h1>{'Lorem ipsum dolor sit!'}</h1>
               <p>
                 {'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}

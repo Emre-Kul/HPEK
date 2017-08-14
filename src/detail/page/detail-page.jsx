@@ -3,7 +3,7 @@ import Footer from "../../common/footer/footer.jsx";
 import FsApiHandler from "../../api/foursquare-api-handler.js";
 
 //stylesheet
-require("./detail-page.scss");
+import "./detail-page.scss";
 
 export class DetailPage extends React.Component{
   constructor(){

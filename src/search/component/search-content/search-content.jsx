@@ -1,7 +1,7 @@
 import React from "react";
 import SearchVenueContainer from "../search-venue-container/search-venue-container.jsx";
 //stylesheet
-require("./search-content.scss");
+import "./search-content.scss";
 
 export class SearchContent extends React.Component{
   constructor(){
@@ -12,7 +12,7 @@ export class SearchContent extends React.Component{
     if(this.props.warning.length > 0){
       return (<p>Warning...</p>);
     }
-    if(this.props.venuesData.length == 0){
+    if(this.props.venuesData.length === 0){
       return (
         <p>Loading...</p>
       );

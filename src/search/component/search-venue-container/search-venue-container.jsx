@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 //stylesheet
-require("./search-venue-container.scss");
+import "./search-venue-container.scss";
 
 export class SearchVenueContainer extends React.Component{
   constructor(){
@@ -11,7 +11,7 @@ export class SearchVenueContainer extends React.Component{
 
   render() {
     let venueData = this.props.venueData;
-    let detailLink = "/d/"+this.props.venueData.venueId;
+    let detailLink = `/d/${this.props.venueData.venueId}`;
     let venueDivImageStyle = {
       "backgroundImage" : `url("${venueData.venuePhoto}")`
     }

@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 //stylesheet
-require("./search-form.scss");
+import "./search-form.scss";
 
 export class SearchForm extends React.Component{
   constructor(){
@@ -42,7 +42,7 @@ export class SearchForm extends React.Component{
             id="search-form-location"
             name="l"
             placeholder="Place"/>
-          <Link to={this.state.linkTo + this.state.query +"/"+ this.state.location}>
+          <Link to={`${this.state.linkTo} ${this.state.query}/${this.state.location}`}>
             <button id="search-button">
               {'Search'}
             </button>

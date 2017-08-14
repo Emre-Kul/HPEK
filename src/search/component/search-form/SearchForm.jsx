@@ -35,12 +35,10 @@ export class SearchForm extends React.Component{
           <input className="search-input-text"
             type="text"
             id="search-form-query"
-            name="q"
             placeholder="I'm looking for"/>
           <input className="search-input-text"
             type="text"
             id="search-form-location"
-            name="l"
             placeholder="Place"/>
           <Link to={searchLink}>
             <button id="search-button">

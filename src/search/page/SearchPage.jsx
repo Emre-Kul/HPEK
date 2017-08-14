@@ -1,9 +1,9 @@
 import React from "react";
-import Footer from "../../common/footer/footer.jsx";
-import SearchForm from "../component/search-form/search-form.jsx";
-import SearchContent from "../component/search-content/search-content.jsx";
+import Footer from "../../common/footer/Footer.jsx";
+import SearchForm from "../component/search-form/SearchForm.jsx";
+import SearchContent from "../component/search-content/SearchContent.jsx";
 
-import FsApiHandler from "../../api/foursquare-api-handler.js";
+import FsApiHandler from "../../api/FoursquareApiHandler.js";
 //stylesheet
 import "./search-page.scss";
 

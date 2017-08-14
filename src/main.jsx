@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router  , Route , Switch} from 'react-router-dom'
 
 
-import SearchPage from "./search/page/search-page.jsx";
-import DetailPage from "./detail/page/detail-page.jsx";
+import SearchPage from "./search/page/SearchPage.jsx";
+import DetailPage from "./detail/page/DetailPage.jsx";
 
 //stylesheet
 import "./main.scss";

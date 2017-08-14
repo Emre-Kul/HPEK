@@ -42,7 +42,7 @@ export class SearchForm extends React.Component{
             id="search-form-location"
             name="l"
             placeholder="Place"/>
-          <Link to={`${this.state.linkTo} ${this.state.query}/${this.state.location}`}>
+          <Link to={`${this.state.linkTo}${this.state.query}/${this.state.location}`}>
             <button id="search-button">
               {'Search'}
             </button>

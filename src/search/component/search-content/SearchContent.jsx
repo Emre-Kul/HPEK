@@ -1,5 +1,5 @@
 import React from "react";
-import SearchVenueContainer from "../search-venue-container/search-venue-container.jsx";
+import SearchVenueContainer from "../search-venue-container/SearchVenueContainer.jsx";
 //stylesheet
 import "./search-content.scss";
 

@@ -1,4 +1,3 @@
-//FoursquareApiHandler
 export const FsApiHandler = function(){
 
   this.auth = "client_id=V131V0IPODZOAI4DH0TXB0W1VF4R1QCAHASGHJI35D3KJLWK" +
@@ -29,12 +28,7 @@ export const FsApiHandler = function(){
   }
 
   this.searchVenues = function(query,place,photoSize,limit){
-    let url = `https://api.foursquare.com/v2/venues/explore?
-      query=${query}
-      &near=${place}
-      &limit=${limit}
-      &venuePhotos=1
-      &${this.auth}`;
+    let url = `https://api.foursquare.com/v2/venues/explore?query=${query}&near=${place}&limit=${limit}&venuePhotos=1&${this.auth}`;
     return new Promise( (resolve,reject) => {
       this.makeRequest("get",url)
         .then( (response) => {

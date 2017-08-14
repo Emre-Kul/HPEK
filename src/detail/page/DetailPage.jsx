@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../../common/footer/footer.jsx";
-import FsApiHandler from "../../api/foursquare-api-handler.js";
+import Footer from "../../common/footer/Footer.jsx";
+import FsApiHandler from "../../api/FoursquareApiHandler.js";
 
 //stylesheet
 import "./detail-page.scss";

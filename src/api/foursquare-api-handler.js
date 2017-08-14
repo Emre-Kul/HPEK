@@ -31,11 +31,12 @@ export const FsApiHandler = function(){
     });
   }
 
-  this.searchVenues = function(query,place,limit){
+  this.searchVenues = function(query,place,photoSize,limit){
     let url = "https://api.foursquare.com/v2/venues/explore?"+
       "query="+query+
       "&near="+place+
       "&limit="+limit+
+      "&venuePhotos=1"+
       "&" + this.auth;
     /*
     return this.makeRequest("get",url);
@@ -48,6 +49,9 @@ export const FsApiHandler = function(){
           let venues = [];
           jsonResponse.response.groups[0].items.forEach( (item) => {
             try {
+              //console.log(item.venue.photos.groups[0].items[0]);
+              let venuePhotoPrefix = item.venue.photos.groups[0].items[0].prefix;
+              let venuePhotoSuffix = item.venue.photos.groups[0].items[0].suffix;
               venues.push(
                 {
                   venueId: item.venue.id,
@@ -55,7 +59,8 @@ export const FsApiHandler = function(){
                   venueHereNow: item.venue.hereNow.count,
                   venuePriceTier:
                     ( (typeof item.venue.price === "undefined") ? -1 : item.venue.price.tier),
-                  venueRating: item.venue.rating
+                  venueRating: item.venue.rating,
+                  venuePhoto : `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
                 });
             }
             catch(e){

@@ -3,13 +3,26 @@
   min-height : 290px;
   border : 1px solid;
   margin : 20px;
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  .venue-bg-div{
+    height : 100%;
+    width: 100%;
+    opacity: 0.5;
+    background-color: #12195f;
+    z-index: -1;
+  }
   .venue-info-div{
-    position:absolute;
-    bottom:20%;
-    left:18px;
+    position: absolute;
+    left:10px;
+    bottom:20px;
     display: flex;
     flex-wrap: wrap;
+    color : #ffffff;
+    a{
+      text-decoration: none;
+      color: #ffffff;
+    }
     .venue-name{
       min-width: 100%;
       font-size: 25px;

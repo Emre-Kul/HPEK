@@ -29,7 +29,7 @@ export class SearchPage extends React.Component{
       }
       console.log("Search For : " + query + " : " + location);
       let fsApiHandler = new FsApiHandler();
-        fsApiHandler.searchVenues(query,location,10)
+        fsApiHandler.searchVenues(query,location,"400x400",10)
           .then((venuesData) => {
             this.setState({
               lastSearch : query+location,
@@ -37,9 +37,9 @@ export class SearchPage extends React.Component{
               warning : ""
             });
           })
-          .catch(()=>{
+          .catch((err)=>{
             this.setState({
-              warning : "warning",
+              warning : err,
               lastSearch : query+location
             });
             console.log("catched");

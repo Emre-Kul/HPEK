@@ -61,18 +61,17 @@ export const FsApiHandler = function(){
     });
   }
 
-  this.getDetailOfVenue = function(venueId,photoSize){
+  this.getDetailOfVenue = function(venueId){
      let url = `https://api.foursquare.com/v2/venues/${venueId}?${this.auth}`;
      return new Promise((resolve,reject) => {
        this.makeRequest("get",url).then( (response)=>{
          let venue = JSON.parse(response).response.venue;
-         let venuePhotoPrefix = venue.bestPhoto.source.prefix;
-         let venuePhotoSuffix = venue.bestPhoto.source.suffix;
+         let venueHeaderPhoto = `${venue.bestPhoto.prefix}${venue.bestPhoto.width}x${venue.bestPhoto.height}${venue.bestPhoto.suffix}`;
          resolve({
            venueId : venue.id,
            venueName : venue.name,
            venueLocation : venue.location,
-           venuePhoto : `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
+           venueHeaderPhoto : venueHeaderPhoto
          });
        }).catch(reject);
      });

@@ -8,14 +8,17 @@ export class DetailHeader extends React.Component{
     super();
   }
   render(){
+    let detailHeaderPhoto = {
+      "backgroundImage" : `url("${this.props.headerPhoto}")`
+    }
     return(
-      <div>
-        <div className="detail-header-container">
+        <div className="detail-header-container"
+        style={detailHeaderPhoto}>
+          <div className="detail-header-background" />
           <img className="detail-header-logo"
                src="/img/index-logo.png"/>
           <div className="detail-header-contact-container"/>
         </div>
-      </div>
     );
   }
 }

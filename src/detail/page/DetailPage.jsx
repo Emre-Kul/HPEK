@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../../common/footer/Footer.jsx";
 import DetailHeader from "../component/detail-header/DetailHeader.jsx";
+import DetailContent from "../component/detail-content/DetailContent.jsx";
 import FsApiHandler from "../../api/FoursquareApiHandler.js";
 
 //stylesheet
@@ -10,27 +11,29 @@ export class DetailPage extends React.Component{
   constructor(){
     super();
     this.state = {
-      venueData : ""
+      venueData : "Loading",
+      venueDataLoaded : false
+    }
+    this.loadVenueData = this.loadVenueData.bind(this);
+  }
+  loadVenueData(){
+    if(!this.state.venueDataLoaded) {
+      let id = this.props.match.params.id;
+      let fsApiHandler = new FsApiHandler();
+      fsApiHandler.getDetailOfVenue(id).then((venue) => {
+        this.setState({
+          venueData: venue,
+          venueDataLoaded: true
+        });
+      }).catch(console.log);
     }
   }
-  componentDidMount(){
-    let id = this.props.match.params.id;
-    let fsApiHandler = new FsApiHandler();
-    fsApiHandler.getDetailOfVenue(id).then( (venue) => {
-      this.setState({
-        venueData : venue.venueName
-      });
-    });
-  }
   render(){
+    this.loadVenueData();
     return(
       <div>
-        <DetailHeader/>
-        <div className="container">
-          { (this.state.venueData.length > 0 ?
-            this.state.venueData
-            : "Loading" )}
-        </div>
+        <DetailHeader headerPhoto={this.state.venueData.venueHeaderPhoto}/>
+        <DetailContent venueName={this.state.venueData.venueName} />
         <Footer/>
       </div>
     );

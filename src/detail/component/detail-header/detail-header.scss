@@ -1,18 +1,30 @@
 .detail-header-container{
   position: relative;
-  min-height: 500px;
-  background-color: #d3d3d3;
+  min-height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
   .detail-header-logo{
     display: block;
     margin:auto;
     max-height: 150px;
   }
-}
-.detail-header-contact-container{
-  position: absolute;
-  width: 100%;
-  height : 150px;
-  bottom : 0;
-  opacity: 0.8;
-  background-image: linear-gradient(97deg, #1e0db4, #e44747);
+  .detail-header-background{
+    position: absolute;
+    height : 100%;
+    width: 100%;
+    opacity: 0.5;
+    background-color: #12195f;
+    z-index: 1;
+  }
+  .detail-header-contact-container{
+    position: absolute;
+    width: 100%;
+    height : 150px;
+    bottom : 0;
+    opacity: 0.8;
+    background-image: linear-gradient(97deg, #1e0db4, #e44747);
+    z-index: 2;
+  }
 }

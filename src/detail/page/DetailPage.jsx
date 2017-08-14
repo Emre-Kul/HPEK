@@ -25,9 +25,11 @@ export class DetailPage extends React.Component{
   render(){
     return(
       <div>
-        <DetailHeader />
+        <DetailHeader/>
         <div className="container">
-          { (this.state.venueData.length > 0 ? this.state.venueData : "Loading" )}
+          { (this.state.venueData.length > 0 ?
+            this.state.venueData
+            : "Loading" )}
         </div>
         <Footer/>
       </div>

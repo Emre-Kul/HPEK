@@ -14,11 +14,14 @@ document.addEventListener("DOMContentLoaded", function(){
     <Router>
       <div>
         <Switch>
-          <Route exact path="/">
-           <SearchPage location = "home"/>
+          <Route exact={true}
+path="/">
+            <SearchPage location="home"/>
           </Route>
-          <Route path="/search/:query/:location" component={SearchPage}/>
-          <Route path="/detail/:id" component={DetailPage} />
+          <Route path="/search/:query/:location"
+component={SearchPage}/>
+          <Route path="/detail/:id"
+component={DetailPage}/>
         </Switch>
       </div>
     </Router>,

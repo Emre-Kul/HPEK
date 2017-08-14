@@ -52,7 +52,10 @@ export class SearchPage extends React.Component{
       return (
         <div>
           <SearchHeader/>
-          {(isHomePage) ? null :  <SearchContent warning={this.state.warning} venuesData={this.state.venuesData}/>}
+          {(isHomePage) ?
+            null
+            :  <SearchContent warning={this.state.warning}
+                  venuesData={this.state.venuesData}/>}
           <Footer/>
         </div>
       );

@@ -11,7 +11,7 @@ export class SearchHeader extends React.Component{
   render() {
     return (
       <div className="search-header-container">
-        <SearchForm />
+        <SearchForm/>
       </div>
     );
   }

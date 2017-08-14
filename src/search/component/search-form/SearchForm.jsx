@@ -11,10 +11,10 @@ export class SearchForm extends React.Component{
       query : "",
       location : ""
     }
-    this.watchSearchForm = this.watchSearchForm.bind(this);
+    this.handleWatchSearchForm = this.handleWatchSearchForm.bind(this);
   }
 
-  watchSearchForm(e){
+  handleWatchSearchForm(e){
     e.preventDefault();
     if(e.target.id === "search-form-query"){
       this.setState({
@@ -31,20 +31,21 @@ export class SearchForm extends React.Component{
   render(){
     let searchLink = `/search/${this.state.query}/${this.state.location}`;
     return (
-      <form className="search-form-container" onInput={this.watchSearchForm}>
-          <input className="search-form-input-text"
+      <form className="search-form-container"
+onInput={this.handleWatchSearchForm}>
+        <input className="search-form-input-text"
             type="text"
             id="search-form-query"
             placeholder="I'm looking for"/>
-          <input className="search-form-input-text"
+        <input className="search-form-input-text"
             type="text"
             id="search-form-location"
             placeholder="Place"/>
-          <Link to={searchLink}>
-            <button id="search-form-button">
-              {'Search'}
-            </button>
-          </Link>
+        <Link to={searchLink}>
+          <button id="search-form-button">
+            {'Search'}
+          </button>
+        </Link>
       </form>
     );
   }

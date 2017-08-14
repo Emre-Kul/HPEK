@@ -44,7 +44,9 @@ export const FsApiHandler = function(){
                   venueName: item.venue.name,
                   venueHereNow: item.venue.hereNow.count,
                   venuePriceTier:
-                    ( (typeof item.venue.price === "undefined") ? -1 : item.venue.price.tier),
+                    ( (typeof item.venue.price === "undefined") ?
+                      -1 :
+                      item.venue.price.tier),
                   venueRating: item.venue.rating,
                   venuePhoto : `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
                 });

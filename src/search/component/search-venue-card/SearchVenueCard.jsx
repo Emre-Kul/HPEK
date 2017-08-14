@@ -16,8 +16,9 @@ export class SearchVenueCard extends React.Component{
       "backgroundImage" : `url("${venueData.venuePhoto}")`
     }
     return (
-      <div className="search-venue-card" style={venueDivImageStyle}>
-        <div className="search-venue-card-background" />
+      <div className="search-venue-card"
+style={venueDivImageStyle}>
+        <div className="search-venue-card-background"/>
         <div className="search-venue-card-info-container">
           <div className="search-venue-card-name">
             <Link to={detailLink}>

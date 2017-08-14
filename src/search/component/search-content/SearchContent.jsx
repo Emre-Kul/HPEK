@@ -10,11 +10,11 @@ export class SearchContent extends React.Component{
 
   render() {
     if(this.props.warning.length > 0){
-      return (<p>Warning...</p>);
+      return (<p>{'Warning...'}</p>);
     }
     if(this.props.venuesData.length === 0){
       return (
-        <p>Loading...</p>
+        <p>{'Loading...'}</p>
       );
     }
     return (
@@ -22,8 +22,7 @@ export class SearchContent extends React.Component{
         {
           this.props.venuesData.map((venueData) => {
             return (
-              <SearchVenueCard
-                key={venueData.venueId}
+              <SearchVenueCard key={venueData.venueId}
                 venueData={venueData}/>
             );
           })

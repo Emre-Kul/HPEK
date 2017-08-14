@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){
            <SearchPage location = "home"/>
           </Route>
           <Route path="/search/:query/:location" component={SearchPage}/>
-          <Route path="/d/:id" component={DetailPage} />
+          <Route path="/detail/:id" component={DetailPage} />
         </Switch>
       </div>
     </Router>,

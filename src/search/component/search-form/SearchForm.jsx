@@ -8,7 +8,6 @@ export class SearchForm extends React.Component{
   constructor(){
     super();
     this.state = {
-      linkTo : "/search/",
       query : "",
       location : ""
     }
@@ -29,6 +28,7 @@ export class SearchForm extends React.Component{
     }
   }
   render(){
+    let searchLink = `/search/${this.state.query}/${this.state.location}`;
     return (
       <form className="search-form-container div-center" onInput={this.watchSearchForm}>
         <div className="row">
@@ -42,7 +42,7 @@ export class SearchForm extends React.Component{
             id="search-form-location"
             name="l"
             placeholder="Place"/>
-          <Link to={`${this.state.linkTo}${this.state.query}/${this.state.location}`}>
+          <Link to={searchLink}>
             <button id="search-button">
               {'Search'}
             </button>

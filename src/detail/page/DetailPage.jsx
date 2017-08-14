@@ -27,8 +27,7 @@ export class DetailPage extends React.Component{
         <div className="header header-big ">
           <img className="logo"
             src="/img/index-logo.png"/>
-          <div id="result-contact-container"
-            className="color-effect-blue-red"/>
+          <div className="result-contact-container color-effect-blue-red"/>
         </div>
         <div className="container">
           { (this.state.venueData.length > 0 ? this.state.venueData : "Loading" )}

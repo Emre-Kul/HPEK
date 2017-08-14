@@ -11,7 +11,7 @@ export class SearchVenueContainer extends React.Component{
 
   render() {
     let venueData = this.props.venueData;
-    let detailLink = `/d/${this.props.venueData.venueId}`;
+    let detailLink = `/detail/${this.props.venueData.venueId}`;
     let venueDivImageStyle = {
       "backgroundImage" : `url("${venueData.venuePhoto}")`
     }

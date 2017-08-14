@@ -1,11 +1,12 @@
 import React from "react";
 import Footer from "../../common/footer/Footer.jsx";
-import SearchForm from "../component/search-form/SearchForm.jsx";
+import SearchHeader from "../component/search-header/SearchHeader.jsx";
 import SearchContent from "../component/search-content/SearchContent.jsx";
 
 import FsApiHandler from "../../api/FoursquareApiHandler.js";
 //stylesheet
 import "./search-page.scss";
+
 
 export class SearchPage extends React.Component{
     constructor(){
@@ -44,47 +45,17 @@ export class SearchPage extends React.Component{
     }
 
     render(){
-      if(this.props.location === "home"){
-        return (
-          <div>
-            <div className="header header-big color-effect-blue-red">
-              <img className="logo"
-                src="/img/index-logo.png"/>
-              <h1>{'Lorem ipsum dolor sit!'}</h1>
-              <p>
-                {'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
-              </p>
-              <SearchForm />
-            </div>
-            <Footer/>
-          </div>
-        );
-      }
-      else {
+      let isHomePage = this.props.location === "home";
+      if(!isHomePage){
         this.makeSearch();
-        return (
-          <div>
-            <div className="header header-small color-effect-blue-red">
-              <div className="container">
-                <div className="row">
-                  <div className="col-6">
-                    <img className="logo"
-                      src="/img/index-logo.png"/>
-                  </div>
-                  <div className="col-6">
-                    <SearchForm />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="container"
-                id="search-content">
-                <SearchContent warning={this.state.warning} venuesData={this.state.venuesData}/>
-            </div>
-            <Footer/>
-          </div>
-        );
       }
+      return (
+        <div>
+          <SearchHeader/>
+          {(isHomePage) ? null :  <SearchContent warning={this.state.warning} venuesData={this.state.venuesData}/>}
+          <Footer/>
+        </div>
+      );
     }
 }
 export default SearchPage;

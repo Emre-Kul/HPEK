@@ -27,25 +27,24 @@ export class SearchForm extends React.Component{
       });
     }
   }
+
   render(){
     let searchLink = `/search/${this.state.query}/${this.state.location}`;
     return (
-      <form className="search-form-container div-center" onInput={this.watchSearchForm}>
-        <div className="row">
-          <input className="search-input-text"
+      <form className="search-form-container" onInput={this.watchSearchForm}>
+          <input className="search-form-input-text"
             type="text"
             id="search-form-query"
             placeholder="I'm looking for"/>
-          <input className="search-input-text"
+          <input className="search-form-input-text"
             type="text"
             id="search-form-location"
             placeholder="Place"/>
           <Link to={searchLink}>
-            <button id="search-button">
+            <button id="search-form-button">
               {'Search'}
             </button>
           </Link>
-        </div>
       </form>
     );
   }

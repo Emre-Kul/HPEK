@@ -1,18 +1,19 @@
-.search-venue-div{
+.search-venue-card{
   position: relative;
   min-height : 290px;
+  min-width: 290px;
   border : 1px solid;
   margin : 20px;
   background-repeat: no-repeat;
   background-size: cover;
-  .venue-bg-div{
+  .search-venue-card-background{
     height : 100%;
     width: 100%;
     opacity: 0.5;
     background-color: #12195f;
     z-index: -1;
   }
-  .venue-info-div{
+  .search-venue-card-info-container{
     position: absolute;
     left:10px;
     bottom:20px;
@@ -23,19 +24,19 @@
       text-decoration: none;
       color: #ffffff;
     }
-    .venue-name{
+    .search-venue-card-name{
       min-width: 100%;
       font-size: 25px;
     }
-    .venue-herenow{
+    .search-venue-card-herenow{
       border-top: 1px solid;
       min-width: 30%;
     }
-    .venue-price-tier{
+    .search-venue-card-tier{
       margin-left : 20px;
       min-width: 30%;
     }
-    .venue-raiting{
+    .search-venue-card-raiting{
       background-color: #776cee;
       text-align: center;
       min-width: 30%;

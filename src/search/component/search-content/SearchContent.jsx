@@ -1,5 +1,5 @@
 import React from "react";
-import SearchVenueContainer from "../search-venue-container/SearchVenueContainer.jsx";
+import SearchVenueCard from "../search-venue-card/SearchVenueCard.jsx";
 //stylesheet
 import "./search-content.scss";
 
@@ -18,12 +18,11 @@ export class SearchContent extends React.Component{
       );
     }
     return (
-      <div className="row">
+      <div className="search-content-container">
         {
           this.props.venuesData.map((venueData) => {
             return (
-              <SearchVenueContainer
-                className="col-3"
+              <SearchVenueCard
                 key={venueData.venueId}
                 venueData={venueData}/>
             );

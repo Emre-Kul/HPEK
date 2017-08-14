@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../common/footer/Footer.jsx";
+import DetailHeader from "../component/detail-header/DetailHeader.jsx";
 import FsApiHandler from "../../api/FoursquareApiHandler.js";
 
 //stylesheet
@@ -24,11 +25,7 @@ export class DetailPage extends React.Component{
   render(){
     return(
       <div>
-        <div className="header header-big ">
-          <img className="logo"
-            src="/img/index-logo.png"/>
-          <div className="result-contact-container color-effect-blue-red"/>
-        </div>
+        <DetailHeader />
         <div className="container">
           { (this.state.venueData.length > 0 ? this.state.venueData : "Loading" )}
         </div>

@@ -6,16 +6,23 @@ export class DetailHeader extends React.Component{
     super();
   }
   render(){
-    let detailHeaderPhoto = {
-      "backgroundImage" : `url("${this.props.headerPhoto}")`
+    let detailHeaderPhotoStyle = {
+      "backgroundImage" : `url("${this.props.venueData.venueHeaderPhoto}")`
     }
     return(
-        <div className="detail-header-container"
-        style={detailHeaderPhoto}>
-          <div className="detail-header-background" />
+        <div className="detail-header-container" style={detailHeaderPhotoStyle}>
+          <div className="detail-header-background"/>
           <img className="detail-header-logo"
-               src="/img/index-logo.png"/>
-          <div className="detail-header-contact-container"/>
+               src="/img/detail-logo.png"/>
+          <div className="detail-header-contact-container">
+            Name : {this.props.venueData.venueName}<br/>
+            Phone : {this.props.venueData.venuePhone}<br/>
+            Adress : {this.props.venueData.venueAddress}<br/>
+            Rating : {this.props.venueData.venueRating}<br/>
+            BeenHere : {this.props.venueData.venueBeenHere}<br/>
+            PriceTier : {this.props.venueData.venuePriceTier}<br />
+            CategoriIcon : <img src={this.props.venueData.venueCategorieIcon} /><br />
+          </div>
         </div>
     );
   }

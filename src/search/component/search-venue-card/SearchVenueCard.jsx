@@ -13,7 +13,7 @@ export class SearchVenueCard extends React.Component{
       "backgroundImage" : `url("${venueData.venuePhoto}")`
     }
     return (
-      <div className="search-venue-card"
+      <div className="search-venue-card-container"
 style={venueDivImageStyle}>
         <div className="search-venue-card-background"/>
         <div className="search-venue-card-name">

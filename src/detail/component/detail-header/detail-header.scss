@@ -4,19 +4,21 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1;
-  .detail-header-logo{
-    display: block;
-    margin:auto;
-    max-height: 150px;
-  }
+  color: #ffffff;
   .detail-header-background{
     position: absolute;
+    top:0;
     height : 100%;
     width: 100%;
-    opacity: 0.5;
+    opacity: 0.6;
     background-color: #12195f;
-    z-index: 1;
+  }
+  .detail-header-logo{
+    position: absolute;
+    left:calc(50% - 228px);
+    display: block;
+    margin:auto;
+    min-height: 228px;
   }
   .detail-header-contact-container{
     position: absolute;
@@ -25,6 +27,5 @@
     bottom : 0;
     opacity: 0.8;
     background-image: linear-gradient(97deg, #1e0db4, #e44747);
-    z-index: 2;
   }
 }

@@ -68,11 +68,18 @@ export const FsApiHandler = function(){
        this.makeRequest("get",url).then( (response)=>{
          let venue = JSON.parse(response).response.venue;
          let venueHeaderPhoto = `${venue.bestPhoto.prefix}${venue.bestPhoto.width}x${venue.bestPhoto.height}${venue.bestPhoto.suffix}`;
+         let venueCategorieIcon = `${venue.categories[0].icon.prefix}88${venue.categories[0].icon.suffix}`
          resolve({
            venueId : venue.id,
            venueName : venue.name,
            venueLocation : venue.location,
-           venueHeaderPhoto : venueHeaderPhoto
+           venueHeaderPhoto : venueHeaderPhoto,
+           venuePhone : venue.contact.formattedPhone,
+           venueAddress : venue.location.address,
+           venueRating : venue.rating,
+           venueBeenHere : venue.beenHere.count,
+           venuePriceTier : (typeof venue.price.tier === "undefined") ? -1 : venue.price.tier,
+           venueCategorieIcon : venueCategorieIcon
          });
        }).catch(reject);
      });

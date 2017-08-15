@@ -19,6 +19,7 @@ export class SearchContent extends React.Component{
     }
     return (
       <div className="search-content-container">
+        <div className="search-content-card-container">
         {
           this.props.venuesData.map((venueData) => {
             return (
@@ -27,6 +28,10 @@ export class SearchContent extends React.Component{
             );
           })
         }
+        </div>
+        <div className="search-content-recent-search-container">
+          {'Recent Searchs'}
+        </div>
       </div>
     );
   }

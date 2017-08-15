@@ -1,8 +1,9 @@
 export const FsApiHandler = function(){
 
-  this.auth = "client_id=V131V0IPODZOAI4DH0TXB0W1VF4R1QCAHASGHJI35D3KJLWK" +
-    "&client_secret=L5RZFRA1K2KPH33H12BFD3MECOJKEBIJSLP14KXYRYW3A5AF" +
-    "&v=20180101";
+  const clientId = "V131V0IPODZOAI4DH0TXB0W1VF4R1QCAHASGHJI35D3KJLWK";
+  const clientSecret = "L5RZFRA1K2KPH33H12BFD3MECOJKEBIJSLP14KXYRYW3A5AF";
+  const apiVersion = "20180101";
+  this.auth = `client_id=${clientId}&client_secret=${clientSecret}&v=${apiVersion}`;
 
   this.makeRequest = function(method,url){
     console.log(`Requesting : ${url}`);
@@ -62,7 +63,7 @@ export const FsApiHandler = function(){
   }
 
   this.getDetailOfVenue = function(venueId){
-     let url = `https://api.foursquare.com/v2/venues/${venueId}?${this.auth}`;
+     const url = `https://api.foursquare.com/v2/venues/${venueId}?${this.auth}`;
      return new Promise((resolve,reject) => {
        this.makeRequest("get",url).then( (response)=>{
          let venue = JSON.parse(response).response.venue;

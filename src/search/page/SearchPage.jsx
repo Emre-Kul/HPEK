@@ -2,9 +2,7 @@ import React from "react";
 import Footer from "../../common/footer/Footer.jsx";
 import SearchHeader from "../component/search-header/SearchHeader.jsx";
 import SearchContent from "../component/search-content/SearchContent.jsx";
-
 import FsApiHandler from "../../api/FoursquareApiHandler.js";
-//stylesheet
 import "./search-page.scss";
 
 
@@ -45,7 +43,7 @@ export class SearchPage extends React.Component{
     }
 
     render(){
-      let isHomePage = this.props.location === "home";
+      const isHomePage = this.props.location === "home";
       if(!isHomePage){
         this.makeSearch();
       }

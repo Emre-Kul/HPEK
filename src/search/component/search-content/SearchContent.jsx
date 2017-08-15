@@ -1,6 +1,5 @@
 import React from "react";
 import SearchVenueCard from "../search-venue-card/SearchVenueCard.jsx";
-//stylesheet
 import "./search-content.scss";
 
 export class SearchContent extends React.Component{

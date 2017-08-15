@@ -3,8 +3,6 @@ import Footer from "../../common/footer/Footer.jsx";
 import DetailHeader from "../component/detail-header/DetailHeader.jsx";
 import DetailContent from "../component/detail-content/DetailContent.jsx";
 import FsApiHandler from "../../api/FoursquareApiHandler.js";
-
-//stylesheet
 import "./detail-page.scss";
 
 export class DetailPage extends React.Component{

@@ -1,12 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router  , Route , Switch} from 'react-router-dom'
-
-
 import SearchPage from "./search/page/SearchPage.jsx";
 import DetailPage from "./detail/page/DetailPage.jsx";
-
-//stylesheet
 import "./main.scss";
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -15,13 +11,13 @@ document.addEventListener("DOMContentLoaded", function(){
       <div>
         <Switch>
           <Route exact={true}
-path="/">
+              path="/">
             <SearchPage location="home"/>
           </Route>
           <Route path="/search/:query/:location"
-component={SearchPage}/>
+              component={SearchPage}/>
           <Route path="/detail/:id"
-component={DetailPage}/>
+              component={DetailPage}/>
         </Switch>
       </div>
     </Router>,

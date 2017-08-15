@@ -1,9 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
-//stylesheet
 import "./search-venue-card.scss";
-
 export class SearchVenueCard extends React.Component{
   constructor(){
     super();

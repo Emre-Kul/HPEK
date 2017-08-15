@@ -1,6 +1,4 @@
 import React from "react";
-
-//stylesheet
 import "./detail-header.scss";
 
 export class DetailHeader extends React.Component{

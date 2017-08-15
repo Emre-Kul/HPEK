@@ -1,5 +1,4 @@
 import React from "react";
-//stylesheet
 import "./detail-content.scss";
 
 export class DetailContent extends React.Component{

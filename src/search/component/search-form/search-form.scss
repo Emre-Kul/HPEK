@@ -3,13 +3,18 @@
   max-width: 600px;
   margin: auto;
   .search-form-input-text{
-    width: 200px;
     padding-left: 10px;
     height: 40px;
     border-radius: 4px;
     margin-left : 10px;
   }
-  #search-form-button{
+  .search-form-input-query{
+    width: 200px;
+  }
+  .search-form-input-location{
+    width: 150px;
+  }
+  .search-form-button{
     background-color: #ff5f5f;
 
     border: none;

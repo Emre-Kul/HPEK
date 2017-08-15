@@ -16,12 +16,13 @@ export class SearchForm extends React.Component{
 
   handleWatchSearchForm(e){
     e.preventDefault();
-    if(e.target.id === "search-form-query"){
+    let targetClassName = e.target.className.split(" ")[0];
+    if(targetClassName === "search-form-input-query"){
       this.setState({
         query : e.target.value
       });
     }
-    else if(e.target.id === "search-form-location"){
+    else if(targetClassName === "search-form-input-location"){
       this.setState({
         location : e.target.value
       });
@@ -33,16 +34,15 @@ export class SearchForm extends React.Component{
     return (
       <form className="search-form-container"
 onInput={this.handleWatchSearchForm}>
-        <input className="search-form-input-text"
+        <input className="search-form-input-query search-form-input-text"
             type="text"
-            id="search-form-query"
             placeholder="I'm looking for"/>
-        <input className="search-form-input-text"
+        <input className="search-form-input-location search-form-input-text"
             type="text"
             id="search-form-location"
             placeholder="Place"/>
         <Link to={searchLink}>
-          <button id="search-form-button">
+          <button className="search-form-button">
             {'Search'}
           </button>
         </Link>

@@ -71,19 +71,23 @@ export const FsApiHandler = function(){
          let venueCategorieIcon = `${venue.categories[0].icon.prefix}88${venue.categories[0].icon.suffix}`
          resolve({
            venueId : venue.id,
-           venueName : venue.name,
-           venueLocation : venue.location,
-           venueHeaderPhoto : venueHeaderPhoto,
-           venuePhone : venue.contact.formattedPhone,
-           venueAddress : venue.location.address,
-           venueRating : venue.rating,
-           venueBeenHere : venue.beenHere.count,
-           venuePriceTier : (typeof venue.price.tier === "undefined") ? -1 : venue.price.tier,
-           venueCategorieIcon : venueCategorieIcon
+           venueInfo : {
+             venueName: venue.name,
+             venueLocation: venue.location,
+             venueHeaderPhoto: venueHeaderPhoto,
+             venuePhone: venue.contact.formattedPhone,
+             venueAddress: venue.location.address,
+             venueRating: venue.rating,
+             venueBeenHere: venue.beenHere.count,
+             venuePriceTier: (typeof venue.price.tier === "undefined") ? -1 : venue.price.tier,
+             venueCategorieIcon: venueCategorieIcon
+           },
+           venueTips : venue.tips
          });
        }).catch(reject);
      });
   }
+
 };
 
 export default FsApiHandler;

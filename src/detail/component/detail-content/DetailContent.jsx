@@ -6,9 +6,11 @@ export class DetailContent extends React.Component{
     super();
   }
   render(){
+    console.log(this.props.venueTips);
     return(
       <div className="detail-content-container">
-        {this.props.venueName}
+        <div className="detail-content-image-container">{this.props.venueId}</div>
+        <div className="detail-content-tips-container" />
       </div>
     );
   }

@@ -5,6 +5,10 @@
   background-repeat: no-repeat;
   background-position: center;
   color: #ffffff;
+  span{
+    display:inline-block;
+    margin:10px;
+  }
   .detail-header-background{
     position: absolute;
     top:0;
@@ -12,6 +16,12 @@
     width: 100%;
     opacity: 0.6;
     background-color: #12195f;
+  }
+  .detail-header-venue-name{
+    position: absolute;
+    left:100px;
+    bottom:150px;
+    font-size: 64px;
   }
   .detail-header-logo{
     position: absolute;
@@ -23,9 +33,25 @@
   .detail-header-contact-container{
     position: absolute;
     width: 100%;
-    height : 150px;
+    height : 115px;
     bottom : 0;
     opacity: 0.8;
     background-image: linear-gradient(97deg, #1e0db4, #e44747);
+    font-size : 12px;
+  }
+  .detail-header-contact-info-container{
+    width:70%;
+    margin:auto;
+  }
+  .detail-header-rating-container{
+    position:absolute;
+    background-image: url("/img/rectangle-icon.svg");
+    height:90px;
+    width:90px;
+    right:100px;
+    bottom:70px;
+    text-align:center;
+    line-height: 90px;
+    font-size:18px;
   }
 }

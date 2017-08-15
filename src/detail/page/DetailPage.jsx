@@ -28,14 +28,16 @@ export class DetailPage extends React.Component{
   }
   render(){
     this.loadVenueData();
+
     return(
       <div>
         {(this.state.venueDataLoaded)
-          ? <DetailHeader venueData={this.state.venueData}/>
+          ? <DetailHeader venueInfo={this.state.venueData.venueInfo}/>
           : null
         }
         {(this.state.venueDataLoaded)
-          ? <DetailContent venueName = {this.state.venueData.venueName} />
+          ? <DetailContent venueId = {this.state.venueData.venueId}
+                            venueTips = {this.state.venueData.venueTips}/>
           : null
         }
 

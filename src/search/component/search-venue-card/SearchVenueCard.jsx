@@ -16,16 +16,21 @@ export class SearchVenueCard extends React.Component{
       <div className="search-venue-card"
 style={venueDivImageStyle}>
         <div className="search-venue-card-background"/>
-        <div className="search-venue-card-info-container">
-          <div className="search-venue-card-name">
-            <Link to={detailLink}>
-              {venueData.venueName}
-            </Link>
-          </div>
-          <div className="search-venue-card-herenow">{venueData.venueHereNow}</div>
-          <div className="search-venue-card-tier">{venueData.venuePriceTier}</div>
-          <div className="search-venue-card-rating">{venueData.venueRating}</div>
+        <div className="search-venue-card-name">
+          <Link to={detailLink}>
+            {venueData.venueName}
+          </Link>
         </div>
+        <div className="search-venue-card-herenow">
+          <img src="/img/people-icon.png"/>
+          <span>{venueData.venueHereNow}</span>
+        </div>
+
+        <div className="search-venue-card-tier">
+          <img src="/img/tag-icon.png"/>
+          <span>{venueData.venuePriceTier}</span>
+        </div>
+        <div className="search-venue-card-raiting">{venueData.venueRating}</div>
       </div>
     );
   }

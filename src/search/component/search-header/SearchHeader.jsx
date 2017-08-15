@@ -10,7 +10,12 @@ export class SearchHeader extends React.Component{
   render() {
     return (
       <div className="search-header-container">
-        <SearchForm/>
+        <div className="search-header-logo-form-container">
+          <img className="search-header-logo" src="/img/index-logo.png" />
+          <div className="search-header-form">
+            <SearchForm/>
+          </div>
+        </div>
       </div>
     );
   }

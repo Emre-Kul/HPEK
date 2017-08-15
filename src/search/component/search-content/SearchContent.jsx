@@ -28,9 +28,7 @@ export class SearchContent extends React.Component{
           })
         }
         </div>
-        <div className="search-content-recent-search-container">
-          {'Recent Searchs'}
-        </div>
+        <div className="search-content-recent-search-container"/>
       </div>
     );
   }

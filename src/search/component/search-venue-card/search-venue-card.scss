@@ -3,9 +3,10 @@
   min-height : 290px;
   min-width: 290px;
   border : 1px solid;
-  margin : 10px;
+  margin : 0px 10px 10px 10px;
   background-repeat: no-repeat;
   background-size: cover;
+  color : #ffffff;
   .search-venue-card-background{
     height : 100%;
     width: 100%;
@@ -13,34 +14,48 @@
     background-color: #12195f;
     z-index: -1;
   }
-  .search-venue-card-info-container{
+  a{
+    text-decoration: none;
+    color: #ffffff;
+  }
+  span{
+    margin-left:10px;
+  }
+  .search-venue-card-herenow{
     position: absolute;
-    left:10px;
-    bottom:20px;
-    display: flex;
-    flex-wrap: wrap;
-    color : #ffffff;
-    a{
-      text-decoration: none;
-      color: #ffffff;
-    }
-    .search-venue-card-name{
+    bottom:0;
+    left:20px;
+    border-top: solid 2px #c4c0ff;
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .search-venue-card-tier{
+    position: absolute;
+    left:100px;
+    bottom:0;
+    height: 40px;
+    line-height: 40px;
+    min-width: 30%;
+  }
+  .search-venue-card-name{
+      position:absolute;
+      bottom:50px;
+      left:20px;
       min-width: 100%;
       font-size: 25px;
     }
-    .search-venue-card-herenow{
-      border-top: 1px solid;
-      min-width: 30%;
-    }
-    .search-venue-card-tier{
-      margin-left : 20px;
-      min-width: 30%;
-    }
-    .search-venue-card-raiting{
-      background-color: #776cee;
-      text-align: center;
-      min-width: 30%;
-    }
+  .search-venue-card-raiting{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url('/img/triangle-icon.svg');
+    background-size: inherit;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 40px;
+    width:80px;
+    line-height: 55px;
   }
 
 }

@@ -6,4 +6,19 @@
   text-align: center;
   color : #ffffff;
   min-height:150px;
+  .search-header-logo-form-container{
+    width:72%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .search-header-logo{
+    max-height : 124px;
+    display:block;
+  }
+  .search-header-form{
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 40px;
+  }
 }

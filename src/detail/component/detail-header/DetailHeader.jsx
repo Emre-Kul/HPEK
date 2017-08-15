@@ -1,6 +1,13 @@
 import React from "react";
 import "./detail-header.scss";
 
+import imgDetailLogo from "./detail-logo.png";
+import imgLocationIcon from "./location-icon.svg";
+import imgPeopleIcon from "./people-icon.svg";
+import imgPhoneIcon from "./phone-icon.svg";
+import imgRectangleIcon from "./rectangle-icon.svg";
+import imgTagIcon from "./tag-icon.svg";
+
 export class DetailHeader extends React.Component{
   constructor(){
     super();
@@ -11,40 +18,44 @@ export class DetailHeader extends React.Component{
       "backgroundImage" : `url("${venueInfo.venueHeaderPhoto}")`
     }
     return(
-        <div className="detail-header-container" style={detailHeaderPhotoStyle}>
-          <div className="detail-header-background"/>
-          <img className="detail-header-logo"
-               src="/img/detail-logo.png"/>
-          <div className="detail-header-venue-name">
-            {venueInfo.venueName}
-          </div>
-          <div className="detail-header-contact-container">
-            <div className="detail-header-contact-info-container">
+      <div className="detail-header-container"
+style={detailHeaderPhotoStyle}>
+        <div className="detail-header-background"/>
+        <img className="detail-header-logo"
+               src={imgDetailLogo}/>
+        <div className="detail-header-venue-name">
+          {venueInfo.venueName}
+        </div>
+        <div className="detail-header-contact-container">
+          <div className="detail-header-contact-info-container">
 
-              <div>
-                <img src="/img/location-icon.svg" />
-                <span>{venueInfo.venueAddress}</span>
-              </div>
-
-              <div>
-                <img src="/img/phone-icon.svg" />
-                <span>{venueInfo.venuePhone}</span>
-              </div>
-
-              <div>
-                <img src="/img/people-icon.svg" />
-                <span>{venueInfo.venueBeenHere}</span>
-                <img src="/img/tag-icon.svg" />
-                <span>{venueInfo.venuePriceTier}</span>
-              </div>
-
-              <div className="detail-header-rating-container">
-                {venueInfo.venueRating}
-              </div>
-
+            <div>
+              <img src={imgLocationIcon}/>
+              <span>{venueInfo.venueAddress}</span>
             </div>
+
+            <div>
+              <img src={imgPhoneIcon}/>
+              <span>{venueInfo.venuePhone}</span>
+            </div>
+
+            <div>
+              <img src={imgPeopleIcon}/>
+              <span>{venueInfo.venueBeenHere}</span>
+              <img src={imgTagIcon}/>
+              <span>{venueInfo.venuePriceTier}</span>
+            </div>
+
+            <div className="detail-header-rating-container"
+                   style={{
+                     "backgroundImage" : `url('${imgRectangleIcon}')`
+                   }}>
+              {venueInfo.venueRating}
+            </div>
+
           </div>
         </div>
+      </div>
     );
   }
 }

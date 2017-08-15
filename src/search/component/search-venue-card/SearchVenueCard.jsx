@@ -1,6 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "./search-venue-card.scss";
+
+import imgPeopleIcon from "./people-icon.svg";
+import imgTagIcon from "./tag-icon.svg";
+import imgTriangle from "./triangle-icon.svg";
+
 export class SearchVenueCard extends React.Component{
   constructor(){
     super();
@@ -22,15 +27,18 @@ style={venueDivImageStyle}>
           </Link>
         </div>
         <div className="search-venue-card-herenow">
-          <img src="/img/people-icon.png"/>
+          <img src={imgPeopleIcon}/>
           <span>{venueData.venueHereNow}</span>
         </div>
 
         <div className="search-venue-card-tier">
-          <img src="/img/tag-icon.png"/>
+          <img src={imgTagIcon}/>
           <span>{venueData.venuePriceTier}</span>
         </div>
-        <div className="search-venue-card-raiting">{venueData.venueRating}</div>
+        <div className="search-venue-card-raiting"
+        style={{
+          "backgroundImage" : `url('${imgTriangle}')`
+        }}>{venueData.venueRating}</div>
       </div>
     );
   }

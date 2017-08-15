@@ -10,7 +10,7 @@ export class DetailContent extends React.Component{
     return(
       <div className="detail-content-container">
         <div className="detail-content-image-container">{this.props.venueId}</div>
-        <div className="detail-content-tips-container" />
+        <div className="detail-content-tips-container"/>
       </div>
     );
   }

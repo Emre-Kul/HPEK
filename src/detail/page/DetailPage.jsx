@@ -36,8 +36,8 @@ export class DetailPage extends React.Component{
           : null
         }
         {(this.state.venueDataLoaded)
-          ? <DetailContent venueId = {this.state.venueData.venueId}
-                            venueTips = {this.state.venueData.venueTips}/>
+          ? <DetailContent venueId={this.state.venueData.venueId}
+                            venueTips={this.state.venueData.venueTips}/>
           : null
         }
 

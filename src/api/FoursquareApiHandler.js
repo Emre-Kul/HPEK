@@ -79,7 +79,9 @@ export const FsApiHandler = function(){
              venueAddress: venue.location.address,
              venueRating: venue.rating,
              venueBeenHere: venue.beenHere.count,
-             venuePriceTier: (typeof venue.price.tier === "undefined") ? -1 : venue.price.tier,
+             venuePriceTier: (typeof venue.price.tier === "undefined") ?
+               -1 :
+               venue.price.tier,
              venueCategorieIcon: venueCategorieIcon
            },
            venueTips : venue.tips

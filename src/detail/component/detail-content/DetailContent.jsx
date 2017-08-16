@@ -1,5 +1,6 @@
 import React from "react";
 import DetailImageCard from "../detail-image-card/DetailImageCard.jsx";
+import DetailTipMenu  from "../detail-tip-menu/DetailTipMenu.jsx";
 import "./detail-content.scss";
 
 export class DetailContent extends React.Component{
@@ -20,7 +21,7 @@ export class DetailContent extends React.Component{
             })
           }
         </div>
-        <div className="detail-content-tips-container"/>
+        <DetailTipMenu venueTips={this.props.venueTips}/>
       </div>
     );
   }

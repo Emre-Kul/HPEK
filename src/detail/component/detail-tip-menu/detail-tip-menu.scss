@@ -1,0 +1,48 @@
+.detail-tip-menu-container{
+  margin-top: -80px;
+  margin-left: 20px;
+  max-width:290px;
+  background-color: #ffffff;
+  box-shadow: 0 0 34px 0 rgba(115, 95, 255, 0.32);
+  z-index: 1;
+  .detail-tip-menu-title{
+    position: relative;
+    text-align: center;
+    margin-top:30px;
+    margin-bottom:20px;
+  }
+  .detail-tip-menu-title:before{
+    content : "";
+    position: absolute;
+    left    : 110px;
+    top: 30px;
+    height  : 1px;
+    width   : 70px;
+    margin:auto;
+    border-bottom:1px solid;
+  }
+  .detail-tip-menu-user-container{
+    width: 80%;
+    margin:auto;
+    padding-top:10px;
+    padding-bottom:20px;
+    display:flex;
+    flex-wrap: wrap;
+    border-bottom: solid 1px #e4e4e4;
+  }
+  .detail-tip-menu-user-picture{
+    width:40px;
+    height:40px;
+    transform: rotate(-45deg);
+  }
+  .detail-tip-menu-user-name{
+    line-height: 40px;
+    margin-left: 20px;
+  }
+  .detail-tip-menu-user-comment{
+    margin-top:10px;
+    min-width: 100%;
+  }
+
+
+}

@@ -83,7 +83,7 @@ export const FsApiHandler = function(){
                venue.price.tier,
              venueCategorieIcon: venueCategorieIcon
            },
-           venueTips : venue.tips
+           venueTips : venue.tips.groups[0].items
          });
        }).catch(reject);
      });

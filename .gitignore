@@ -2,3 +2,4 @@ node_modules
 public/bundle.js
 .idea/
 .sass-cache/
+package-lock.json

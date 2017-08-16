@@ -2,17 +2,21 @@ import React from "react";
 import "./footer.scss";
 
 export class Footer extends React.Component{
-    constructor(){
-        super();
-    }
     render(){
         return (
-          <footer>
-            <div className="container">
-              <a href="#about-us"> {'About Us'} </a>
-              <a href="#contact"> {'Contact'} </a>
-              <a href="#blog"> {'Blog'} </a>
-            </div>
+          <footer className="footer-container">
+            <a href="#about-us"
+               className="footer-link">
+              {"About Us"}
+            </a>
+            <a href="#contact"
+               className="footer-link">
+              {"Contact"}
+            </a>
+            <a href="#blog"
+               className="footer-link">
+              {"Blog"}
+            </a>
           </footer>
         );
     }

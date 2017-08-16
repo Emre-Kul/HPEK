@@ -9,9 +9,7 @@ import imgRectangleIcon from "./rectangle-icon.svg";
 import imgTagIcon from "./tag-icon.svg";
 
 export class DetailHeader extends React.Component{
-  constructor(){
-    super();
-  }
+
   render(){
     const venueInfo = this.props.venueInfo;
     let detailHeaderPhotoStyle = {
@@ -30,19 +28,19 @@ style={detailHeaderPhotoStyle}>
           <div className="detail-header-contact-info-container">
 
             <div>
-              <img src={imgLocationIcon}/>
+              <img src={imgLocationIcon} alt="Location Icon"/>
               <span>{venueInfo.venueAddress}</span>
             </div>
 
             <div>
-              <img src={imgPhoneIcon}/>
+              <img src={imgPhoneIcon} alt="Phone Icon"/>
               <span>{venueInfo.venuePhone}</span>
             </div>
 
             <div>
-              <img src={imgPeopleIcon}/>
+              <img src={imgPeopleIcon} alt="People Icon"/>
               <span>{venueInfo.venueBeenHere}</span>
-              <img src={imgTagIcon}/>
+              <img src={imgTagIcon} alt="Tag Icon"/>
               <span>{venueInfo.venuePriceTier}</span>
             </div>
 

@@ -61,7 +61,7 @@ export const FsApiHandler = function(){
     });
   }
 
-  this.getDetailOfVenue = function(venueId){
+  this.getDetailOfVenue = function(venueId,venueTipsLimit){
      const url = `https://api.foursquare.com/v2/venues/${venueId}?${this.auth}`;
      return new Promise((resolve,reject) => {
        this.makeRequest("get",url).then( (response)=>{
@@ -83,7 +83,7 @@ export const FsApiHandler = function(){
                venue.price.tier,
              venueCategorieIcon: venueCategorieIcon
            },
-           venueTips : venue.tips.groups[0].items
+           venueTips : venue.tips.groups[0].items.slice(0,venueTipsLimit)
          });
        }).catch(reject);
      });

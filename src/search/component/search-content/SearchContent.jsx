@@ -4,17 +4,13 @@ import SearchRecentSearchs from "../search-recent-searchs/SearchRecentSearchs.js
 import "./search-content.scss";
 
 export class SearchContent extends React.Component{
-  constructor(){
-    super();
-  }
-
   render() {
     if(this.props.warning.length > 0){
-      return (<p>{'Warning...'}</p>);
+      return (<p>{"Warning..."}</p>);
     }
     if(this.props.venuesData.length === 0){
       return (
-        <p>{'Loading...'}</p>
+        <p>{"Loading..."}</p>
       );
     }
     return (

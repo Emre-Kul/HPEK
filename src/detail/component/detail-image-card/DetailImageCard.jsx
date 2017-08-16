@@ -3,10 +3,6 @@ import React from "react";
 import "./detail-image-card.scss"
 
 export class DetailImageCard extends React.Component{
-  constructor(){
-    super();
-  }
-
   render() {
     let backgroundStyle = {
       "backgroundImage" : `url(${this.props.backgroundImage})`

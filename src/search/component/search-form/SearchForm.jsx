@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 import "./search-form.scss";
 
 export class SearchForm extends React.Component{
@@ -7,20 +7,32 @@ export class SearchForm extends React.Component{
     super();
     this.state = {
       query : "",
-      location : ""
+      location : "",
+      redirect : false
     }
     this.handleSearchQueryInput = this.handleSearchQueryInput.bind(this);
     this.handleSearchLocationInput = this.handleSearchLocationInput.bind(this);
+    this.handleSearchButtonClick = this.handleSearchButtonClick.bind(this);
   }
   handleSearchQueryInput(e){
     this.setState({
-      query : e.target.value
+      query : e.target.value,
+      redirect : false
     });
   }
   handleSearchLocationInput(e){
     this.setState({
-      location : e.target.value
+      location : e.target.value,
+      redirect : false
     });
+  }
+  handleSearchButtonClick(e){
+    e.preventDefault();
+    if(this.state.location.length != 0 && this.state.query.length != 0) {
+      this.setState({
+        redirect: true
+      });
+    }
   }
   render(){
     const searchLink = `/search/${this.state.query}/${this.state.location}`;
@@ -35,11 +47,14 @@ export class SearchForm extends React.Component{
             id="search-form-location"
             placeholder="Place"
             onInput={this.handleSearchLocationInput}/>
-        <Link to={searchLink}>
-          <button className="search-form-button">
+          <button className="search-form-button"
+          onClick={this.handleSearchButtonClick}>
             {'Search'}
           </button>
-        </Link>
+        {(this.state.redirect) ?
+          <Redirect to={searchLink}/> :
+          null
+        }
       </form>
     );
   }

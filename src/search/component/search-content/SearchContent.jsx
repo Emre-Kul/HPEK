@@ -1,5 +1,6 @@
 import React from "react";
 import SearchVenueCard from "../search-venue-card/SearchVenueCard.jsx";
+import SearchRecentSearchs from "../search-recent-searchs/SearchRecentSearchs.jsx";
 import "./search-content.scss";
 
 export class SearchContent extends React.Component{
@@ -28,7 +29,7 @@ export class SearchContent extends React.Component{
           })
         }
         </div>
-        <div className="search-content-recent-search-container"/>
+        <SearchRecentSearchs/>
       </div>
     );
   }

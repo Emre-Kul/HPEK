@@ -1,0 +1,24 @@
+.search-recent-search-container{
+
+  margin-left : 30px;
+  min-width : 290px;
+  height: 500px;
+  background-color: #ffffff;
+  box-shadow: 0 0 34px 0 rgba(255, 95, 95, 0.32);
+  text-align:center;
+  padding-top: 40px;
+  .search-recent-search-title{
+    position: relative;
+    margin:auto;
+  }
+  .search-recent-search-title:before{
+    content : "";
+    position: absolute;
+    left    : 110px;
+    top: 30px;
+    height  : 1px;
+    width   : 70px;
+    margin:auto;
+    border-bottom:1px solid;
+  }
+}

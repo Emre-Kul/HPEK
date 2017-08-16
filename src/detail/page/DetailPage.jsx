@@ -10,7 +10,9 @@ export class DetailPage extends React.Component{
     super();
     this.state = {
       venueData : "Loading",
-      venueDataLoaded : false
+      venueDataLoaded : false,
+      venuePhotos : [],
+      venuePhotosLoaded : false
     }
     this.loadVenueData = this.loadVenueData.bind(this);
   }
@@ -18,12 +20,21 @@ export class DetailPage extends React.Component{
     if(!this.state.venueDataLoaded) {
       let id = this.props.match.params.id;
       let fsApiHandler = new FsApiHandler();
-      fsApiHandler.getDetailOfVenue(id).then((venue) => {
-        this.setState({
-          venueData: venue,
-          venueDataLoaded: true
-        });
-      }).catch(console.log);
+      fsApiHandler.getDetailOfVenue(id)
+        .then((venue) => {
+          this.setState({
+            venueData: venue,
+            venueDataLoaded: true
+          });
+          return fsApiHandler.getPhotosOfVenue(venue.venueId,300,300,10);
+        })
+        .then((photos) =>{
+          this.setState({
+            venuePhotos : photos,
+            venuePhotosLoaded : true
+          });
+        })
+        .catch(console.log);
     }
   }
   render(){
@@ -35,8 +46,8 @@ export class DetailPage extends React.Component{
           ? <DetailHeader venueInfo={this.state.venueData.venueInfo}/>
           : null
         }
-        {(this.state.venueDataLoaded)
-          ? <DetailContent venueId={this.state.venueData.venueId}
+        {(this.state.venueDataLoaded && this.state.venuePhotosLoaded)
+          ? <DetailContent venuePhotos={this.state.venuePhotos}
                             venueTips={this.state.venueData.venueTips}/>
           : null
         }

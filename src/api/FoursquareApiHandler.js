@@ -13,7 +13,7 @@ export const FsApiHandler = function(){
       request.onload = () =>{
 
         if (request.status >= 200 && request.status < 300) {
-          resolve(request.response);
+          resolve(JSON.parse(request.response));
         } else {
           reject({
             status: request.status,
@@ -33,9 +33,8 @@ export const FsApiHandler = function(){
     return new Promise( (resolve,reject) => {
       this.makeRequest("get",url)
         .then( (response) => {
-          let jsonResponse = JSON.parse(response);
           let venues = [];
-          jsonResponse.response.groups[0].items.forEach( (item) => {
+          response.response.groups[0].items.forEach( (item) => {
             try {
               let venuePhotoPrefix = item.venue.featuredPhotos.items[0].prefix;
               let venuePhotoSuffix = item.venue.featuredPhotos.items[0].suffix;
@@ -66,7 +65,7 @@ export const FsApiHandler = function(){
      const url = `https://api.foursquare.com/v2/venues/${venueId}?${this.auth}`;
      return new Promise((resolve,reject) => {
        this.makeRequest("get",url).then( (response)=>{
-         let venue = JSON.parse(response).response.venue;
+         let venue = response.response.venue;
          let venueHeaderPhoto = `${venue.bestPhoto.prefix}${venue.bestPhoto.width}x${venue.bestPhoto.height}${venue.bestPhoto.suffix}`;
          let venueCategorieIcon = `${venue.categories[0].icon.prefix}88${venue.categories[0].icon.suffix}`
          resolve({
@@ -90,6 +89,22 @@ export const FsApiHandler = function(){
      });
   }
 
+  this.getPhotosOfVenue = function(venueId,photoSizeX,photoSizeY,limit){
+    return new Promise( (resolve,reject) => {
+      let url = `https://api.foursquare.com/v2/venues/${venueId}/photos?${this.auth}&limit=${limit}`;
+      this.makeRequest("get",url).then( (response)=> {
+        let items = response.response.photos.items;
+        let photos = [];
+        items.forEach((item) => {
+          photos.push({
+            photoId : item.id,
+            photoUrl : `${item.prefix}${photoSizeX}x${photoSizeY}${item.suffix}`
+          });
+        });
+        resolve(photos);
+      }).catch(reject);
+    });
+  }
 };
 
 export default FsApiHandler;

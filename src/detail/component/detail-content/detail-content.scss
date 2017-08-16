@@ -6,12 +6,14 @@
   .detail-content-image-container{
     width:640px;
     min-height:500px;
+    display:flex;
+    flex-wrap: wrap;
   }
   .detail-content-tips-container{
     margin-top: -80px;
     margin-left: 20px;
     min-width:290px;
-    min-height:600px;
+    height:600px;
     background-color: #ffffff;
     box-shadow: 0 0 34px 0 rgba(115, 95, 255, 0.32);
     z-index: 1;

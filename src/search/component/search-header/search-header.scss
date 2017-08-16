@@ -1,11 +1,25 @@
-.search-header-container{
-  background-image: linear-gradient(97deg, #1e0db4, #e44747);
-  background-repeat: no-repeat;
+.search-home-header-container{
   background-size: cover;
+  background-repeat: no-repeat;
+  color:#ffffff;
+  height : 600px;
   border: 1px solid;
   text-align: center;
-  color : #ffffff;
-  min-height:150px;
+  p{
+    margin-top:17px;
+    margin-bottom:60px;
+    font-size: 16px;
+  }
+  h1{
+    font-size: 55px;
+    margin-top:23px;
+  }
+}
+
+.search-header-container{
+  background-image: linear-gradient(97deg, #1e0db4, #e44747);
+  height: 150px;
+
   .search-header-logo-form-container{
     width:72%;
     margin: auto;
@@ -15,10 +29,5 @@
   .search-header-logo{
     max-height : 124px;
     display:block;
-  }
-  .search-header-form{
-    width: 70%;
-    margin-top: 50px;
-    margin-left: 40px;
   }
 }

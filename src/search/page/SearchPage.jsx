@@ -49,7 +49,7 @@ export class SearchPage extends React.Component{
       }
       return (
         <div>
-          <SearchHeader/>
+          <SearchHeader isHomePage={isHomePage}/>
           {(isHomePage) ?
             null
             :  <SearchContent warning={this.state.warning}

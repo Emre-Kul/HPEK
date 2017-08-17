@@ -46,10 +46,10 @@ export class SearchForm extends React.Component{
             type="text"
             placeholder="Place"
             onInput={this.handleSearchLocationInput}/>
-          <button className="search-form-button"
+        <button className="search-form-button"
           onClick={this.handleSearchButtonClick}>
-            {"Search"}
-          </button>
+          {"Search"}
+        </button>
         {(this.state.redirect) ?
           <Redirect to={searchLink}/> :
           null

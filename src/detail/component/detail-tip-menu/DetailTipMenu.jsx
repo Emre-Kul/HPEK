@@ -15,8 +15,8 @@ export class DetailTipMenu extends React.Component{
               <div className="detail-tip-menu-user-container"
                    key={venueTip.id}>
                 <div className="detail-tip-menu-user-picture">
-                    <img src={`${venueTip.user.photo.prefix}40x40${venueTip.user.photo.suffix}`}
-                        alt="Tip User Picture"/>
+                  <img src={`${venueTip.user.photo.prefix}40x40${venueTip.user.photo.suffix}`}
+                    alt="Tip User Picture"/>
                 </div>
                 <div className="detail-tip-menu-user-name">
                   {`${venueTip.user.firstName} ${venueTip.user.lastName}`}

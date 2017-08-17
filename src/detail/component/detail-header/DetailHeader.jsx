@@ -28,19 +28,23 @@ style={detailHeaderPhotoStyle}>
           <div className="detail-header-contact-info-container">
 
             <div>
-              <img src={imgLocationIcon} alt="Location Icon"/>
+              <img src={imgLocationIcon}
+                   alt="Location Icon"/>
               <span>{venueInfo.venueAddress}</span>
             </div>
 
             <div>
-              <img src={imgPhoneIcon} alt="Phone Icon"/>
+              <img src={imgPhoneIcon}
+                   alt="Phone Icon"/>
               <span>{venueInfo.venuePhone}</span>
             </div>
 
             <div>
-              <img src={imgPeopleIcon} alt="People Icon"/>
+              <img src={imgPeopleIcon}
+                   alt="People Icon"/>
               <span>{venueInfo.venueBeenHere}</span>
-              <img src={imgTagIcon} alt="Tag Icon"/>
+              <img src={imgTagIcon}
+                   alt="Tag Icon"/>
               <span>{venueInfo.venuePriceTier}</span>
             </div>
 

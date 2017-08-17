@@ -15,12 +15,14 @@ export class SearchForm extends React.Component{
     this.handleSearchButtonClick = this.handleSearchButtonClick.bind(this);
   }
   handleSearchQueryInput(e){
+    e.target.value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
     this.setState({
       query : e.target.value,
       redirect : false
     });
   }
   handleSearchLocationInput(e){
+    e.target.value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
     this.setState({
       location : e.target.value,
       redirect : false

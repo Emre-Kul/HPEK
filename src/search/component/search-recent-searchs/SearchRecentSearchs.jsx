@@ -1,5 +1,6 @@
 import React from "react";
 import "./search-recent-searchs.scss";
+import {Link} from "react-router-dom";
 
 export class SearchRecentSearchs extends React.Component{
   render() {
@@ -13,7 +14,10 @@ export class SearchRecentSearchs extends React.Component{
             return (
               <div className="search-recent-search-content"
                    key={recentSearch.id}>
-                {`${recentSearch.searchQuery} in ${recentSearch.searchLocation}`}
+                <Link className="search-recent-search-link"
+                      to={`/search/${recentSearch.searchQuery}/${recentSearch.searchLocation}`}>
+                  {`${recentSearch.searchQuery} in ${recentSearch.searchLocation}`}
+                </Link>
               </div>
             );
           })

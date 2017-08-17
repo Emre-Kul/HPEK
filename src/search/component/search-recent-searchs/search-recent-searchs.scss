@@ -26,10 +26,19 @@
     margin:auto;
     border-bottom:1px solid;
   }
+  .search-recent-search-link{
+    text-transform: none;
+    text-decoration: none;
+    color: #9b9b9b;
+    &:hover{
+      color: #4b4b4b;
+    }
+  }
+
   .search-recent-search-content{
     height: 50px;
     text-align: center;
-    color: #9b9b9b;
+
     font-size:14px;
     line-height: 50px;
     border-bottom: solid 1px #e4e4e4;

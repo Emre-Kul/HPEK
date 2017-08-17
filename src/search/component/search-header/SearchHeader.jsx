@@ -3,6 +3,8 @@ import SearchForm from "../search-form/SearchForm.jsx";
 import "./search-header.scss";
 import imgSearchHeaderLogo from "./search-header-logo.png";
 import imgSearchHeaderHomeBackground from "./search-header-home-background.png";
+import {Link} from "react-router-dom";
+
 export class SearchHeader extends React.Component{
   render() {
     const homeBackgroundStyle = {
@@ -28,9 +30,11 @@ export class SearchHeader extends React.Component{
 
         <div className="search-header-container">
           <div className="search-header-logo-form-container">
-            <img className="search-header-logo"
-                 src={imgSearchHeaderLogo}
-                 alt="Search Header Logo"/>
+            <Link to="/">
+              <img className="search-header-logo"
+                   src={imgSearchHeaderLogo}
+                  alt="Search Header Logo"/>
+            </Link>
             <SearchForm/>
           </div>
         </div>

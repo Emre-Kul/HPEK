@@ -82,7 +82,7 @@ export const FsApiHandler = function(){
              venueAddress: venue.location.address,
              venueRating: venue.rating,
              venueBeenHere: venue.beenHere.count,
-             venuePriceTier: (typeof venue.price.tier === "undefined") ?
+             venuePriceTier: (typeof venue.price === "undefined") ?
                -1 :
                venue.price.tier,
              venueCategorieIcon: venueCategorieIcon

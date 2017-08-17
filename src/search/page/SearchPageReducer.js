@@ -20,6 +20,9 @@ export const searchPageReducer = (state = [],action) => {
         ]);
       }
     break;
+    default:
+      return state;
+    break;
   }
 }
 export default searchPageReducer;

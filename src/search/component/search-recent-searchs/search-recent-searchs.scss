@@ -7,14 +7,14 @@
   box-shadow: 0 0 34px 0 rgba(255, 95, 95, 0.32);
   text-align:center;
   padding-top: 40px;
+  font-family: Gotham-Medium;
   .search-recent-search-title{
     position: relative;
     margin:auto;
     margin-bottom:30px;
-  }
-  .search-recent-search-div{
-    margin-top:10px;
-    border:1px solid;
+    font-size: 16px;
+    color: #4a4a4a;
+    font-weight: 500;
   }
   .search-recent-search-title:before{
     content : "";
@@ -26,4 +26,13 @@
     margin:auto;
     border-bottom:1px solid;
   }
+  .search-recent-search-content{
+    height: 50px;
+    text-align: center;
+    color: #9b9b9b;
+    font-size:14px;
+    line-height: 50px;
+    border-bottom: solid 1px #e4e4e4;
+  }
+
 }

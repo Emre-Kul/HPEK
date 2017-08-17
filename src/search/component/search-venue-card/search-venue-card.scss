@@ -30,6 +30,10 @@
     min-width: 40px;
     height: 40px;
     line-height: 40px;
+    font-family: Gotham-Medium;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
   }
   .search-venue-card-tier{
     position: absolute;
@@ -45,6 +49,7 @@
       left:20px;
       min-width: 100%;
       font-size: 25px;
+      font-family: Gotham-Book;
     }
   .search-venue-card-raiting{
     position: absolute;
@@ -56,6 +61,8 @@
     height: 40px;
     width:80px;
     line-height: 55px;
+    font-family : Gotham-Medium;
+    font-weight: 500;
   }
 
 }

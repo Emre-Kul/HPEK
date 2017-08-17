@@ -11,7 +11,8 @@ export class SearchRecentSearchs extends React.Component{
         {
           this.props.recentSearchsStore.map((recentSearch) => {
             return (
-              <div key={recentSearch.id}>
+              <div className="search-recent-search-content"
+                   key={recentSearch.id}>
                 {`${recentSearch.searchQuery} in ${recentSearch.searchLocation}`}
               </div>
             );

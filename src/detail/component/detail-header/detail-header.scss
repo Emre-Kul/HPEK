@@ -21,7 +21,10 @@
     position: absolute;
     left:100px;
     bottom:150px;
+    font-family: Gotham-Light;
     font-size: 64px;
+    font-weight: 300;
+    color: #ffffff;
   }
   .detail-header-logo{
     position: absolute;
@@ -37,7 +40,12 @@
     bottom : 0;
     opacity: 0.8;
     background-image: linear-gradient(97deg, #1e0db4, #e44747);
-    font-size : 12px;
+
+    font-family: Gotham-Medium;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+
   }
   .detail-header-contact-info-container{
     width:70%;
@@ -45,13 +53,14 @@
   }
   .detail-header-rating-container{
     position:absolute;
-
     height:90px;
     width:90px;
     right:100px;
     bottom:70px;
-    text-align:center;
     line-height: 90px;
-    font-size:18px;
+    font-family: Gotham-Book;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
   }
 }

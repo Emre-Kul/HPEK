@@ -25,7 +25,7 @@ export class SearchContent extends React.Component{
           })
         }
         </div>
-        <SearchRecentSearchs/>
+            <SearchRecentSearchs recentSearchsStore={this.props.recentSearchsStore}/>
       </div>
     );
   }

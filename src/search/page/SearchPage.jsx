@@ -5,6 +5,9 @@ import SearchContent from "../component/search-content/SearchContent.jsx";
 import FsApiHandler from "../../api/FoursquareApiHandler.js";
 import "./search-page.scss";
 
+import SearchPageReducer from "./SearchPageReducer.js";
+import { createStore } from "redux";
+const searchPageStore = createStore(SearchPageReducer);
 
 export class SearchPage extends React.Component{
     constructor(){
@@ -23,21 +26,30 @@ export class SearchPage extends React.Component{
       if (query + location === this.state.lastSearch) {
         return;
       }
+
       let fsApiHandler = new FsApiHandler();
       fsApiHandler.searchVenues(query,location,"400x400",10)
         .then((venuesData) => {
+          searchPageStore.dispatch(
+            {
+              id : venuesData.searchId,
+              type : "ADD_SEARCH",
+              lastSearch : `${query} in ${location}`
+            }
+          );
           this.setState({
             lastSearch : query+location,
-            venuesData : venuesData,
+            venuesData : venuesData.venues,
             warning : ""
           });
         })
         .catch((err)=>{
-          this.setState({
-            warning : err,
-            lastSearch : query+location
-          });
+           this.setState({
+              warning : err,
+              lastSearch : query+location
+            });
           })
+
     }
 
     render(){
@@ -50,8 +62,9 @@ export class SearchPage extends React.Component{
           <SearchHeader isHomePage={isHomePage}/>
           {(isHomePage) ?
             null
-            :  <SearchContent warning={this.state.warning}
-                  venuesData={this.state.venuesData}/>}
+            :  <SearchContent recentSearchsStore={searchPageStore.getState()}
+                              warning={this.state.warning}
+                              venuesData={this.state.venuesData}/>}
           <Footer/>
         </div>
       );

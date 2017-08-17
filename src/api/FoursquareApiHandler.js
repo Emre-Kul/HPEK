@@ -6,7 +6,6 @@ export const FsApiHandler = function(){
   this.auth = `client_id=${clientId}&client_secret=${clientSecret}&v=${apiVersion}`;
 
   this.makeRequest = function(method,url){
-    console.log(`Requesting : ${url}`);
     return new Promise((resolve,reject) =>{
       let request = new XMLHttpRequest();
       request.open(method,url);
@@ -55,7 +54,12 @@ export const FsApiHandler = function(){
               console.log(`${e} Error At : ${item.venue.name}`);
             }
           });
-          resolve(venues);
+          resolve(
+              {
+                searchId : response.meta.requestId,
+                venues : venues
+              }
+            );
         })
         .catch(reject);
     });

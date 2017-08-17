@@ -10,6 +10,11 @@
   .search-recent-search-title{
     position: relative;
     margin:auto;
+    margin-bottom:30px;
+  }
+  .search-recent-search-div{
+    margin-top:10px;
+    border:1px solid;
   }
   .search-recent-search-title:before{
     content : "";

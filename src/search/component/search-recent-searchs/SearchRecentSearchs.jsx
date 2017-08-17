@@ -8,6 +8,15 @@ export class SearchRecentSearchs extends React.Component{
         <div className="search-recent-search-title">
           {"RECENT SEARCHES"}
         </div>
+        {
+          this.props.recentSearchsStore.map((recentSearch) => {
+            return (
+              <div key={recentSearch.id}>
+                {recentSearch.lastSearch}
+              </div>
+            );
+          })
+        }
       </div>
     );
   }

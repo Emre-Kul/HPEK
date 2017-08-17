@@ -34,7 +34,8 @@ export class SearchPage extends React.Component{
             {
               id : venuesData.searchId,
               type : "ADD_SEARCH",
-              lastSearch : `${query} in ${location}`
+              searchQuery : query,
+              searchLocation : location
             }
           );
           this.setState({
@@ -49,7 +50,6 @@ export class SearchPage extends React.Component{
               lastSearch : query+location
             });
           })
-
     }
 
     render(){

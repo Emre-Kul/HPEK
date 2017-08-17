@@ -1,12 +1,24 @@
 export const searchPageReducer = (state = [],action) => {
   switch (action.type){
     case "ADD_SEARCH":
-      return state.concat([
-        {
-          id : action.id,
-          lastSearch : action.lastSearch
+      let isActionExist = false;
+      state.forEach( (stateObj) => {
+        if(stateObj.searchQuery === action.searchQuery && stateObj.searchLocation === action.searchLocation){
+          isActionExist = true;
         }
-      ]);
+      });
+      if(isActionExist){
+        return state;
+      }
+      else {
+        return state.concat([
+          {
+            id: action.id,
+            searchQuery: action.searchQuery,
+            searchLocation: action.searchLocation
+          }
+        ]);
+      }
     break;
   }
 }

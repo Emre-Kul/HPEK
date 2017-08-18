@@ -37,7 +37,7 @@ export class SearchPage extends React.Component{
     if (query + location === this.state.lastSearch) {
       return null;
     }
-    console.log("Making Search");
+ 
     this.setState({
       venuesData: "",
       warning: "",

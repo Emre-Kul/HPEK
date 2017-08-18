@@ -15,22 +15,35 @@ export class SearchPage extends React.Component{
     this.state = {
       lastSearch : "",
       venuesData : "",
-      warning : ""
+      warning : "",
+      animateHeader : false
     }
 
     this.makeSearch = this.makeSearch.bind(this);
+
+  }
+  componentDidMount(){
+    this.makeSearch();
+  }
+  componentDidUpdate(){
+    this.makeSearch();
   }
   makeSearch(){
+    if(this.props.location === "home"){
+      return null;
+    }
     let query = this.props.match.params.query;
     let location = this.props.match.params.location;
     if (query + location === this.state.lastSearch) {
-      return;
+      return null;
     }
-    if(this.state.venuesData.length > 0){
-      this.setState({
-        venuesData : ""
-      });
-    }
+    console.log("Making Search");
+    this.setState({
+      venuesData: "",
+      warning: "",
+      lastSearch : query+location
+    });
+
     let fsApiHandler = new FsApiHandler();
     fsApiHandler.searchVenues(query,location,"400x400",10)
       .then((venuesData) => {
@@ -43,24 +56,19 @@ export class SearchPage extends React.Component{
           }
         );
         this.setState({
-          lastSearch : query+location,
-          venuesData : venuesData.venues,
-          warning : ""
+          venuesData : venuesData.venues
         });
       })
       .catch((err)=>{
+      console.log(err);
         this.setState({
-          warning : err,
-          lastSearch : query+location
+          warning : `Error Accured Please Try Again... Err Code : ${err.status} `
         });
       })
   }
 
   render(){
     const isHomePage = this.props.location === "home";
-    if(!isHomePage){
-      this.makeSearch();
-    }
     return (
       <div>
         <SearchHeader isHomePage={isHomePage}/>

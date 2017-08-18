@@ -26,7 +26,11 @@ export class SearchPage extends React.Component{
     if (query + location === this.state.lastSearch) {
       return;
     }
-
+    if(this.state.venuesData.length > 0){
+      this.setState({
+        venuesData : ""
+      });
+    }
     let fsApiHandler = new FsApiHandler();
     fsApiHandler.searchVenues(query,location,"400x400",10)
       .then((venuesData) => {

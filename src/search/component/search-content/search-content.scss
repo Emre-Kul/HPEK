@@ -1,3 +1,8 @@
+@keyframes heightMaxAnimation {
+  from {height: 0px;}
+  to  {height: 1510px;}
+}
+
 .search-content-container{
   display:flex;
   flex-wrap: wrap;
@@ -6,10 +11,11 @@
   margin-top : 40px;
   border-bottom : 2px solid #9b9b9b;
   padding-bottom : 50px;
+  overflow: hidden;
+  animation:heightMaxAnimation 3s;
   .search-content-card-container{
     display:flex;
     flex-wrap:wrap;
     max-width : 630px;
-
   }
 }

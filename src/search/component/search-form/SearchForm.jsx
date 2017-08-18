@@ -30,7 +30,7 @@ export class SearchForm extends React.Component{
   }
   handleSearchButtonClick(e){
     e.preventDefault();
-    if(this.state.location.length != 0 && this.state.query.length != 0) {
+    if(this.state.location.length !== 0 && this.state.query.length !== 0) {
       this.setState({
         redirect: true
       });

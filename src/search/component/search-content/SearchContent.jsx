@@ -1,6 +1,8 @@
 import React from "react";
 import SearchVenueCard from "../search-venue-card/SearchVenueCard.jsx";
 import SearchRecentSearchs from "../search-recent-searchs/SearchRecentSearchs.jsx";
+import imgLoadingIcon from "./loading-bar-icon.svg";
+
 import "./search-content.scss";
 
 export class SearchContent extends React.Component{
@@ -10,7 +12,9 @@ export class SearchContent extends React.Component{
     }
     if(this.props.venuesData.length === 0){
       return (
-        <p>{"Loading..."}</p>
+         <img className="search-content-loading-icon"
+              src={imgLoadingIcon}
+              alt="Loading bar icon"/>
       );
     }
     return (

@@ -2,7 +2,14 @@
   from {height: 0px;}
   to  {height: 1510px;}
 }
-
+.search-content-loading-icon{
+  display:block;
+  height:100px;
+  width: 100px;
+  margin:auto;
+  background-image: linear-gradient(97deg, #e44747 , #1e0db4);
+  margin-top:50px;
+}
 .search-content-container{
   display:flex;
   flex-wrap: wrap;

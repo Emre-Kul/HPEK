@@ -94,7 +94,7 @@ export const FsApiHandler = function(){
      });
   }
 
-  this.getPhotosOfVenue = function(venueId,photoSizeX,photoSizeY,limit){
+  this.getPhotosOfVenue = function(venueId,photoSize,limit){
     return new Promise( (resolve,reject) => {
       let url = `https://api.foursquare.com/v2/venues/${venueId}/photos?${this.auth}&limit=${limit}`;
       this.makeRequest("get",url).then( (response)=> {
@@ -103,7 +103,7 @@ export const FsApiHandler = function(){
         items.forEach((item) => {
           photos.push({
             photoId : item.id,
-            photoUrl : `${item.prefix}${photoSizeX}x${photoSizeY}${item.suffix}`
+            photoUrl : `${item.prefix}${photoSize}${item.suffix}`
           });
         });
         resolve(photos);
@@ -112,4 +112,4 @@ export const FsApiHandler = function(){
   }
 };
 
-export default FsApiHandler;
+export default new FsApiHandler();

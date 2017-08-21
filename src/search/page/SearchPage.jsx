@@ -2,13 +2,17 @@ import React from "react";
 import Footer from "../../common/footer/Footer.jsx";
 import SearchHeader from "../component/search-header/SearchHeader.jsx";
 import SearchContent from "../component/search-content/SearchContent.jsx";
-import FsApiHandler from "../../api/FoursquareApiHandler.js";
+import fsApiHandler from "../../api/FoursquareApiHandler.js";
 import "./search-page.scss";
 
 import SearchPageReducer from "./SearchPageReducer.js";
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 const searchPageStore = createStore(SearchPageReducer);
+
+
+const venuePictureSize = "400x400";
+const venueSearchLimit = 10;
 
 export class SearchPage extends React.Component{
   constructor(){
@@ -45,8 +49,7 @@ export class SearchPage extends React.Component{
       lastSearch : query+location
     });
 
-    let fsApiHandler = new FsApiHandler();
-    fsApiHandler.searchVenues(query,location,"400x400",10)
+    fsApiHandler.searchVenues(query,location,venuePictureSize,venueSearchLimit)
       .then((venuesData) => {
         searchPageStore.dispatch(
           {

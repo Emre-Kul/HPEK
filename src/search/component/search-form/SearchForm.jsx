@@ -16,13 +16,13 @@ export class SearchForm extends React.Component{
   }
   handleSearchQueryInput(e){
     this.setState({
-      query : e.target.value,
+      query : `${e.target.value.slice(0,1).toUpperCase()}${e.target.value.slice(1)}`,
       redirect : false
     });
   }
   handleSearchLocationInput(e){
     this.setState({
-      location : e.target.value,
+      location : `${e.target.value.slice(0,1).toUpperCase()}${e.target.value.slice(1)}`,
       redirect : false
     });
   }

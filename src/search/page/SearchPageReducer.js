@@ -1,6 +1,6 @@
 const ADD_SEARCH = "ADD_SEARCH";
 
-export const searchPageReducer = (state = [], action) => {
+const searchPageReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_SEARCH:
       let isActionExist = false;
@@ -34,6 +34,9 @@ const actionAddSearch = function(id,searchQuery,searchLocation){
     searchQuery : searchQuery,
     searchLocation : searchLocation
   }
+};
+
+module.exports = {
+  actionAddSearch,
+  searchPageReducer
 }
-export default actionAddSearch;
-export default searchPageReducer;

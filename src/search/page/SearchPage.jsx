@@ -5,10 +5,10 @@ import SearchContent from "../component/search-content/SearchContent.jsx";
 import fsApiHandler from "../../api/FoursquareApiHandler.js";
 import "./search-page.scss";
 
-import SearchPageReducer from "./SearchPageReducer.js";
+import {searchPageReducer , actionAddSearch} from "./SearchPageReducer.js";
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-const searchPageStore = createStore(SearchPageReducer);
+const searchPageStore = createStore(searchPageReducer);
 
 
 const venuePictureSize = "400x400";

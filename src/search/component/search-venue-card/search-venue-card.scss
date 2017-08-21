@@ -12,6 +12,7 @@
   background-size: cover;
   color : #ffffff;
   animation: fadeAnimation 3s;
+
   .search-venue-card-background{
     height : 100%;
     width: 100%;
@@ -19,13 +20,16 @@
     background-color: #12195f;
     z-index: -1;
   }
-  a{
+
+  .search-venue-card-link{
     text-decoration: none;
     color: #ffffff;
   }
-  span{
+
+  .search-venue-card-text{
     margin-left:10px;
   }
+
   .search-venue-card-herenow{
     position: absolute;
     bottom:0;
@@ -39,6 +43,7 @@
     font-weight: 500;
     color: #ffffff;
   }
+
   .search-venue-card-tier{
     position: absolute;
     left:100px;
@@ -47,6 +52,7 @@
     line-height: 40px;
     min-width: 30%;
   }
+
   .search-venue-card-name{
     position:absolute;
     bottom:50px;
@@ -55,6 +61,7 @@
     font-size: 25px;
     font-family: Gotham-Book;
   }
+
   .search-venue-card-raiting{
     position: absolute;
     right: 0;

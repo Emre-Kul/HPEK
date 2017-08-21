@@ -5,18 +5,21 @@
   height : 600px;
   border: 1px solid;
   text-align: center;
+
   .search-home-header-slogan-content{
     margin-top:17px;
     margin-bottom:60px;
     font-size: 16px;
     font-family: Gotham-Book;
   }
+
   .search-home-header-slogan-title{
     font-size: 55px;
     margin-top:23px;
     font-family: Gotham-ExtraLight;
     font-weight: 200;
   }
+
 }
 
 .search-header-container{
@@ -29,6 +32,7 @@
     display: flex;
     flex-wrap: wrap;
   }
+
   .search-header-logo{
     max-height : 124px;
     display:block;

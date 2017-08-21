@@ -30,22 +30,30 @@ style={detailHeaderPhotoStyle}>
             <div>
               <img src={imgLocationIcon}
                    alt="Location Icon"/>
-              <span>{venueInfo.venueAddress}</span>
+              <span className="detail-header-text">
+                {venueInfo.venueAddress}
+              </span>
             </div>
 
             <div>
               <img src={imgPhoneIcon}
                    alt="Phone Icon"/>
-              <span>{venueInfo.venuePhone}</span>
+              <span className="detail-header-text">
+                {venueInfo.venuePhone}
+              </span>
             </div>
 
             <div>
               <img src={imgPeopleIcon}
                    alt="People Icon"/>
-              <span>{venueInfo.venueBeenHere}</span>
+              <span className="detail-header-text">
+                {venueInfo.venueBeenHere}
+              </span>
               <img src={imgTagIcon}
                    alt="Tag Icon"/>
-              <span>{venueInfo.venuePriceTier}</span>
+              <span className="detail-header-text">
+                {venueInfo.venuePriceTier}
+              </span>
             </div>
 
             <div className="detail-header-rating-container"

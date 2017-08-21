@@ -1,6 +1,7 @@
 .search-form-container{
   max-width: 600px;
   margin:auto;
+
   .search-form-input-text{
     padding-left: 10px;
     height: 40px;
@@ -9,12 +10,15 @@
     font-family: Gotham-Medium;
     text-transform: capitalize;
   }
+
   .search-form-input-query{
     width: 285px;
   }
+
   .search-form-input-location{
     width: 156px;
   }
+
   .search-form-button{
     background-image: url("./search-icon.svg");
     background-position: 5px 0px;
@@ -24,11 +28,9 @@
     cursor: pointer;
     border: none;
     box-shadow: 0 12px 21px 0 rgba(0, 0, 0, 0.24);
-
     width: 77px;
     height: 45px;
     margin-left:10px;
-
     vertical-align: top;
     }
 }

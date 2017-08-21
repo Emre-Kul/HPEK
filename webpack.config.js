@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, 'src'),
@@ -11,9 +13,10 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
-    contentBase: "./public",
+    contentBase: path.join(__dirname,"public"),
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    inline: true
   },
   module: {
     rules: [
@@ -40,4 +43,14 @@ module.exports = {
       path.join(__dirname, 'node_modules'),
     ],
   },
+  plugins : [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname,"/public/index.html"),
+      files: {
+        css: ['style.css'],
+        js: [ "bundle.js"],
+      }
+    }),
+  ]
 };

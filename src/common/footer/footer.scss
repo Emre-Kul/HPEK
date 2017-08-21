@@ -2,14 +2,16 @@
   height: 150px;
   text-align: center;
   background-color: #ffffff;
-  line-height: 150px;
+  display:table;
+  width: 100%;
 
   .footer-link-container{
-    width: 80%;
-    margin: auto;
+    display: table-cell;
+    vertical-align: middle;
   }
 
   .footer-link{
+
     font-size: 12px;
     text-transform: uppercase;
     color : #9b9b9b;

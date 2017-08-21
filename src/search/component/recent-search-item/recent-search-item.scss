@@ -2,7 +2,8 @@
   height: 50px;
   border-bottom: solid 1px #e4e4e4;
   font-size:14px;
-  line-height: 50px;
+  display: table;
+  width: 100%;
 }
 
 .recent-search-item-link{
@@ -10,7 +11,8 @@
   text-decoration: none;
   color: #9b9b9b;
   cursor: pointer;
-
+  display:table-cell;
+  vertical-align: middle;
   &:hover{
     color: #4b4b4b;
   }

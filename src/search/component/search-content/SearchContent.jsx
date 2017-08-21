@@ -1,6 +1,6 @@
 import React from "react";
 import SearchVenueCard from "../search-venue-card/SearchVenueCard.jsx";
-import SearchRecentSearchs from "../search-recent-searchs/SearchRecentSearchs.jsx";
+import RecentSearchPanel from "../recent-search-panel/RecentSearchPanel.jsx";
 import imgLoadingIcon from "./loading-bar-icon.svg";
 
 import "./search-content.scss";
@@ -24,7 +24,7 @@ export class SearchContent extends React.Component{
           })
         }
         </div>
-        <SearchRecentSearchs recentSearchsStore={this.props.recentSearchsStore}/>
+        <RecentSearchPanel />
       </div>
     );
   }

@@ -1,4 +1,4 @@
-.search-recent-search-container{
+.recent-search-panel-container{
   margin-left : 30px;
   min-width : 290px;
   height: 500px;
@@ -8,7 +8,7 @@
   padding-top: 40px;
   font-family: Gotham-Medium;
 
-  .search-recent-search-title{
+  .recent-search-panel-title{
     position: relative;
     margin:auto;
     margin-bottom:30px;
@@ -17,7 +17,7 @@
     font-weight: 500;
   }
 
-  .search-recent-search-title:before{
+  .recent-search-panel-title:before{
     content : "";
     position: absolute;
     left    : 110px;
@@ -26,26 +26,6 @@
     width   : 70px;
     margin:auto;
     border-bottom:1px solid;
-  }
-
-  .search-recent-search-link{
-    text-transform: none;
-    text-decoration: none;
-    color: #9b9b9b;
-
-    &:hover{
-      color: #4b4b4b;
-    }
-
-  }
-
-  .search-recent-search-content{
-    height: 50px;
-    text-align: center;
-
-    font-size:14px;
-    line-height: 50px;
-    border-bottom: solid 1px #e4e4e4;
   }
 
 }

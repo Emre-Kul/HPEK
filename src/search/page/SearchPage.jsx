@@ -6,7 +6,8 @@ import FsApiHandler from "../../api/FoursquareApiHandler.js";
 import "./search-page.scss";
 
 import SearchPageReducer from "./SearchPageReducer.js";
-import { createStore } from "redux";
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 const searchPageStore = createStore(SearchPageReducer);
 
 export class SearchPage extends React.Component{
@@ -70,15 +71,16 @@ export class SearchPage extends React.Component{
   render(){
     const isHomePage = this.props.location === "home";
     return (
+      <Provider store={searchPageStore}>
       <div>
         <SearchHeader isHomePage={isHomePage}/>
         {(isHomePage) ?
           null
-          :  <SearchContent recentSearchsStore={searchPageStore.getState()}
-                            warning={this.state.warning}
+          :  <SearchContent warning={this.state.warning}
                             venuesData={this.state.venuesData}/>}
         <Footer/>
       </div>
+      </Provider>
     );
   }
 }

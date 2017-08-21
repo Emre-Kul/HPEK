@@ -1,6 +1,8 @@
+const ADD_SEARCH = "ADD_SEARCH";
+
 export const searchPageReducer = (state = [], action) => {
   switch (action.type) {
-    case "ADD_SEARCH":
+    case ADD_SEARCH:
       let isActionExist = false;
       state.forEach( (stateObj) => {
         if(stateObj.searchQuery === action.searchQuery && stateObj.searchLocation === action.searchLocation){
@@ -25,4 +27,13 @@ export const searchPageReducer = (state = [], action) => {
     break;
   }
 }
+const actionAddSearch = function(id,searchQuery,searchLocation){
+  return {
+    type : ADD_SEARCH,
+    id : id,
+    searchQuery : searchQuery,
+    searchLocation : searchLocation
+  }
+}
+export default actionAddSearch;
 export default searchPageReducer;

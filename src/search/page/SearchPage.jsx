@@ -52,14 +52,7 @@ export class SearchPage extends React.Component{
 
     fsApiHandler.searchVenues(query,location,venuePictureSize,venueSearchLimit)
       .then((venuesData) => {
-        searchPageStore.dispatch(
-          {
-            id : venuesData.searchId,
-            type : "ADD_SEARCH",
-            searchQuery : query,
-            searchLocation : location
-          }
-        );
+        searchPageStore.dispatch(actionAddSearch(venuesData.searchId,query,location));
         this.setState({
           venuesData : venuesData.venues
         });

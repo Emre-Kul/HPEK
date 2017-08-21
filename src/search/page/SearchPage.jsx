@@ -62,7 +62,7 @@ export class SearchPage extends React.Component{
       .catch((err)=>{
       console.log(err);
         this.setState({
-          warning : `Error Accured Please Try Again... Err Code : ${err.status} `
+          warning : `Error Accured Please Try Again... `
         });
       })
   }

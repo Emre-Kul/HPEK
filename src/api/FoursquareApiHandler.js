@@ -28,7 +28,7 @@ export const FsApiHandler = function(){
   }
 
   this.searchVenues = function(query,place,photoSize,limit){
-    let url = `https://api.foursquare.com/v2/venues/explore?query=${query}&near=${place}&limit=${limit}&venuePhotos=1&${this.auth}`;
+    let url = `https://api.foursquare.com/v2/venues/explore?price1,2,3,4&query=${query}&near=${place}&limit=${limit}&venuePhotos=1&${this.auth}`;
     return new Promise( (resolve,reject) => {
       this.makeRequest("get",url)
         .then( (response) => {
@@ -52,6 +52,7 @@ export const FsApiHandler = function(){
             }
             catch(e){
               console.log(`${e} Error At : ${item.venue.name}`);
+              reject(`${e} Error At : ${item.venue.name}`);
             }
           });
           resolve(

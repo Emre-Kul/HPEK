@@ -1,5 +1,5 @@
-export const searchPageReducer = (state = [],action) => {
-  switch (action.type){
+export const searchPageReducer = (state = [], action) => {
+  switch (action.type) {
     case "ADD_SEARCH":
       let isActionExist = false;
       state.forEach( (stateObj) => {
@@ -7,7 +7,7 @@ export const searchPageReducer = (state = [],action) => {
           isActionExist = true;
         }
       });
-      if(isActionExist){
+      if(isActionExist) {
         return state;
       }
       else {

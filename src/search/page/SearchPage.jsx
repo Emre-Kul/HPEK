@@ -13,6 +13,7 @@ const searchPageStore = createStore(SearchPageReducer);
 
 const venuePictureSize = "400x400";
 const venueSearchLimit = 10;
+const PAGE_HOME = "home";
 
 export class SearchPage extends React.Component{
   constructor(){
@@ -34,7 +35,7 @@ export class SearchPage extends React.Component{
     this.makeSearch();
   }
   makeSearch(){
-    if(this.props.location === "home"){
+    if(this.props.location === PAGE_HOME){
       return null;
     }
     let query = this.props.match.params.query;

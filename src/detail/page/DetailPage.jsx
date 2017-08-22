@@ -20,6 +20,9 @@ export class DetailPage extends React.Component{
     }
     this.loadVenueData = this.loadVenueData.bind(this);
   }
+  componentDidMount(){
+    this.loadVenueData();
+  }
   loadVenueData(){
     if(!this.state.venueDataLoaded) {
       let id = this.props.match.params.id;
@@ -41,7 +44,6 @@ export class DetailPage extends React.Component{
     }
   }
   render(){
-    this.loadVenueData();
     return(
       <div>
         {(this.state.venueDataLoaded)

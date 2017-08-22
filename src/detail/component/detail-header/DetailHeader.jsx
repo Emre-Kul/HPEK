@@ -60,7 +60,9 @@ style={detailHeaderPhotoStyle}>
                    style={{
                      "backgroundImage" : `url('${imgRectangleIcon}')`
                    }}>
-              {venueInfo.venueRating}
+              <span className="detail-header-rating-value">
+                {venueInfo.venueRating}
+              </span>
             </div>
 
           </div>

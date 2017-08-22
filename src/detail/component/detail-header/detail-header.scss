@@ -2,6 +2,7 @@
   position: relative;
   min-height: 600px;
   background : no-repeat center;
+  background-size: cover;
   color: #ffffff;
 
   .detail-header-text{
@@ -41,7 +42,9 @@
     height : 115px;
     background-image: linear-gradient(97deg, #1e0db4, #e44747);
     opacity: 0.8;
-    font: 500 12px Gotham-Medium;
+    font-weight: 500;
+    font-size:12px;
+    font-family: Gotham-Medium;
     color: #ffffff;
 
   }
@@ -53,6 +56,7 @@
 
   .detail-header-rating-container{
     position:absolute;
+    display: table;
     right:100px;
     bottom:70px;
     height:90px;
@@ -61,5 +65,10 @@
     font-size: 18px;
     text-align: center;
     color: #ffffff;
+  }
+
+  .detail-header-rating-value{
+    display: table-cell;
+    vertical-align: middle;
   }
 }

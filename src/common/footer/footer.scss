@@ -1,9 +1,9 @@
 .footer-container{
+  display:table;
   height: 150px;
+  width: 100%;
   text-align: center;
   background-color: #ffffff;
-  display:table;
-  width: 100%;
 
   .footer-link-container{
     display: table-cell;
@@ -11,12 +11,10 @@
   }
 
   .footer-link{
-
-    font-size: 12px;
+    margin-left : 10px;
+    font: 12px Gotham-Medium;
     text-transform: uppercase;
     color : #9b9b9b;
-    margin-left : 10px;
-    font-family: Gotham-Medium;
 
     &:hover{
       color : #4d4d4d;

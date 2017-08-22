@@ -1,18 +1,18 @@
 .recent-search-item-container{
+  display: table;
   height: 50px;
+  width: 100%;
   border-bottom: solid 1px #e4e4e4;
   font-size:14px;
-  display: table;
-  width: 100%;
 }
 
 .recent-search-item-link{
+  display:table-cell;
   text-transform: none;
   text-decoration: none;
+  vertical-align: middle;
   color: #9b9b9b;
   cursor: pointer;
-  display:table-cell;
-  vertical-align: middle;
   &:hover{
     color: #4b4b4b;
   }

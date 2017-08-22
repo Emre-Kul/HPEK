@@ -6,19 +6,19 @@
   position: relative;
   min-height : 290px;
   min-width: 290px;
+  margin : 0 10px 10px 10px;
   border : 1px solid;
-  margin : 0px 10px 10px 10px;
   background-repeat: no-repeat;
   background-size: cover;
   color : #ffffff;
   animation: fadeAnimation 3s;
 
   .search-venue-card-background{
+    z-index: -1;
     height : 100%;
     width: 100%;
     opacity: 0.5;
     background-color: #12195f;
-    z-index: -1;
   }
 
   .search-venue-card-link{
@@ -34,9 +34,9 @@
     position: absolute;
     bottom:0;
     left:20px;
-    border-top: solid 2px #c4c0ff;
     min-width: 40px;
     height: 40px;
+    border-top: solid 2px #c4c0ff;
     font-family: Gotham-Medium;
     font-size: 12px;
     font-weight: 500;
@@ -64,12 +64,11 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    height: 40px;
+    width:80px;
     background-size: inherit;
     background-repeat: no-repeat;
     text-align: center;
-    height: 40px;
-    width:80px;
-    line-height: 55px;
     font-family : Gotham-Medium;
     font-weight: 500;
   }

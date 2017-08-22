@@ -14,8 +14,8 @@
   }
 
   .search-home-header-slogan-title{
-    font-size: 55px;
     margin-top:23px;
+    font-size: 55px;
     font-family: Gotham-ExtraLight;
     font-weight: 200;
   }
@@ -27,14 +27,14 @@
   height: 150px;
 
   .search-header-logo-form-container{
-    width:72%;
-    margin: auto;
     display: flex;
     flex-wrap: wrap;
+    width:72%;
+    margin: auto;
   }
 
   .search-header-logo{
-    max-height : 124px;
     display:block;
+    max-height : 124px;
   }
 }

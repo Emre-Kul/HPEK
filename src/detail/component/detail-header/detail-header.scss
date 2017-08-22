@@ -1,9 +1,7 @@
 .detail-header-container{
   position: relative;
   min-height: 600px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background : no-repeat center;
   color: #ffffff;
 
   .detail-header-text{
@@ -24,9 +22,7 @@
     position: absolute;
     left:100px;
     bottom:150px;
-    font-family: Gotham-Light;
-    font-size: 64px;
-    font-weight: 300;
+    font: 300 64px Gotham-Light;
     color: #ffffff;
   }
 
@@ -40,14 +36,12 @@
 
   .detail-header-contact-container{
     position: absolute;
+    bottom : 0;
     width: 100%;
     height : 115px;
-    bottom : 0;
-    opacity: 0.8;
     background-image: linear-gradient(97deg, #1e0db4, #e44747);
-    font-family: Gotham-Medium;
-    font-size: 12px;
-    font-weight: 500;
+    opacity: 0.8;
+    font: 500 12px Gotham-Medium;
     color: #ffffff;
 
   }
@@ -59,11 +53,10 @@
 
   .detail-header-rating-container{
     position:absolute;
-    height:90px;
-    width:90px;
     right:100px;
     bottom:70px;
-    line-height: 90px;
+    height:90px;
+    width:90px;
     font-family: Gotham-Book;
     font-size: 18px;
     text-align: center;

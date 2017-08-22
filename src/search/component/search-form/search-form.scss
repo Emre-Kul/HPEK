@@ -4,11 +4,11 @@
 
   .search-form-input-text{
     padding-left: 10px;
-    height: 40px;
-    border-radius: 4px;
     margin-left : 10px;
+    height: 40px;
     font-family: Gotham-Medium;
     text-transform: capitalize;
+    border-radius: 4px;
   }
 
   .search-form-input-query{
@@ -25,12 +25,12 @@
     background-repeat: no-repeat;
     background-color: #ff5f5f;
     border-radius: 4px;
-    cursor: pointer;
     border: none;
     box-shadow: 0 12px 21px 0 rgba(0, 0, 0, 0.24);
     width: 77px;
     height: 45px;
     margin-left:10px;
+    cursor: pointer;
     vertical-align: top;
     }
 }

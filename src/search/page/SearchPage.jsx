@@ -1,12 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
+
 import Footer from "../../common/footer/Footer.jsx";
 import SearchHeader from "../component/search-header/SearchHeader.jsx";
 import SearchContent from "../component/search-content/SearchContent.jsx";
-import {searchVenues} from "../../api/FsApiHandler.js";
-import "./search-page.scss";
-
+import {searchVenues} from "../../api/fsApiHandler.js";
 import {actionAddToSearchList} from "../../reducers/SearchPageReducer.js";
+
+import "./search-page.scss";
 
 const venuePictureSize = "400x400";
 const venueSearchLimit = 10;

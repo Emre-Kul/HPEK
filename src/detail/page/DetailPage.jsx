@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../../common/footer/Footer.jsx";
 import DetailHeader from "../component/detail-header/DetailHeader.jsx";
 import DetailContent from "../component/detail-content/DetailContent.jsx";
-import {getDetailOfVenue,getPhotosOfVenue} from "../../api/FsApiHandler.js";
+import {getDetailOfVenue,getPhotosOfVenue} from "../../api/fsApiHandler.js";
 import "./detail-page.scss";
 
 const venuePhotoSize = "300x300";

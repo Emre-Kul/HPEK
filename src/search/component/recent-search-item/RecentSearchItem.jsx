@@ -1,6 +1,7 @@
 import React from "react";
-import "./recent-search-item.scss";
 import {Link} from "react-router-dom";
+
+import "./recent-search-item.scss";
 
 export class RecentSearchItem extends React.Component{
   render() {

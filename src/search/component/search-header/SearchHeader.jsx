@@ -1,9 +1,12 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
 import SearchForm from "../search-form/SearchForm.jsx";
-import "./search-header.scss";
+
 import imgSearchHeaderLogo from "./search-header-logo.png";
 import imgSearchHeaderHomeBackground from "./search-header-home-background.png";
-import {Link} from "react-router-dom";
+
+import "./search-header.scss";
 
 export class SearchHeader extends React.Component{
   render() {

@@ -1,8 +1,9 @@
 import React from "react";
-import "./recent-search-list.scss";
+import {connect} from "react-redux";
+
 import RecentSearchItem from "../recent-search-item/RecentSearchItem.jsx";
 
-import {connect} from "react-redux";
+import "./recent-search-list.scss";
 
 export class RecentSearchList extends React.Component{
   render() {

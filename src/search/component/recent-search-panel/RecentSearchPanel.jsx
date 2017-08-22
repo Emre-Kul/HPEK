@@ -1,6 +1,8 @@
 import React from "react";
-import "./recent-search-panel.scss";
+
 import RecentSearchList from "../recent-search-list/RecentSearchList.jsx";
+
+import "./recent-search-panel.scss";
 
 export class RecentSearchPanel extends React.Component{
   render() {

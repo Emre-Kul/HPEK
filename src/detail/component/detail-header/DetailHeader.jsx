@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./detail-header.scss";
 
 import imgDetailLogo from "./detail-logo.png";

@@ -1,10 +1,11 @@
 import React from "react";
+
 import "./footer.scss";
 
 export class Footer extends React.Component{
     render(){
         return (
-          <footer className="footer-container">
+          <div className="footer">
             <div className="footer-link-container">
               <a href="#about-us"
                 className="footer-link">
@@ -19,7 +20,7 @@ export class Footer extends React.Component{
                 {"Blog"}
               </a>
             </div>
-          </footer>
+          </div>
         );
     }
 }

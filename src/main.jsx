@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router  , Route , Switch} from 'react-router-dom';
-
 import {Provider} from "react-redux";
 import {createStore} from "redux";
-import {searchPageReducer} from "./reducers/SearchPageReducer.js";
 
+import {searchPageReducer} from "./reducers/SearchPageReducer.js";
 import SearchPage from "./search/page/SearchPage.jsx";
 import DetailPage from "./detail/page/DetailPage.jsx";
 

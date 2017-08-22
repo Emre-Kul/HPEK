@@ -1,10 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "./search-venue-card.scss";
 
 import imgPeopleIcon from "./people-icon.svg";
 import imgTagIcon from "./tag-icon.svg";
 import imgTriangle from "./triangle-icon.svg";
+
+import "./search-venue-card.scss";
 
 export class SearchVenueCard extends React.Component{
   constructor(){

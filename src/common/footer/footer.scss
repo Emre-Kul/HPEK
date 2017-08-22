@@ -2,18 +2,24 @@
   display:table;
   height: 150px;
   width: 100%;
+
   text-align: center;
+
   background-color: #ffffff;
 
   .footer-link-container{
     display: table-cell;
+
     vertical-align: middle;
   }
 
   .footer-link{
     margin-left : 10px;
-    font: 12px Gotham-Medium;
+
+    font-size: 12px;
+    font-family : Gotham-Medium;
     text-transform: uppercase;
+
     color : #9b9b9b;
 
     &:hover{

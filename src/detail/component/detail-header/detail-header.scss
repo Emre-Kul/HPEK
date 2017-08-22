@@ -1,6 +1,8 @@
 .detail-header{
   position: relative;
+
   min-height: 600px;
+
   background : no-repeat center;
   background-size: cover;
   color: #ffffff;
@@ -13,8 +15,10 @@
   .detail-header-background{
     position: absolute;
     top:0;
+
     height : 100%;
     width: 100%;
+
     opacity: 0.6;
     background-color: #12195f;
   }
@@ -23,13 +27,18 @@
     position: absolute;
     left:100px;
     bottom:150px;
-    font: 300 64px Gotham-Light;
+
+    font-weight: 300;
+    font-size : 64px;
+    font-family: Gotham-Light;
+
     color: #ffffff;
   }
 
   .detail-header-logo{
     position: absolute;
     left:calc(50% - 228px);
+
     display: block;
     margin:auto;
     min-height: 228px;
@@ -38,13 +47,16 @@
   .detail-header-contact-container{
     position: absolute;
     bottom : 0;
+
     width: 100%;
     height : 115px;
-    background-image: linear-gradient(97deg, #1e0db4, #e44747);
-    opacity: 0.8;
+
     font-weight: 500;
     font-size:12px;
     font-family: Gotham-Medium;
+
+    background-image: linear-gradient(97deg, #1e0db4, #e44747);
+    opacity: 0.8;
     color: #ffffff;
 
   }
@@ -56,14 +68,17 @@
 
   .detail-header-rating-container{
     position:absolute;
-    display: table;
     right:100px;
     bottom:70px;
+
+    display: table;
     height:90px;
     width:90px;
+
     font-family: Gotham-Book;
     font-size: 18px;
     text-align: center;
+
     color: #ffffff;
   }
 

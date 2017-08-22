@@ -2,19 +2,23 @@
   background-size: cover;
   background-repeat: no-repeat;
   color:#ffffff;
+
   height : 600px;
   border: 1px solid;
+
   text-align: center;
 
   .search-home-header-slogan-content{
     margin-top:17px;
     margin-bottom:60px;
+
     font-size: 16px;
     font-family: Gotham-Book;
   }
 
   .search-home-header-slogan-title{
     margin-top:23px;
+
     font-size: 55px;
     font-family: Gotham-ExtraLight;
     font-weight: 200;
@@ -24,6 +28,7 @@
 
 .search-header-container{
   background-image: linear-gradient(97deg, #1e0db4, #e44747);
+
   height: 150px;
 
   .search-header-logo-form-container{

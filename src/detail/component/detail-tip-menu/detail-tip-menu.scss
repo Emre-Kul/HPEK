@@ -1,32 +1,39 @@
 .detail-tip-menu{
   z-index: 1;
+
   margin-top: -80px;
   margin-left: 20px;
   max-width:290px;
-  background-color: #ffffff;
   box-shadow: 0 0 34px 0 rgba(115, 95, 255, 0.32);
 
+  background-color: #ffffff;
+
   .detail-tip-menu-title{
-    display:block;
     position: relative;
+
+    display:block;
     margin-top:30px;
     margin-bottom:20px;
+
     font-family: Gotham-Medium;
     font-size: 16px;
     font-weight: 500;
     text-align: center;
+
     color: #4a4a4a;
   }
 
   .detail-tip-menu-title:before{
-    content : "";
     position: absolute;
-    left    : 110px;
+    left: 110px;
     top: 30px;
-    height  : 1px;
-    width   : 70px;
-    margin:auto;
-    border-bottom:2px solid #c4c0ff;
+
+    height: 1px;
+    width: 70px;
+    margin: auto;
+    border-bottom: 2px solid #c4c0ff;
+
+    content : "";
   }
 
   .detail-tip-menu-user-container{
@@ -42,22 +49,27 @@
   .detail-tip-menu-user-picture-container{
     width:40px;
     height:40px;
+
     transform: rotate(-45deg);
   }
 
   .detail-tip-menu-user-name{
     margin-left: 20px;
+
     font-family: Gotham-Medium;
     font-size: 14px;
     font-weight: 500;
+
     color: #9b9b9b;
   }
 
   .detail-tip-menu-user-comment{
     margin-top:10px;
     min-width: 100%;
+
     font-family: Gotham-Book;
     font-size: 14px;
+
     color: #9b9b9b;
   }
 

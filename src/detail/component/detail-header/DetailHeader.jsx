@@ -18,7 +18,7 @@ export class DetailHeader extends React.Component{
       "backgroundImage" : `url("${venueInfo.venueHeaderPhoto}")`
     }
     return(
-      <div className="detail-header-container"
+      <div className="detail-header"
 style={detailHeaderPhotoStyle}>
         <div className="detail-header-background"/>
         <img className="detail-header-logo"

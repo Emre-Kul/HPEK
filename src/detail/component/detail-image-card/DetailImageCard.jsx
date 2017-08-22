@@ -8,7 +8,7 @@ export class DetailImageCard extends React.Component{
       "backgroundImage" : `url(${this.props.backgroundImage})`
     }
     return (
-      <div className="detail-image-card-container"
+      <div className="detail-image-card"
           style={backgroundStyle}/>
     );
   }

@@ -1,12 +1,4 @@
-.search-content-loading-icon{
-  display:block;
-  height:100px;
-  width: 100px;
-  margin:50px auto auto auto;
-  background-image: linear-gradient(97deg, #e44747 , #1e0db4);
-}
-
-.search-content-container{
+.search-content{
   display:flex;
   flex-wrap: wrap;
   width: 75%;
@@ -20,4 +12,14 @@
     flex-wrap:wrap;
     width : 630px;
   }
+
+  .search-content-loading-icon{
+    display:block;
+    height:100px;
+    width: 100px;
+    margin:50px auto auto auto;
+    background-image: linear-gradient(97deg, #e44747 , #1e0db4);
+  }
+
 }
+

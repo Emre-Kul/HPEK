@@ -9,7 +9,7 @@ export class RecentSearchItem extends React.Component{
       <li className="recent-search-item">
         <Link className="recent-search-item-link"
           to={`/search/${this.props.recentSearchQuery}/${this.props.recentSearchLocation}`}>
-        { `${this.props.recentSearchQuery} in ${this.props.recentSearchLocation}`}
+          { `${this.props.recentSearchQuery} in ${this.props.recentSearchLocation}`}
         </Link>
       </li>
     );

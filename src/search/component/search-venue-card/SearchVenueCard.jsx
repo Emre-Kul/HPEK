@@ -32,7 +32,7 @@ style={venueDivImageStyle}>
         </div>
         <div className="search-venue-card-herenow-container">
           <span className="search-venue-card-herenow">
-          <img src={imgPeopleIcon}/>
+            <img src={imgPeopleIcon}/>
             <span className="search-venue-card-text">
               {venueData.venueHereNow}
             </span>
@@ -41,10 +41,8 @@ style={venueDivImageStyle}>
 
         <div className="search-venue-card-tier-container">
           <span className="search-venue-card-tier">
-          <img src={imgTagIcon}/>
-            <span className="search-venue-card-tier-bar">
-
-            </span>
+            <img src={imgTagIcon}/>
+            <span className="search-venue-card-tier-bar"/>
           </span>
         </div>
         <div className="search-venue-card-raiting-container"

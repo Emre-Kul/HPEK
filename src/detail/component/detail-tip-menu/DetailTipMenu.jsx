@@ -5,7 +5,7 @@ import "./detail-tip-menu.scss"
 export class DetailTipMenu extends React.Component{
   render() {
     return (
-      <div className="detail-tip-menu-container">
+      <div className="detail-tip-menu">
         <span className="detail-tip-menu-title">
           {"TIPS"}
         </span>

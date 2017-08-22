@@ -7,8 +7,6 @@ import SearchContent from "../component/search-content/SearchContent.jsx";
 import {searchVenues} from "../../api/fsApiHandler.js";
 import {actionAddToSearchList} from "../../reducers/searchPageReducer.js";
 
-import "./search-page.scss";
-
 const VENUE_PHOTO_SIZE = "400x400";
 const VENUE_SEARCH_LIMIT = 10;
 const PAGE_HOME = "home";

@@ -9,7 +9,7 @@ import "./search-content.scss";
 export class SearchContent extends React.Component{
   render() {
     return (
-      <div className="search-content-container">
+      <div className="search-content">
         <div className="search-content-card-container">
           { (this.props.warning.length > 0) ?
             <p>{this.props.warning}</p> :
@@ -25,7 +25,7 @@ export class SearchContent extends React.Component{
           })
         }
         </div>
-        <RecentSearchPanel />
+        <RecentSearchPanel/>
       </div>
     );
   }

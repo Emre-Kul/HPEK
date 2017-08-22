@@ -8,7 +8,7 @@ import "./detail-content.scss";
 export class DetailContent extends React.Component{
   render(){
     return(
-      <div className="detail-content-container">
+      <div className="detail-content">
         <div className="detail-content-image-container">
           {
             this.props.venuePhotos.map((venuePhoto) => {

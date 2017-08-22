@@ -1,9 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import imgPeopleIcon from "./people-icon.svg";
-import imgTagIcon from "./tag-icon.svg";
-import imgTriangle from "./triangle-icon.svg";
+import imgPeopleIcon from "../../../../asset/img/people-icon.svg";
+import imgTagIcon from "../../../../asset/img/tag-icon.svg";
+import imgTriangle from "../../../../asset/img/triangle-icon.svg";
 
 import "./search-venue-card.scss";
 

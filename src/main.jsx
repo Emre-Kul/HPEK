@@ -4,12 +4,12 @@ import { BrowserRouter as Router  , Route , Switch} from 'react-router-dom';
 import {Provider} from "react-redux";
 import {createStore} from "redux";
 
-import {searchPageReducer} from "./reducers/SearchPageReducer.js";
+import {searchPageReducer} from "./reducers/searchPageReducer.js";
 import SearchPage from "./search/page/SearchPage.jsx";
 import DetailPage from "./detail/page/DetailPage.jsx";
 
 import "./main.scss";
-import "./common/fonts/fonts.scss";
+import "../asset/font/fonts.scss";
 
 const store = createStore(searchPageReducer);
 const appElement = document.getElementById("root");

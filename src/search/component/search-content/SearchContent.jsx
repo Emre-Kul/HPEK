@@ -4,7 +4,7 @@ import RecentSearchPanel from "../recent-search-panel/RecentSearchPanel.jsx";
 
 import "./search-content.scss";
 
-import imgLoadingIcon from "./loading-bar-icon.svg";
+import imgLoadingIcon from "../../../../asset/img/loading-bar-icon.svg";
 
 export class SearchContent extends React.Component{
   render() {

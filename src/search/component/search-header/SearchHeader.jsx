@@ -3,8 +3,8 @@ import {Link} from "react-router-dom";
 
 import SearchForm from "../search-form/SearchForm.jsx";
 
-import imgSearchHeaderLogo from "./search-header-logo.png";
-import imgSearchHeaderHomeBackground from "./search-header-home-background.png";
+import imgSearchHeaderLogo from "../../../../asset/img/search-header-logo.png";
+import imgSearchHeaderHomeBackground from "../../../../asset/img/search-header-home-background.png";
 
 import "./search-header.scss";
 

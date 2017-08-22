@@ -1,7 +1,7 @@
-const clientId = "V131V0IPODZOAI4DH0TXB0W1VF4R1QCAHASGHJI35D3KJLWK";
-const clientSecret = "L5RZFRA1K2KPH33H12BFD3MECOJKEBIJSLP14KXYRYW3A5AF";
-const apiVersion = "20180101";
-const auth = `client_id=${clientId}&client_secret=${clientSecret}&v=${apiVersion}`;
+const FS_CLIENT_ID = "V131V0IPODZOAI4DH0TXB0W1VF4R1QCAHASGHJI35D3KJLWK";
+const FS_CLIENT_SECRET = "L5RZFRA1K2KPH33H12BFD3MECOJKEBIJSLP14KXYRYW3A5AF";
+const FS_API_VERSION = "20180101";
+const FS_API_KEY = `client_id=${FS_CLIENT_ID}&client_secret=${FS_CLIENT_SECRET}&v=${FS_API_VERSION}`;
 
 const makeRequest = function(method,url){
   return new Promise((resolve,reject) =>{
@@ -26,7 +26,7 @@ const makeRequest = function(method,url){
 }
 
 const searchVenues = function(query,place,photoSize,limit){
-  let url = `https://api.foursquare.com/v2/venues/explore?price1,2,3,4&query=${query}&near=${place}&limit=${limit}&venuePhotos=1&${auth}`;
+  let url = `https://api.foursquare.com/v2/venues/explore?price1,2,3,4&query=${query}&near=${place}&limit=${limit}&venuePhotos=1&${FS_API_KEY}`;
   return new Promise( (resolve,reject) => {
     makeRequest("get",url)
       .then( (response) => {
@@ -65,7 +65,7 @@ const searchVenues = function(query,place,photoSize,limit){
 }
 
 const getDetailOfVenue = function(venueId,venueTipsLimit){
-   const url = `https://api.foursquare.com/v2/venues/${venueId}?${auth}`;
+   const url = `https://api.foursquare.com/v2/venues/${venueId}?${FS_API_KEY}`;
    return new Promise((resolve,reject) => {
      makeRequest("get",url).then( (response)=>{
        let venue = response.response.venue;
@@ -94,7 +94,7 @@ const getDetailOfVenue = function(venueId,venueTipsLimit){
 
 const getPhotosOfVenue = function(venueId,photoSize,limit){
   return new Promise( (resolve,reject) => {
-    let url = `https://api.foursquare.com/v2/venues/${venueId}/photos?${auth}&limit=${limit}`;
+    let url = `https://api.foursquare.com/v2/venues/${venueId}/photos?${FS_API_KEY}&limit=${limit}`;
     makeRequest("get",url).then( (response)=> {
       let items = response.response.photos.items;
       let photos = [];

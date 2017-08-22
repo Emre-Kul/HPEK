@@ -2,9 +2,9 @@ import React from "react";
 import SearchVenueCard from "../search-venue-card/SearchVenueCard.jsx";
 import RecentSearchPanel from "../recent-search-panel/RecentSearchPanel.jsx";
 
-import "./search-content.scss";
-
 import imgLoadingIcon from "../../../../asset/img/loading-bar-icon.svg";
+
+import "./search-content.scss";
 
 export class SearchContent extends React.Component{
   render() {

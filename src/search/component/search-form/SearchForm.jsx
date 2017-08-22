@@ -39,11 +39,11 @@ export class SearchForm extends React.Component{
     const searchLink = `/search/${this.state.query}/${this.state.location}`;
     return (
       <form className="search-form">
-        <input className="search-form-input-query search-form-input-text"
+        <input className="search-form-query-input search-form-input"
             type="text"
             placeholder="I'm looking for"
             onInput={this.handleSearchQueryInput}/>
-        <input className="search-form-input-location search-form-input-text"
+        <input className="search-form-location-input search-form-input"
             type="text"
             placeholder="Place"
             onInput={this.handleSearchLocationInput}/>

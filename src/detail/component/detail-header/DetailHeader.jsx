@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./detail-header.scss";
 
 import imgDetailLogo from "../../../../asset/img/detail-logo.png";
 import imgLocationIcon from "../../../../asset/img/location-icon.svg";
@@ -8,6 +7,8 @@ import imgPeopleIcon from "../../../../asset/img/people-icon.svg";
 import imgPhoneIcon from "../../../../asset/img/phone-icon.svg";
 import imgRectangleIcon from "../../../../asset/img/rectangle-icon.svg";
 import imgTagIcon from "../../../../asset/img/tag-icon.svg";
+
+import "./detail-header.scss";
 
 export class DetailHeader extends React.Component{
 

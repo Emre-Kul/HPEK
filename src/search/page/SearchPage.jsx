@@ -9,8 +9,8 @@ import {actionAddToSearchList} from "../../reducers/searchPageReducer.js";
 
 import "./search-page.scss";
 
-const venuePictureSize = "400x400";
-const venueSearchLimit = 10;
+const VENUE_PHOTO_SIZE = "400x400";
+const VENUE_SEARCH_LIMIT = 10;
 const PAGE_HOME = "home";
 
 
@@ -50,7 +50,7 @@ export class SearchPage extends React.Component{
       lastSearch : query+location
     });
 
-    searchVenues(query,location,venuePictureSize,venueSearchLimit)
+    searchVenues(query,location,VENUE_PHOTO_SIZE,VENUE_SEARCH_LIMIT)
       .then((venuesData) => {
 
         this.props.dispatch(actionAddToSearchList(venuesData.searchId,query,location));
@@ -67,7 +67,7 @@ export class SearchPage extends React.Component{
   }
 
   render(){
-    const isHomePage = this.props.location === "home";
+    const isHomePage = this.props.location === PAGE_HOME;
     return (
       <div>
         <SearchHeader isHomePage={isHomePage}/>

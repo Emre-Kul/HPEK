@@ -5,9 +5,9 @@ import DetailContent from "../component/detail-content/DetailContent.jsx";
 import {getDetailOfVenue,getPhotosOfVenue} from "../../api/fsApiHandler.js";
 import "./detail-page.scss";
 
-const venuePhotoSize = "300x300";
-const venueTipsLimit = 10;
-const venuePhotoLimit = 10;
+const VENUE_PHOTO_SIZE = "300x300";
+const VENUE_TIPS_LIMIT = 10;
+const VENUE_PHOTO_LIMIT = 10;
 
 export class DetailPage extends React.Component{
   constructor(){
@@ -26,13 +26,13 @@ export class DetailPage extends React.Component{
   loadVenueData(){
     if(!this.state.venueDataLoaded) {
       let id = this.props.match.params.id;
-      getDetailOfVenue(id,venueTipsLimit)
+      getDetailOfVenue(id,VENUE_TIPS_LIMIT)
         .then((venue) => {
           this.setState({
             venueData: venue,
             venueDataLoaded: true
           });
-          return getPhotosOfVenue(venue.venueId,venuePhotoSize,venuePhotoLimit);
+          return getPhotosOfVenue(venue.venueId,VENUE_PHOTO_SIZE,VENUE_PHOTO_LIMIT);
         })
         .then((photos) =>{
           this.setState({

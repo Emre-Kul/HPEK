@@ -11,11 +11,11 @@ import DetailPage from "./detail/page/DetailPage.jsx";
 import "./main.scss";
 import "../asset/font/fonts.scss";
 
-const store = createStore(searchPageReducer);
-const appElement = document.getElementById("root");
+const STORE = createStore(searchPageReducer);
+const APP_ELEMENT = document.getElementById("root");
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={STORE}>
     <Router>
       <div>
         <Switch>
@@ -31,5 +31,5 @@ ReactDOM.render(
       </div>
     </Router>
   </Provider>,
-  appElement
+  APP_ELEMENT
 );

@@ -8,7 +8,9 @@ import {searchPageReducer} from "./reducers/SearchPageReducer.js";
 
 import SearchPage from "./search/page/SearchPage.jsx";
 import DetailPage from "./detail/page/DetailPage.jsx";
+
 import "./main.scss";
+import "./common/fonts/fonts.scss";
 
 const store = createStore(searchPageReducer);
 const appElement = document.getElementById("root");

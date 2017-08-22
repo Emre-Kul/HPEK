@@ -35,6 +35,10 @@ module.exports = {
           'file-loader',
           'image-webpack-loader'
         ]
+      },
+      {
+        test: /\.(otf)$/,
+        loader: 'file-loader'
       }
     ]
   },

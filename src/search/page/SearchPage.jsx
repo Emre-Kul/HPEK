@@ -33,37 +33,30 @@ export class SearchPage extends React.Component{
     this.makeSearch();
   }
   makeSearch(){
-    if(this.props.location === PAGE_HOME){
-      return null;
-    }
-    let query = this.props.match.params.query;
-    let location = this.props.match.params.location;
-    if (query + location === this.state.lastSearch) {
-      return null;
-    }
-
-    this.setState({
-      venuesData: "",
-      warning: "",
-      lastSearch : query+location
-    });
-
-    searchVenues(query,location,VENUE_PHOTO_SIZE,VENUE_SEARCH_LIMIT)
-      .then((venuesData) => {
-
-        this.props.dispatch(actionAddToSearchList(venuesData.searchId,query,location));
+    if(this.props.location !== PAGE_HOME){
+      let query = this.props.match.params.query;
+      let location = this.props.match.params.location;
+      if (query + location !== this.state.lastSearch) {
         this.setState({
-          venuesData : venuesData.venues
+          venuesData: "",
+          warning: "",
+          lastSearch: query + location
         });
-      })
-      .catch((err)=>{
-      console.log(err);
-        this.setState({
-          warning : `Error Accured Please Try Again... `
-        });
-      })
+        searchVenues(query, location, VENUE_PHOTO_SIZE, VENUE_SEARCH_LIMIT)
+          .then((venuesData) => {
+            this.props.dispatch(actionAddToSearchList(venuesData.searchId, query, location));
+            this.setState({
+              venuesData: venuesData.venues
+            });
+          })
+          .catch((err) => {
+            this.setState({
+              warning: `Error Accured Please Try Again... ${err}`
+            });
+          })
+      }
+    }
   }
-
   render(){
     const isHomePage = this.props.location === PAGE_HOME;
     return (

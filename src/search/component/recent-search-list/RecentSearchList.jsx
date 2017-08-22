@@ -22,7 +22,6 @@ export class RecentSearchList extends React.Component{
   }
 }
 
-
 RecentSearchList = connect((store)=>{
   return{
     recentSearchs : store

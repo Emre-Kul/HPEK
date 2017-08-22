@@ -1,19 +1,18 @@
 import React from "react";
+import {connect} from "react-redux";
 import Footer from "../../common/footer/Footer.jsx";
 import SearchHeader from "../component/search-header/SearchHeader.jsx";
 import SearchContent from "../component/search-content/SearchContent.jsx";
-import fsApiHandler from "../../api/FoursquareApiHandler.js";
+import {searchVenues} from "../../api/FsApiHandler.js";
 import "./search-page.scss";
 
-import {searchPageReducer , actionAddSearch} from "./SearchPageReducer.js";
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-const searchPageStore = createStore(searchPageReducer);
-
+import {actionAddToSearchList} from "../../reducers/SearchPageReducer.js";
 
 const venuePictureSize = "400x400";
 const venueSearchLimit = 10;
 const PAGE_HOME = "home";
+
+
 
 export class SearchPage extends React.Component{
   constructor(){
@@ -50,9 +49,10 @@ export class SearchPage extends React.Component{
       lastSearch : query+location
     });
 
-    fsApiHandler.searchVenues(query,location,venuePictureSize,venueSearchLimit)
+    searchVenues(query,location,venuePictureSize,venueSearchLimit)
       .then((venuesData) => {
-        searchPageStore.dispatch(actionAddSearch(venuesData.searchId,query,location));
+
+        this.props.dispatch(actionAddToSearchList(venuesData.searchId,query,location));
         this.setState({
           venuesData : venuesData.venues
         });
@@ -68,7 +68,6 @@ export class SearchPage extends React.Component{
   render(){
     const isHomePage = this.props.location === "home";
     return (
-      <Provider store={searchPageStore}>
       <div>
         <SearchHeader isHomePage={isHomePage}/>
         {(isHomePage) ?
@@ -77,8 +76,8 @@ export class SearchPage extends React.Component{
                             venuesData={this.state.venuesData}/>}
         <Footer/>
       </div>
-      </Provider>
     );
   }
 }
+SearchPage = connect()(SearchPage);
 export default SearchPage;

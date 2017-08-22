@@ -27,7 +27,7 @@ const searchPageReducer = (state = [], action) => {
     break;
   }
 }
-const actionAddSearch = function(id,searchQuery,searchLocation){
+const actionAddToSearchList = function(id,searchQuery,searchLocation){
   return {
     type : ADD_SEARCH,
     id : id,
@@ -37,6 +37,6 @@ const actionAddSearch = function(id,searchQuery,searchLocation){
 };
 
 module.exports = {
-  actionAddSearch,
+  actionAddToSearchList,
   searchPageReducer
 }

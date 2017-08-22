@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../../common/footer/Footer.jsx";
 import DetailHeader from "../component/detail-header/DetailHeader.jsx";
 import DetailContent from "../component/detail-content/DetailContent.jsx";
-import fsApiHandler from "../../api/FoursquareApiHandler.js";
+import {getDetailOfVenue,getPhotosOfVenue} from "../../api/FsApiHandler.js";
 import "./detail-page.scss";
 
 const venuePhotoSize = "300x300";
@@ -23,13 +23,13 @@ export class DetailPage extends React.Component{
   loadVenueData(){
     if(!this.state.venueDataLoaded) {
       let id = this.props.match.params.id;
-      fsApiHandler.getDetailOfVenue(id,venueTipsLimit)
+      getDetailOfVenue(id,venueTipsLimit)
         .then((venue) => {
           this.setState({
             venueData: venue,
             venueDataLoaded: true
           });
-          return fsApiHandler.getPhotosOfVenue(venue.venueId,venuePhotoSize,venuePhotoLimit);
+          return getPhotosOfVenue(venue.venueId,venuePhotoSize,venuePhotoLimit);
         })
         .then((photos) =>{
           this.setState({

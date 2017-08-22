@@ -21,29 +21,39 @@ export class SearchVenueCard extends React.Component{
       <div className="search-venue-card-container"
 style={venueDivImageStyle}>
         <div className="search-venue-card-background"/>
-        <div className="search-venue-card-name">
+        <div className="search-venue-card-name-container">
           <Link className="search-venue-card-link"
                 to={detailLink}>
-            {venueData.venueName}
+            <span>
+              {venueData.venueName}
+            </span>
           </Link>
         </div>
-        <div className="search-venue-card-herenow">
+        <div className="search-venue-card-herenow-container">
+          <span className="search-venue-card-herenow">
           <img src={imgPeopleIcon}/>
-          <span className="search-venue-card-text">
-            {venueData.venueHereNow}
+            <span className="search-venue-card-text">
+              {venueData.venueHereNow}
+            </span>
           </span>
         </div>
 
-        <div className="search-venue-card-tier">
+        <div className="search-venue-card-tier-container">
+          <span className="search-venue-card-tier">
           <img src={imgTagIcon}/>
-          <span className="search-venue-card-text">
-            {venueData.venuePriceTier}
+            <span className="search-venue-card-tier-bar">
+
+            </span>
           </span>
         </div>
-        <div className="search-venue-card-raiting"
+        <div className="search-venue-card-raiting-container"
         style={{
           "backgroundImage" : `url('${imgTriangle}')`
-        }}>{venueData.venueRating}</div>
+        }}>
+          <span className="search-venue-card-raiting">
+            {venueData.venueRating}
+          </span>
+        </div>
       </div>
     );
   }

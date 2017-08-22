@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 export class RecentSearchList extends React.Component{
   render() {
     return (
-      <ul className="recent-search-list-container">
+      <ul className="recent-search-list">
         {
           this.props.recentSearchs.map((recentSearch) => {
             return (

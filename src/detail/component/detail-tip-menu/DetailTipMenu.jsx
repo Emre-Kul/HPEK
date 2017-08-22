@@ -6,24 +6,24 @@ export class DetailTipMenu extends React.Component{
   render() {
     return (
       <div className="detail-tip-menu-container">
-        <div className="detail-tip-menu-title">
+        <span className="detail-tip-menu-title">
           {"TIPS"}
-        </div>
+        </span>
         {
           this.props.venueTips.map((venueTip) => {
             return (
               <div className="detail-tip-menu-user-container"
                    key={venueTip.id}>
-                <div className="detail-tip-menu-user-picture">
+                <div className="detail-tip-menu-user-picture-container">
                   <img src={`${venueTip.user.photo.prefix}40x40${venueTip.user.photo.suffix}`}
                     alt="Tip User Picture"/>
                 </div>
-                <div className="detail-tip-menu-user-name">
+                <span className="detail-tip-menu-user-name">
                   {`${venueTip.user.firstName} ${venueTip.user.lastName}`}
-                </div>
-                <div className="detail-tip-menu-user-comment">
+                </span>
+                <span className="detail-tip-menu-user-comment">
                   {venueTip.text}
-                </div>
+                </span>
               </div>
             );
           })

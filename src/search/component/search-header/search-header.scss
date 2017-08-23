@@ -1,9 +1,19 @@
+.header-home-animation-appear {
+  opacity: 0.01;
+}
+
+.header-home-animation-appear.header-home-animation-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
 .search-home-header-container{
   background-size: cover;
   background-repeat: no-repeat;
   color:#ffffff;
 
-  height : 600px;
+  max-height : 600px;
+  min-height : 150px;
   border: 1px solid;
 
   text-align: center;

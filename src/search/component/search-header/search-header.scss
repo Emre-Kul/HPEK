@@ -25,15 +25,6 @@
     font-family: Gotham-ExtraLight;
     font-weight: 200;
   }
-  .header-home-animation-appear {
-    opacity: 0.01;
-  }
-
-  .header-home-animation-appear.header-home-animation-appear-active {
-    opacity: 1;
-    transition: opacity 1s ease-in;
-  }
-
 }
 
 .search-header{

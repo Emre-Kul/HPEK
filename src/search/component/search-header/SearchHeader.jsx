@@ -19,12 +19,6 @@ export class SearchHeader extends React.Component{
         {(this.props.isHomePage) ?
           <div className="search-home-header"
              style={homeBackgroundStyle}>
-            <ReactCSSTransitionGroup
-              transitionName="header-home-animation"
-              transitionAppear={true}
-              transitionAppearTimeout={1000}
-              transitionEnter={false}
-              transitionLeave={false}>
             <img className="search-home-header-logo"
                  src={imgSearchHeaderLogo}
                  alt="Home Header Logo"/>
@@ -35,7 +29,6 @@ export class SearchHeader extends React.Component{
                 {"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
               </p>
             <SearchForm/>
-            </ReactCSSTransitionGroup>
           </div>:
           <div className="search-header">
             <div className="search-header-content-container">

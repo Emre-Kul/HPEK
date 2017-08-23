@@ -1,12 +1,14 @@
 .search-form{
+
   max-width: 600px;
-  margin:auto;
+  margin:10px auto 20px auto;
 
   .search-form-input{
     padding-left: 10px;
-    margin-left : 10px;
-    height: 40px;
+    margin-right: 10px;
+    height: 45px;
     border-radius: 4px;
+    box-sizing: border-box;
 
     font-family: Gotham-Medium;
     text-transform: capitalize;
@@ -32,9 +34,21 @@
     box-shadow: 0 12px 21px 0 rgba(0, 0, 0, 0.24);
     width: 77px;
     height: 45px;
-    margin-left:10px;
 
     cursor: pointer;
     vertical-align: top;
     }
+}
+
+@media (max-width: 1105px){
+  .search-form {
+    .search-form-button {
+      width: 100%;
+      padding-left:10px;
+    }
+    .search-form-input{
+      width:100%;
+      margin-bottom:5px;
+    }
+  }
 }

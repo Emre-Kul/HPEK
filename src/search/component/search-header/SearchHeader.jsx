@@ -30,13 +30,17 @@ export class SearchHeader extends React.Component{
             <SearchForm/>
           </div>:
           <div className="search-header-container">
-            <div className="search-header-logo-form-container">
+            <div className="search-header-content-container">
+             <div className="search-header-logo-container">
               <Link to="/">
-                <img className="search-header-logo"
+              <img className="search-header-logo"
                    src={imgSearchHeaderLogo}
-                  alt="Search Header Logo"/>
+                   alt="Search Header Logo"/>
               </Link>
-              <SearchForm/>
+             </div>
+              <div className="search-header-form-container">
+                <SearchForm/>
+              </div>
             </div>
           </div>
       }

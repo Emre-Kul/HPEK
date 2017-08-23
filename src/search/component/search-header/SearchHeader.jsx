@@ -17,7 +17,7 @@ export class SearchHeader extends React.Component{
     return (
       <div>
         {(this.props.isHomePage) ?
-          <div className="search-home-header-container"
+          <div className="search-home-header"
              style={homeBackgroundStyle}>
             <ReactCSSTransitionGroup
               transitionName="header-home-animation"
@@ -37,7 +37,7 @@ export class SearchHeader extends React.Component{
             <SearchForm/>
             </ReactCSSTransitionGroup>
           </div>:
-          <div className="search-header-container">
+          <div className="search-header">
             <div className="search-header-content-container">
              <div className="search-header-logo-container">
               <Link to="/">

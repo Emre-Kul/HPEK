@@ -1,13 +1,5 @@
-.header-home-animation-appear {
-  opacity: 0.01;
-}
 
-.header-home-animation-appear.header-home-animation-appear-active {
-  opacity: 1;
-  transition: opacity 1s ease-in;
-}
-
-.search-home-header-container{
+.search-home-header{
   background-size: cover;
   background-repeat: no-repeat;
   color:#ffffff;
@@ -33,10 +25,18 @@
     font-family: Gotham-ExtraLight;
     font-weight: 200;
   }
+  .header-home-animation-appear {
+    opacity: 0.01;
+  }
+
+  .header-home-animation-appear.header-home-animation-appear-active {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+  }
 
 }
 
-.search-header-container{
+.search-header{
   background-image: linear-gradient(97deg, #1e0db4, #e44747);
 
   min-height: 150px;

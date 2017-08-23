@@ -1,3 +1,11 @@
+@keyframes hideSloganAnimation{
+  from {height:300px;
+        opacity:1;
+      }
+  to {height:0;
+      opacity: 0;
+      }
+}
 
 .search-home-header{
   background-size: cover;
@@ -9,7 +17,11 @@
   border: 1px solid;
 
   text-align: center;
-
+  .search-home-header-slogan-container{
+    animation: hideSloganAnimation 1s;
+    height: 0px;
+    opacity: 0;
+  }
   .search-home-header-slogan-content{
     margin-top:17px;
     margin-bottom:60px;

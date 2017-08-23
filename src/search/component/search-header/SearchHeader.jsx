@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 
 import SearchForm from "../search-form/SearchForm.jsx";
 
@@ -22,12 +22,14 @@ export class SearchHeader extends React.Component{
             <img className="search-home-header-logo"
                  src={imgSearchHeaderLogo}
                  alt="Home Header Logo"/>
+            <div className="search-home-header-slogan-container">
                <h1 className="search-home-header-slogan-title">
                 {"Lorem ipsum dolor sit!"}
                 </h1>
               <p className="search-home-header-slogan-content">
                 {"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
               </p>
+            </div>
             <SearchForm/>
           </div>:
           <div className="search-header">

@@ -1,21 +1,21 @@
 import React from "react";
+
 import SearchVenueCard from "../search-venue-card/SearchVenueCard.jsx";
 import RecentSearchPanel from "../recent-search-panel/RecentSearchPanel.jsx";
-
-import imgLoadingIcon from "../../../../asset/img/loading-bar-icon.svg";
+import SearchContentMessage from "../search-content-message/SearchContentMessage.jsx";
 
 import "./search-content.scss";
 
 export class SearchContent extends React.Component{
   render() {
+    let dataLoading = this.props.venuesData.length === 0;
+    let errorAccured = this.props.warning.length > 0;
     return (
       <div className="search-content">
         <div className="search-content-card-container">
           {
-            (this.props.venuesData.length === 0) ?
-              <img className="search-content-loading-icon"
-                 src={imgLoadingIcon}
-                 alt="Loading bar icon"/> :
+            ( dataLoading || errorAccured) ?
+              <SearchContentMessage error={this.props.warning}/>:
             this.props.venuesData.map((venueData) => {
             return (
               <SearchVenueCard key={venueData.venueId}

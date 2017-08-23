@@ -11,13 +11,12 @@ export class SearchContent extends React.Component{
     return (
       <div className="search-content">
         <div className="search-content-card-container">
-          { (this.props.warning.length > 0) ?
-            <p>{this.props.warning}</p> :
+          {
             (this.props.venuesData.length === 0) ?
               <img className="search-content-loading-icon"
                  src={imgLoadingIcon}
                  alt="Loading bar icon"/> :
-           this.props.venuesData.map((venueData) => {
+            this.props.venuesData.map((venueData) => {
             return (
               <SearchVenueCard key={venueData.venueId}
                 venueData={venueData}/>

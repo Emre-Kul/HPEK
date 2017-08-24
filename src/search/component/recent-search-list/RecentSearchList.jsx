@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
@@ -6,7 +6,7 @@ import RecentSearchItem from "../recent-search-item/RecentSearchItem.jsx";
 
 import "./recent-search-list.scss";
 
-export class RecentSearchList extends React.Component{
+export class RecentSearchList extends Component{
   static propTypes = {
     recentSearchs : PropTypes.array
   };

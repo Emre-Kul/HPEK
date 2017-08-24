@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import PropTypes from "prop-types";
 
 import DetailImageCard from "../detail-image-card/DetailImageCard.jsx";
@@ -6,7 +6,7 @@ import DetailTipMenu  from "../detail-tip-menu/DetailTipMenu.jsx";
 
 import "./detail-content.scss";
 
-export class DetailContent extends React.Component{
+export class DetailContent extends Component{
   static propTypes = {
     venuePhotos : PropTypes.array
   };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import PropTypes from "prop-types";
 
 import SearchVenueCard from "../search-venue-card/SearchVenueCard.jsx";
@@ -7,7 +7,7 @@ import SearchContentMessage from "../search-content-message/SearchContentMessage
 
 import "./search-content.scss";
 
-export class SearchContent extends React.Component{
+export class SearchContent extends Component{
   static propTypes = {
     venuesData : PropTypes.array,
     warning : PropTypes.string

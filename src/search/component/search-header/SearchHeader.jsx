@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -9,7 +9,7 @@ import imgSearchHeaderHomeBackground from "../../../../asset/img/search-header-h
 
 import "./search-header.scss";
 
-export class SearchHeader extends React.Component{
+export class SearchHeader extends Component{
   static propTypes = {
     isHomePage : PropTypes.bool
   };

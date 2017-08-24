@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import PropTypes from "prop-types";
 
 import imgDetailLogo from "../../../../asset/img/detail-logo.png";
@@ -10,7 +10,7 @@ import imgTagIcon from "../../../../asset/img/tag-icon.svg";
 
 import "./detail-header.scss";
 
-export class DetailHeader extends React.Component{
+export class DetailHeader extends Component{
   static propTypes = {
     venueInfo : PropTypes.object
   };

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component }  from "react";
 import PropTypes from "prop-types";
 
 import "./detail-tip-menu.scss"
 
-export class DetailTipMenu extends React.Component{
+export class DetailTipMenu extends Component{
   static propTypes = {
     venueTip : PropTypes.object
   };

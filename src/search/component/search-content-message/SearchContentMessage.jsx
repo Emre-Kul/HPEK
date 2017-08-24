@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Component }  from "react";
 import PropTypes from "prop-types";
 
 import imgLoadingIcon from "../../../../asset/img/loading-bar-icon.svg";
 
 import "./search-content-message.scss";
 
-export class SearchContentMessage extends React.Component{
+export class SearchContentMessage extends Component{
 
   static propTypes = {
     error : PropTypes.string

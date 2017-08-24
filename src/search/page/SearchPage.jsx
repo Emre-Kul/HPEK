@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
@@ -11,7 +11,7 @@ import {actionAddToSearchList} from "../../reducers/searchActions.js";
 const VENUE_PHOTO_SIZE = "400x400";
 const VENUE_SEARCH_LIMIT = 10;
 
-export class SearchPage extends React.Component{
+export class SearchPage extends Component{
 
   static propTypes = {
     isHomePage : PropTypes.bool

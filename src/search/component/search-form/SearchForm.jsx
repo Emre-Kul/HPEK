@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component }  from "react";
 import {Redirect} from "react-router-dom";
 
 import "./search-form.scss";
 
-export class SearchForm extends React.Component{
+export class SearchForm extends Component{
   constructor(){
     super();
     this.state = {

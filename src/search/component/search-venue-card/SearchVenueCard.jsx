@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -8,7 +8,7 @@ import imgTriangle from "../../../../asset/img/triangle-icon.svg";
 
 import "./search-venue-card.scss";
 
-export class SearchVenueCard extends React.Component{
+export class SearchVenueCard extends Component{
 
   static propTypes = {
     venueData : PropTypes.object

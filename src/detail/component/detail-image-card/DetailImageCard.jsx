@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component }  from "react";
 import PropTypes from "prop-types";
 
 import "./detail-image-card.scss"
 
-export class DetailImageCard extends React.Component{
+export class DetailImageCard extends Component{
   static propTypes = {
     backgroundImage : PropTypes.string
   }

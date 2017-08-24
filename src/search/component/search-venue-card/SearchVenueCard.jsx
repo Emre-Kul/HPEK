@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 
 import imgPeopleIcon from "../../../../asset/img/people-icon.svg";
 import imgTagIcon from "../../../../asset/img/tag-icon.svg";
@@ -8,6 +9,11 @@ import imgTriangle from "../../../../asset/img/triangle-icon.svg";
 import "./search-venue-card.scss";
 
 export class SearchVenueCard extends React.Component{
+
+  static propTypes = {
+    venueData : PropTypes.object
+  };
+
   constructor(){
     super();
   }
@@ -57,4 +63,5 @@ style={venueDivImageStyle}>
     );
   }
 }
+
 export default SearchVenueCard;

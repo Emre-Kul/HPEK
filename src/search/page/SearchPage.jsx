@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import PropTypes from "prop-types";
 
 import Footer from "../../common/footer/Footer.jsx";
 import SearchHeader from "../component/search-header/SearchHeader.jsx";
@@ -9,16 +10,18 @@ import {actionAddToSearchList} from "../../reducers/searchActions.js";
 
 const VENUE_PHOTO_SIZE = "400x400";
 const VENUE_SEARCH_LIMIT = 10;
-const PAGE_HOME = "home";
-
-
 
 export class SearchPage extends React.Component{
+
+  static propTypes = {
+    isHomePage : PropTypes.bool
+  };
+
   constructor(){
     super();
     this.state = {
       lastSearch : "",
-      venuesData : "",
+      venuesData : [],
       warning : "",
       animateHeader : false
     }
@@ -33,12 +36,12 @@ export class SearchPage extends React.Component{
     this.makeSearch();
   }
   makeSearch(){
-    if(this.props.location !== PAGE_HOME){
+    if(!this.props.isHomePage){
       let query = this.props.match.params.query;
       let location = this.props.match.params.location;
       if (query + location !== this.state.lastSearch) {
         this.setState({
-          venuesData: "",
+          venuesData: [],
           warning: "",
           lastSearch: query + location
         });
@@ -58,11 +61,10 @@ export class SearchPage extends React.Component{
     }
   }
   render(){
-    const isHomePage = this.props.location === PAGE_HOME;
     return (
       <div>
-        <SearchHeader isHomePage={isHomePage}/>
-        {(isHomePage) ?
+        <SearchHeader isHomePage={this.props.isHomePage}/>
+        {(this.props.isHomePage) ?
           null
           :  <SearchContent warning={this.state.warning}
                             venuesData={this.state.venuesData}/>}
@@ -71,5 +73,7 @@ export class SearchPage extends React.Component{
     );
   }
 }
+
 SearchPage = connect()(SearchPage);
+
 export default SearchPage;

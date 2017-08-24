@@ -21,7 +21,7 @@ ReactDOM.render(
         <Switch>
           <Route exact={true}
                  path="/">
-            <SearchPage location="home"/>
+            <SearchPage isHomePage={true}/>
           </Route>
           <Route path="/search/:query/:location"
                  component={SearchPage}/>

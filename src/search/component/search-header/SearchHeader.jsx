@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
+import PropTypes from "prop-types";
 
 import SearchForm from "../search-form/SearchForm.jsx";
 
@@ -10,6 +10,9 @@ import imgSearchHeaderHomeBackground from "../../../../asset/img/search-header-h
 import "./search-header.scss";
 
 export class SearchHeader extends React.Component{
+  static propTypes = {
+    isHomePage : PropTypes.bool
+  };
   render() {
     const homeBackgroundStyle = {
       "backgroundImage" : `url('${imgSearchHeaderHomeBackground}')`
@@ -51,4 +54,5 @@ export class SearchHeader extends React.Component{
       );
   }
 }
+
 export default SearchHeader;

@@ -1,8 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./detail-tip-menu.scss"
 
 export class DetailTipMenu extends React.Component{
+  static propTypes = {
+    venueTip : PropTypes.object
+  };
   render() {
     return (
       <div className="detail-tip-menu">
@@ -35,4 +39,5 @@ export class DetailTipMenu extends React.Component{
     );
   }
 }
+
 export default DetailTipMenu;

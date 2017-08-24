@@ -1,9 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "./recent-search-item.scss";
 
 export class RecentSearchItem extends React.Component{
+  static propTypes = {
+    recentSearchQuery : PropTypes.string,
+    recentSearchLocation : PropTypes.string
+  };
   render() {
     return (
       <li className="recent-search-item">

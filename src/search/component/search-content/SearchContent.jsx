@@ -19,7 +19,7 @@ export class SearchContent extends React.Component{
             this.props.venuesData.map((venueData) => {
             return (
               <SearchVenueCard key={venueData.venueId}
-                venueData={venueData}/>
+                               venueData={venueData}/>
             );
           })
         }

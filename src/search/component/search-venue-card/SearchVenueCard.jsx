@@ -46,9 +46,9 @@ style={venueDivImageStyle}>
           </span>
         </div>
         <div className="search-venue-card-raiting-container"
-        style={{
-          "backgroundImage" : `url('${imgTriangle}')`
-        }}>
+             style={{
+                "backgroundImage" : `url('${imgTriangle}')`
+             }}>
           <span className="search-venue-card-raiting">
             {venueData.venueRating}
           </span>

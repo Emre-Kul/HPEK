@@ -5,7 +5,7 @@ import Footer from "../../common/footer/Footer.jsx";
 import SearchHeader from "../component/search-header/SearchHeader.jsx";
 import SearchContent from "../component/search-content/SearchContent.jsx";
 import {searchVenues} from "../../api/fsApiHandler.js";
-import {actionAddToSearchList} from "../../reducers/searchPageReducer.js";
+import {actionAddToSearchList} from "../../reducers/searchActions.js";
 
 const VENUE_PHOTO_SIZE = "400x400";
 const VENUE_SEARCH_LIMIT = 10;

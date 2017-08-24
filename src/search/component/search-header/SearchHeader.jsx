@@ -18,14 +18,14 @@ export class SearchHeader extends React.Component{
       <div>
         {(this.props.isHomePage) ?
           <div className="search-home-header"
-             style={homeBackgroundStyle}>
+               style={homeBackgroundStyle}>
             <img className="search-home-header-logo"
                  src={imgSearchHeaderLogo}
                  alt="Home Header Logo"/>
             <div className="search-home-header-slogan-container">
-               <h1 className="search-home-header-slogan-title">
+              <h1 className="search-home-header-slogan-title">
                 {"Lorem ipsum dolor sit!"}
-                </h1>
+              </h1>
               <p className="search-home-header-slogan-content">
                 {"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
               </p>
@@ -34,13 +34,13 @@ export class SearchHeader extends React.Component{
           </div>:
           <div className="search-header">
             <div className="search-header-content-container">
-             <div className="search-header-logo-container">
-              <Link to="/">
-              <img className="search-header-logo"
-                   src={imgSearchHeaderLogo}
-                   alt="Search Header Logo"/>
-              </Link>
-             </div>
+              <div className="search-header-logo-container">
+                <Link to="/">
+                  <img className="search-header-logo"
+                       src={imgSearchHeaderLogo}
+                       alt="Search Header Logo"/>
+                </Link>
+              </div>
               <div className="search-header-form-container">
                 <SearchForm/>
               </div>

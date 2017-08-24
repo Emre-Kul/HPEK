@@ -19,10 +19,10 @@ export class DetailHeader extends React.Component{
     }
     return(
       <div className="detail-header"
-style={detailHeaderPhotoStyle}>
+           style={detailHeaderPhotoStyle}>
         <div className="detail-header-background"/>
         <img className="detail-header-logo"
-               src={imgDetailLogo}/>
+             src={imgDetailLogo}/>
         <div className="detail-header-venue-name">
           {venueInfo.venueName}
         </div>
@@ -59,9 +59,9 @@ style={detailHeaderPhotoStyle}>
             </div>
 
             <div className="detail-header-rating-container"
-                   style={{
-                     "backgroundImage" : `url('${imgRectangleIcon}')`
-                   }}>
+                 style={{
+                   "backgroundImage" : `url('${imgRectangleIcon}')`
+                 }}>
               <span className="detail-header-rating-value">
                 {venueInfo.venueRating}
               </span>

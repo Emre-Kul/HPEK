@@ -13,8 +13,8 @@ export class RecentSearchList extends React.Component{
           this.props.recentSearchs.map((recentSearch) => {
             return (
               <RecentSearchItem key={recentSearch.id}
-                recentSearchQuery={recentSearch.searchQuery}
-                recentSearchLocation={recentSearch.searchLocation}/>
+                                recentSearchQuery={recentSearch.searchQuery}
+                                recentSearchLocation={recentSearch.searchLocation}/>
             )
           })
         }

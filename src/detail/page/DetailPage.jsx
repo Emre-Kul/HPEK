@@ -52,7 +52,7 @@ export class DetailPage extends React.Component{
         }
         {(this.state.venueDataLoaded && this.state.venuePhotosLoaded)
           ? <DetailContent venuePhotos={this.state.venuePhotos}
-                            venueTips={this.state.venueData.venueTips}/>
+                           venueTips={this.state.venueData.venueTips}/>
           : null
         }
 

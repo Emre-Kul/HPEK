@@ -4,14 +4,14 @@ import { BrowserRouter as Router  , Route , Switch} from 'react-router-dom';
 import {Provider} from "react-redux";
 import {createStore} from "redux";
 
-import {searchPageReducer} from "./reducers/searchPageReducer.js";
+import searchReducer from "./reducers/searchReducer.js";
 import SearchPage from "./search/page/SearchPage.jsx";
 import DetailPage from "./detail/page/DetailPage.jsx";
 
 import "./main.scss";
 import "../asset/font/fonts.scss";
 
-const STORE = createStore(searchPageReducer);
+const STORE = createStore(searchReducer);
 const APP_ELEMENT = document.getElementById("root");
 
 ReactDOM.render(
@@ -20,13 +20,13 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route exact={true}
-            path="/">
+                 path="/">
             <SearchPage location="home"/>
           </Route>
           <Route path="/search/:query/:location"
-            component={SearchPage}/>
+                 component={SearchPage}/>
           <Route path="/detail/:id"
-            component={DetailPage}/>
+                 component={DetailPage}/>
         </Switch>
       </div>
     </Router>

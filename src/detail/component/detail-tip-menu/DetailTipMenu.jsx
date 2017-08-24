@@ -18,7 +18,7 @@ export class DetailTipMenu extends React.Component{
                   <a href={`${venueTip.user.photo.prefix}500x500${venueTip.user.photo.suffix}`}
                      target="_blank">
                   <img src={`${venueTip.user.photo.prefix}40x40${venueTip.user.photo.suffix}`}
-                    alt="Tip User Picture"/>
+                       alt="Tip User Picture"/>
                   </a>
                 </div>
                 <span className="detail-tip-menu-user-name">

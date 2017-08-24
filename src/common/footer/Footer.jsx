@@ -8,15 +8,15 @@ export class Footer extends React.Component{
           <div className="footer">
             <div className="footer-link-container">
               <a href="#about-us"
-                className="footer-link">
+                 className="footer-link">
                 {"About Us"}
               </a>
               <a href="#contact"
-                className="footer-link">
+                 className="footer-link">
                 {"Contact"}
               </a>
               <a href="#blog"
-                className="footer-link">
+                 className="footer-link">
                 {"Blog"}
               </a>
             </div>

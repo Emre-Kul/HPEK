@@ -9,7 +9,7 @@ export class DetailImageCard extends React.Component{
     }
     return (
       <div className="detail-image-card"
-          style={backgroundStyle}/>
+           style={backgroundStyle}/>
     );
   }
 }

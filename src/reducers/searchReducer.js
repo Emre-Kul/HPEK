@@ -1,17 +1,17 @@
-export const searchReducer = (state = [], action) => {
+export const searchReducer = (state, action) => {
+  let newState = {
+    recentSearchs : []
+  };
   switch (action.type) {
     case "ADD_SEARCH":
       let isActionExist = false;
-      state.forEach( (stateObj) => {
-        if(stateObj.searchQuery === action.searchQuery && stateObj.searchLocation === action.searchLocation){
+      state.recentSearchs.forEach( (recentSearch) => {
+        if(recentSearch.searchQuery === action.searchQuery && recentSearch.searchLocation === action.searchLocation){
           isActionExist = true;
         }
       });
-      if(isActionExist) {
-        return state;
-      }
-      else {
-        return state.concat([
+      if(!isActionExist) {
+        newState.recentSearchs = state.recentSearchs.concat([
           {
             id: action.id,
             searchQuery: action.searchQuery,
@@ -20,10 +20,8 @@ export const searchReducer = (state = [], action) => {
         ]);
       }
     break;
-    default:
-      return state;
-    break;
   }
+  return newState;
 }
 
 export default searchReducer;

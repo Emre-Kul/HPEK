@@ -9,7 +9,9 @@ export class SearchContentMessage extends React.Component{
     return (
       <div className="search-content-message">
         {(this.props.error.length > 0) ?
-          <p>{this.props.error}</p>:
+          <p className="search-content-message-error">
+            {this.props.error}
+          </p>:
           <img className="search-content-loading-icon"
                src={imgLoadingIcon}
                alt="Loading bar icon"/>

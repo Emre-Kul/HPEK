@@ -1,4 +1,4 @@
-@keyframes hideSloganAnimation{
+@keyframes hide-slogan-animation{
   from {height:300px;
         opacity:1;
       }
@@ -18,7 +18,7 @@
 
   text-align: center;
   .search-home-header-slogan-container{
-    animation: hideSloganAnimation 1s;
+    animation: hide-slogan-animation 1s;
   }
   .search-home-header-slogan-content{
     margin-top:17px;

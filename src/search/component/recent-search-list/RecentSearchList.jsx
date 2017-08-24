@@ -6,6 +6,7 @@ import RecentSearchItem from "../recent-search-item/RecentSearchItem.jsx";
 import "./recent-search-list.scss";
 
 export class RecentSearchList extends React.Component{
+
   render() {
     return (
       <ul className="recent-search-list">
@@ -23,9 +24,9 @@ export class RecentSearchList extends React.Component{
   }
 }
 
-RecentSearchList = connect((store)=>{
+RecentSearchList = connect((rootStoreState)=>{
   return{
-    recentSearchs : store
+    recentSearchs : rootStoreState.recentSearchs
   }
 })(RecentSearchList);
 

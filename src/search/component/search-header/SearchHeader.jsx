@@ -31,12 +31,6 @@ export class SearchHeader extends Component{
                      alt="Search Header Logo"/>
               </Link>
             </div>
-            {(!this.props.isHomePage) ?
-              <div className={(animateHeader) ? "search-header-form-container-animate":"search-header-form-container"}>
-                <SearchForm/>
-              </div>:
-              null
-            }
             {(animateHeader || this.props.isHomePage) ?
               <div className={(animateHeader)
                 ? "search-header-slogan-container-animate"
@@ -50,12 +44,9 @@ export class SearchHeader extends Component{
               </div> :
               null
             }
-            {(this.props.isHomePage) ?
-              <div className="search-header-form-container">
-                <SearchForm/>
-              </div>:
-              null
-            }
+            <div className="search-header-form-container">
+              <SearchForm/>
+            </div>
           </div>
         </div>
       );

@@ -23,7 +23,7 @@ export class SearchPage extends Component{
       lastSearch : "",
       venuesData : [],
       warning : "",
-      animateHeader : false
+      animateHeaderAtSearch : false
     }
 
     this.makeSearch = this.makeSearch.bind(this);
@@ -36,6 +36,11 @@ export class SearchPage extends Component{
     this.makeSearch();
   }
   makeSearch(){
+    if(this.props.isHomePage && !this.state.animateHeaderAtSearch){
+      this.setState({
+        animateHeaderAtSearch: true
+      });
+    }
     if(!this.props.isHomePage){
       let query = this.props.match.params.query;
       let location = this.props.match.params.location;
@@ -61,9 +66,11 @@ export class SearchPage extends Component{
     }
   }
   render(){
+    let isHomePage = this.props.isHomePage;
     return (
       <div>
-        <SearchHeader isHomePage={this.props.isHomePage}/>
+        <SearchHeader isHomePage={isHomePage}
+                      animateHeaderAtSearch={this.state.animateHeaderAtSearch}/>
         {(this.props.isHomePage) ?
           null
           :  <SearchContent warning={this.state.warning}

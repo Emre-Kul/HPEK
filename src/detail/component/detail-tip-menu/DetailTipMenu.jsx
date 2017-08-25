@@ -5,7 +5,7 @@ import "./detail-tip-menu.scss"
 
 export class DetailTipMenu extends Component{
   static propTypes = {
-    venueTip : PropTypes.object
+    venueTips : PropTypes.array
   };
   render() {
     return (
@@ -14,29 +14,29 @@ export class DetailTipMenu extends Component{
           {"TIPS"}
         </span>
         {
-          this.props.venueTips.map((venueTip) => {
-            return (
-              <div className="detail-tip-menu-user-container"
-                   key={venueTip.id}>
-                <div className="detail-tip-menu-user-picture-container">
-                  <a href={`${venueTip.user.photo.prefix}500x500${venueTip.user.photo.suffix}`}
-                     target="_blank">
+        this.props.venueTips.map((venueTip) => {
+          return (
+            <div className="detail-tip-menu-user-container"
+                 key={venueTip.id}>
+              <div className="detail-tip-menu-user-picture-container">
+                <a href={`${venueTip.user.photo.prefix}500x500${venueTip.user.photo.suffix}`}
+                   target="_blank">
                   <img src={`${venueTip.user.photo.prefix}40x40${venueTip.user.photo.suffix}`}
-                       alt="Tip User Picture"/>
-                  </a>
-                </div>
+                     alt="Tip User Picture"/>
+                </a>
+              </div>
 
-                <div className="detail-tip-menu-user-name-container">
-                  <span className="detail-tip-menu-user-name">
-                    {`${venueTip.user.firstName} ${venueTip.user.lastName}`}
-                  </span>
-                </div>
-                <span className="detail-tip-menu-user-comment">
-                  {venueTip.text}
+              <div className="detail-tip-menu-user-name-container">
+                <span className="detail-tip-menu-user-name">
+                  {`${venueTip.user.firstName} ${venueTip.user.lastName}`}
                 </span>
               </div>
-            );
-          })
+              <span className="detail-tip-menu-user-comment">
+                {venueTip.text}
+              </span>
+            </div>
+          );
+        })
         }
       </div>
     );

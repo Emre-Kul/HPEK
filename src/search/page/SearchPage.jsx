@@ -14,7 +14,9 @@ const VENUE_SEARCH_LIMIT = 10;
 export class SearchPage extends Component{
 
   static propTypes = {
-    isHomePage : PropTypes.bool
+    isHomePage : PropTypes.bool,
+    match: PropTypes.object,
+    dispatch : PropTypes.func
   };
 
   constructor(){

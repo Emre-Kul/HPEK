@@ -8,7 +8,8 @@ import "./detail-content.scss";
 
 export class DetailContent extends Component{
   static propTypes = {
-    venuePhotos : PropTypes.array
+    venuePhotos : PropTypes.array,
+    venueTips : PropTypes.array
   };
   render(){
     return(
@@ -18,7 +19,8 @@ export class DetailContent extends Component{
             this.props.venuePhotos.map((venuePhoto) => {
               return (
                 <DetailImageCard key={venuePhoto.photoId}
-                                 backgroundImage={venuePhoto.photoUrl}/>
+                                 backgroundImage={venuePhoto.photoUrl}
+                                 userInfo={venuePhoto.photoUser}/>
               );
             })
           }

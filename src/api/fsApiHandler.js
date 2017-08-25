@@ -101,7 +101,8 @@ const getPhotosOfVenue = function(venueId,photoSize,limit){
       items.forEach((item) => {
         photos.push({
           photoId : item.id,
-          photoUrl : `${item.prefix}${photoSize}${item.suffix}`
+          photoUrl : `${item.prefix}${photoSize}${item.suffix}`,
+          photoUser : item.user
         });
       });
       resolve(photos);

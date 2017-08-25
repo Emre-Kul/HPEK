@@ -110,8 +110,7 @@ const getPhotosOfVenue = function(venueId,photoSize,limit){
   });
 }
 
-module.exports = {
-  makeRequest,
+export{
   searchVenues,
   getDetailOfVenue,
   getPhotosOfVenue

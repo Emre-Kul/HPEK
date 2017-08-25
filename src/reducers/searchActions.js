@@ -7,6 +7,6 @@ const actionAddToSearchList = function(id,searchQuery,searchLocation){
   }
 };
 
-module.exports ={
+export{
   actionAddToSearchList
 };

@@ -62,14 +62,15 @@
   }
 
   .detail-header-contact-info-container{
+    position:relative;
     width:70%;
     margin:auto;
   }
 
   .detail-header-rating-container{
     position:absolute;
-    right:100px;
-    bottom:70px;
+    right:30px;
+    bottom: 45px;
 
     display: table;
     height:90px;

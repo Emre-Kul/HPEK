@@ -25,9 +25,12 @@ export class DetailTipMenu extends Component{
                        alt="Tip User Picture"/>
                   </a>
                 </div>
-                <span className="detail-tip-menu-user-name">
-                  {`${venueTip.user.firstName} ${venueTip.user.lastName}`}
-                </span>
+
+                <div className="detail-tip-menu-user-name-container">
+                  <span className="detail-tip-menu-user-name">
+                    {`${venueTip.user.firstName} ${venueTip.user.lastName}`}
+                  </span>
+                </div>
                 <span className="detail-tip-menu-user-comment">
                   {venueTip.text}
                 </span>

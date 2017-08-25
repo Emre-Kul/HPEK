@@ -13,7 +13,6 @@
   background-repeat: no-repeat;
   color:#ffffff;
 
-  max-height : 600px;
   min-height : 150px;
 
   text-align: center;
@@ -21,8 +20,9 @@
   .search-header-content-container{
     display: flex;
     flex-wrap: wrap;
+
     width:72%;
-    margin: auto;
+    margin:auto;
   }
 
 
@@ -32,30 +32,32 @@
   }
 
   .search-header-logo{
-    height : 124px;
-    margin:auto;
+    width : 252px;
   }
 
   .search-header-home-logo{
     width: 454px;
+    max-width:100%;
   }
 
   .search-header-form-container{
-    margin: 50px auto 50px auto;
+    margin: 40px auto 40px auto;
     order:2;
   }
 
   .search-header-slogan-container{
+    margin:auto;
     order:1;
   }
   .search-header-slogan-container-animate{
     animation: hide-slogan-animation 2s forwards;
     overflow: hidden;
     order:3;
+    margin:auto;
   }
   .search-header-slogan-content{
     margin-top:17px;
-    margin-bottom:60px;
+    margin-bottom:30px;
 
     font-size: 16px;
     font-family: Gotham-Book;
@@ -71,12 +73,15 @@
 }
 
 @media (max-width:968px){
-  .search-header-container{
+  .search-header{
     .search-header-content-container{
        width:100%;
     }
     .search-header-logo-container{
       margin: 0 auto 0 auto;
      }
+    .search-header-logo{
+      max-width:100%;
+    }
   }
 }

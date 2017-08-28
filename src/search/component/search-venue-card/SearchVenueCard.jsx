@@ -48,7 +48,9 @@ style={venueDivImageStyle}>
         <div className="search-venue-card-tier-container">
           <span className="search-venue-card-tier">
             <img src={imgTagIcon}/>
-            <span className="search-venue-card-tier-bar"/>
+            <div className="search-venue-card-tier-bar">
+              <div className="search-venue-card-tier-bar-child "></div>
+            </div>
           </span>
         </div>
         <div className="search-venue-card-raiting-container"

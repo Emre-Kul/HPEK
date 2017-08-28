@@ -64,10 +64,11 @@
     height: 40px;
     min-width: 30%;
   }
-
-  .search-venue-card-tier {
-    display: table-cell;
-    vertical-align: middle;
+  .search-venue-card-tier-bar-child {
+    display:block;
+    width:25%;
+    background-c1olor: red;
+    height:100%;
   }
 
   .search-venue-card-tier-bar{
@@ -76,7 +77,8 @@
     border-radius: 100px;
     height:3px;
     width:60px;
-    margin-left:5px;
+    margin-left:8px;
+    margin-bottom:2px;
     vertical-align: middle;
   }
 

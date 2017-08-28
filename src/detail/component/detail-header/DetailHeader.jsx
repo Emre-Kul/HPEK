@@ -55,9 +55,9 @@ export class DetailHeader extends Component{
               </span>
               <img src={imgTagIcon}
                    alt="Tag Icon"/>
-              <span className="detail-header-text">
-                {venueInfo.venuePriceTier}
-              </span>
+              <div className="detail-header-tier-bar">
+
+              </div>
             </div>
 
             <div className="detail-header-rating-container"

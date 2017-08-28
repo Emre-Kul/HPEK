@@ -42,7 +42,7 @@ style={venueDivImageStyle}>
         </div>
 
         <div className="search-venue-card-tier-container">
-          <PriceTierBar
+          <PriceTierBar venueId={venueData.venueId}
             priceTier={venueData.venuePriceTier}/>
         </div>
 

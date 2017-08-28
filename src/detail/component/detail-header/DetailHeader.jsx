@@ -55,7 +55,8 @@ export class DetailHeader extends Component{
                 {venueInfo.venueBeenHere}
               </span>
 
-              <PriceTierBar priceTier={venueInfo.venuePriceTier}/>
+              <PriceTierBar venueId={venueInfo.venueId}
+                        priceTier={venueInfo.venuePriceTier}/>
             </div>
 
             <div className="detail-header-rating-container"

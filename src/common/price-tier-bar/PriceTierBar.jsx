@@ -10,27 +10,27 @@ import "./price-tier-bar.scss";
 export class PriceTierBar extends Component{
 
   static propTypes = {
-    priceTier : PropTypes.number
+    priceTier : PropTypes.number,
+    venueId : PropTypes.string
   };
   render() {
+    let priceTierBarColors = ["#c9c5ff","#a59fee","#8b81ff","#685dea"];
+    let priceTierBars = [];
+    let priceTier = (this.props.priceTier > 4) ? 4 : this.props.priceTier;
+
+    for(let i = 0;i < priceTier;i++){
+      priceTierBars.push(<div key={`${this.props.venueId}-priceTierBar-${i}`}
+                              className="price-tier-bar-child"
+                              style={ {"backgroundColor" : priceTierBarColors[i+1]} }
+                              />);
+    }
+
     return (
       <div className="price-tier-bar">
         <img src={imgTagIcon}
              className="price-tier-bar-icon"/>
         <div className="price-tier-bar-container">
-
-          <div className="price-tier-bar-child"
-               style={ {"backgroundColor" : "#c9c5ff"} }/>
-
-          <div className="price-tier-bar-child"
-               style={ {"backgroundColor" : "#a59fee"} }/>
-
-          <div className="price-tier-bar-child"
-               style={ {"backgroundColor" : "#8b81ff"} }/>
-
-          <div className="price-tier-bar-child"
-               style={ {"backgroundColor" : "#685dea"} }/>
-
+          {priceTierBars}
         </div>
 
       </div>

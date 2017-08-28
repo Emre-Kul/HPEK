@@ -5,6 +5,7 @@ import imgTagIcon from "../../../asset/img/tag-icon.svg";
 
 import "./price-tier-bar.scss";
 
+//#c9c5ff,#a59fee,#8b81ff,#685dea
 
 export class PriceTierBar extends Component{
 
@@ -12,12 +13,24 @@ export class PriceTierBar extends Component{
     priceTier : PropTypes.number
   };
   render() {
-    console.log(this.props.priceTier);
     return (
       <div className="price-tier-bar">
         <img src={imgTagIcon}
              className="price-tier-bar-icon"/>
         <div className="price-tier-bar-container">
+
+          <div className="price-tier-bar-child"
+               style={ {"backgroundColor" : "#c9c5ff"} }/>
+
+          <div className="price-tier-bar-child"
+               style={ {"backgroundColor" : "#a59fee"} }/>
+
+          <div className="price-tier-bar-child"
+               style={ {"backgroundColor" : "#8b81ff"} }/>
+
+          <div className="price-tier-bar-child"
+               style={ {"backgroundColor" : "#685dea"} }/>
+
         </div>
 
       </div>

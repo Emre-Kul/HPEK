@@ -60,28 +60,10 @@
     left:100px;
     bottom:0;
 
-    display: table;
     height: 40px;
     min-width: 30%;
   }
-  .search-venue-card-tier-bar-child {
-    display:block;
-    width:25%;
-    background-c1olor: red;
-    height:100%;
-  }
-
-  .search-venue-card-tier-bar{
-    display:inline-block;
-    border:1px solid;
-    border-radius: 100px;
-    height:3px;
-    width:60px;
-    margin-left:8px;
-    margin-bottom:2px;
-    vertical-align: middle;
-  }
-
+  
   .search-venue-card-name-container {
     position:absolute;
     bottom:50px;

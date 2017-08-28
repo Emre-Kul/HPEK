@@ -1,12 +1,13 @@
 import React, { Component }  from "react";
 import PropTypes from "prop-types";
 
+import PriceTierBar from "../../../common/price-tier-bar/PriceTierBar.jsx";
+
 import imgDetailLogo from "../../../../asset/img/detail-logo.png";
 import imgLocationIcon from "../../../../asset/img/location-icon.svg";
 import imgPeopleIcon from "../../../../asset/img/people-icon.svg";
 import imgPhoneIcon from "../../../../asset/img/phone-icon.svg";
 import imgRectangleIcon from "../../../../asset/img/rectangle-icon.svg";
-import imgTagIcon from "../../../../asset/img/tag-icon.svg";
 
 import "./detail-header.scss";
 
@@ -53,11 +54,8 @@ export class DetailHeader extends Component{
               <span className="detail-header-text">
                 {venueInfo.venueBeenHere}
               </span>
-              <img src={imgTagIcon}
-                   alt="Tag Icon"/>
-              <div className="detail-header-tier-bar">
 
-              </div>
+              <PriceTierBar priceTier={venueInfo.venuePriceTier}/>
             </div>
 
             <div className="detail-header-rating-container"

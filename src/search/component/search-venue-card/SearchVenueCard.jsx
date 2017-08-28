@@ -2,8 +2,9 @@ import React, { Component }  from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
+import PriceTierBar from "../../../common/price-tier-bar/PriceTierBar.jsx";
+
 import imgPeopleIcon from "../../../../asset/img/people-icon.svg";
-import imgTagIcon from "../../../../asset/img/tag-icon.svg";
 import imgTriangle from "../../../../asset/img/triangle-icon.svg";
 
 import "./search-venue-card.scss";
@@ -13,11 +14,6 @@ export class SearchVenueCard extends Component{
   static propTypes = {
     venueData : PropTypes.object
   };
-
-  constructor(){
-    super();
-  }
-
   render() {
     let venueData = this.props.venueData;
     let detailLink = `/detail/${this.props.venueData.venueId}`;
@@ -46,13 +42,10 @@ style={venueDivImageStyle}>
         </div>
 
         <div className="search-venue-card-tier-container">
-          <span className="search-venue-card-tier">
-            <img src={imgTagIcon}/>
-            <div className="search-venue-card-tier-bar">
-              <div className="search-venue-card-tier-bar-child "></div>
-            </div>
-          </span>
+          <PriceTierBar
+            priceTier={venueData.venuePriceTier}/>
         </div>
+
         <div className="search-venue-card-raiting-container"
              style={{
                 "backgroundImage" : `url('${imgTriangle}')`

@@ -1,4 +1,4 @@
-@keyframes fadeAnimation {
+@keyframes fade-animation {
   from {opacity : 0}
   to {opacity: 1.0}
 }
@@ -13,7 +13,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   color : #ffffff;
-  animation: fadeAnimation 3s;
+  animation: fade-animation 3s;
 
   .search-venue-card-text{
     margin-left: 10px;

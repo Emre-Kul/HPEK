@@ -1,0 +1,14 @@
+.price-tier-bar{
+  display:inline-block;
+  .price-tier-bar-container {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 100px;
+    height: 3px;
+    width: 60px;
+    margin-left:10px;
+    margin-bottom:3px;
+  }
+  .price-tier-bar-icon{
+  }
+}

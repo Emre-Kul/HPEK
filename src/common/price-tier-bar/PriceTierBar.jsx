@@ -21,7 +21,7 @@ export class PriceTierBar extends Component{
     for(let i = 0;i < priceTier;i++){
       priceTierBars.push(<div key={`${this.props.venueId}-priceTierBar-${i}`}
                               className="price-tier-bar-child"
-                              style={ {"backgroundColor" : priceTierBarColors[i+1]} }
+                              style={ {"backgroundColor" : priceTierBarColors[i]} }
                               />);
     }
 

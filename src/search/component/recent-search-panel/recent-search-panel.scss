@@ -1,9 +1,10 @@
 .recent-search-panel{
-  width : 290px;
+  flex-basis: 290px;
+  flex-grow: 0;
+  flex-shrink: 0;
 
   padding-bottom:20px;
   padding-top: 40px;
-  margin-left:10px;
   min-height:500px;
   align-self: flex-start;
 
@@ -35,6 +36,14 @@
     width   : 70px;
     margin:auto;
     border-bottom:1px solid;
+  }
+
+}
+
+@media (max-width:1024px){
+
+  .recent-search-panel{
+    margin: auto;
   }
 
 }

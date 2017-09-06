@@ -1,19 +1,27 @@
 .search-content{
   display:flex;
-  flex-wrap: wrap;
-
-  width: 75%;
+  width: 80%;
   margin:40px auto auto auto;
   padding-bottom: 62px;
   border-bottom : 2px solid #9b9b9b;
-  overflow: hidden;
 
   .search-content-card-container{
     display:flex;
-    flex-wrap:wrap;
-    width : 630px;
     margin-right:20px;
+
+    flex-wrap:wrap;
+    justify-content: center;
+
   }
 
+}
+
+@media (max-width:1024px){
+  .search-content{
+    flex-wrap: wrap;
+  }
+  .search-content-card-container{
+
+  }
 }
 

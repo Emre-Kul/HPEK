@@ -12,7 +12,6 @@ export class SearchContentMessage extends Component{
   };
 
   render() {
-    console.log(this.props.error);
     return (
       <div className="search-content-message">
         {(typeof this.props.error.status !== "undefined") ?

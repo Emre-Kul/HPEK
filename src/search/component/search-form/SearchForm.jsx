@@ -17,15 +17,21 @@ export class SearchForm extends Component{
   }
   handleSearchQueryInput(e){
     this.setState({
-      query : `${e.target.value.slice(0,1).toUpperCase()}${e.target.value.slice(1)}`,
-      redirect : false
+      query : `${e.target.value.slice(0,1).toUpperCase()}${e.target.value.slice(1)}`
     });
   }
   handleSearchLocationInput(e){
     this.setState({
-      location : `${e.target.value.slice(0,1).toUpperCase()}${e.target.value.slice(1)}`,
-      redirect : false
+      location : `${e.target.value.slice(0,1).toUpperCase()}${e.target.value.slice(1)}`
     });
+  }
+
+  componentDidUpdate(){
+    if(this.state.redirect){
+      this.setState({
+        redirect : false
+      });
+    }
   }
   handleSearchButtonClick(e){
     e.preventDefault();

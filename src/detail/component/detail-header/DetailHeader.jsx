@@ -25,12 +25,15 @@ export class DetailHeader extends Component{
            style={detailHeaderPhotoStyle}>
         <div className="detail-header-content">
 
-          <img className="detail-header-logo"
-               src={imgDetailLogo}/>
-          <div className="detail-header-category-logo-container">
-            <img className="detail-header-category-logo"
-                 src={venueInfo.venueCategorieIcon}/>
+          <div className="detail-header-logos-container">
+            <img className="detail-header-logo"
+                 src={imgDetailLogo}/>
+            <div className="detail-header-category-logo-container">
+              <img className="detail-header-category-logo"
+                   src={venueInfo.venueCategorieIcon}/>
+            </div>
           </div>
+
           <div className="detail-header-venue-name">
             {venueInfo.venueName}
           </div>

@@ -4,7 +4,27 @@
   background-size: cover;
   color: #ffffff;
 
+  .detail-header-logos-container{
+    position: relative;
+
+    height:400px;
+    width:630px;
+    margin:auto;
+
+  }
+
+  .detail-header-logo{
+    display: block;
+
+    margin:auto;
+    min-height: 228px;
+  }
+
   .detail-header-category-logo-container{
+    position:absolute;
+    left:50px;
+    bottom:50px;
+
     height:200px;
     width:200px;
     margin:auto;
@@ -40,7 +60,7 @@
   .detail-header-venue-name{
     position: absolute;
     left:100px;
-    bottom:150px;
+    bottom:120px;
 
     font-weight: 300;
     font-size : 64px;
@@ -49,12 +69,6 @@
     color: #ffffff;
   }
 
-  .detail-header-logo{
-    display: block;
-
-    margin:auto;
-    min-height: 228px;
-  }
 
   .detail-header-contact-container{
     position: absolute;

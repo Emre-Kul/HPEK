@@ -3,10 +3,11 @@
 
   margin-top: -80px;
   margin-left: 20px;
+  padding-bottom:5px;
   max-width:290px;
+  align-self: flex-start;
 
   box-shadow: 0 0 34px 0 rgba(115, 95, 255, 0.32);
-
   background-color: #ffffff;
 
   .detail-tip-menu-title{
@@ -44,7 +45,9 @@
     margin:auto;
     padding-top:10px;
     padding-bottom:20px;
+
     border-bottom: solid 1px #e4e4e4;
+
     overflow: hidden;
   }
 
@@ -58,19 +61,18 @@
 
   .detail-tip-menu-user-name-container{
     display:table;
-    height:40px;
     margin-left:20px;
+    height:40px;
   }
 
   .detail-tip-menu-user-name{
     display:table-cell;
     vertical-align: middle;
+    max-width: 170px;
 
     font-family: Gotham-Medium;
     font-size: 14px;
     font-weight: 500;
-
-    max-width: 170px;
 
     color: #9b9b9b;
 

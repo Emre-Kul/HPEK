@@ -11,9 +11,7 @@ export class RecentSearchPanel extends Component{
         <div className="recent-search-panel-title-container">
           {"RECENT SEARCHES"}
         </div>
-        <div className="recent-search-panel-list-container">
-          <RecentSearchList/>
-        </div>
+        <RecentSearchList/>
       </div>
     );
   }

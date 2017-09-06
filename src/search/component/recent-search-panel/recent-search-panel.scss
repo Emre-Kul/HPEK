@@ -1,13 +1,16 @@
 .recent-search-panel{
+  width : 290px;
+
+  padding-bottom:20px;
   padding-top: 40px;
-  margin-left : 30px;
-  min-width : 290px;
-  height: 500px;
-  box-shadow: 0 0 34px 0 rgba(255, 95, 95, 0.32);
+  margin-left:10px;
+  min-height:500px;
+  align-self: flex-start;
 
   font-family: Gotham-Medium;
   text-align:center;
 
+  box-shadow: 0 0 34px 0 rgba(255, 95, 95, 0.32);
   background-color: #ffffff;
 
   .recent-search-panel-title-container{

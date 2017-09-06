@@ -45,7 +45,7 @@ export class DetailHeader extends Component{
                 <img src={imgLocationIcon}
                      alt="Location Icon"/>
                 <span className="detail-header-text">
-                   {venueInfo.venueAddress}
+                  {venueInfo.venueAddress}
                 </span>
               </div>
 
@@ -72,7 +72,7 @@ export class DetailHeader extends Component{
                  style={{
                    "backgroundImage" : `url('${imgRectangleIcon}')`
                  }}>
-                 <span className="detail-header-rating-value">
+                <span className="detail-header-rating-value">
                   {venueInfo.venueRating}
                 </span>
               </div>

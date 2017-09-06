@@ -15,6 +15,15 @@ export class SearchForm extends Component{
     this.handleSearchLocationInput = this.handleSearchLocationInput.bind(this);
     this.handleSearchButtonClick = this.handleSearchButtonClick.bind(this);
   }
+
+  componentWillUpdate(){
+    if(this.state.redirect){
+      this.setState({
+        redirect : false
+      });
+    }
+  }
+
   handleSearchQueryInput(e){
     this.setState({
       query : `${e.target.value.slice(0,1).toUpperCase()}${e.target.value.slice(1)}`
@@ -26,13 +35,6 @@ export class SearchForm extends Component{
     });
   }
 
-  componentDidUpdate(){
-    if(this.state.redirect){
-      this.setState({
-        redirect : false
-      });
-    }
-  }
   handleSearchButtonClick(e){
     e.preventDefault();
     if(this.state.location.length !== 0 && this.state.query.length !== 0) {

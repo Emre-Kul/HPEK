@@ -10,12 +10,12 @@ import "./search-content.scss";
 export class SearchContent extends Component{
   static propTypes = {
     venuesData : PropTypes.array,
-    warning : PropTypes.string
+    warning : PropTypes.object
   };
 
   render() {
     let dataLoading = this.props.venuesData.length === 0;
-    let errorAccured = this.props.warning.length > 0;
+    let errorAccured = this.props.warning.status > 0;
     return (
       <div className="search-content">
         <div className="search-content-card-container">

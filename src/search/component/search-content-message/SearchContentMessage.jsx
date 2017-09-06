@@ -8,15 +8,16 @@ import "./search-content-message.scss";
 export class SearchContentMessage extends Component{
 
   static propTypes = {
-    error : PropTypes.string
+    error : PropTypes.object
   };
 
   render() {
     return (
       <div className="search-content-message">
-        {(this.props.error.length > 0) ?
+        {(this.props.error.status > 0) ?
           <p className="search-content-message-error">
-            {this.props.error}
+            {`Error Code : ${this.props.error.status}`} <br/>
+            {`Error Message : ${this.props.error.statusText}`}
           </p>:
           <img className="search-content-loading-icon"
                src={imgLoadingIcon}

@@ -19,7 +19,10 @@ const makeRequest = function(method,url){
       }
     }
     request.onerror = () => {
-      reject(request.status);
+      reject({
+        status: request.status,
+        statusText: request.statusText
+      });
     }
     request.send();
   });
@@ -49,8 +52,10 @@ const searchVenues = function(query,place,photoSize,limit){
               });
           }
           catch(e){
-            console.log(`${e} Error At : ${item.venue.name}`);
-            reject(`${e} Error At : ${item.venue.name}`);
+            reject({
+              status: "Error At Venue",
+              statusText: item.venue.name
+            });
           }
         });
         resolve(

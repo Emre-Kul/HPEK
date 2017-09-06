@@ -24,7 +24,7 @@ export class SearchPage extends Component{
     this.state = {
       lastSearch : "",
       venuesData : [],
-      warning : "",
+      warning : {},
       animateHeaderAtSearch : false
     }
 
@@ -49,7 +49,7 @@ export class SearchPage extends Component{
       if (query + location !== this.state.lastSearch) {
         this.setState({
           venuesData: [],
-          warning: "",
+          warning: {},
           lastSearch: query + location
         });
         searchVenues(query, location, VENUE_PHOTO_SIZE, VENUE_SEARCH_LIMIT)
@@ -61,7 +61,7 @@ export class SearchPage extends Component{
           })
           .catch((err) => {
             this.setState({
-              warning: `Error Accured Please Try Again... ${err}`
+              warning: err
             });
           })
       }

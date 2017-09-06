@@ -26,7 +26,7 @@ const makeRequest = function(method,url){
 }
 
 const searchVenues = function(query,place,photoSize,limit){
-  let url = `https://api.foursquare.com/v2/venues/explore?price1,2,3,4&query=${query}&near=${place}&limit=${limit}&venuePhotos=1&${FS_API_KEY}`;
+  let url = `https://api.foursquare.com/v2/venues/explore?query=${query}&near=${place}&limit=${limit}&venuePhotos=1&${FS_API_KEY}`;
   return new Promise( (resolve,reject) => {
     makeRequest("get",url)
       .then( (response) => {

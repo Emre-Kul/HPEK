@@ -23,49 +23,56 @@ export class DetailHeader extends Component{
     return(
       <div className="detail-header"
            style={detailHeaderPhotoStyle}>
-        <div className="detail-header-background"/>
-        <img className="detail-header-logo"
-             src={imgDetailLogo}/>
-        <div className="detail-header-venue-name">
-          {venueInfo.venueName}
-        </div>
-        <div className="detail-header-contact-container">
-          <div className="detail-header-contact-info-container">
+        <div className="detail-header-content">
 
-            <div>
-              <img src={imgLocationIcon}
-                   alt="Location Icon"/>
-              <span className="detail-header-text">
-                {venueInfo.venueAddress}
-              </span>
-            </div>
+          <img className="detail-header-logo"
+               src={imgDetailLogo}/>
+          <div className="detail-header-category-logo-container">
+            <img className="detail-header-category-logo"
+                 src={venueInfo.venueCategorieIcon}/>
+          </div>
+          <div className="detail-header-venue-name">
+            {venueInfo.venueName}
+          </div>
 
-            <div>
-              <img src={imgPhoneIcon}
-                   alt="Phone Icon"/>
-              <span className="detail-header-text">
-                {venueInfo.venuePhone}
-              </span>
-            </div>
+          <div className="detail-header-contact-container">
+            <div className="detail-header-contact-info-container">
 
-            <div>
-              <img src={imgPeopleIcon}
-                   alt="People Icon"/>
-              <span className="detail-header-text">
-                {venueInfo.venueBeenHere}
-              </span>
+              <div>
+                <img src={imgLocationIcon}
+                     alt="Location Icon"/>
+                <span className="detail-header-text">
+                   {venueInfo.venueAddress}
+                </span>
+              </div>
 
-              <PriceTierBar venueId={venueInfo.venueId}
+              <div>
+                <img src={imgPhoneIcon}
+                     alt="Phone Icon"/>
+                <span className="detail-header-text">
+                  {venueInfo.venuePhone}
+                </span>
+              </div>
+
+              <div>
+                <img src={imgPeopleIcon}
+                     alt="People Icon"/>
+                <span className="detail-header-text">
+                  {venueInfo.venueBeenHere}
+                </span>
+
+                <PriceTierBar venueId={venueInfo.venueId}
                         priceTier={venueInfo.venuePriceTier}/>
-            </div>
+              </div>
 
-            <div className="detail-header-rating-container"
+              <div className="detail-header-rating-container"
                  style={{
                    "backgroundImage" : `url('${imgRectangleIcon}')`
                  }}>
-              <span className="detail-header-rating-value">
-                {venueInfo.venueRating}
-              </span>
+                 <span className="detail-header-rating-value">
+                  {venueInfo.venueRating}
+                </span>
+              </div>
             </div>
 
           </div>

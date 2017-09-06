@@ -12,9 +12,10 @@ export class SearchContentMessage extends Component{
   };
 
   render() {
+    console.log(this.props.error);
     return (
       <div className="search-content-message">
-        {(this.props.error.status > 0) ?
+        {(typeof this.props.error.status !== "undefined") ?
           <p className="search-content-message-error">
             {`Error Code : ${this.props.error.status}`} <br/>
             {`Error Message : ${this.props.error.statusText}`}

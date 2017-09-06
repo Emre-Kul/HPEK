@@ -26,8 +26,8 @@ export class SearchHeader extends Component{
            null}>
         <div className="search-header-content-container">
           <div className={(this.props.isHomePage) ?
-               "search-header-logo-container" :
-               null}>
+               "search-header-home-logo-container" :
+               "search-header-logo-container"}>
             <Link to="/">
               <img className={(this.props.isHomePage) ?
                    "search-header-home-logo" :

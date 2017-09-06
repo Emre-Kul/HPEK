@@ -21,14 +21,17 @@
     display: flex;
     flex-wrap: wrap;
 
-    width:72%;
+    width:80%;
     margin:auto;
   }
 
 
-  .search-header-logo-container{
+  .search-header-home-logo-container{
     margin:auto;
     order:0;
+  }
+  .search-header-logo-container{
+    max-width: 252px;
   }
 
   .search-header-logo{
@@ -72,14 +75,19 @@
   }
 }
 
-@media (max-width:968px){
+@media (max-width:1024px){
   .search-header{
     .search-header-content-container{
        width:100%;
     }
-    .search-header-logo-container{
+    .search-header-home-logo-container{
       margin: 0 auto 0 auto;
      }
+
+    .search-header-logo-container{
+      margin:0 auto 0 auto;
+    }
+
     .search-header-logo{
       max-width:100%;
     }

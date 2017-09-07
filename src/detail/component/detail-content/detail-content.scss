@@ -1,15 +1,26 @@
 .detail-content{
   display:flex;
-  flex-wrap: wrap;
-  width: 75%;
+  width: 82%;
   margin:10px auto auto auto;
   padding : 10px 0 62px 0;
   border-bottom : 2px solid #9b9b9b;
+  justify-content: center;
 
   .detail-content-image-container{
     display:flex;
     flex-wrap: wrap;
-    width:640px;
+    flex:1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis:640px;
     min-height:500px;
+    align-self: flex-start;
   }
+}
+
+@media (max-width:1024px) {
+  .detail-content{
+    flex-wrap: wrap;
+  }
+
 }

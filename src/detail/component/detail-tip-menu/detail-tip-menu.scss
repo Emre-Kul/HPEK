@@ -11,11 +11,11 @@
   background-color: #ffffff;
 
   .detail-tip-menu-title{
-    position: relative;
-
     display:block;
-    margin-top:30px;
-    margin-bottom:20px;
+    width:50px;
+    height:40px;
+    border-bottom:2px solid #c4c0ff;
+    margin:30px auto 10px auto;
 
     font-family: Gotham-Medium;
     font-size: 16px;
@@ -24,20 +24,7 @@
 
     color: #4a4a4a;
   }
-
-  .detail-tip-menu-title:before{
-    position: absolute;
-    left: 110px;
-    top: 30px;
-
-    height: 1px;
-    width: 70px;
-    margin: auto;
-    border-bottom: 2px solid #c4c0ff;
-
-    content : "";
-  }
-
+  
   .detail-tip-menu-user-container{
     display:flex;
     flex-wrap: wrap;

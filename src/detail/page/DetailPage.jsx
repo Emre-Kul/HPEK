@@ -5,7 +5,7 @@ import DetailHeader from "../component/detail-header/DetailHeader.jsx";
 import DetailContent from "../component/detail-content/DetailContent.jsx";
 import {getDetailOfVenue,getPhotosOfVenue} from "../../api/fsApiHandler.js";
 
-const VENUE_PHOTO_SIZE = "300x300";
+const VENUE_PHOTO_SIZE = "480x480";
 const VENUE_TIPS_LIMIT = 10;
 const VENUE_PHOTO_LIMIT = 10;
 

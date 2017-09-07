@@ -10,7 +10,7 @@
     height:400px;
     width:630px;
     margin:auto;
-
+    max-width: 100%;
   }
 
   .detail-header-logo{
@@ -18,6 +18,7 @@
 
     margin:auto;
     min-height: 228px;
+    max-width: 100%;
   }
 
   .detail-header-category-logo-container{
@@ -27,7 +28,6 @@
 
     height:200px;
     width:200px;
-    margin:auto;
 
     border:4px solid #ffc5c5;
     transform: rotate(-45deg);
@@ -109,6 +109,24 @@
     vertical-align: middle;
   }
 
+}
 
-
+@media(max-width:1024px){
+  .detail-header{
+    .detail-header-rating-container{
+      top:10px;
+    }
+  }
+}
+@media(max-width:640px){
+  .detail-header{
+    .detail-header-category-logo-container{
+      position: relative;
+      margin:-30px auto;
+      left:0;
+      bottom:0;
+      width:150px;
+      height:150px;
+    }
+  }
 }

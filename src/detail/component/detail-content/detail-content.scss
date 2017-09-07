@@ -21,6 +21,17 @@
 @media (max-width:1024px) {
   .detail-content{
     flex-wrap: wrap;
+    width:90%;
+    .detail-content-image-container{
+      flex-shrink: 1;
+    }
   }
+}
 
+@media (max-width: 764px){
+  .detail-content{
+    width:100%;
+    margin:0;
+    padding:0;
+  }
 }

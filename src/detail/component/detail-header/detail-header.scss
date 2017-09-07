@@ -120,6 +120,9 @@
 }
 @media(max-width:640px){
   .detail-header{
+    .detail-header-contact-info-container{
+      width:90%;
+    }
     .detail-header-category-logo-container{
       position: relative;
       margin:-30px auto;

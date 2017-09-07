@@ -3,18 +3,36 @@ import PropTypes from "prop-types";
 
 import "./detail-tip-menu.scss"
 
+const VENUE_LOAD_TIP_SIZE = 5;
 export class DetailTipMenu extends Component{
+
   static propTypes = {
     venueTips : PropTypes.array
   };
+
+  constructor(){
+    super();
+    this.state = {
+      venueTipLimit : VENUE_LOAD_TIP_SIZE
+    }
+    this.handleMoreTipClick = this.handleMoreTipClick.bind(this);
+  }
+  handleMoreTipClick(){
+    if(this.state.venueTipLimit < this.props.venueTips.length) {
+      this.setState({
+        venueTipLimit: this.state.venueTipLimit + VENUE_LOAD_TIP_SIZE
+      });
+    }
+  }
   render() {
+    let venueTips = this.props.venueTips.slice(0,this.state.venueTipLimit);
     return (
       <div className="detail-tip-menu">
         <span className="detail-tip-menu-title">
           {"TIPS"}
         </span>
         {
-        this.props.venueTips.map((venueTip) => {
+        venueTips.map((venueTip) => {
           return (
             <div className="detail-tip-menu-user-container"
                  key={venueTip.id}>
@@ -38,6 +56,10 @@ export class DetailTipMenu extends Component{
           );
         })
         }
+        <button className="detail-tip-menu-load-tips-button"
+                onClick={this.handleMoreTipClick}>
+          {"More Tips"}
+        </button>
       </div>
     );
   }

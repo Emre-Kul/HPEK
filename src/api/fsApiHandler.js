@@ -69,7 +69,7 @@ const searchVenues = function(query,place,photoSize,limit){
   });
 }
 
-const getDetailOfVenue = function(venueId,venueTipsLimit){
+const getDetailOfVenue = function(venueId){
    const url = `https://api.foursquare.com/v2/venues/${venueId}?${FS_API_KEY}`;
    return new Promise((resolve,reject) => {
      makeRequest("get",url).then( (response)=>{
@@ -91,7 +91,7 @@ const getDetailOfVenue = function(venueId,venueTipsLimit){
              venue.price.tier,
            venueCategorieIcon: venueCategorieIcon
          },
-         venueTips : venue.tips.groups[0].items.slice(0,venueTipsLimit)
+         venueTips : venue.tips.groups[0].items
        });
      }).catch(reject);
    });

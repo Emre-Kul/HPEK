@@ -6,7 +6,6 @@ import DetailContent from "../component/detail-content/DetailContent.jsx";
 import {getDetailOfVenue,getPhotosOfVenue} from "../../api/fsApiHandler.js";
 
 const VENUE_PHOTO_SIZE = "480x480";
-const VENUE_TIPS_LIMIT = 10;
 const VENUE_PHOTO_LIMIT = 10;
 
 export class DetailPage extends React.Component{
@@ -26,7 +25,7 @@ export class DetailPage extends React.Component{
   loadVenueData(){
     if(!this.state.venueDataLoaded) {
       let id = this.props.match.params.id;
-      getDetailOfVenue(id,VENUE_TIPS_LIMIT)
+      getDetailOfVenue(id)
         .then((venue) => {
           this.setState({
             venueData: venue,

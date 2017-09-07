@@ -37,5 +37,19 @@
   }
 }
 
+@media( max-width: 670px){
+  .search-content{
+    width:100%;
+    margin:0;
+    .search-content-card-container{
+      width: 100%;
+
+      padding:0;
+      margin:0;
+    }
+  }
+}
+
+
 
 

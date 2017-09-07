@@ -25,7 +25,7 @@
 
   .search-form-button{
     background-image: url("../../../../asset/img/search-icon.svg");
-    background-position: 5px 0px;
+    background-position: 5px 2px;
     background-repeat: no-repeat;
     background-color: #ff5f5f;
 
@@ -49,6 +49,9 @@
     .search-form-input{
       width:100%;
       margin-bottom:5px;
+    }
+    .search-form-button{
+      background-position: 170px 2px;
     }
   }
 }

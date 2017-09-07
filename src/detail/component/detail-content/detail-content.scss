@@ -8,13 +8,16 @@
 
   .detail-content-image-container{
     display:flex;
+    min-height:500px;
+
     flex-wrap: wrap;
     flex:1;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-shrink: 0;
     flex-basis:640px;
-    min-height:500px;
     align-self: flex-start;
+    justify-content: center;
+
   }
 }
 

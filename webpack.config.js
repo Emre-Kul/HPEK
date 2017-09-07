@@ -8,9 +8,10 @@ module.exports = {
     './main.jsx',
   ],
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
+    contentPath: 'assets/'
   },
   devServer: {
     contentBase: path.join(__dirname,"public"),

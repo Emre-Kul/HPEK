@@ -1,5 +1,5 @@
 HPEK = Hipo Project Emre Kul
 
-Sass(scss) :
+First-Run : npm install
 
-sass watch src/:public/style/
+Run : npm start

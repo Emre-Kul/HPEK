@@ -5,8 +5,8 @@
 .search-venue-card {
   position: relative;
 
-  min-height : 290px;
-  min-width: 290px;
+  height : 290px;
+  width: 290px;
   margin : 0 10px 10px 10px;
   border : 1px solid;
 
@@ -19,14 +19,11 @@
     margin-left: 10px;
   }
 
-  .search-venue-card-background {
-    z-index: -1;
-
+  .search-venue-card-content {
     height : 100%;
     width: 100%;
 
-    opacity: 0.5;
-    background-color: #12195f;
+    background-color: rgba(18,25,95,0.5);
   }
 
   .search-venue-card-link {
@@ -101,9 +98,16 @@
 
 @media( max-width: 670px){
   .search-venue-card{
-    width:100%;
+    width:48vw;
+    height:48vw;
+
     padding:0;
-    margin-left:0;
-    margin-right:0;
+    margin:0;
+  }
+}
+@media (max-width: 480px){
+  .search-venue-card{
+    width:100vw;
+    height:100vw;
   }
 }

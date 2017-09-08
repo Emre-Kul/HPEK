@@ -23,36 +23,37 @@ export class SearchVenueCard extends Component{
     return (
       <div className="search-venue-card"
 style={venueDivImageStyle}>
-        <div className="search-venue-card-background"/>
-        <div className="search-venue-card-name-container">
-          <Link className="search-venue-card-link"
-                to={detailLink}>
-            <span>
-              {venueData.venueName}
+        <div className="search-venue-card-content">
+          <div className="search-venue-card-name-container">
+            <Link className="search-venue-card-link"
+                  to={detailLink}>
+              <span>
+                {venueData.venueName}
+              </span>
+            </Link>
+          </div>
+          <div className="search-venue-card-herenow-container">
+            <span className="search-venue-card-herenow">
+              <img src={imgPeopleIcon}/>
+              <span className="search-venue-card-text">
+                {venueData.venueHereNow}
+              </span>
             </span>
-          </Link>
-        </div>
-        <div className="search-venue-card-herenow-container">
-          <span className="search-venue-card-herenow">
-            <img src={imgPeopleIcon}/>
-            <span className="search-venue-card-text">
-              {venueData.venueHereNow}
+          </div>
+
+          <div className="search-venue-card-tier-container">
+            <PriceTierBar venueId={venueData.venueId}
+              priceTier={venueData.venuePriceTier}/>
+          </div>
+
+          <div className="search-venue-card-raiting-container"
+               style={{
+                  "backgroundImage" : `url('${imgTriangle}')`
+               }}>
+            <span className="search-venue-card-raiting">
+              {venueData.venueRating}
             </span>
-          </span>
-        </div>
-
-        <div className="search-venue-card-tier-container">
-          <PriceTierBar venueId={venueData.venueId}
-            priceTier={venueData.venuePriceTier}/>
-        </div>
-
-        <div className="search-venue-card-raiting-container"
-             style={{
-                "backgroundImage" : `url('${imgTriangle}')`
-             }}>
-          <span className="search-venue-card-raiting">
-            {venueData.venueRating}
-          </span>
+          </div>
         </div>
       </div>
     );

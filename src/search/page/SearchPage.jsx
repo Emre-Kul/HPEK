@@ -8,7 +8,7 @@ import SearchContent from "../component/search-content/SearchContent.jsx";
 import {searchVenues} from "../../api/fsApiHandler.js";
 import {actionAddToSearchList} from "../../reducers/searchActions.js";
 
-const VENUE_PHOTO_SIZE = "400x400";
+const VENUE_PHOTO_SIZE = "480x480";
 const VENUE_SEARCH_LIMIT = 10;
 
 export class SearchPage extends Component{

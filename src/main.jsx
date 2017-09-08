@@ -19,14 +19,13 @@ ReactDOM.render(
     <Router>
       <div>
         <Switch>
-          <Route exact={true}
-                 path="/">
-            <SearchPage isHomePage={true}/>
-          </Route>
           <Route path="/search/:query/:location"
                  component={SearchPage}/>
           <Route path="/detail/:id"
                  component={DetailPage}/>
+          <Route path="/">
+            <SearchPage isHomePage={true}/>
+          </Route>
         </Switch>
       </div>
     </Router>

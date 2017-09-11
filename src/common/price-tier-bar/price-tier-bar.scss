@@ -1,5 +1,6 @@
-.price-tier-bar{
-  display:inline-block;
+.price-tier-bar {
+  display: inline-block;
+
   .price-tier-bar-container {
     position: relative;
     display: inline-block;
@@ -8,19 +9,17 @@
 
     height: 3px;
     width: 60px;
-    margin-left:10px;
-    margin-bottom:3px;
+    margin-left: 10px;
+    margin-bottom: 3px;
     vertical-align: middle;
 
     background-color: #000000;
   }
-  .price-tier-bar-icon{
-  }
 
   .price-tier-bar-child {
     display: inline-block;
-    width:25%;
-    height:100%;
+    width: 25%;
+    height: 100%;
     vertical-align: top;
   }
 

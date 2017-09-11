@@ -1,14 +1,16 @@
-.search-content-message{
-  margin:auto;
-  .search-content-loading-icon{
-    display:block;
-    height:100px;
-    width: 100px;
-    margin:50px auto auto auto;
+.search-content-message {
+  margin: auto;
 
-    background-image: linear-gradient(97deg, #e44747 , #1e0db4);
+  .search-content-loading-icon {
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin: 50px auto auto auto;
+
+    background-image: linear-gradient(97deg, #e44747, #1e0db4);
   }
-  .search-content-message-error{
-    color:#ff0000;
+
+  .search-content-message-error {
+    color: #ff0000;
   }
 }

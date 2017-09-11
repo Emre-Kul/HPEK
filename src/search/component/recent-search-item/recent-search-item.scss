@@ -1,14 +1,14 @@
-.recent-search-item{
+.recent-search-item {
   display: table;
   height: 50px;
   width: 100%;
   border-bottom: solid 1px #e4e4e4;
 
-  font-size:14px;
+  font-size: 14px;
 }
 
-.recent-search-item-link{
-  display:table-cell;
+.recent-search-item-link {
+  display: table-cell;
 
   text-transform: none;
   text-decoration: none;
@@ -17,7 +17,7 @@
   color: #9b9b9b;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     color: #4b4b4b;
   }
 

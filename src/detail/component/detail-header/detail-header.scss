@@ -1,79 +1,77 @@
-.detail-header{
+.detail-header {
 
-  background : no-repeat center;
+  background: no-repeat center;
   background-size: cover;
   color: #ffffff;
 
-  .detail-header-logos-container{
+  .detail-header-logos-container {
     position: relative;
 
-    height:400px;
-    width:630px;
-    margin:auto;
+    height: 400px;
+    width: 630px;
+    margin: auto;
     max-width: 100%;
   }
 
-  .detail-header-logo{
+  .detail-header-logo {
     display: block;
 
-    margin:auto;
+    margin: auto;
     width: 458px;
     max-width: 100%;
   }
 
-  .detail-header-category-logo-container{
-    position:absolute;
-    left:50px;
-    bottom:50px;
+  .detail-header-category-logo-container {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
 
-    height:200px;
-    width:200px;
+    height: 200px;
+    width: 200px;
 
-    border:4px solid #ffc5c5;
+    border: 4px solid #ffc5c5;
     transform: rotate(-45deg);
 
   }
 
-  .detail-header-category-logo{
-    margin-left:calc(50% - 25px);
+  .detail-header-category-logo {
+    margin-left: calc(50% - 25px);
     margin-top: calc(50% - 25px);
-    height:50px;
+    height: 50px;
     width: 50px;
 
     transform: rotate(45deg);
   }
 
-  .detail-header-text{
-    display:inline-block;
-    margin:10px;
+  .detail-header-text {
+    display: inline-block;
+
+    margin: 10px;
   }
 
-  .detail-header-content{
+  .detail-header-content {
     position: relative;
-
     width: 100%;
 
-    background-color: rgba(18,25,95,0.6);
+    background-color: rgba(18, 25, 95, 0.6);
   }
 
-  .detail-header-venue-name{
-    margin-left:15%;
+  .detail-header-venue-name {
+    margin-left: 15%;
 
     font-weight: 300;
-    font-size : 64px;
+    font-size: 64px;
     font-family: Gotham-Light;
 
     color: #ffffff;
   }
 
-
-  .detail-header-contact-container{
-
+  .detail-header-contact-container {
     width: 100%;
-    height : 115px;
+    height: 115px;
 
     font-weight: 500;
-    font-size:12px;
+    font-size: 12px;
     font-family: Gotham-Medium;
 
     background-image: linear-gradient(97deg, #1e0db4, #e44747);
@@ -82,20 +80,20 @@
 
   }
 
-  .detail-header-contact-info-container{
-    position:relative;
-    width:72%;
-    margin:auto;
+  .detail-header-contact-info-container {
+    position: relative;
+    width: 72%;
+    margin: auto;
   }
 
-  .detail-header-rating-container{
-    position:absolute;
-    right:0;
-    top : -45px;
+  .detail-header-rating-container {
+    position: absolute;
+    right: 0;
+    top: -45px;
 
     display: table;
-    height:90px;
-    width:90px;
+    height: 90px;
+    width: 90px;
 
     font-family: Gotham-Book;
     font-size: 18px;
@@ -104,32 +102,36 @@
     color: #ffffff;
   }
 
-  .detail-header-rating-value{
+  .detail-header-rating-value {
     display: table-cell;
     vertical-align: middle;
   }
 
 }
 
-@media(max-width:1024px){
-  .detail-header{
-    .detail-header-rating-container{
-      top:10px;
+@media (max-width: 1024px) {
+  .detail-header {
+
+    .detail-header-rating-container {
+      top: 10px;
     }
   }
 }
-@media(max-width:640px){
-  .detail-header{
-    .detail-header-contact-info-container{
-      width:90%;
+
+@media (max-width: 640px) {
+  .detail-header {
+
+    .detail-header-contact-info-container {
+      width: 90%;
     }
-    .detail-header-category-logo-container{
+
+    .detail-header-category-logo-container {
       position: relative;
-      margin:-30px auto;
-      left:0;
-      bottom:0;
-      width:150px;
-      height:150px;
+      margin: -30px auto;
+      left: 0;
+      bottom: 0;
+      width: 150px;
+      height: 150px;
     }
   }
 }

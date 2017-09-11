@@ -1,5 +1,5 @@
-.footer{
-  display:table;
+.footer {
+  display: table;
   height: 150px;
   width: 100%;
 
@@ -7,23 +7,23 @@
 
   background-color: #ffffff;
 
-  .footer-link-container{
+  .footer-link-container {
     display: table-cell;
 
     vertical-align: middle;
   }
 
-  .footer-link{
-    margin-left : 10px;
+  .footer-link {
+    margin-left: 10px;
 
     font-size: 12px;
-    font-family : Gotham-Medium;
+    font-family: Gotham-Medium;
     text-transform: uppercase;
 
-    color : #9b9b9b;
+    color: #9b9b9b;
 
-    &:hover{
-      color : #4d4d4d;
+    &:hover {
+      color: #4d4d4d;
     }
   }
 

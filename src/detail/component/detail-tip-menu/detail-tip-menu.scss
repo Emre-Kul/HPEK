@@ -1,10 +1,10 @@
-.detail-tip-menu{
+.detail-tip-menu {
   z-index: 1;
 
   margin-top: -80px;
   margin-left: 20px;
-  padding-bottom:5px;
-  max-width:290px;
+  padding-bottom: 5px;
+  max-width: 290px;
   align-self: flex-start;
 
   box-shadow: 0 0 34px 0 rgba(115, 95, 255, 0.32);
@@ -12,12 +12,12 @@
 
   text-align: center;
 
-  .detail-tip-menu-title{
-    display:block;
-    width:50px;
-    height:40px;
-    border-bottom:2px solid #c4c0ff;
-    margin:30px auto 10px auto;
+  .detail-tip-menu-title {
+    display: block;
+    width: 50px;
+    height: 40px;
+    border-bottom: 2px solid #c4c0ff;
+    margin: 30px auto 10px auto;
 
     font-family: Gotham-Medium;
     font-size: 16px;
@@ -27,35 +27,35 @@
     color: #4a4a4a;
   }
 
-  .detail-tip-menu-user-container{
-    display:flex;
+  .detail-tip-menu-user-container {
+    display: flex;
     flex-wrap: wrap;
     width: 80%;
-    margin:auto;
-    padding-top:10px;
-    padding-bottom:20px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
 
     border-bottom: solid 1px #e4e4e4;
 
     overflow: hidden;
   }
 
-  .detail-tip-menu-user-picture-container{
-    width:40px;
-    height:40px;
-    margin-left:10px;
+  .detail-tip-menu-user-picture-container {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
 
     transform: rotate(-45deg);
   }
 
-  .detail-tip-menu-user-name-container{
-    display:table;
-    margin-left:20px;
-    height:40px;
+  .detail-tip-menu-user-name-container {
+    display: table;
+    margin-left: 20px;
+    height: 40px;
   }
 
-  .detail-tip-menu-user-name{
-    display:table-cell;
+  .detail-tip-menu-user-name {
+    display: table-cell;
     vertical-align: middle;
     max-width: 170px;
 
@@ -67,8 +67,8 @@
 
   }
 
-  .detail-tip-menu-user-comment{
-    margin-top:10px;
+  .detail-tip-menu-user-comment {
+    margin-top: 10px;
     min-width: 100%;
 
     font-family: Gotham-Book;
@@ -77,9 +77,9 @@
     color: #9b9b9b;
   }
 
-  .detail-tip-menu-load-tips-button{
-    margin:20px auto 20px auto;
-    border:none;
+  .detail-tip-menu-load-tips-button {
+    margin: 20px auto 20px auto;
+    border: none;
 
     cursor: pointer;
     font-family: Gotham-Medium;
@@ -87,16 +87,15 @@
     font-weight: 500;
     text-decoration: underline;
 
-    color:#7a74d2;
+    color: #7a74d2;
     background-color: #fff;
   }
 
 }
 
-
-@media (max-width:1024px) {
-  .detail-tip-menu{
-    margin-top:20px;
+@media (max-width: 1024px) {
+  .detail-tip-menu {
+    margin-top: 20px;
   }
 
 }

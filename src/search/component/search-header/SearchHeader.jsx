@@ -28,7 +28,9 @@ export class SearchHeader extends Component{
            style={(this.props.isHomePage) ?
            homeBackgroundStyle :
            searchBackgroundStyle}>
-        <div className="search-header-content-background">
+        <div className={(this.props.isHomePage) ?
+                         null :
+                         "search-header-content-background"}>
           <div className="search-header-content-container">
             <div className={(this.props.isHomePage) ?
                  "search-header-home-logo-container" :

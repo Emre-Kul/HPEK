@@ -10,6 +10,7 @@ import {actionAddToSearchList} from "../../reducers/searchActions.js";
 
 const VENUE_PHOTO_SIZE = "480x480";
 const VENUE_SEARCH_LIMIT = 10;
+const SEARCH_HEADER_PHOTO_SIZE = "1250x150";
 
 export class SearchPage extends Component{
 
@@ -24,6 +25,7 @@ export class SearchPage extends Component{
     this.state = {
       lastSearch : "",
       venuesData : [],
+      searchHeaderPhoto : "",
       warning : {},
       animateHeaderAtSearch : false
     }
@@ -49,14 +51,16 @@ export class SearchPage extends Component{
       if (query + location !== this.state.lastSearch) {
         this.setState({
           venuesData: [],
+          searchHeaderPhoto : "",
           warning: {},
           lastSearch: query + location
         });
-        searchVenues(query, location, VENUE_PHOTO_SIZE, VENUE_SEARCH_LIMIT)
+        searchVenues(query, location, VENUE_PHOTO_SIZE,SEARCH_HEADER_PHOTO_SIZE, VENUE_SEARCH_LIMIT)
           .then((venuesData) => {
             this.props.dispatch(actionAddToSearchList(venuesData.searchId, query, location));
             this.setState({
-              venuesData: venuesData.venues
+              venuesData: venuesData.venues,
+              searchHeaderPhoto : venuesData.searchHeaderPhoto
             });
           })
           .catch((err) => {
@@ -72,7 +76,8 @@ export class SearchPage extends Component{
     return (
       <div>
         <SearchHeader isHomePage={isHomePage}
-                      animateHeaderAtSearch={this.state.animateHeaderAtSearch}/>
+                      animateHeaderAtSearch={this.state.animateHeaderAtSearch}
+                      searchHeaderPhoto={this.state.searchHeaderPhoto}/>
         {(this.props.isHomePage) ?
           null
           :  <SearchContent warning={this.state.warning}

@@ -28,12 +28,14 @@ const makeRequest = function(method,url){
   });
 }
 
-const searchVenues = function(query,place,photoSize,limit){
+const searchVenues = function(query,place,photoSize,searchHeaderPhotoSize,limit){
   let url = `https://api.foursquare.com/v2/venues/explore?query=${query}&near=${place}&limit=${limit}&venuePhotos=1&${FS_API_KEY}`;
   return new Promise( (resolve,reject) => {
     makeRequest("get",url)
       .then( (response) => {
         let venues = [];
+        let firstVenuePhoto = response.response.groups[0].items[0].venue.featuredPhotos.items[0];
+        let searchHeaderPhoto = `${firstVenuePhoto.prefix}${searchHeaderPhotoSize}${firstVenuePhoto.suffix}`
         response.response.groups[0].items.forEach( (item) => {
           try {
             let venuePhotoPrefix = item.venue.featuredPhotos.items[0].prefix;
@@ -61,6 +63,7 @@ const searchVenues = function(query,place,photoSize,limit){
         resolve(
             {
               searchId : response.meta.requestId,
+              searchHeaderPhoto : searchHeaderPhoto,
               venues : venues
             }
           );

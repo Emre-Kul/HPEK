@@ -49,16 +49,10 @@ export class DetailPage extends Component {
   render () {
     return (
       <div>
-        {(this.state.venueDataLoaded)
-          ? <DetailHeader venueInfo={this.state.venueData.venueInfo}/>
-          : null
-        }
-        {(this.state.venueDataLoaded && this.state.venuePhotosLoaded)
-          ? <DetailContent venuePhotos={this.state.venuePhotos}
-                           venueTips={this.state.venueData.venueTips}/>
-          : null
-        }
-
+        {(this.state.venueDataLoaded && <DetailHeader venueInfo={this.state.venueData.venueInfo}/>)}
+        {(this.state.venueDataLoaded && this.state.venuePhotosLoaded &&
+          <DetailContent venuePhotos={this.state.venuePhotos}
+                         venueTips={this.state.venueData.venueTips}/>)}
         <Footer/>
       </div>
     )

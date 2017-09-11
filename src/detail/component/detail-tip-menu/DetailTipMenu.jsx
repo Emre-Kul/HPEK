@@ -49,13 +49,9 @@ export class DetailTipMenu extends Component {
 
                 <div className="detail-tip-menu-user-name-container">
                   <span className="detail-tip-menu-user-name">
-                    {(typeof venueTip.user.firstName !== 'undefined')
-                      ? venueTip.user.firstName
-                      : null}
+                    {(typeof venueTip.user.firstName !== 'undefined' && venueTip.user.firstName)}
                     {' '}
-                    {(typeof venueTip.user.lastName !== 'undefined')
-                      ? venueTip.user.lastName
-                      : null}
+                    {(typeof venueTip.user.lastName !== 'undefined' && venueTip.user.lastName)}
                   </span>
                 </div>
                 <span className="detail-tip-menu-user-comment">

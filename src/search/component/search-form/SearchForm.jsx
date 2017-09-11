@@ -60,10 +60,7 @@ export class SearchForm extends Component {
                onInput={this.handleSearchLocationInput}/>
         <button className="search-form-button"
                 onClick={this.handleSearchButtonClick}/>
-        {(this.state.redirect)
-          ? <Redirect to={searchLink}/>
-          : null
-        }
+        {(this.state.redirect && <Redirect to={searchLink}/>)}
       </form>
     )
   }

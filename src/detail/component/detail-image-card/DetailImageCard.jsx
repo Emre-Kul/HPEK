@@ -1,18 +1,18 @@
-import React, { Component }  from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import "./detail-image-card.scss"
+import './detail-image-card.scss'
 
-export class DetailImageCard extends Component{
+export class DetailImageCard extends Component {
 
   static propTypes = {
-    backgroundImage : PropTypes.string,
-    userInfo : PropTypes.object
+    backgroundImage: PropTypes.string,
+    userInfo: PropTypes.object
   }
-  
-  render() {
+
+  render () {
     let backgroundStyle = {
-      "backgroundImage" : `url(${this.props.backgroundImage})`
+      'backgroundImage': `url(${this.props.backgroundImage})`
     }
     return (
       <div className="detail-image-card"
@@ -27,8 +27,8 @@ export class DetailImageCard extends Component{
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default DetailImageCard;
+export default DetailImageCard

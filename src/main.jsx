@@ -1,18 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router  , Route , Switch} from 'react-router-dom';
-import {Provider} from "react-redux";
-import {createStore} from "redux";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 
-import searchReducer from "./reducers/searchReducer.js";
-import SearchPage from "./search/page/SearchPage.jsx";
-import DetailPage from "./detail/page/DetailPage.jsx";
+import searchReducer from './reducers/searchReducer.js'
+import SearchPage from './search/page/SearchPage.jsx'
+import DetailPage from './detail/page/DetailPage.jsx'
 
-import "./main.scss";
-import "../asset/font/fonts.scss";
+import './main.scss'
+import '../asset/font/fonts.scss'
 
-const STORE = createStore(searchReducer);
-const APP_ELEMENT = document.getElementById("root");
+const STORE = createStore(searchReducer)
+const APP_ELEMENT = document.getElementById('root')
 
 ReactDOM.render(
   <Provider store={STORE}>
@@ -31,4 +31,4 @@ ReactDOM.render(
     </Router>
   </Provider>,
   APP_ELEMENT
-);
+)

@@ -1,27 +1,28 @@
-import React, { Component }  from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import imgTagIcon from "../../../asset/img/tag-icon.svg";
+import imgTagIcon from '../../../asset/img/tag-icon.svg'
 
-import "./price-tier-bar.scss";
+import './price-tier-bar.scss'
 
-export class PriceTierBar extends Component{
+export class PriceTierBar extends Component {
 
   static propTypes = {
-    priceTier : PropTypes.number,
-    venueId : PropTypes.string
-  };
-  render() {
-    let priceTierBarColors = ["#c9c5ff","#a59fee","#8b81ff","#685dea"];
-    let priceTierBars = [];
-    let priceTier = (this.props.priceTier > 4) ?
-      4 :
-      this.props.priceTier;
+    priceTier: PropTypes.number,
+    venueId: PropTypes.string
+  }
 
-    for(let i = 0;i < priceTier;i++){
+  render () {
+    let priceTierBarColors = ['#c9c5ff', '#a59fee', '#8b81ff', '#685dea']
+    let priceTierBars = []
+    let priceTier = (this.props.priceTier > 4)
+      ? 4
+      : this.props.priceTier
+
+    for (let i = 0; i < priceTier; i++) {
       priceTierBars.push(<div key={`${this.props.venueId}-priceTierBar-${i}`}
                               className="price-tier-bar-child"
-                              style={{"backgroundColor" : priceTierBarColors[i]}}/>);
+                              style={{'backgroundColor': priceTierBarColors[i]}}/>)
     }
 
     return (
@@ -33,8 +34,8 @@ export class PriceTierBar extends Component{
         </div>
 
       </div>
-    );
+    )
   }
 }
 
-export default PriceTierBar;
+export default PriceTierBar

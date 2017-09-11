@@ -1,26 +1,27 @@
-import React, { Component }  from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import PriceTierBar from "../../../common/price-tier-bar/PriceTierBar.jsx";
+import PriceTierBar from '../../../common/price-tier-bar/PriceTierBar.jsx'
 
-import imgDetailLogo from "../../../../asset/img/detail-logo.png";
-import imgLocationIcon from "../../../../asset/img/location-icon.svg";
-import imgPeopleIcon from "../../../../asset/img/people-icon.svg";
-import imgPhoneIcon from "../../../../asset/img/phone-icon.svg";
-import imgRectangleIcon from "../../../../asset/img/rectangle-icon.svg";
+import imgDetailLogo from '../../../../asset/img/detail-logo.png'
+import imgLocationIcon from '../../../../asset/img/location-icon.svg'
+import imgPeopleIcon from '../../../../asset/img/people-icon.svg'
+import imgPhoneIcon from '../../../../asset/img/phone-icon.svg'
+import imgRectangleIcon from '../../../../asset/img/rectangle-icon.svg'
 
-import "./detail-header.scss";
+import './detail-header.scss'
 
-export class DetailHeader extends Component{
+export class DetailHeader extends Component {
   static propTypes = {
-    venueInfo : PropTypes.object
-  };
-  render(){
-    const venueInfo = this.props.venueInfo;
+    venueInfo: PropTypes.object
+  }
+
+  render () {
+    const venueInfo = this.props.venueInfo
     let detailHeaderPhotoStyle = {
-      "backgroundImage" : `url("${venueInfo.venueHeaderPhoto}")`
+      'backgroundImage': `url("${venueInfo.venueHeaderPhoto}")`
     }
-    return(
+    return (
       <div className="detail-header"
            style={detailHeaderPhotoStyle}>
         <div className="detail-header-content">
@@ -65,13 +66,13 @@ export class DetailHeader extends Component{
                 </span>
 
                 <PriceTierBar venueId={venueInfo.venueId}
-                        priceTier={venueInfo.venuePriceTier}/>
+                              priceTier={venueInfo.venuePriceTier}/>
               </div>
 
               <div className="detail-header-rating-container"
-                 style={{
-                   "backgroundImage" : `url('${imgRectangleIcon}')`
-                 }}>
+                   style={{
+                     'backgroundImage': `url('${imgRectangleIcon}')`
+                   }}>
                 <span className="detail-header-rating-value">
                   {venueInfo.venueRating}
                 </span>
@@ -81,8 +82,8 @@ export class DetailHeader extends Component{
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default DetailHeader;
+export default DetailHeader

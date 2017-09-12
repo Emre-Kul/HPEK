@@ -29,10 +29,12 @@ export class DetailPageHeader extends Component {
         <div className="detail-page-header-content">
 
           <div className="detail-page-header-logos-container">
-            <img className="detail-page-header-logo"
+            <img alt="Detail Page Header Logo"
+                 className="detail-page-header-logo"
                  src={imgDetailLogo}/>
             <div className="detail-page-header-category-logo-container">
-              <img className="detail-page-header-category-logo"
+              <img alt="Detail Page Header Logo"
+                   className="detail-page-header-category-logo"
                    src={venueInfo.venueCategorieIcon}/>
             </div>
           </div>

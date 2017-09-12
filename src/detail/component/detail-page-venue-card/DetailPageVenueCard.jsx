@@ -22,7 +22,8 @@ export class DetailPageVenueCard extends Component {
           <div className="detail-page-venue-card-user-info-content-container">
             <div className="detail-page-venue-card-user-info-image-container">
               <img className="detail-page-venue-card-user-info-image"
-                   src={`${this.props.userInfo.photo.prefix}60x60${this.props.userInfo.photo.suffix}`}/>
+                   src={`${this.props.userInfo.photo.prefix}60x60${this.props.userInfo.photo.suffix}`}
+                   alt="Detail Page Venue Card"/>
             </div>
             {this.props.userInfo.firstName} {this.props.userInfo.lastName}
           </div>

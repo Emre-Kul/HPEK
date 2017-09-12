@@ -29,7 +29,8 @@ export class PriceTierBar extends Component {
   render() {
     return (
       <div className="price-tier-bar">
-        <img src={imgTagIcon}
+        <img alt="Price Tier Bar Icon"
+             src={imgTagIcon}
              className="price-tier-bar-icon"/>
         <div className="price-tier-bar-container">
           {this.renderPriceTierBars(this.props.venueId, this.props.priceTier)}

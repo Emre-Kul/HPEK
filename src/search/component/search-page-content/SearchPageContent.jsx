@@ -24,7 +24,7 @@ export class SearchPageContent extends Component {
             <SearchPageContentMessage error={this.props.warning}/> :
               this.props.venuesData.map(venueData => (
                 <SearchPageVenueCard key={venueData.venueId}
-                                       venueData={venueData}/>
+                                     venueData={venueData}/>
                 ))}
         </div>
         <RecentSearchPanel/>

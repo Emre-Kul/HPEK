@@ -19,8 +19,8 @@ export class DetailPageContent extends Component {
           {
             this.props.venuePhotos.map(venuePhoto => (
               <DetailPageVenueCard key={venuePhoto.photoId}
-                                     backgroundImage={venuePhoto.photoUrl}
-                                     userInfo={venuePhoto.photoUser}/>
+                                   backgroundImage={venuePhoto.photoUrl}
+                                   userInfo={venuePhoto.photoUser}/>
               ))
           }
         </div>

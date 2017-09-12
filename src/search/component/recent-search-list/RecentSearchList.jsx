@@ -17,8 +17,8 @@ export class RecentSearchList extends Component {
         {
           this.props.recentSearchs.map(recentSearch => (
             <RecentSearchItem key={recentSearch.id}
-                                recentSearchQuery={recentSearch.searchQuery}
-                                recentSearchLocation={recentSearch.searchLocation}/>
+                              recentSearchQuery={recentSearch.searchQuery}
+                              recentSearchLocation={recentSearch.searchLocation}/>
             ))
         }
       </ul>

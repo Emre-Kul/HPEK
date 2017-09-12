@@ -18,14 +18,14 @@ export class DetailPage extends Component {
       venuePhotos: [],
       venuePhotosLoaded: false
     }
-    this.loadVenueData = this.loadVenueData.bind(this)
+
   }
 
   componentDidMount () {
     this.loadVenueData()
   }
 
-  loadVenueData () {
+  loadVenueData = () => {
     if (!this.state.venueDataLoaded) {
       let id = this.props.match.params.id
       getDetailOfVenue(id)

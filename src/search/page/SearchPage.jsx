@@ -31,8 +31,6 @@ export class SearchPage extends Component {
       animateHeaderAtSearch: false
     }
 
-    this.makeSearch = this.makeSearch.bind(this)
-
   }
 
   componentDidMount () {
@@ -43,7 +41,7 @@ export class SearchPage extends Component {
     this.makeSearch()
   }
 
-  makeSearch () {
+  makeSearch = () => {
     if (this.props.isHomePage && !this.state.animateHeaderAtSearch) {
       this.setState({
         animateHeaderAtSearch: true

@@ -1,54 +1,54 @@
 import axios from 'axios'
 
-import {FS_AXIOS_CONFIG } from './fsApiConsts.js'
+import { FS_AXIOS_CONFIG } from './fsApiConsts.js'
 
 const searchVenues = function (query, place, photoSize, searchHeaderPhotoSize, limit) {
   const url = 'venues/explore'
   return new Promise((resolve, reject) => {
-    Object.assign(FS_AXIOS_CONFIG.params,{
-      query : query,
-      near : place,
-      venuePhotos : 1,
-      limit : limit
+    Object.assign(FS_AXIOS_CONFIG.params, {
+      query: query,
+      near: place,
+      venuePhotos: 1,
+      limit: limit
     })
-    axios(url,FS_AXIOS_CONFIG)
+    axios(url, FS_AXIOS_CONFIG)
       .then((response) => {
-      let responseData = response.data.response
-      let venues = []
-      let firstVenuePhoto = responseData.groups[0].items[0].venue.featuredPhotos.items[0]
-      let searchHeaderPhoto = `${firstVenuePhoto.prefix}${searchHeaderPhotoSize}${firstVenuePhoto.suffix}`
-      responseData.groups[0].items.forEach((item) => {
-        try {
-          let venuePhotoPrefix = item.venue.featuredPhotos.items[0].prefix
-          let venuePhotoSuffix = item.venue.featuredPhotos.items[0].suffix
-          venues.push(
-            {
-              venueId: item.venue.id,
-              venueName: item.venue.name,
-              venueHereNow: item.venue.hereNow.count,
-              venuePriceTier:
-                ( (typeof item.venue.price === 'undefined')
-                  ? -1
-                  : item.venue.price.tier),
-              venueRating: item.venue.rating,
-              venuePhoto: `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
+        let responseData = response.data.response
+        let venues = []
+        let firstVenuePhoto = responseData.groups[0].items[0].venue.featuredPhotos.items[0]
+        let searchHeaderPhoto = `${firstVenuePhoto.prefix}${searchHeaderPhotoSize}${firstVenuePhoto.suffix}`
+        responseData.groups[0].items.forEach((item) => {
+          try {
+            let venuePhotoPrefix = item.venue.featuredPhotos.items[0].prefix
+            let venuePhotoSuffix = item.venue.featuredPhotos.items[0].suffix
+            venues.push(
+              {
+                venueId: item.venue.id,
+                venueName: item.venue.name,
+                venueHereNow: item.venue.hereNow.count,
+                venuePriceTier:
+                  ( (typeof item.venue.price === 'undefined')
+                    ? -1
+                    : item.venue.price.tier),
+                venueRating: item.venue.rating,
+                venuePhoto: `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
+              })
+          }
+          catch (e) {
+            reject({
+              status: 'Error At Venue',
+              statusText: item.venue.name
             })
-        }
-        catch (e) {
-          reject({
-            status: 'Error At Venue',
-            statusText: item.venue.name
-          })
-        }
-      })
-      resolve(
-        {
-          searchId: response.data.meta.requestId,
-          searchHeaderPhoto: searchHeaderPhoto,
-          venues: venues
-        }
-      )
-    }).catch((err) => {
+          }
+        })
+        resolve(
+          {
+            searchId: response.data.meta.requestId,
+            searchHeaderPhoto: searchHeaderPhoto,
+            venues: venues
+          }
+        )
+      }).catch((err) => {
       reject({
         status: err.response.status,
         statusText: err.response.statusText
@@ -93,10 +93,10 @@ const getDetailOfVenue = function (venueId) {
 const getPhotosOfVenue = function (venueId, photoSize, limit) {
   const url = `venues/${venueId}/photos`
   return new Promise((resolve, reject) => {
-    Object.assign(FS_AXIOS_CONFIG.params,{
-      limit : limit
+    Object.assign(FS_AXIOS_CONFIG.params, {
+      limit: limit
     })
-    axios.get(url,FS_AXIOS_CONFIG).then((response) => {
+    axios.get(url, FS_AXIOS_CONFIG).then((response) => {
       let items = response.data.response.photos.items
       let photos = []
       items.forEach((item) => {

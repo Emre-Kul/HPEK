@@ -25,7 +25,7 @@ export class SearchPageContent extends Component {
               : this.props.venuesData.map((venueData) => {
                 return (
                   <SearchPageVenueCard key={venueData.venueId}
-                                   venueData={venueData}/>
+                                       venueData={venueData}/>
                 )
               })
           }

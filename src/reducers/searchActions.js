@@ -1,12 +1,12 @@
-const actionAddToSearchList = function(id,searchQuery,searchLocation){
+const actionAddToSearchList = function (id, searchQuery, searchLocation) {
   return {
-    type : "ADD_SEARCH",
-    id : id,
-    searchQuery : searchQuery,
-    searchLocation : searchLocation
+    type: 'ADD_SEARCH',
+    id: id,
+    searchQuery: searchQuery,
+    searchLocation: searchLocation
   }
-};
+}
 
-export{
+export {
   actionAddToSearchList
-};
+}

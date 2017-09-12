@@ -81,11 +81,11 @@ export class SearchPage extends Component {
     return (
       <div>
         <SearchPageHeader isHomePage={isHomePage}
-                      animateHeaderAtSearch={this.state.animateHeaderAtSearch}
-                      searchHeaderPhoto={this.state.searchHeaderPhoto}/>
+                          animateHeaderAtSearch={this.state.animateHeaderAtSearch}
+                          searchHeaderPhoto={this.state.searchHeaderPhoto}/>
         {(!this.props.isHomePage &&
           <SearchPageContent warning={this.state.warning}
-                         venuesData={this.state.venuesData}/>)}
+                             venuesData={this.state.venuesData}/>)}
         <Footer/>
       </div>
     )

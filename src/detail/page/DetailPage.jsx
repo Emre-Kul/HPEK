@@ -52,7 +52,7 @@ export class DetailPage extends Component {
         {(this.state.venueDataLoaded && <DetailPageHeader venueInfo={this.state.venueData.venueInfo}/>)}
         {(this.state.venueDataLoaded && this.state.venuePhotosLoaded &&
           <DetailPageContent venuePhotos={this.state.venuePhotos}
-                         venueTips={this.state.venueData.venueTips}/>)}
+                             venueTips={this.state.venueData.venueTips}/>)}
         <Footer/>
       </div>
     )

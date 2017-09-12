@@ -4,12 +4,15 @@ import {FS_AXIOS_CONFIG} from "./fsApiConsts.js";
 function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
   const url = "venues/explore";
 
-  Object.assign(FS_AXIOS_CONFIG.params, {
-    query,
-    near: place,
-    venuePhotos: 1,
-    limit
-  });
+  FS_AXIOS_CONFIG.params = {
+    ...FS_AXIOS_CONFIG.params,
+    ...{
+      query,
+      near: place,
+      venuePhotos: 1,
+      limit
+    }
+  };
   return axios.get(url, FS_AXIOS_CONFIG)
       .then((response) => {
         const responseData = response.data.response;
@@ -91,9 +94,12 @@ function getDetailOfVenue(venueId) {
 function getPhotosOfVenue(venueId, photoSize, limit) {
   const url = `venues/${venueId}/photos`;
 
-  Object.assign(FS_AXIOS_CONFIG.params, {
-    limit
-  });
+  FS_AXIOS_CONFIG.params = {
+    ...FS_AXIOS_CONFIG.params,
+    ...{
+      limit
+    }
+  };
   return axios.get(url, FS_AXIOS_CONFIG).then((response) => {
     const {items} = response.data.response.photos;
     const photos = [];

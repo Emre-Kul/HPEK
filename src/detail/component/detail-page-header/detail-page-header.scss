@@ -9,13 +9,13 @@
 
     height: 400px;
     width: 630px;
-    margin: auto;
     max-width: 100%;
+    margin: auto;
+
   }
 
   .detail-page-header-logo {
     display: block;
-
     margin: auto;
     width: 458px;
     max-width: 100%;
@@ -28,8 +28,8 @@
 
     height: 200px;
     width: 200px;
-
     border: 4px solid #ffc5c5;
+
     transform: rotate(-45deg);
 
   }
@@ -45,12 +45,12 @@
 
   .detail-page-header-text {
     display: inline-block;
-
     margin: 10px;
   }
 
   .detail-page-header-content {
     position: relative;
+
     width: 100%;
 
     background-color: rgba(18, 25, 95, 0.6);
@@ -82,6 +82,7 @@
 
   .detail-page-header-contact-info-container {
     position: relative;
+
     width: 72%;
     margin: auto;
   }
@@ -127,9 +128,10 @@
 
     .detail-page-header-category-logo-container {
       position: relative;
-      margin: -30px auto;
       left: 0;
       bottom: 0;
+
+      margin: -30px auto;
       width: 150px;
       height: 150px;
     }

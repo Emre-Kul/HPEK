@@ -4,16 +4,16 @@
   margin: 40px auto auto auto;
   padding-bottom: 62px;
   border-bottom: 2px solid #9b9b9b;
+
   justify-content: center;
 
   .search-page-content-card-container {
     display: flex;
+    flex-wrap: wrap;
 
     flex-basis: 630px;
     flex-grow: 1;
     flex-shrink: 0;
-
-    flex-wrap: wrap;
     justify-content: center;
   }
 }
@@ -44,7 +44,6 @@
 
     .search-page-content-card-container {
       width: 100%;
-
       padding: 0;
       margin: 0;
     }

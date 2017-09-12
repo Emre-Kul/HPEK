@@ -4,19 +4,21 @@
   margin: 10px auto auto auto;
   padding: 10px 0 62px 0;
   border-bottom: 2px solid #9b9b9b;
+
   justify-content: center;
 
   .detail-page-content-venue-container {
     display: flex;
-    justify-content: center;
-
     min-height: 500px;
+
     flex-wrap: wrap;
     flex: 1;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 640px;
     align-self: flex-start;
+    justify-content: center;
+
   }
 }
 

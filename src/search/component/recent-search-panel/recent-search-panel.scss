@@ -2,15 +2,15 @@
   flex-basis: 290px;
   flex-grow: 0;
   flex-shrink: 1;
+  align-self: flex-start;
+  text-align: center;
 
   padding-bottom: 20px;
   padding-top: 40px;
   min-height: 500px;
-  align-self: flex-start;
+
 
   font-family: Gotham-Medium;
-  text-align: center;
-
   box-shadow: 0 0 34px 0 rgba(255, 95, 95, 0.32);
   background-color: #ffffff;
 
@@ -29,7 +29,6 @@
     display: block;
     border: 1px solid #c4c0ff;
     margin: 20px auto 0 auto;
-
     width: 30%;
 
     content: "";

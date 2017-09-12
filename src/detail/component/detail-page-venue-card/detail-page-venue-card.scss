@@ -12,6 +12,7 @@
 
   &:hover .detail-page-venue-card-user-info-container {
     display: table;
+
     cursor: pointer;
   }
 
@@ -35,13 +36,15 @@
   .detail-page-venue-card-user-info-image-container {
     height: 40px;
     width: 40px;
-    transform: rotate(-45deg);
     margin: 10px auto 20px auto;
     overflow: hidden;
+
+    transform: rotate(-45deg);
   }
 
   .detail-page-venue-card-user-info-image {
     transform: rotate(45deg);
+
     margin-left: -10px;
     margin-top: -10px;
   }
@@ -52,7 +55,6 @@
   .detail-page-venue-card {
     width: 49%;
     height: 49vw;
-
     padding: 0;
     margin: 0;
   }

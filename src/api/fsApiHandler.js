@@ -32,10 +32,12 @@ function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
                 venuePhoto: `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
               });
           } catch (e) {
-            throw new Error({
-              status: "Error At Venue",
-              statusText: item.venue.name
-            });
+            throw new ({
+              response: {
+                status: "Error At Venue",
+                statusText: item.venue.name
+              }
+            })();
           }
         });
         return (
@@ -47,10 +49,10 @@ function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
         );
       })
       .catch((err) => {
-        throw new Error({
+        throw new ({
           status: err.response.status,
           statusText: err.response.statusText
-        });
+        })();
       });
 }
 

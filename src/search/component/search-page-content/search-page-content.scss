@@ -1,4 +1,4 @@
-.search-content {
+.search-page-content {
   display: flex;
   width: 82%;
   margin: 40px auto auto auto;
@@ -6,7 +6,7 @@
   border-bottom: 2px solid #9b9b9b;
   justify-content: center;
 
-  .search-content-card-container {
+  .search-page-content-card-container {
     display: flex;
 
     flex-basis: 630px;
@@ -20,10 +20,10 @@
 
 @media (max-width: 1024px) {
 
-  .search-content {
+  .search-page-content {
     flex-wrap: wrap;
 
-    .search-content-card-container {
+    .search-page-content-card-container {
       flex: 1;
       flex-basis: 100%;
     }
@@ -32,17 +32,17 @@
 }
 
 @media (max-width: 820px) {
-  .search-content {
+  .search-page-content {
     width: 100%;
   }
 }
 
 @media ( max-width: 670px) {
-  .search-content {
+  .search-page-content {
     margin: 0;
     padding: 0;
 
-    .search-content-card-container {
+    .search-page-content-card-container {
       width: 100%;
 
       padding: 0;

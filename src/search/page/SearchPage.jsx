@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import Footer from '../../common/footer/Footer.jsx'
-import SearchHeader from '../component/search-header/SearchHeader.jsx'
-import SearchContent from '../component/search-content/SearchContent.jsx'
+import SearchPageHeader from '../component/search-page-header/SearchPageHeader.jsx'
+import SearchPageContent from '../component/search-page-content/SearchPageContent.jsx'
 import { searchVenues } from '../../api/fsApiHandler.js'
 import { actionAddToSearchList } from '../../reducers/searchActions.js'
 
@@ -80,11 +80,11 @@ export class SearchPage extends Component {
     let isHomePage = this.props.isHomePage
     return (
       <div>
-        <SearchHeader isHomePage={isHomePage}
+        <SearchPageHeader isHomePage={isHomePage}
                       animateHeaderAtSearch={this.state.animateHeaderAtSearch}
                       searchHeaderPhoto={this.state.searchHeaderPhoto}/>
         {(!this.props.isHomePage &&
-          <SearchContent warning={this.state.warning}
+          <SearchPageContent warning={this.state.warning}
                          venuesData={this.state.venuesData}/>)}
         <Footer/>
       </div>

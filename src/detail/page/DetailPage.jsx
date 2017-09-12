@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 import Footer from '../../common/footer/Footer.jsx'
-import DetailHeader from '../component/detail-header/DetailHeader.jsx'
-import DetailContent from '../component/detail-content/DetailContent.jsx'
+import DetailPageHeader from '../component/detail-page-header/DetailPageHeader.jsx'
+import DetailPageContent from '../component/detail-page-content/DetailPageContent.jsx'
 import { getDetailOfVenue, getPhotosOfVenue } from '../../api/fsApiHandler.js'
 
 const VENUE_PHOTO_SIZE = '480x480'
@@ -49,9 +49,9 @@ export class DetailPage extends Component {
   render () {
     return (
       <div>
-        {(this.state.venueDataLoaded && <DetailHeader venueInfo={this.state.venueData.venueInfo}/>)}
+        {(this.state.venueDataLoaded && <DetailPageHeader venueInfo={this.state.venueData.venueInfo}/>)}
         {(this.state.venueDataLoaded && this.state.venuePhotosLoaded &&
-          <DetailContent venuePhotos={this.state.venuePhotos}
+          <DetailPageContent venuePhotos={this.state.venuePhotos}
                          venueTips={this.state.venueData.venueTips}/>)}
         <Footer/>
       </div>

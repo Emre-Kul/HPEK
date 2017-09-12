@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
-import './search-form.scss'
+import './search-page-form.scss'
 
-export class SearchForm extends Component {
+export class SearchPageForm extends Component {
   constructor (props) {
     super(props)
 
@@ -49,16 +49,16 @@ export class SearchForm extends Component {
   render () {
     const searchLink = `/search/${this.state.query}/${this.state.location}`
     return (
-      <form className="search-form">
-        <input className="search-form-query-input search-form-input"
+      <form className="search-page-form">
+        <input className="search-page-form-query-input search-page-form-input"
                type="text"
                placeholder="I'm looking for"
                onInput={this.handleSearchQueryInput}/>
-        <input className="search-form-location-input search-form-input"
+        <input className="search-page-form-location-input search-page-form-input"
                type="text"
                placeholder="Place"
                onInput={this.handleSearchLocationInput}/>
-        <button className="search-form-button"
+        <button className="search-page-form-button"
                 onClick={this.handleSearchButtonClick}/>
         {(this.state.redirect && <Redirect to={searchLink}/>)}
       </form>
@@ -66,4 +66,4 @@ export class SearchForm extends Component {
   }
 }
 
-export default SearchForm
+export default SearchPageForm

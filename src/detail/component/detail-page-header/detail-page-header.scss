@@ -1,10 +1,10 @@
-.detail-header {
+.detail-page-header {
 
   background: no-repeat center;
   background-size: cover;
   color: #ffffff;
 
-  .detail-header-logos-container {
+  .detail-page-header-logos-container {
     position: relative;
 
     height: 400px;
@@ -13,7 +13,7 @@
     max-width: 100%;
   }
 
-  .detail-header-logo {
+  .detail-page-header-logo {
     display: block;
 
     margin: auto;
@@ -21,7 +21,7 @@
     max-width: 100%;
   }
 
-  .detail-header-category-logo-container {
+  .detail-page-header-category-logo-container {
     position: absolute;
     left: 50px;
     bottom: 50px;
@@ -34,7 +34,7 @@
 
   }
 
-  .detail-header-category-logo {
+  .detail-page-header-category-logo {
     margin-left: calc(50% - 25px);
     margin-top: calc(50% - 25px);
     height: 50px;
@@ -43,20 +43,20 @@
     transform: rotate(45deg);
   }
 
-  .detail-header-text {
+  .detail-page-header-text {
     display: inline-block;
 
     margin: 10px;
   }
 
-  .detail-header-content {
+  .detail-page-header-content {
     position: relative;
     width: 100%;
 
     background-color: rgba(18, 25, 95, 0.6);
   }
 
-  .detail-header-venue-name {
+  .detail-page-header-venue-name {
     margin-left: 15%;
 
     font-weight: 300;
@@ -66,7 +66,7 @@
     color: #ffffff;
   }
 
-  .detail-header-contact-container {
+  .detail-page-header-contact-container {
     width: 100%;
     height: 115px;
 
@@ -80,13 +80,13 @@
 
   }
 
-  .detail-header-contact-info-container {
+  .detail-page-header-contact-info-container {
     position: relative;
     width: 72%;
     margin: auto;
   }
 
-  .detail-header-rating-container {
+  .detail-page-header-rating-container {
     position: absolute;
     right: 0;
     top: -45px;
@@ -102,7 +102,7 @@
     color: #ffffff;
   }
 
-  .detail-header-rating-value {
+  .detail-page-header-rating-value {
     display: table-cell;
     vertical-align: middle;
   }
@@ -110,22 +110,22 @@
 }
 
 @media (max-width: 1024px) {
-  .detail-header {
+  .detail-page-header {
 
-    .detail-header-rating-container {
+    .detail-page-header-rating-container {
       top: 10px;
     }
   }
 }
 
 @media (max-width: 640px) {
-  .detail-header {
+  .detail-page-header {
 
-    .detail-header-contact-info-container {
+    .detail-page-header-contact-info-container {
       width: 90%;
     }
 
-    .detail-header-category-logo-container {
+    .detail-page-header-category-logo-container {
       position: relative;
       margin: -30px auto;
       left: 0;

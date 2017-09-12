@@ -9,9 +9,9 @@ import imgPeopleIcon from '../../../../asset/img/people-icon.svg'
 import imgPhoneIcon from '../../../../asset/img/phone-icon.svg'
 import imgRectangleIcon from '../../../../asset/img/rectangle-icon.svg'
 
-import './detail-header.scss'
+import './detail-page-header.scss'
 
-export class DetailHeader extends Component {
+export class DetailPageHeader extends Component {
   static propTypes = {
     venueInfo: PropTypes.object
   }
@@ -22,30 +22,30 @@ export class DetailHeader extends Component {
       'backgroundImage': `url("${venueInfo.venueHeaderPhoto}")`
     }
     return (
-      <div className="detail-header"
+      <div className="detail-page-header"
            style={detailHeaderPhotoStyle}>
-        <div className="detail-header-content">
+        <div className="detail-page-header-content">
 
-          <div className="detail-header-logos-container">
-            <img className="detail-header-logo"
+          <div className="detail-page-header-logos-container">
+            <img className="detail-page-header-logo"
                  src={imgDetailLogo}/>
-            <div className="detail-header-category-logo-container">
-              <img className="detail-header-category-logo"
+            <div className="detail-page-header-category-logo-container">
+              <img className="detail-page-header-category-logo"
                    src={venueInfo.venueCategorieIcon}/>
             </div>
           </div>
 
-          <div className="detail-header-venue-name">
+          <div className="detail-page-header-venue-name">
             {venueInfo.venueName}
           </div>
 
-          <div className="detail-header-contact-container">
-            <div className="detail-header-contact-info-container">
+          <div className="detail-page-header-contact-container">
+            <div className="detail-page-header-contact-info-container">
 
               <div>
                 <img src={imgLocationIcon}
                      alt="Location Icon"/>
-                <span className="detail-header-text">
+                <span className="detail-page-header-text">
                   {venueInfo.venueAddress}
                 </span>
               </div>
@@ -53,7 +53,7 @@ export class DetailHeader extends Component {
               <div>
                 <img src={imgPhoneIcon}
                      alt="Phone Icon"/>
-                <span className="detail-header-text">
+                <span className="detail-page-header-text">
                   {venueInfo.venuePhone}
                 </span>
               </div>
@@ -61,7 +61,7 @@ export class DetailHeader extends Component {
               <div>
                 <img src={imgPeopleIcon}
                      alt="People Icon"/>
-                <span className="detail-header-text">
+                <span className="detail-page-header-text">
                   {venueInfo.venueBeenHere}
                 </span>
 
@@ -69,11 +69,11 @@ export class DetailHeader extends Component {
                               priceTier={venueInfo.venuePriceTier}/>
               </div>
 
-              <div className="detail-header-rating-container"
+              <div className="detail-page-header-rating-container"
                    style={{
                      'backgroundImage': `url('${imgRectangleIcon}')`
                    }}>
-                <span className="detail-header-rating-value">
+                <span className="detail-page-header-rating-value">
                   {venueInfo.venueRating}
                 </span>
               </div>
@@ -86,4 +86,4 @@ export class DetailHeader extends Component {
   }
 }
 
-export default DetailHeader
+export default DetailPageHeader

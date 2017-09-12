@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import SearchVenueCard from '../search-venue-card/SearchVenueCard.jsx'
+import SearchPageVenueCard from '../search-page-venue-card/SearchPageVenueCard.jsx'
 import RecentSearchPanel from '../recent-search-panel/RecentSearchPanel.jsx'
-import SearchContentMessage from '../search-content-message/SearchContentMessage.jsx'
+import SearchPageContentMessage from '../search-page-content-message/SearchPageContentMessage.jsx'
 
-import './search-content.scss'
+import './search-page-content.scss'
 
-export class SearchContent extends Component {
+export class SearchPageContent extends Component {
   static propTypes = {
     venuesData: PropTypes.array,
     warning: PropTypes.object
@@ -17,14 +17,14 @@ export class SearchContent extends Component {
     let dataLoading = this.props.venuesData.length === 0
     let errorAccured = this.props.warning.status > 0
     return (
-      <div className="search-content">
-        <div className="search-content-card-container">
+      <div className="search-page-content">
+        <div className="search-page-content-card-container">
           {
             ( dataLoading || errorAccured)
-              ? <SearchContentMessage error={this.props.warning}/>
+              ? <SearchPageContentMessage error={this.props.warning}/>
               : this.props.venuesData.map((venueData) => {
                 return (
-                  <SearchVenueCard key={venueData.venueId}
+                  <SearchPageVenueCard key={venueData.venueId}
                                    venueData={venueData}/>
                 )
               })
@@ -36,4 +36,4 @@ export class SearchContent extends Component {
   }
 }
 
-export default SearchContent
+export default SearchPageContent

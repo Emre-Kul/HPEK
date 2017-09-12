@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import './detail-image-card.scss'
+import './detail-page-venue-card.scss'
 
-export class DetailImageCard extends Component {
+export class DetailPageVenueCard extends Component {
 
   static propTypes = {
     backgroundImage: PropTypes.string,
@@ -15,12 +15,12 @@ export class DetailImageCard extends Component {
       'backgroundImage': `url(${this.props.backgroundImage})`
     }
     return (
-      <div className="detail-image-card"
+      <div className="detail-page-venue-card"
            style={backgroundStyle}>
-        <div className="detail-image-card-user-info-container">
-          <div className="detail-image-card-user-info-content-container">
-            <div className="detail-image-card-user-info-image-container">
-              <img className="detail-image-card-user-info-image"
+        <div className="detail-page-venue-card-user-info-container">
+          <div className="detail-page-venue-card-user-info-content-container">
+            <div className="detail-page-venue-card-user-info-image-container">
+              <img className="detail-page-venue-card-user-info-image"
                    src={`${this.props.userInfo.photo.prefix}60x60${this.props.userInfo.photo.suffix}`}/>
             </div>
             {this.props.userInfo.firstName} {this.props.userInfo.lastName}
@@ -31,4 +31,4 @@ export class DetailImageCard extends Component {
   }
 }
 
-export default DetailImageCard
+export default DetailPageVenueCard

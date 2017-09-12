@@ -7,7 +7,7 @@
   }
 }
 
-.search-header {
+.search-page-header {
   background-size: cover;
   background-repeat: no-repeat;
   color: #ffffff;
@@ -17,14 +17,14 @@
   z-index: -1;
   text-align: center;
 
-  .search-header-content-background {
+  .search-page-header-content-background {
     width: 100%;
     height: 100%;
 
     background-image: linear-gradient(97deg, rgba(30, 13, 180, 0.8), rgba(228, 71, 71, 0.8));
   }
 
-  .search-header-content-container {
+  .search-page-header-content-container {
     display: flex;
     flex-wrap: wrap;
 
@@ -33,35 +33,35 @@
 
   }
 
-  .search-header-home-logo-container {
+  .search-page-header-home-logo-container {
     margin: auto;
     order: 0;
   }
-  .search-header-logo-container {
+  .search-page-header-logo-container {
     max-width: 252px;
   }
 
-  .search-header-logo {
+  .search-page-header-logo {
     width: 252px;
   }
 
-  .search-header-home-logo {
+  .search-page-header-home-logo {
     width: 454px;
     max-width: 100%;
   }
 
-  .search-header-form-container {
+  .search-page-header-form-container {
     margin: 40px auto 40px auto;
     order: 2;
   }
 
-  .search-header-slogan-container {
+  .search-page-header-slogan-container {
     margin: auto;
     order: 1;
     width: 100%;
   }
 
-  .search-header-slogan-container-animate {
+  .search-page-header-slogan-container-animate {
     animation: hide-slogan-animation 2s forwards;
     overflow: hidden;
     order: 3;
@@ -69,7 +69,7 @@
     width: 100%;
   }
 
-  .search-header-slogan-content {
+  .search-page-header-slogan-content {
     margin-top: 17px;
     margin-bottom: 30px;
 
@@ -77,7 +77,7 @@
     font-family: Gotham-Book;
   }
 
-  .search-header-slogan-title {
+  .search-page-header-slogan-title {
     margin-top: 23px;
 
     font-size: 55px;
@@ -87,25 +87,25 @@
 }
 
 @media (max-width: 1024px) {
-  .search-header {
+  .search-page-header {
 
-    .search-header-content-container {
+    .search-page-header-content-container {
       width: 100%;
     }
 
-    .search-header-home-logo-container {
+    .search-page-header-home-logo-container {
       margin: 0 auto 0 auto;
     }
 
-    .search-header-logo-container {
+    .search-page-header-logo-container {
       margin: 0 auto 0 auto;
     }
 
-    .search-header-logo {
+    .search-page-header-logo {
       max-width: 100%;
     }
 
-    .search-header-form-container {
+    .search-page-header-form-container {
       margin: auto;
     }
   }

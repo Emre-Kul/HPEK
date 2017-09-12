@@ -1,21 +1,21 @@
-.detail-image-card {
+.detail-page-venue-card {
   position: relative;
 
   width: 290px;
   height: 290px;
   border: 1px solid #e1e1e1;
-  margin: 0px 10px 10px 10px;
+  margin: 0 10px 10px 10px;
 
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
 
-  &:hover .detail-image-card-user-info-container {
+  &:hover .detail-page-venue-card-user-info-container {
     display: table;
     cursor: pointer;
   }
 
-  .detail-image-card-user-info-container {
+  .detail-page-venue-card-user-info-container {
     position: absolute;
     top: 0;
 
@@ -27,12 +27,12 @@
     background-color: rgba(18, 25, 95, 0.5);
   }
 
-  .detail-image-card-user-info-content-container {
+  .detail-page-venue-card-user-info-content-container {
     display: table-cell;
     vertical-align: middle;
   }
 
-  .detail-image-card-user-info-image-container {
+  .detail-page-venue-card-user-info-image-container {
     height: 40px;
     width: 40px;
     transform: rotate(-45deg);
@@ -40,7 +40,7 @@
     overflow: hidden;
   }
 
-  .detail-image-card-user-info-image {
+  .detail-page-venue-card-user-info-image {
     transform: rotate(45deg);
     margin-left: -10px;
     margin-top: -10px;
@@ -49,8 +49,8 @@
 }
 
 @media (max-width: 764px) {
-  .detail-image-card {
-    width: 49vw;
+  .detail-page-venue-card {
+    width: 49%;
     height: 49vw;
 
     padding: 0;
@@ -59,7 +59,7 @@
 }
 
 @media (max-width: 480px) {
-  .detail-image-card {
+  .detail-page-venue-card {
     width: 100vw;
     height: 100vw;
   }

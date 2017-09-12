@@ -20,7 +20,8 @@ export class SearchPageContent extends Component {
     return (
       <div className="search-page-content">
         <div className="search-page-content-card-container">
-          {(dataLoading || errorAccured) ? <SearchPageContentMessage error={this.props.warning}/> :
+          {(dataLoading || errorAccured) ?
+            <SearchPageContentMessage error={this.props.warning}/> :
               this.props.venuesData.map(venueData => (
                 <SearchPageVenueCard key={venueData.venueId}
                                        venueData={venueData}/>

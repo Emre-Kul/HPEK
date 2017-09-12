@@ -1,4 +1,6 @@
-{"env": {
+{
+  "extends": "eslint-config-hipo-base",
+  "env": {
     "browser": true,
     "es6": true
   },

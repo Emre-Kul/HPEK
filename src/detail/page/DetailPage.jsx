@@ -1,52 +1,53 @@
-import React, { Component } from 'react'
+import React, {Component} from "react";
 
-import Footer from '../../common/footer/Footer.jsx'
-import DetailPageHeader from '../component/detail-page-header/DetailPageHeader.jsx'
-import DetailPageContent from '../component/detail-page-content/DetailPageContent.jsx'
-import { getDetailOfVenue, getPhotosOfVenue } from '../../api/fsApiHandler.js'
+import Footer from "../../common/footer/Footer.jsx";
+import DetailPageHeader from "../component/detail-page-header/DetailPageHeader.jsx";
+import DetailPageContent from "../component/detail-page-content/DetailPageContent.jsx";
+import {getDetailOfVenue, getPhotosOfVenue} from "../../api/fsApiHandler.js";
 
-const VENUE_PHOTO_SIZE = '480x480'
-const VENUE_PHOTO_LIMIT = 10
+const VENUE_PHOTO_SIZE = "480x480";
+const VENUE_PHOTO_LIMIT = 10;
 
 export class DetailPage extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
-      venueData: 'Loading',
+      venueData: "Loading",
       venueDataLoaded: false,
       venuePhotos: [],
       venuePhotosLoaded: false
-    }
+    };
 
   }
 
-  componentDidMount () {
-    this.loadVenueData()
+  componentDidMount() {
+    this.loadVenueData();
   }
 
   loadVenueData = () => {
     if (!this.state.venueDataLoaded) {
-      let id = this.props.match.params.id
+      const {id} = this.props.match.params;
+
       getDetailOfVenue(id)
         .then((venue) => {
           this.setState({
             venueData: venue,
             venueDataLoaded: true
-          })
-          return getPhotosOfVenue(venue.venueId, VENUE_PHOTO_SIZE, VENUE_PHOTO_LIMIT)
+          });
+          return getPhotosOfVenue(venue.venueId, VENUE_PHOTO_SIZE, VENUE_PHOTO_LIMIT);
         })
         .then((photos) => {
           this.setState({
             venuePhotos: photos,
             venuePhotosLoaded: true
-          })
+          });
         })
-        .catch(console.log)
+        .catch(console.log);
     }
   }
 
-  render () {
+  render() {
     return (
       <div>
         {(this.state.venueDataLoaded && <DetailPageHeader venueInfo={this.state.venueData.venueInfo}/>)}
@@ -55,8 +56,8 @@ export class DetailPage extends Component {
                              venueTips={this.state.venueData.venueTips}/>)}
         <Footer/>
       </div>
-    )
+    );
   }
 }
 
-export default DetailPage
+export default DetailPage;

@@ -7,9 +7,8 @@
     "build": "webpack",
     "start": "./node_modules/.bin/webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "./node_modules/.bin/eslint ./src/* --ext .jsx,.js",
-    "eslint:fix": "./node_modules/.bin/eslint ./src --fix --ext .jsx,.js",
-    "sass:watch": "sass --watch src/:public/style/"
+    "eslint": "./node_modules/.bin/eslint --ext .jsx,.js src/",
+    "eslint:fix": "./node_modules/.bin/eslint --fix --ext .jsx,.js src/"
   },
   "keywords": [],
   "author": "",
@@ -37,6 +36,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "eslint-config-hipo-base": "git+https://github.com/Hipo/eslint-config-hipo-base.git",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",

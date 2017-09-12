@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, {Component} from "react";
+import PropTypes from "prop-types";
 
-import './detail-page-venue-card.scss'
+import "./detail-page-venue-card.scss";
 
 export class DetailPageVenueCard extends Component {
 
@@ -10,10 +10,11 @@ export class DetailPageVenueCard extends Component {
     userInfo: PropTypes.object
   }
 
-  render () {
-    let backgroundStyle = {
-      'backgroundImage': `url(${this.props.backgroundImage})`
-    }
+  render() {
+    const backgroundStyle = {
+      backgroundImage: `url(${this.props.backgroundImage})`
+    };
+
     return (
       <div className="detail-page-venue-card"
            style={backgroundStyle}>
@@ -27,8 +28,8 @@ export class DetailPageVenueCard extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default DetailPageVenueCard
+export default DetailPageVenueCard;

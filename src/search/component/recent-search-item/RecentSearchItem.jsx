@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 
-import './recent-search-item.scss'
+import "./recent-search-item.scss";
 
 export class RecentSearchItem extends Component {
   static propTypes = {
@@ -10,7 +10,7 @@ export class RecentSearchItem extends Component {
     recentSearchLocation: PropTypes.string
   }
 
-  render () {
+  render() {
     return (
       <li className="recent-search-item">
         <Link className="recent-search-item-link"
@@ -18,8 +18,8 @@ export class RecentSearchItem extends Component {
           {`${this.props.recentSearchQuery} in ${this.props.recentSearchLocation}`}
         </Link>
       </li>
-    )
+    );
   }
 }
 
-export default RecentSearchItem
+export default RecentSearchItem;

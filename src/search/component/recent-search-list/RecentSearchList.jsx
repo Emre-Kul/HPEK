@@ -1,37 +1,33 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
 
-import RecentSearchItem from '../recent-search-item/RecentSearchItem.jsx'
+import RecentSearchItem from "../recent-search-item/RecentSearchItem.jsx";
 
-import './recent-search-list.scss'
+import "./recent-search-list.scss";
 
 export class RecentSearchList extends Component {
   static propTypes = {
     recentSearchs: PropTypes.array
   }
 
-  render () {
+  render() {
     return (
       <ul className="recent-search-list">
         {
-          this.props.recentSearchs.map((recentSearch) => {
-            return (
-              <RecentSearchItem key={recentSearch.id}
+          this.props.recentSearchs.map(recentSearch => (
+            <RecentSearchItem key={recentSearch.id}
                                 recentSearchQuery={recentSearch.searchQuery}
                                 recentSearchLocation={recentSearch.searchLocation}/>
-            )
-          })
+            ))
         }
       </ul>
-    )
+    );
   }
 }
 
-RecentSearchList = connect((rootStoreState) => {
+export default connect((rootStoreState) => {
   return {
     recentSearchs: rootStoreState.recentSearchs
-  }
-})(RecentSearchList)
-
-export default RecentSearchList
+  };
+})(RecentSearchList);

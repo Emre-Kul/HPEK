@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
+import React, {Component} from "react";
 
-import RecentSearchList from '../recent-search-list/RecentSearchList.jsx'
+import RecentSearchList from "../recent-search-list/RecentSearchList.jsx";
 
-import './recent-search-panel.scss'
+import "./recent-search-panel.scss";
 
 export class RecentSearchPanel extends Component {
-  render () {
+  render() {
     return (
       <div className="recent-search-panel">
         <div className="recent-search-panel-title-container">
-          {'RECENT SEARCHES'}
+          {"RECENT SEARCHES"}
         </div>
         <RecentSearchList/>
       </div>
-    )
+    );
   }
 }
 
-export default RecentSearchPanel
+export default RecentSearchPanel;

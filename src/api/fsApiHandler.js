@@ -1,21 +1,18 @@
 import axios from 'axios'
 
-import {FS_CLIENT_ID, FS_CLIENT_SECRET, FS_API_VERSION } from './fsApiConsts.js'
+import {FS_AXIOS_CONFIG } from './fsApiConsts.js'
 
 const searchVenues = function (query, place, photoSize, searchHeaderPhotoSize, limit) {
-  const url = 'https://api.foursquare.com/v2/venues/explore'
+  const url = 'venues/explore'
   return new Promise((resolve, reject) => {
-    axios.get(url, {
-      params: {
-        query: query,
-        near: place,
-        limit: limit,
-        venuePhotos: 1,
-        client_id: FS_CLIENT_ID,
-        client_secret: FS_CLIENT_SECRET,
-        v: FS_API_VERSION
-      }
-    }).then((response) => {
+    Object.assign(FS_AXIOS_CONFIG.params,{
+      query : query,
+      near : place,
+      venuePhotos : 1,
+      limit : limit
+    })
+    axios(url,FS_AXIOS_CONFIG)
+      .then((response) => {
       let responseData = response.data.response
       let venues = []
       let firstVenuePhoto = responseData.groups[0].items[0].venue.featuredPhotos.items[0]
@@ -61,15 +58,9 @@ const searchVenues = function (query, place, photoSize, searchHeaderPhotoSize, l
 }
 
 const getDetailOfVenue = function (venueId) {
-  const url = `https://api.foursquare.com/v2/venues/${venueId}`
+  const url = `venues/${venueId}`
   return new Promise((resolve, reject) => {
-    axios.get(url, {
-      params: {
-        client_id: FS_CLIENT_ID,
-        client_secret: FS_CLIENT_SECRET,
-        v: FS_API_VERSION
-      }
-    }).then((response) => {
+    axios.get(url, FS_AXIOS_CONFIG).then((response) => {
       let venue = response.data.response.venue
       let venueHeaderPhoto = `${venue.bestPhoto.prefix}${venue.bestPhoto.width}x${venue.bestPhoto.height}${venue.bestPhoto.suffix}`
       let venueCategorieIcon = `${venue.categories[0].icon.prefix}88${venue.categories[0].icon.suffix}`
@@ -100,16 +91,12 @@ const getDetailOfVenue = function (venueId) {
 }
 
 const getPhotosOfVenue = function (venueId, photoSize, limit) {
-  const url = `https://api.foursquare.com/v2/venues/${venueId}/photos`
+  const url = `venues/${venueId}/photos`
   return new Promise((resolve, reject) => {
-    axios.get(url,{
-      params :{
-        limit: limit,
-        client_id: FS_CLIENT_ID,
-        client_secret: FS_CLIENT_SECRET,
-        v: FS_API_VERSION
-      }
-    }).then((response) => {
+    Object.assign(FS_AXIOS_CONFIG.params,{
+      limit : limit
+    })
+    axios.get(url,FS_AXIOS_CONFIG).then((response) => {
       let items = response.data.response.photos.items
       let photos = []
       items.forEach((item) => {

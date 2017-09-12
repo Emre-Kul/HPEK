@@ -21,7 +21,6 @@ export const searchReducer = (state = {
           }
         ])
       }
-      break
     }
   }
   return newState

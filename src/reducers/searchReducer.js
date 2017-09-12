@@ -1,11 +1,13 @@
 export const searchReducer = (state = {
-  recentSearchs: []
+  recentSearchs: [],
+  searchVenueData: []
 }, action) => {
   let newState = {
-    recentSearchs: state.recentSearchs
+    recentSearchs: state.recentSearchs,
+    searchVenueData: state.searchVenueData
   }
   switch (action.type) {
-    case 'ADD_SEARCH': {
+    case 'ADD_TO_SEARCH_LIST': {
       let isRecentSearchExist = false
       state.recentSearchs.forEach((recentSearch) => {
         if (recentSearch.searchQuery === action.searchQuery && recentSearch.searchLocation === action.searchLocation) {

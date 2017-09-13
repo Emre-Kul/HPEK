@@ -54,7 +54,7 @@ function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
 function getDetailOfVenue(venueId) {
   const url = `venues/${venueId}`;
 
-  return axios.get(url, FS_AXIOS_CONFIG).then(response => response.data.response)
+  return axios.get(url, FS_AXIOS_CONFIG).then(response => response.data.response.venue)
     .catch((err) => {
       throw new Error(err.response.statusText);
     });

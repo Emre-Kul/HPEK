@@ -100,7 +100,7 @@ function getPhotosOfVenue(venueId, photoSize, limit) {
         photoUser: item.user
       });
     });
-    return (photos);
+    return photos;
   })
     .catch((err) => {
       throw new Error(err.response.statusText);

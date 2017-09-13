@@ -47,7 +47,8 @@ export class SearchPageForm extends Component {
     const searchLink = `/search/${this.state.query}/${this.state.location}`;
 
     return (
-      <form className="search-page-form">
+      <form className="search-page-form"
+            onSubmit={this.handleSubmit}>
         <input className="search-page-form-query-input search-page-form-input"
                type="text"
                placeholder="I'm looking for"
@@ -57,7 +58,7 @@ export class SearchPageForm extends Component {
                placeholder="Place"
                onInput={this.handleSearchLocationInput}/>
         <button className="search-page-form-button"
-                onClick={this.handleSubmit}/>
+                type="submit"/>
         {(this.state.redirect && <Redirect to={searchLink}/>)}
       </form>
     );

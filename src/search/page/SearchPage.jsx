@@ -50,7 +50,7 @@ export class SearchPage extends Component {
         animateHeaderAtSearch: true
       });
     }
-    if (!isHomePage) {
+    if (!isHomePage && typeof match.params !== "undefined") {
       const {query, location} = match.params;
 
       if (query + location !== lastSearch) {

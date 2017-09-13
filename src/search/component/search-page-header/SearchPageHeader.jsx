@@ -39,11 +39,11 @@ export class SearchPageHeader extends Component {
             </div>
             {(animateHeader || this.props.isHomePage) && (
               <div className={(animateHeader) ? "search-page-header-slogan-container-animate" : "search-page-header-slogan-container"}>
-                <h1 className="search-header-slogan-title">
+                <h1 className="search-page-header-slogan-title">
                   {"Lorem ipsum dolor sit!"}
                 </h1>
                 <p className="search-page-header-slogan-content">
-                  {"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+                  {"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
                 </p>
               </div>)}
             <div className="search-page-header-form-container">

@@ -5,7 +5,6 @@ import VenueDetailPageHeader from "../component/venue-detail-page-header/VenueDe
 import VenueDetailPageContent from "../component/venue-detail-page-content/VenueDetailPageContent.jsx";
 import {getDetailOfVenue, getPhotosOfVenue} from "../../api/fsApiHandler.js";
 
-const VENUE_PHOTO_SIZE = "480x480";
 const VENUE_PHOTO_LIMIT = 10;
 
 export class VenueDetailPage extends Component {
@@ -35,7 +34,7 @@ export class VenueDetailPage extends Component {
             venueData: venue,
             venueDataLoaded: true
           });
-          return getPhotosOfVenue(venue.venueId, VENUE_PHOTO_SIZE, VENUE_PHOTO_LIMIT);
+          return getPhotosOfVenue(venue.venueId, VENUE_PHOTO_LIMIT);
         })
         .then((photos) => {
           this.setState({
@@ -56,7 +55,7 @@ export class VenueDetailPage extends Component {
         {(venueDataLoaded && <VenueDetailPageHeader venueInfo={venueInfo}/>)}
         {(venueDataLoaded && venuePhotosLoaded &&
           <VenueDetailPageContent venuePhotos={venuePhotos}
-                             venueTips={venueTips}/>)}
+                                  venueTips={venueTips}/>)}
         <Footer/>
       </div>
     );

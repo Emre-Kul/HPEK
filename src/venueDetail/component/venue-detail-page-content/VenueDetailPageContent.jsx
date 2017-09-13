@@ -6,6 +6,8 @@ import VenueDetailPageTipMenu from "../venue-detail-page-tip-menu/VenueDetailPag
 
 import "./venue-detail-page-content.scss";
 
+const VENUE_PHOTO_SIZE = "480x480";
+
 export class VenueDetailPageContent extends Component {
   static propTypes = {
     venuePhotos: PropTypes.array,
@@ -18,9 +20,9 @@ export class VenueDetailPageContent extends Component {
         <div className="venue-detail-page-content-venue-container">
           {
             this.props.venuePhotos.map(venuePhoto => (
-              <VenuePhotoCard key={venuePhoto.photoId}
-                                   backgroundImage={venuePhoto.photoUrl}
-                                   userInfo={venuePhoto.photoUser}/>
+              <VenuePhotoCard key={venuePhoto.id}
+                                   backgroundImage={`${venuePhoto.prefix}${VENUE_PHOTO_SIZE}${venuePhoto.suffix}`}
+                                   userInfo={venuePhoto.user}/>
               ))
           }
         </div>

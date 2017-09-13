@@ -90,17 +90,7 @@ function getPhotosOfVenue(venueId, photoSize, limit) {
     }
   };
   return axios.get(url, FS_AXIOS_CONFIG).then((response) => {
-    const {items} = response.data.response.photos;
-    const photos = [];
-
-    items.forEach((item) => {
-      photos.push({
-        photoId: item.id,
-        photoUrl: `${item.prefix}${photoSize}${item.suffix}`,
-        photoUser: item.user
-      });
-    });
-    return photos;
+    return response.data.response.photos.items;
   })
     .catch((err) => {
       throw new Error(err.response.statusText);

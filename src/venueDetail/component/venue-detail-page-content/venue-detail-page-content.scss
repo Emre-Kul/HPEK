@@ -1,4 +1,4 @@
-.detail-page-content {
+.venue-detail-page-content {
   display: flex;
   width: 82%;
   margin: 10px auto auto auto;
@@ -7,7 +7,7 @@
 
   justify-content: center;
 
-  .detail-page-content-venue-container {
+  .venue-detail-page-content-venue-container {
     display: flex;
     min-height: 500px;
 
@@ -23,19 +23,19 @@
 }
 
 @media (max-width: 1024px) {
-  .detail-page-content {
+  .venue-detail-page-content {
     flex-wrap: wrap;
 
     width: 90%;
 
-    .detail-page-content-venue-container {
+    .venue-detail-page-content-venue-container {
       flex-shrink: 1;
     }
   }
 }
 
 @media (max-width: 764px) {
-  .detail-page-content {
+  .venue-detail-page-content {
     width: 100%;
     margin: 0;
     padding: 0;

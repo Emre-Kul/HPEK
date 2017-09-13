@@ -7,9 +7,9 @@ import PriceTierBar from "../../../common/price-tier-bar/PriceTierBar.jsx";
 import imgPeopleIcon from "../../../../asset/img/people-icon.svg";
 import imgTriangle from "../../../../asset/img/triangle-icon.svg";
 
-import "./venue-card.scss";
+import "./venue-summary-card.scss";
 
-export class VenueCard extends Component {
+export class VenueSummaryCard extends Component {
 
   static propTypes = {
     venueData: PropTypes.object
@@ -23,36 +23,36 @@ export class VenueCard extends Component {
     };
 
     return (
-      <div className="venue-card"
+      <div className="venue-summary-card"
            style={venueDivImageStyle}>
-        <div className="venue-card-content">
-          <div className="venue-card-name-container">
-            <Link className="venue-card-link"
+        <div className="venue-summary-card-content">
+          <div className="venue-summary-card-name-container">
+            <Link className="venue-summary-card-link"
                   to={detailLink}>
               <span>
                 {venueData.venueName}
               </span>
             </Link>
           </div>
-          <div className="venue-card-herenow-container">
-            <span className="venue-card-herenow">
+          <div className="venue-summary-card-herenow-container">
+            <span className="venue-summary-card-herenow">
               <img src={imgPeopleIcon}/>
-              <span className="venue-card-text">
+              <span className="venue-summary-card-text">
                 {venueData.venueHereNow}
               </span>
             </span>
           </div>
 
-          <div className="venue-card-tier-container">
+          <div className="venue-summary-card-tier-container">
             <PriceTierBar venueId={venueData.venueId}
                           priceTier={venueData.venuePriceTier}/>
           </div>
 
-          <div className="venue-card-raiting-container"
+          <div className="venue-summary-card-raiting-container"
                style={{
                  backgroundImage: `url('${imgTriangle}')`
                }}>
-            <span className="venue-card-raiting">
+            <span className="venue-summary-card-raiting">
               {venueData.venueRating}
             </span>
           </div>
@@ -62,4 +62,4 @@ export class VenueCard extends Component {
   }
 }
 
-export default VenueCard;
+export default VenueSummaryCard;

@@ -12,14 +12,16 @@ export class SearchPageContentMessage extends Component {
   }
 
   render() {
+    const {error} = this.props;
+
     return (
       <div className="search-page-content-message">
-        {(this.props.error.length === 0) ?
+        {(error.length === 0) ?
           <img className="search-page-content-loading-icon"
                src={imgLoadingIcon}
                alt="Loading bar icon"/> :
           <p className="search-page-content-message-error">
-            {`Error : ${this.props.error}`}
+            {`Error : ${error}`}
           </p>
         }
       </div>

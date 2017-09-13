@@ -42,15 +42,18 @@ export class SearchPage extends Component {
   }
 
   makeSearch = () => {
-    if (this.props.isHomePage && !this.state.animateHeaderAtSearch) {
+    const {isHomePage, match, dispatch} = this.props;
+    const {animateHeaderAtSearch, lastSearch} = this.state;
+
+    if (isHomePage && !animateHeaderAtSearch) {
       this.setState({
         animateHeaderAtSearch: true
       });
     }
-    if (!this.props.isHomePage) {
-      const {query, location} = this.props.match.params;
+    if (!isHomePage) {
+      const {query, location} = match.params;
 
-      if (query + location !== this.state.lastSearch) {
+      if (query + location !== lastSearch) {
         this.setState({
           venuesData: [],
           searchHeaderPhoto: "",
@@ -59,7 +62,7 @@ export class SearchPage extends Component {
         });
         searchVenues(query, location, VENUE_PHOTO_SIZE, SEARCH_HEADER_PHOTO_SIZE, VENUE_SEARCH_LIMIT)
           .then((venuesData) => {
-            this.props.dispatch(actionAddToSearchList(venuesData.searchId, query, location));
+            dispatch(actionAddToSearchList(venuesData.searchId, query, location));
             this.setState({
               venuesData: venuesData.venues,
               searchHeaderPhoto: venuesData.searchHeaderPhoto
@@ -75,16 +78,17 @@ export class SearchPage extends Component {
   }
 
   render() {
+    const {animateHeaderAtSearch, searchHeaderPhoto, warning, venuesData} = this.state;
     const {isHomePage} = this.props;
 
     return (
       <div>
         <SearchPageHeader isHomePage={isHomePage}
-                          animateHeaderAtSearch={this.state.animateHeaderAtSearch}
-                          searchHeaderPhoto={this.state.searchHeaderPhoto}/>
+                          animateHeaderAtSearch={animateHeaderAtSearch}
+                          searchHeaderPhoto={searchHeaderPhoto}/>
         {(!isHomePage &&
-          <SearchPageContent warning={this.state.warning}
-                             venuesData={this.state.venuesData}/>)}
+          <SearchPageContent warning={warning}
+                             venuesData={venuesData}/>)}
         <Footer/>
       </div>
     );

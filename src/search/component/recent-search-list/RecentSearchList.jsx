@@ -12,10 +12,12 @@ export class RecentSearchList extends Component {
   }
 
   render() {
+    const {recentSearchs} = this.props;
+
     return (
       <ul className="recent-search-list">
         {
-          this.props.recentSearchs.map(recentSearch => (
+          recentSearchs.map(recentSearch => (
             <RecentSearchItem key={recentSearch.id}
                               recentSearchQuery={recentSearch.searchQuery}
                               recentSearchLocation={recentSearch.searchLocation}/>

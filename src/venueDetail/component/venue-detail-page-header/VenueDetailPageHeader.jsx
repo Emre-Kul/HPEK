@@ -9,9 +9,9 @@ import imgPeopleIcon from "../../../../asset/img/people-icon.svg";
 import imgPhoneIcon from "../../../../asset/img/phone-icon.svg";
 import imgRectangleIcon from "../../../../asset/img/rectangle-icon.svg";
 
-import "./detail-page-header.scss";
+import "./venue-detail-page-header.scss";
 
-export class DetailPageHeader extends Component {
+export class VenueDetailPageHeader extends Component {
   static propTypes = {
     venueInfo: PropTypes.object
   }
@@ -24,32 +24,32 @@ export class DetailPageHeader extends Component {
     };
 
     return (
-      <div className="detail-page-header"
+      <div className="venue-detail-page-header"
            style={detailHeaderPhotoStyle}>
-        <div className="detail-page-header-content">
+        <div className="venue-detail-page-header-content">
 
-          <div className="detail-page-header-logos-container">
+          <div className="venue-detail-page-header-logos-container">
             <img alt="Detail Page Header Logo"
-                 className="detail-page-header-logo"
+                 className="venue-detail-page-header-logo"
                  src={imgDetailLogo}/>
-            <div className="detail-page-header-category-logo-container">
+            <div className="venue-detail-page-header-category-logo-container">
               <img alt="Detail Page Header Logo"
-                   className="detail-page-header-category-logo"
+                   className="venue-detail-page-header-category-logo"
                    src={venueInfo.venueCategorieIcon}/>
             </div>
           </div>
 
-          <div className="detail-page-header-venue-name">
+          <div className="venue-detail-page-header-venue-name">
             {venueInfo.venueName}
           </div>
 
-          <div className="detail-page-header-contact-container">
-            <div className="detail-page-header-contact-info-container">
+          <div className="venue-detail-page-header-contact-container">
+            <div className="venue-detail-page-header-contact-info-container">
 
               <div>
                 <img src={imgLocationIcon}
                      alt="Location Icon"/>
-                <span className="detail-page-header-text">
+                <span className="venue-detail-page-header-text">
                   {venueInfo.venueAddress}
                 </span>
               </div>
@@ -57,7 +57,7 @@ export class DetailPageHeader extends Component {
               <div>
                 <img src={imgPhoneIcon}
                      alt="Phone Icon"/>
-                <span className="detail-page-header-text">
+                <span className="venue-detail-page-header-text">
                   {venueInfo.venuePhone}
                 </span>
               </div>
@@ -65,7 +65,7 @@ export class DetailPageHeader extends Component {
               <div>
                 <img src={imgPeopleIcon}
                      alt="People Icon"/>
-                <span className="detail-page-header-text">
+                <span className="venue-detail-page-header-text">
                   {venueInfo.venueBeenHere}
                 </span>
 
@@ -73,11 +73,11 @@ export class DetailPageHeader extends Component {
                               priceTier={venueInfo.venuePriceTier}/>
               </div>
 
-              <div className="detail-page-header-rating-container"
+              <div className="venue-detail-page-header-rating-container"
                    style={{
                      backgroundImage: `url('${imgRectangleIcon}')`
                    }}>
-                <span className="detail-page-header-rating-value">
+                <span className="venue-detail-page-header-rating-value">
                   {venueInfo.venueRating}
                 </span>
               </div>
@@ -90,4 +90,4 @@ export class DetailPageHeader extends Component {
   }
 }
 
-export default DetailPageHeader;
+export default VenueDetailPageHeader;

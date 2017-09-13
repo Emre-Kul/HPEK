@@ -6,7 +6,7 @@ import {createStore} from "redux";
 
 import searchReducer from "./reducers/searchReducer.js";
 import SearchPage from "./search/page/SearchPage.jsx";
-import DetailPage from "./detail/page/DetailPage.jsx";
+import VenueDetailPage from "./venueDetail/page/VenueDetailPage.jsx";
 
 import "./main.scss";
 import "../asset/font/fonts.scss";
@@ -22,7 +22,7 @@ ReactDOM.render(
           <Route path="/search/:query/:location"
                  component={SearchPage}/>
           <Route path="/detail/:id"
-                 component={DetailPage}/>
+                 component={VenueDetailPage}/>
           <Route path="/">
             <SearchPage isHomePage={true}/>
           </Route>

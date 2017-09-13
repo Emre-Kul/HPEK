@@ -7,7 +7,7 @@
   }
 }
 
-.venue-card {
+.venue-summary-card {
   position: relative;
 
   height: 290px;
@@ -20,23 +20,23 @@
   color: #ffffff;
   animation: fade-animation 3s;
 
-  .venue-card-text {
+  .venue-summary-card-text {
     margin-left: 10px;
   }
 
-  .venue-card-content {
+  .venue-summary-card-content {
     height: 100%;
     width: 100%;
 
     background-color: rgba(18, 25, 95, 0.5);
   }
 
-  .venue-card-link {
+  .venue-summary-card-link {
     text-decoration: none;
     color: #ffffff;
   }
 
-  .venue-card-herenow-container {
+  .venue-summary-card-herenow-container {
     position: absolute;
     bottom: 0;
     left: 20px;
@@ -53,12 +53,12 @@
     color: #ffffff;
   }
 
-  .venue-card-herenow {
+  .venue-summary-card-herenow {
     display: table-cell;
     vertical-align: middle;
   }
 
-  .venue-card-tier-container {
+  .venue-summary-card-tier-container {
     position: absolute;
     left: 90px;
     bottom: 0;
@@ -67,7 +67,7 @@
     min-width: 30%;
   }
 
-  .venue-card-name-container {
+  .venue-summary-card-name-container {
     position: absolute;
     bottom: 50px;
     left: 20px;
@@ -78,7 +78,7 @@
     font-family: Gotham-Book;
   }
 
-  .venue-card-raiting-container {
+  .venue-summary-card-raiting-container {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -95,14 +95,14 @@
     font-weight: 500;
   }
 
-  .venue-card-raiting {
+  .venue-summary-card-raiting {
     display: table-cell;
     vertical-align: bottom;
   }
 }
 
 @media ( max-width: 670px) {
-  .venue-card {
+  .venue-summary-card {
     width: 48vw;
     height: 48vw;
 
@@ -112,7 +112,7 @@
 }
 
 @media (max-width: 480px) {
-  .venue-card {
+  .venue-summary-card {
     width: 100vw;
     height: 100vw;
   }

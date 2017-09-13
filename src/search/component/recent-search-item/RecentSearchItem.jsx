@@ -11,11 +11,13 @@ export class RecentSearchItem extends Component {
   }
 
   render() {
+    const {recentSearchQuery, recentSearchLocation} = this.props;
+
     return (
       <li className="recent-search-item">
         <Link className="recent-search-item-link"
-              to={`/search/${this.props.recentSearchQuery}/${this.props.recentSearchLocation}`}>
-          {`${this.props.recentSearchQuery} in ${this.props.recentSearchLocation}`}
+              to={`/search/${recentSearchQuery}/${recentSearchLocation}`}>
+          {`${recentSearchQuery} in ${recentSearchLocation}`}
         </Link>
       </li>
     );

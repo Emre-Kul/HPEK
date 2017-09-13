@@ -1,14 +1,14 @@
 import React, {Component} from "react";
 
 import Footer from "../../common/footer/Footer.jsx";
-import DetailPageHeader from "../component/detail-page-header/DetailPageHeader.jsx";
-import DetailPageContent from "../component/detail-page-content/DetailPageContent.jsx";
+import VenueDetailPageHeader from "../component/venue-detail-page-header/VenueDetailPageHeader.jsx";
+import VenueDetailPageContent from "../component/venue-detail-page-content/VenueDetailPageContent.jsx";
 import {getDetailOfVenue, getPhotosOfVenue} from "../../api/fsApiHandler.js";
 
 const VENUE_PHOTO_SIZE = "480x480";
 const VENUE_PHOTO_LIMIT = 10;
 
-export class DetailPage extends Component {
+export class VenueDetailPage extends Component {
   constructor(props) {
     super(props);
 
@@ -48,16 +48,19 @@ export class DetailPage extends Component {
   }
 
   render() {
+    const {venueDataLoaded, venueData: {venueInfo}} = this.state;
+    const {venuePhotosLoaded, venuePhotos, venueData: {venueTips}} = this.state;
+
     return (
       <div>
-        {(this.state.venueDataLoaded && <DetailPageHeader venueInfo={this.state.venueData.venueInfo}/>)}
-        {(this.state.venueDataLoaded && this.state.venuePhotosLoaded &&
-          <DetailPageContent venuePhotos={this.state.venuePhotos}
-                             venueTips={this.state.venueData.venueTips}/>)}
+        {(venueDataLoaded && <VenueDetailPageHeader venueInfo={venueInfo}/>)}
+        {(venueDataLoaded && venuePhotosLoaded &&
+          <VenueDetailPageContent venuePhotos={venuePhotos}
+                             venueTips={venueTips}/>)}
         <Footer/>
       </div>
     );
   }
 }
 
-export default DetailPage;
+export default VenueDetailPage;

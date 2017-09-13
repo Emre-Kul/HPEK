@@ -34,7 +34,7 @@ export class SearchPageForm extends Component {
     });
   }
 
-  handleSearchButtonClick = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     if (this.state.location.length !== 0 && this.state.query.length !== 0) {
       this.setState({
@@ -57,7 +57,7 @@ export class SearchPageForm extends Component {
                placeholder="Place"
                onInput={this.handleSearchLocationInput}/>
         <button className="search-page-form-button"
-                onClick={this.handleSearchButtonClick}/>
+                onClick={this.handleSubmit}/>
         {(this.state.redirect && <Redirect to={searchLink}/>)}
       </form>
     );

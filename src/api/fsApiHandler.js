@@ -35,12 +35,7 @@ function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
                 venuePhoto: `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
               });
           } catch (e) {
-            throw new ({
-              response: {
-                status: "Error At Venue",
-                statusText: item.venue.name
-              }
-            })();
+            throw new Error(`Error At Venue${item.venue.name}`);
           }
         });
         return (
@@ -52,10 +47,7 @@ function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
         );
       })
       .catch((err) => {
-        throw new ({
-          status: err.response.status,
-          statusText: err.response.statusText
-        })();
+        throw new Error(err.response.statusText);
       });
 }
 
@@ -83,12 +75,9 @@ function getDetailOfVenue(venueId) {
       venueTips: venue.tips.groups[0].items
     });
   })
-  .catch((err) => {
-    throw new Error({
-      status: err.response.status,
-      statusText: err.response.statusText
+    .catch((err) => {
+      throw new Error(err.response.statusText);
     });
-  });
 }
 
 function getPhotosOfVenue(venueId, photoSize, limit) {
@@ -113,12 +102,9 @@ function getPhotosOfVenue(venueId, photoSize, limit) {
     });
     return (photos);
   })
-  .catch((err) => {
-    throw new Error({
-      status: err.response.status,
-      statusText: err.response.statusText
+    .catch((err) => {
+      throw new Error(err.response.statusText);
     });
-  });
 }
 
 export {

@@ -27,7 +27,7 @@ export class SearchPage extends Component {
       lastSearch: "",
       venuesData: [],
       searchHeaderPhoto: "",
-      warning: {},
+      warning: "",
       animateHeaderAtSearch: false
     };
 
@@ -54,7 +54,7 @@ export class SearchPage extends Component {
         this.setState({
           venuesData: [],
           searchHeaderPhoto: "",
-          warning: {},
+          warning: "",
           lastSearch: query + location
         });
         searchVenues(query, location, VENUE_PHOTO_SIZE, SEARCH_HEADER_PHOTO_SIZE, VENUE_SEARCH_LIMIT)
@@ -67,7 +67,7 @@ export class SearchPage extends Component {
           })
           .catch((err) => {
             this.setState({
-              warning: err
+              warning: err.message
             });
           });
       }

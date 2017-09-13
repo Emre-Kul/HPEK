@@ -10,7 +10,7 @@ import "./search-page-content.scss";
 export class SearchPageContent extends Component {
   static propTypes = {
     venuesData: PropTypes.array,
-    warning: PropTypes.object
+    warning: PropTypes.string
   }
 
   render() {

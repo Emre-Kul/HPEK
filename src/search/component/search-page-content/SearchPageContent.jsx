@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import SearchPageVenueCard from "../search-page-venue-card/SearchPageVenueCard.jsx";
+import SearchPageVenueCard from "../venue-card/VenueCard.jsx";
 import RecentSearchPanel from "../recent-search-panel/RecentSearchPanel.jsx";
 import SearchPageContentMessage from "../search-page-content-message/SearchPageContentMessage.jsx";
 

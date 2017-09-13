@@ -7,7 +7,7 @@
   }
 }
 
-.search-page-venue-card {
+.venue-card {
   position: relative;
 
   height: 290px;
@@ -20,23 +20,23 @@
   color: #ffffff;
   animation: fade-animation 3s;
 
-  .search-page-venue-card-text {
+  .venue-card-text {
     margin-left: 10px;
   }
 
-  .search-page-venue-card-content {
+  .venue-card-content {
     height: 100%;
     width: 100%;
 
     background-color: rgba(18, 25, 95, 0.5);
   }
 
-  .search-page-venue-card-link {
+  .venue-card-link {
     text-decoration: none;
     color: #ffffff;
   }
 
-  .search-page-venue-card-herenow-container {
+  .venue-card-herenow-container {
     position: absolute;
     bottom: 0;
     left: 20px;
@@ -53,12 +53,12 @@
     color: #ffffff;
   }
 
-  .search-page-venue-card-herenow {
+  .venue-card-herenow {
     display: table-cell;
     vertical-align: middle;
   }
 
-  .search-page-venue-card-tier-container {
+  .venue-card-tier-container {
     position: absolute;
     left: 90px;
     bottom: 0;
@@ -67,7 +67,7 @@
     min-width: 30%;
   }
 
-  .search-page-venue-card-name-container {
+  .venue-card-name-container {
     position: absolute;
     bottom: 50px;
     left: 20px;
@@ -78,7 +78,7 @@
     font-family: Gotham-Book;
   }
 
-  .search-page-venue-card-raiting-container {
+  .venue-card-raiting-container {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -95,14 +95,14 @@
     font-weight: 500;
   }
 
-  .search-page-venue-card-raiting {
+  .venue-card-raiting {
     display: table-cell;
     vertical-align: bottom;
   }
 }
 
 @media ( max-width: 670px) {
-  .search-page-venue-card {
+  .venue-card {
     width: 48vw;
     height: 48vw;
 
@@ -112,7 +112,7 @@
 }
 
 @media (max-width: 480px) {
-  .search-page-venue-card {
+  .venue-card {
     width: 100vw;
     height: 100vw;
   }

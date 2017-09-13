@@ -20,7 +20,7 @@ export class VenueDetailPageHeader extends Component {
     const {venueInfo} = this.props;
 
     const detailHeaderPhotoStyle = {
-      backgroundImage: `url("${venueInfo.venueHeaderPhoto}")`
+      backgroundImage: `url("${venueInfo.bestPhoto.prefix}${venueInfo.bestPhoto.width}x${venueInfo.bestPhoto.height}${venueInfo.bestPhoto.suffix}")`
     };
 
     return (
@@ -35,12 +35,12 @@ export class VenueDetailPageHeader extends Component {
             <div className="venue-detail-page-header-category-logo-container">
               <img alt="Detail Page Header Logo"
                    className="venue-detail-page-header-category-logo"
-                   src={venueInfo.venueCategorieIcon}/>
+                   src={`${venueInfo.categories[0].icon.prefix}88${venueInfo.categories[0].icon.suffix}`}/>
             </div>
           </div>
 
           <div className="venue-detail-page-header-venue-name">
-            {venueInfo.venueName}
+            {venueInfo.name}
           </div>
 
           <div className="venue-detail-page-header-contact-container">
@@ -50,7 +50,7 @@ export class VenueDetailPageHeader extends Component {
                 <img src={imgLocationIcon}
                      alt="Location Icon"/>
                 <span className="venue-detail-page-header-text">
-                  {venueInfo.venueAddress}
+                  {venueInfo.location.address}
                 </span>
               </div>
 
@@ -58,7 +58,7 @@ export class VenueDetailPageHeader extends Component {
                 <img src={imgPhoneIcon}
                      alt="Phone Icon"/>
                 <span className="venue-detail-page-header-text">
-                  {venueInfo.venuePhone}
+                  {venueInfo.contact.formattedPhone}
                 </span>
               </div>
 
@@ -66,11 +66,11 @@ export class VenueDetailPageHeader extends Component {
                 <img src={imgPeopleIcon}
                      alt="People Icon"/>
                 <span className="venue-detail-page-header-text">
-                  {venueInfo.venueBeenHere}
+                  {venueInfo.beenHere.count}
                 </span>
 
-                <PriceTierBar venueId={venueInfo.venueId}
-                              priceTier={venueInfo.venuePriceTier}/>
+                <PriceTierBar venueId={venueInfo.id}
+                              priceTier={venueInfo.price.tier}/>
               </div>
 
               <div className="venue-detail-page-header-rating-container"
@@ -78,7 +78,7 @@ export class VenueDetailPageHeader extends Component {
                      backgroundImage: `url('${imgRectangleIcon}')`
                    }}>
                 <span className="venue-detail-page-header-rating-value">
-                  {venueInfo.venueRating}
+                  {venueInfo.rating}
                 </span>
               </div>
             </div>

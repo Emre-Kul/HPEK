@@ -54,27 +54,7 @@ function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
 function getDetailOfVenue(venueId) {
   const url = `venues/${venueId}`;
 
-  return axios.get(url, FS_AXIOS_CONFIG).then((response) => {
-    const {venue} = response.data.response;
-    const venueHeaderPhoto = `${venue.bestPhoto.prefix}${venue.bestPhoto.width}x${venue.bestPhoto.height}${venue.bestPhoto.suffix}`;
-    const venueCategorieIcon = `${venue.categories[0].icon.prefix}88${venue.categories[0].icon.suffix}`;
-
-    return ({
-      venueId: venue.id,
-      venueInfo: {
-        venueName: venue.name,
-        venueLocation: venue.location,
-        venueHeaderPhoto,
-        venuePhone: venue.contact.formattedPhone,
-        venueAddress: venue.location.address,
-        venueRating: venue.rating,
-        venueBeenHere: venue.beenHere.count,
-        venuePriceTier: (typeof venue.price === "undefined") ? -1 : venue.price.tier,
-        venueCategorieIcon
-      },
-      venueTips: venue.tips.groups[0].items
-    });
-  })
+  return axios.get(url, FS_AXIOS_CONFIG).then(response => response.data.response)
     .catch((err) => {
       throw new Error(err.response.statusText);
     });
@@ -89,9 +69,7 @@ function getPhotosOfVenue(venueId, photoSize, limit) {
       limit
     }
   };
-  return axios.get(url, FS_AXIOS_CONFIG).then((response) => {
-    return response.data.response.photos.items;
-  })
+  return axios.get(url, FS_AXIOS_CONFIG).then(response => response.data.response.photos.items)
     .catch((err) => {
       throw new Error(err.response.statusText);
     });

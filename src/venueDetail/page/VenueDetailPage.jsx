@@ -34,7 +34,7 @@ export class VenueDetailPage extends Component {
             venueData: venue,
             venueDataLoaded: true
           });
-          return getPhotosOfVenue(venue.venueId, VENUE_PHOTO_LIMIT);
+          return getPhotosOfVenue(venue.id, VENUE_PHOTO_LIMIT);
         })
         .then((photos) => {
           this.setState({
@@ -47,15 +47,15 @@ export class VenueDetailPage extends Component {
   }
 
   render() {
-    const {venueDataLoaded, venueData: {venueInfo}} = this.state;
-    const {venuePhotosLoaded, venuePhotos, venueData: {venueTips}} = this.state;
+    const {venueDataLoaded, venueData} = this.state;
+    const {venuePhotosLoaded, venuePhotos} = this.state;
 
     return (
       <div>
-        {(venueDataLoaded && <VenueDetailPageHeader venueInfo={venueInfo}/>)}
+        {(venueDataLoaded && <VenueDetailPageHeader venueInfo={venueData}/>)}
         {(venueDataLoaded && venuePhotosLoaded &&
           <VenueDetailPageContent venuePhotos={venuePhotos}
-                                  venueTips={venueTips}/>)}
+                                  venueTips={venueData.tips.groups[0].items}/>)}
         <Footer/>
       </div>
     );

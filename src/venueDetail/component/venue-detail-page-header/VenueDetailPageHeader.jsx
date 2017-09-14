@@ -18,7 +18,6 @@ export class VenueDetailPageHeader extends Component {
 
   render() {
     const {venueInfo} = this.props;
-
     const detailHeaderPhotoStyle = {
       backgroundImage: `url("${venueInfo.bestPhoto.prefix}${venueInfo.bestPhoto.width}x${venueInfo.bestPhoto.height}${venueInfo.bestPhoto.suffix}")`
     };
@@ -50,7 +49,7 @@ export class VenueDetailPageHeader extends Component {
                 <img src={imgLocationIcon}
                      alt="Location Icon"/>
                 <span className="venue-detail-page-header-text">
-                  {venueInfo.location.address}
+                  {(venueInfo.location.address || "-----")}
                 </span>
               </div>
 
@@ -58,7 +57,7 @@ export class VenueDetailPageHeader extends Component {
                 <img src={imgPhoneIcon}
                      alt="Phone Icon"/>
                 <span className="venue-detail-page-header-text">
-                  {venueInfo.contact.formattedPhone}
+                  {(venueInfo.contact.formattedPhone || "-----")}
                 </span>
               </div>
 
@@ -66,11 +65,11 @@ export class VenueDetailPageHeader extends Component {
                 <img src={imgPeopleIcon}
                      alt="People Icon"/>
                 <span className="venue-detail-page-header-text">
-                  {venueInfo.beenHere.count}
+                  {(venueInfo.hereNow.count || 0)}
                 </span>
 
                 <PriceTierBar venueId={venueInfo.id}
-                              priceTier={venueInfo.price.tier}/>
+                              priceTier={(venueInfo.price.tier || 0)}/>
               </div>
 
               <div className="venue-detail-page-header-rating-container"
@@ -78,7 +77,7 @@ export class VenueDetailPageHeader extends Component {
                      backgroundImage: `url('${imgRectangleIcon}')`
                    }}>
                 <span className="venue-detail-page-header-rating-value">
-                  {venueInfo.rating}
+                  {(venueInfo.rating || "-")}
                 </span>
               </div>
             </div>

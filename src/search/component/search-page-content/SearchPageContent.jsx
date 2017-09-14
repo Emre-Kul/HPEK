@@ -18,7 +18,7 @@ export class SearchPageContent extends Component {
 
     const dataLoading = this.props.venuesData.length === 0;
     const errorAccured = this.props.warning.status > 0;
-    console.log(venuesData);
+
     return (
       <div className="search-page-content">
         <div className="search-page-content-card-container">

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import {FS_AXIOS_CONFIG} from "./fsApiConsts.js";
-function searchVenues(query, place,limit) {
+function searchVenues(query, place, limit) {
   const url = "venues/explore";
 
   FS_AXIOS_CONFIG.params = {
@@ -17,11 +17,12 @@ function searchVenues(query, place,limit) {
       .then((response) => {
         const responseData = response.data.response;
         const venues = responseData.groups[0].items;
+
         return (
-          {
-            searchId: response.data.meta.requestId,
-            venues
-          }
+        {
+          searchId: response.data.meta.requestId,
+          venues
+        }
         );
       })
       .catch((err) => {

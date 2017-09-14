@@ -32,7 +32,7 @@ export class VenueSummaryCard extends Component {
             <Link className="venue-summary-card-link"
                   to={detailLink}>
               <span>
-                {(venue.name || '-')}
+                {(venue.name || "-")}
               </span>
             </Link>
           </div>
@@ -47,7 +47,7 @@ export class VenueSummaryCard extends Component {
 
           <div className="venue-summary-card-tier-container">
             <PriceTierBar venueId={venue.id}
-                          priceTier={(venue.price.tier || 0)}/>
+                          priceTier={(venue.price.tier || -1)}/>
           </div>
 
           <div className="venue-summary-card-raiting-container"
@@ -55,7 +55,7 @@ export class VenueSummaryCard extends Component {
                  backgroundImage: `url('${imgTriangle}')`
                }}>
             <span className="venue-summary-card-raiting">
-              {(venue.rating || '-')}
+              {(venue.rating || "-")}
             </span>
           </div>
         </div>

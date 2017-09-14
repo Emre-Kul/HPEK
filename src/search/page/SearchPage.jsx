@@ -62,8 +62,10 @@ export class SearchPage extends Component {
         searchVenues(query, location, VENUE_SEARCH_LIMIT)
           .then((venuesResponse) => {
             dispatch(actionAddToSearchList(venuesResponse.searchId, query, location));
-            const venues = venuesResponse.venues;
-            const searchHeaderPhoto = `${venues[0].venue.featuredPhotos.items[0].prefix}${SEARCH_HEADER_PHOTO_SIZE}${venues[0].venue.featuredPhotos.items[0].suffix}`;
+            const {venues} = venuesResponse;
+            const {prefix, suffix} = venues[0].venue.featuredPhotos.items[0];
+            const searchHeaderPhoto = `${prefix}${SEARCH_HEADER_PHOTO_SIZE}${suffix}`;
+
             this.setState({
               venuesData: venues,
               searchHeaderPhoto

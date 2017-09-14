@@ -9,17 +9,19 @@ import imgTriangle from "../../../../asset/img/triangle-icon.svg";
 
 import "./venue-summary-card.scss";
 
+const VENUE_PHOTO_SIZE = "480x480";
+
 export class VenueSummaryCard extends Component {
 
   static propTypes = {
-    venueData: PropTypes.object
+    venue: PropTypes.object
   }
 
   render() {
-    const {venueData} = this.props;
-    const detailLink = `/detail/${this.props.venueData.venueId}`;
+    const {venue} = this.props;
+    const detailLink = `/detail/${venue.id}`;
     const venueDivImageStyle = {
-      backgroundImage: `url("${venueData.venuePhoto}")`
+      backgroundImage: `url("${venue.featuredPhotos.items[0].prefix}${VENUE_PHOTO_SIZE}${venue.featuredPhotos.items[0].suffix}")`
     };
 
     return (
@@ -30,7 +32,7 @@ export class VenueSummaryCard extends Component {
             <Link className="venue-summary-card-link"
                   to={detailLink}>
               <span>
-                {venueData.venueName}
+                {(venue.name || '-')}
               </span>
             </Link>
           </div>
@@ -38,14 +40,14 @@ export class VenueSummaryCard extends Component {
             <span className="venue-summary-card-herenow">
               <img src={imgPeopleIcon}/>
               <span className="venue-summary-card-text">
-                {venueData.venueHereNow}
+                {(venue.hereNow.count || 0)}
               </span>
             </span>
           </div>
 
           <div className="venue-summary-card-tier-container">
-            <PriceTierBar venueId={venueData.venueId}
-                          priceTier={venueData.venuePriceTier}/>
+            <PriceTierBar venueId={venue.id}
+                          priceTier={(venue.price.tier || 0)}/>
           </div>
 
           <div className="venue-summary-card-raiting-container"
@@ -53,7 +55,7 @@ export class VenueSummaryCard extends Component {
                  backgroundImage: `url('${imgTriangle}')`
                }}>
             <span className="venue-summary-card-raiting">
-              {venueData.venueRating}
+              {(venue.rating || '-')}
             </span>
           </div>
         </div>

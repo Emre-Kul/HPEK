@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import {FS_AXIOS_CONFIG} from "./fsApiConsts.js";
-function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
+function searchVenues(query, place,limit) {
   const url = "venues/explore";
 
   FS_AXIOS_CONFIG.params = {
@@ -16,34 +16,12 @@ function searchVenues(query, place, photoSize, searchHeaderPhotoSize, limit) {
   return axios.get(url, FS_AXIOS_CONFIG)
       .then((response) => {
         const responseData = response.data.response;
-        const venues = [];
-        const firstVenuePhoto = responseData.groups[0].items[0].venue.featuredPhotos.items[0];
-        const searchHeaderPhoto = `${firstVenuePhoto.prefix}${searchHeaderPhotoSize}${firstVenuePhoto.suffix}`;
-
-        responseData.groups[0].items.forEach((item) => {
-          try {
-            const venuePhotoPrefix = item.venue.featuredPhotos.items[0].prefix;
-            const venuePhotoSuffix = item.venue.featuredPhotos.items[0].suffix;
-
-            venues.push(
-              {
-                venueId: item.venue.id,
-                venueName: item.venue.name,
-                venueHereNow: item.venue.hereNow.count,
-                venuePriceTier: ((typeof item.venue.price === "undefined") ? -1 : item.venue.price.tier),
-                venueRating: item.venue.rating,
-                venuePhoto: `${venuePhotoPrefix}${photoSize}${venuePhotoSuffix}`
-              });
-          } catch (e) {
-            throw new Error(`Error At Venue${item.venue.name}`);
-          }
-        });
+        const venues = responseData.groups[0].items;
         return (
-        {
-          searchId: response.data.meta.requestId,
-          searchHeaderPhoto,
-          venues
-        }
+          {
+            searchId: response.data.meta.requestId,
+            venues
+          }
         );
       })
       .catch((err) => {

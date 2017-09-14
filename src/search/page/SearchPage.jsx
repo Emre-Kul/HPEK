@@ -8,7 +8,6 @@ import SearchPageContent from "../component/search-page-content/SearchPageConten
 import {searchVenues} from "../../api/fsApiHandler.js";
 import {actionAddToSearchList} from "../../reducers/searchActions.js";
 
-const VENUE_PHOTO_SIZE = "480x480";
 const VENUE_SEARCH_LIMIT = 10;
 const SEARCH_HEADER_PHOTO_SIZE = "1250x150";
 
@@ -60,12 +59,14 @@ export class SearchPage extends Component {
           warning: "",
           lastSearch: query + location
         });
-        searchVenues(query, location, VENUE_PHOTO_SIZE, SEARCH_HEADER_PHOTO_SIZE, VENUE_SEARCH_LIMIT)
-          .then((venuesData) => {
-            dispatch(actionAddToSearchList(venuesData.searchId, query, location));
+        searchVenues(query, location, VENUE_SEARCH_LIMIT)
+          .then((venuesResponse) => {
+            dispatch(actionAddToSearchList(venuesResponse.searchId, query, location));
+            const venues = venuesResponse.venues;
+            const searchHeaderPhoto = `${venues[0].venue.featuredPhotos.items[0].prefix}${SEARCH_HEADER_PHOTO_SIZE}${venues[0].venue.featuredPhotos.items[0].suffix}`;
             this.setState({
-              venuesData: venuesData.venues,
-              searchHeaderPhoto: venuesData.searchHeaderPhoto
+              venuesData: venues,
+              searchHeaderPhoto
             });
           })
           .catch((err) => {

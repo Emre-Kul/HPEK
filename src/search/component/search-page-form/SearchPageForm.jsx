@@ -13,18 +13,8 @@ class SearchPageForm extends Component {
 
     this.state = {
       query: "",
-      location: "",
-      redirect: false
+      location: ""
     };
-  }
-
-
-  componentWillUpdate() {
-    if (this.state.redirect) {
-      this.setState({
-        redirect: false
-      });
-    }
   }
 
   handleSearchQueryInput = (e) => {

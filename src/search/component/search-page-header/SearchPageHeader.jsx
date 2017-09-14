@@ -18,7 +18,7 @@ class SearchPageHeader extends Component {
   }
 
   render() {
-    const {isHomePage, animateHeaderAtSearch, searchHeaderPhoto} = this.props;
+    const {isHomePage, animateHeaderAtSearch, searchHeaderPhoto, onHandleSearchFormSubmit} = this.props;
 
     const animateHeader = (!isHomePage && animateHeaderAtSearch);
     const homeBackgroundStyle = {
@@ -50,7 +50,7 @@ class SearchPageHeader extends Component {
                 </p>
               </div>)}
             <div className="search-page-header-form-container">
-              <SearchPageForm onHandleSearchFormSubmit={this.props.onHandleSearchFormSubmit}/>
+              <SearchPageForm onHandleSearchFormSubmit={onHandleSearchFormSubmit}/>
             </div>
           </div>
         </div>

@@ -19,7 +19,9 @@ class VenueDetailPageTipMenu extends Component {
   }
 
   handleMoreTipClick = () => {
-    const {venueTipLimit, venueTips} = this.props;
+    const {venueTipLimit} = this.state;
+    const {venueTips} = this.props;
+
     if (venueTipLimit < venueTips.length) {
       this.setState({
         venueTipLimit: venueTipLimit + VENUE_LOAD_TIP_SIZE

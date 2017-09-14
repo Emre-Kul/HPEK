@@ -11,10 +11,10 @@ class VenuePhotoCard extends Component {
   }
 
   render() {
-    const {userInfo} = this.props;
+    const {userInfo, backgroundImage} = this.props;
 
     const backgroundStyle = {
-      backgroundImage: `url(${this.props.backgroundImage})`
+      backgroundImage: `url(${backgroundImage})`
     };
 
     return (

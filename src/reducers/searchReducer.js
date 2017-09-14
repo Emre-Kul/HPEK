@@ -12,16 +12,16 @@ export const searchReducer = (state = {
       let isRecentSearchExist = false;
 
       state.recentSearchs.forEach((recentSearch) => {
-        if (recentSearch.searchQuery === action.searchQuery && recentSearch.searchLocation === action.searchLocation) {
+        if (recentSearch.searchQuery === action.payload.searchQuery && recentSearch.searchLocation === action.payload.searchLocation) {
           isRecentSearchExist = true;
         }
       });
       if (!isRecentSearchExist) {
         newState.recentSearchs = state.recentSearchs.concat([
           {
-            id: action.id,
-            searchQuery: action.searchQuery,
-            searchLocation: action.searchLocation
+            id: action.payload.id,
+            searchQuery: action.payload.searchQuery,
+            searchLocation: action.payload.searchLocation
           }
         ]);
       }

@@ -49,7 +49,8 @@ export class SearchPageHeader extends Component {
                 </p>
               </div>)}
             <div className="search-page-header-form-container">
-              <SearchPageForm/>
+              <SearchPageForm
+                handleSearchFormSubmit={this.props.handleSearchFormSubmit}/>
             </div>
           </div>
         </div>

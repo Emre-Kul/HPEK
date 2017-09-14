@@ -41,7 +41,8 @@ export class SearchPage extends Component {
   }
 
   makeSearch = () => {
-    const {isHomePage, match, dispatch} = this.props;
+    const isHomePage = this.props.match.url === "/";
+    const {match, dispatch} = this.props;
     const {animateHeaderAtSearch, lastSearch} = this.state;
 
     if (isHomePage && !animateHeaderAtSearch) {
@@ -80,15 +81,19 @@ export class SearchPage extends Component {
     }
   }
 
+  handleSearchFormSubmit = (query,location) => {
+    this.props.history.push(`/search/${query}/${location}`);
+  }
+
   render() {
     const {animateHeaderAtSearch, searchHeaderPhoto, warning, venuesData} = this.state;
-    const {isHomePage} = this.props;
-
+    const isHomePage = this.props.match.url === "/";
     return (
       <div>
         <SearchPageHeader isHomePage={isHomePage}
                           animateHeaderAtSearch={animateHeaderAtSearch}
-                          searchHeaderPhoto={searchHeaderPhoto}/>
+                          searchHeaderPhoto={searchHeaderPhoto}
+                          handleSearchFormSubmit={this.handleSearchFormSubmit}/>
         {(!isHomePage &&
           <SearchPageContent warning={warning}
                              venuesData={venuesData}/>)}

@@ -34,21 +34,16 @@ export class SearchPageForm extends Component {
     });
   }
 
-  handleSubmit = (e) => {
+  handleSearchSubmit = (e) => {
     e.preventDefault();
-    if (this.state.location.length !== 0 && this.state.query.length !== 0) {
-      this.setState({
-        redirect: true
-      });
-    }
+    const {location, query} = this.state;
+    this.props.handleSearchFormSubmit(query,location);
   }
 
   render() {
-    const searchLink = `/search/${this.state.query}/${this.state.location}`;
-
     return (
       <form className="search-page-form"
-            onSubmit={this.handleSubmit}>
+            onSubmit={this.handleSearchSubmit}>
         <input className="search-page-form-query-input search-page-form-input"
                type="text"
                placeholder="I'm looking for"
@@ -59,7 +54,6 @@ export class SearchPageForm extends Component {
                onInput={this.handleSearchLocationInput}/>
         <button className="search-page-form-button"
                 type="submit"/>
-        {(this.state.redirect && <Redirect to={searchLink}/>)}
       </form>
     );
   }

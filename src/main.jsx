@@ -23,8 +23,8 @@ ReactDOM.render(
                  component={SearchPage}/>
           <Route path="/detail/:id"
                  component={VenueDetailPage}/>
-          <Route path="/">
-            <SearchPage isHomePage={true}/>
+          <Route path="/"
+                 component={SearchPage}>
           </Route>
         </Switch>
       </div>

@@ -12,7 +12,8 @@ export const searchReducer = (state = {
       let isRecentSearchExist = false;
 
       state.recentSearchs.forEach((recentSearch) => {
-        if (recentSearch.searchQuery === action.payload.searchQuery && recentSearch.searchLocation === action.payload.searchLocation) {
+        if (recentSearch.searchQuery === action.payload.searchQuery &&
+            recentSearch.searchLocation === action.payload.searchLocation) {
           isRecentSearchExist = true;
         }
       });

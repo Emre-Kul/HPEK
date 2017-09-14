@@ -1,11 +1,7 @@
-function actionAddToSearchList(id, searchQuery, searchLocation) {
+function actionAddToSearchList(searchData) {
   return {
     type: "ADD_TO_SEARCH_LIST",
-    payload : {
-      id,
-      searchQuery,
-      searchLocation
-    }
+    payload: searchData
   };
 }
 

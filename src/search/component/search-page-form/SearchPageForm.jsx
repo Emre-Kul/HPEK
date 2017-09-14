@@ -1,9 +1,13 @@
 import React, {Component} from "react";
-import {Redirect} from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "./search-page-form.scss";
 
 export class SearchPageForm extends Component {
+  static propTypes = {
+    onHandleSearchFormSubmit: PropTypes.func
+  }
+
   constructor(props) {
     super(props);
 
@@ -13,6 +17,7 @@ export class SearchPageForm extends Component {
       redirect: false
     };
   }
+
 
   componentWillUpdate() {
     if (this.state.redirect) {
@@ -34,16 +39,17 @@ export class SearchPageForm extends Component {
     });
   }
 
-  handleSearchSubmit = (e) => {
+  handleSearchFormSubmit = (e) => {
     e.preventDefault();
     const {location, query} = this.state;
-    this.props.handleSearchFormSubmit(query,location);
+
+    this.props.onHandleSearchFormSubmit(query, location);
   }
 
   render() {
     return (
       <form className="search-page-form"
-            onSubmit={this.handleSearchSubmit}>
+            onSubmit={this.handleSearchFormSubmit}>
         <input className="search-page-form-query-input search-page-form-input"
                type="text"
                placeholder="I'm looking for"

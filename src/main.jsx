@@ -24,8 +24,7 @@ ReactDOM.render(
           <Route path="/detail/:id"
                  component={VenueDetailPage}/>
           <Route path="/"
-                 component={SearchPage}>
-          </Route>
+                 component={SearchPage}/>
         </Switch>
       </div>
     </Router>

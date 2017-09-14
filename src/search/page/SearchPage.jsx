@@ -14,8 +14,8 @@ const SEARCH_HEADER_PHOTO_SIZE = "1250x150";
 export class SearchPage extends Component {
 
   static propTypes = {
-    isHomePage: PropTypes.bool,
     match: PropTypes.object,
+    history: PropTypes.object,
     dispatch: PropTypes.func
   }
 
@@ -81,19 +81,20 @@ export class SearchPage extends Component {
     }
   }
 
-  handleSearchFormSubmit = (query,location) => {
+  handleSearchFormSubmit = (query, location) => {
     this.props.history.push(`/search/${query}/${location}`);
   }
 
   render() {
     const {animateHeaderAtSearch, searchHeaderPhoto, warning, venuesData} = this.state;
     const isHomePage = this.props.match.url === "/";
+
     return (
       <div>
         <SearchPageHeader isHomePage={isHomePage}
                           animateHeaderAtSearch={animateHeaderAtSearch}
                           searchHeaderPhoto={searchHeaderPhoto}
-                          handleSearchFormSubmit={this.handleSearchFormSubmit}/>
+                          onHandleSearchFormSubmit={this.handleSearchFormSubmit}/>
         {(!isHomePage &&
           <SearchPageContent warning={warning}
                              venuesData={venuesData}/>)}

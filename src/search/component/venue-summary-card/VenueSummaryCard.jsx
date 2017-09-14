@@ -47,7 +47,7 @@ export class VenueSummaryCard extends Component {
 
           <div className="venue-summary-card-tier-container">
             <PriceTierBar venueId={venue.id}
-                          priceTier={(typeof venue.price !== "undefined") ? venue.price.tier : 0}/>
+                          priceTier={(typeof venue.price === "undefined") ? 0 : venue.price.tier}/>
           </div>
 
           <div className="venue-summary-card-raiting-container"

@@ -69,7 +69,7 @@ export class VenueDetailPageHeader extends Component {
                 </span>
 
                 <PriceTierBar venueId={venueInfo.id}
-                              priceTier={(typeof venueInfo.price !== "undefined") ? venueInfo.price.tier : 0}/>
+                              priceTier={(typeof venueInfo.price === "undefined") ? 0 : venueInfo.price.tier}/>
               </div>
 
               <div className="venue-detail-page-header-rating-container"

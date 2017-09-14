@@ -13,7 +13,8 @@ export class SearchPageHeader extends Component {
   static propTypes = {
     isHomePage: PropTypes.bool,
     animateHeaderAtSearch: PropTypes.bool,
-    searchHeaderPhoto: PropTypes.string
+    searchHeaderPhoto: PropTypes.string,
+    onHandleSearchFormSubmit: PropTypes.func
   }
 
   render() {
@@ -49,8 +50,7 @@ export class SearchPageHeader extends Component {
                 </p>
               </div>)}
             <div className="search-page-header-form-container">
-              <SearchPageForm
-                handleSearchFormSubmit={this.props.handleSearchFormSubmit}/>
+              <SearchPageForm onHandleSearchFormSubmit={this.props.onHandleSearchFormSubmit}/>
             </div>
           </div>
         </div>

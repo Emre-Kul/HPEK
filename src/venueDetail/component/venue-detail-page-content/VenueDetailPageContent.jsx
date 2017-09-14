@@ -9,7 +9,7 @@ import "./venue-detail-page-content.scss";
 const VENUE_PHOTO_SIZE = "480x480";
 const VENUE_PHOTOS_LIMIT = 10;
 
-export class VenueDetailPageContent extends Component {
+class VenueDetailPageContent extends Component {
   static propTypes = {
     venuePhotos: PropTypes.array,
     venueTips: PropTypes.array

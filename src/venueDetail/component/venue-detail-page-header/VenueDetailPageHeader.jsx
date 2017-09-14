@@ -11,7 +11,7 @@ import imgRectangleIcon from "../../../../asset/img/rectangle-icon.svg";
 
 import "./venue-detail-page-header.scss";
 
-export class VenueDetailPageHeader extends Component {
+class VenueDetailPageHeader extends Component {
   static propTypes = {
     venueInfo: PropTypes.object
   }

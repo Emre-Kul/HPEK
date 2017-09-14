@@ -7,7 +7,7 @@ import {getDetailOfVenue, getPhotosOfVenue} from "../../api/fsApiHandler.js";
 
 const VENUE_PHOTO_LIMIT = 10;
 
-export class VenueDetailPage extends Component {
+class VenueDetailPage extends Component {
   constructor(props) {
     super(props);
 

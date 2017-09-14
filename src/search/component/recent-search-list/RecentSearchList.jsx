@@ -6,7 +6,7 @@ import RecentSearchItem from "../recent-search-item/RecentSearchItem.jsx";
 
 import "./recent-search-list.scss";
 
-export class RecentSearchList extends Component {
+class RecentSearchList extends Component {
   static propTypes = {
     recentSearchs: PropTypes.array
   }

@@ -11,7 +11,7 @@ import {actionAddToSearchList} from "../../reducers/searchActions.js";
 const VENUE_SEARCH_LIMIT = 10;
 const SEARCH_HEADER_PHOTO_SIZE = "1250x150";
 
-export class SearchPage extends Component {
+class SearchPage extends Component {
 
   static propTypes = {
     match: PropTypes.object,

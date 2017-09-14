@@ -7,7 +7,7 @@ import SearchPageContentMessage from "../search-page-content-message/SearchPageC
 
 import "./search-page-content.scss";
 
-export class SearchPageContent extends Component {
+class SearchPageContent extends Component {
   static propTypes = {
     venuesData: PropTypes.array,
     warning: PropTypes.string

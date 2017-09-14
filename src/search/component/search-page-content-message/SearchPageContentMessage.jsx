@@ -5,7 +5,7 @@ import imgLoadingIcon from "../../../../asset/img/loading-bar-icon.svg";
 
 import "./search-page-content-message.scss";
 
-export class SearchPageContentMessage extends Component {
+class SearchPageContentMessage extends Component {
 
   static propTypes = {
     error: PropTypes.string

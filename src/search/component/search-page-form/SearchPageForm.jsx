@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "./search-page-form.scss";
 
-export class SearchPageForm extends Component {
+class SearchPageForm extends Component {
   static propTypes = {
     onHandleSearchFormSubmit: PropTypes.func
   }
@@ -39,7 +39,7 @@ export class SearchPageForm extends Component {
     });
   }
 
-  handleSearchFormSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const {location, query} = this.state;
 
@@ -49,7 +49,7 @@ export class SearchPageForm extends Component {
   render() {
     return (
       <form className="search-page-form"
-            onSubmit={this.handleSearchFormSubmit}>
+            onSubmit={this.handleSubmit}>
         <input className="search-page-form-query-input search-page-form-input"
                type="text"
                placeholder="I'm looking for"

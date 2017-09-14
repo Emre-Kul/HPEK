@@ -5,7 +5,7 @@ import "./venue-detail-page-tip-menu.scss";
 
 const VENUE_LOAD_TIP_SIZE = 5;
 
-export class VenueDetailPageTipMenu extends Component {
+class VenueDetailPageTipMenu extends Component {
 
   static propTypes = {
     venueTips: PropTypes.array

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "./venue-photo-card.scss";
 
-export class VenuePhotoCard extends Component {
+class VenuePhotoCard extends Component {
 
   static propTypes = {
     backgroundImage: PropTypes.string,

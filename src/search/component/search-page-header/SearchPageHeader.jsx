@@ -9,7 +9,7 @@ import imgSearchHeaderHomeBackground from "../../../../asset/img/search-header-h
 
 import "./search-page-header.scss";
 
-export class SearchPageHeader extends Component {
+class SearchPageHeader extends Component {
   static propTypes = {
     isHomePage: PropTypes.bool,
     animateHeaderAtSearch: PropTypes.bool,

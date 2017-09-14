@@ -4,7 +4,7 @@ import RecentSearchList from "../recent-search-list/RecentSearchList.jsx";
 
 import "./recent-search-panel.scss";
 
-export class RecentSearchPanel extends Component {
+class RecentSearchPanel extends Component {
   render() {
     return (
       <div className="recent-search-panel">

@@ -11,7 +11,7 @@ import "./venue-summary-card.scss";
 
 const VENUE_PHOTO_SIZE = "480x480";
 
-export class VenueSummaryCard extends Component {
+class VenueSummaryCard extends Component {
 
   static propTypes = {
     venue: PropTypes.object

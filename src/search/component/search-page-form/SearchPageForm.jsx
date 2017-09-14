@@ -42,8 +42,9 @@ class SearchPageForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const {location, query} = this.state;
+    const {onHandleSearchFormSubmit} = this.props;
 
-    this.props.onHandleSearchFormSubmit(query, location);
+    onHandleSearchFormSubmit(query, location);
   }
 
   render() {

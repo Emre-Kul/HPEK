@@ -16,8 +16,8 @@ class SearchPageContent extends Component {
   render() {
     const {venuesData, warning} = this.props;
 
-    const dataLoading = this.props.venuesData.length === 0;
-    const errorAccured = this.props.warning.status > 0;
+    const dataLoading = venuesData.length === 0;
+    const errorAccured = warning.status > 0;
 
     return (
       <div className="search-page-content">

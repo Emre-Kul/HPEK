@@ -4,17 +4,23 @@ export const venueDetailReducer = (state = {
   venueDetailPhotos: [],
   venueDetailPhotosLoaded: false
 }, action) => {
-  const newState = {...{},...state};
+  const newState = {
+    ...{},
+    ...state
+  };
 
   switch (action.type) {
     case "SET_VENUE_DETAIL": {
-      newState.venueDetailData = {...newState.venueDetailData,...payload.venueDetailData};
-      newState.venueDetailDataLoaded = payload.venueDetailDataLoaded;
+      newState.venueDetailData = {
+        ...newState.venueDetailData,
+        ...action.payload.venueDetailData
+      };
+      newState.venueDetailDataLoaded = action.payload.venueDetailDataLoaded;
       break;
     }
     case "SET_VENUE_PHOTOS": {
-      newState.venueDetailPhotos = payload.venueDetailPhotos;
-      newState.venueDetailPhotosLoaded = payload.venueDetailPhotosLoaded;
+      newState.venueDetailPhotos = action.payload.venueDetailPhotos;
+      newState.venueDetailPhotosLoaded = action.payload.venueDetailPhotosLoaded;
       break;
     }
     default:

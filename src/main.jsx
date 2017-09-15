@@ -12,7 +12,10 @@ import VenueDetailPage from "./venueDetail/page/VenueDetailPage.jsx";
 import "./main.scss";
 import "../asset/font/fonts.scss";
 
-const STORE = createStore(combineReducers({searchReducer,venueDetailReducer}));
+const STORE = createStore(combineReducers({
+  searchReducer,
+  venueDetailReducer
+}));
 const APP_ELEMENT = document.getElementById("root");
 
 ReactDOM.render(

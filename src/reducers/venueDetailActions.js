@@ -1,6 +1,6 @@
 function actionSetVenueDetails(venueDetailData) {
   return {
-    type: "SET_VENUE_DETAILS",
+    type: "SET_VENUE_DETAIL",
     payload: venueDetailData
   };
 }

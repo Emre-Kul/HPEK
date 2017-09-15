@@ -16,10 +16,9 @@ class VenueDetailPage extends Component {
   }
 
   loadVenueData = () => {
-    const {venueDetail: {venueDetailDataLoaded}, match} = this.props;
+    const {match} = this.props;
 
-    if (!venueDetailDataLoaded) {
-      getDetailOfVenue(match.params.id)
+    getDetailOfVenue(match.params.id)
         .then((venue) => {
 
           this.props.dispatch(actionSetVenueDetails({
@@ -36,7 +35,7 @@ class VenueDetailPage extends Component {
           }));
         })
         .catch(console.log);
-    }
+
   }
 
   render() {

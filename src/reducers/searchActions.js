@@ -4,14 +4,37 @@ function addToSearchList(searchData) {
     payload: searchData
   };
 }
-function searchVenue(searchVenueData) {
+function searchVenueStart() {
   return {
-    type: "SEARCH_VENUE",
-    payload: searchVenueData
+    type: "SEARCH_VENUE_START",
+    payload: {
+      venuesLoading: true,
+      errorAccrued: false
+    }
+  };
+}
+function searchVenueFulfilled(searchVenueData){
+  return {
+    type: "SEARCH_VENUE_FULFILLED",
+    payload: {...searchVenueData,...{
+      errorAccrued: false,
+      venuesLoading: false
+    }}
+  };
+}
+function searchVenueRejected(rejectionReason){
+  return {
+    type: "SEARCH_VENUE_REJECTED",
+    payload: {
+      errorAccrued : true,
+      error: rejectionReason
+    }
   };
 }
 
 export {
   addToSearchList,
-  searchVenue
+  searchVenueStart,
+  searchVenueFulfilled,
+  searchVenueRejected
 };

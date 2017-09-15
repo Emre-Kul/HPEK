@@ -1,7 +1,7 @@
 const initialState = {
   recentSearchs: [],
   searchVenueData: {
-    venuesLoading: true,
+    venuesLoading: false,
     venues: [],
     errorAccrued: false,
     error: ""
@@ -31,7 +31,21 @@ export const searchReducer = (state = initialState, action) => {
       }
       break;
     }
-    case "SEARCH_VENUE": {
+    case "SEARCH_VENUE_START": {
+      newState.searchVenueData = {
+        ...newState.searchVenueData,
+        ...action.payload
+      };
+      break;
+    }
+    case "SEARCH_VENUE_FULFILLED": {
+      newState.searchVenueData = {
+        ...newState.searchVenueData,
+        ...action.payload
+      };
+      break;
+    }
+    case "SEARCH_VENUE_REJECTED": {
       newState.searchVenueData = {
         ...newState.searchVenueData,
         ...action.payload

@@ -6,7 +6,7 @@ import Footer from "../../common/footer/Footer.jsx";
 import SearchPageHeader from "../component/search-page-header/SearchPageHeader.jsx";
 import SearchPageContent from "../component/search-page-content/SearchPageContent.jsx";
 import {searchVenues} from "../../api/fsApiHandler.js";
-import {addToSearchList, searchVenue} from "../../reducers/searchActions.js";
+import {addToSearchList,searchVenueStart, searchVenueFulfilled, searchVenueRejected} from "../../reducers/searchActions.js";
 
 const VENUE_SEARCH_LIMIT = 10;
 const SEARCH_HEADER_PHOTO_SIZE = "1250x150";
@@ -56,39 +56,36 @@ class SearchPage extends Component {
           searchHeaderPhoto: "",
           lastSearch: query + location
         });
-        dispatch(searchVenue({
-          venuesLoading: true,
-          errorAccrued: false
-        }));
-        searchVenues(query, location, VENUE_SEARCH_LIMIT)
-          .then((venuesResponse) => {
 
-            dispatch(addToSearchList({
-              id: venuesResponse.searchId,
-              searchQuery: query,
-              searchLocation: location
-            }));
+        dispatch( (dispatch) => {
+          dispatch(searchVenueStart());
+          searchVenues(query, location, VENUE_SEARCH_LIMIT)
+            .then((venuesResponse) => {
 
-            dispatch(searchVenue({
-              venues: venuesResponse.venues,
-              venuesLoading: false,
-              errorAccrued: false
-            }));
+              dispatch(addToSearchList({
+                id: venuesResponse.searchId,
+                searchQuery: query,
+                searchLocation: location
+              }));
 
-            const {venues} = venuesResponse;
-            const {prefix, suffix} = venues[0].venue.featuredPhotos.items[0];
-            const searchHeaderPhoto = `${prefix}${SEARCH_HEADER_PHOTO_SIZE}${suffix}`;
+              dispatch(searchVenueFulfilled({
+                venues: venuesResponse.venues
+              }));
 
-            this.setState({
-              searchHeaderPhoto
+              const {venues} = venuesResponse;
+              const {prefix, suffix} = venues[0].venue.featuredPhotos.items[0];
+              const searchHeaderPhoto = `${prefix}${SEARCH_HEADER_PHOTO_SIZE}${suffix}`;
+
+              this.setState({
+                searchHeaderPhoto
+              });
+            })
+            .catch((err) => {
+              dispatch(searchVenueRejected(err.message));
             });
-          })
-          .catch((err) => {
-            dispatch(searchVenue({
-              errorAccrued: true,
-              error: err.message
-            }));
-          });
+        });
+
+
       }
     }
   }

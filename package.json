@@ -30,6 +30,7 @@
     "image-webpack-loader": "^3.3.1",
     "node-sass": "^4.5.3",
     "prop-types": "^15.5.10",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.2",

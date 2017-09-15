@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Provider} from "react-redux";
-import {combineReducers, createStore} from "redux";
+import {applyMiddleware , combineReducers, createStore} from "redux";
+import thunk from "redux-thunk";
 
 import searchReducer from "./reducers/searchReducer.js";
 import venueDetailReducer from "./reducers/venueDetailReducer.js";
@@ -12,10 +13,11 @@ import VenueDetailPage from "./venueDetail/page/VenueDetailPage.jsx";
 import "./main.scss";
 import "../asset/font/fonts.scss";
 
+const MIDDLEWARE = applyMiddleware(thunk);
 const STORE = createStore(combineReducers({
   searchReducer,
   venueDetailReducer
-}));
+}),MIDDLEWARE);
 const APP_ELEMENT = document.getElementById("root");
 
 ReactDOM.render(

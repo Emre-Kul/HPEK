@@ -5,7 +5,7 @@ import Footer from "../../common/footer/Footer.jsx";
 import VenueDetailPageHeader from "../component/venue-detail-page-header/VenueDetailPageHeader.jsx";
 import VenueDetailPageContent from "../component/venue-detail-page-content/VenueDetailPageContent.jsx";
 import {getDetailOfVenue, getPhotosOfVenue} from "../../api/fsApiHandler.js";
-import {setVenuePhotos, setVenueDetails} from "../../reducers/venueDetailActions.js";
+import {fetchVenuePhotosFulfilled, fetchVenueDetailFulfilled} from "../../reducers/venueDetailActions.js";
 
 const VENUE_PHOTO_LIMIT = 10;
 
@@ -21,7 +21,7 @@ class VenueDetailPage extends Component {
     getDetailOfVenue(match.params.id)
         .then((venue) => {
 
-          this.props.dispatch(setVenueDetails({
+          this.props.dispatch(fetchVenueDetailFulfilled({
             venueDetailData: venue,
             venueDetailDataLoaded: true
           }));
@@ -29,7 +29,7 @@ class VenueDetailPage extends Component {
           return getPhotosOfVenue(venue.id, VENUE_PHOTO_LIMIT);
         })
         .then((photos) => {
-          this.props.dispatch(setVenuePhotos({
+          this.props.dispatch(fetchVenuePhotosFulfilled({
             venueDetailPhotos: photos,
             venueDetailPhotosLoaded: true
           }));
@@ -39,13 +39,15 @@ class VenueDetailPage extends Component {
   }
 
   render() {
-    const {venueDetailDataLoaded, venueDetailData, venueDetailPhotosLoaded, venueDetailPhotos} = this.props.venueDetail;
 
+    const {venueDetailDataLoaded, venueDetailData} = this.props.venueDetailReducer.venueDetail;
+    const { venueDetailPhotosLoaded, venueDetailPhotosData} = this.props.venueDetailReducer.venueDetailPhotos;
+    console.log(venueDetailPhotosData);
     return (
       <div>
         {(venueDetailDataLoaded && <VenueDetailPageHeader venueInfo={venueDetailData}/>)}
         {(venueDetailDataLoaded && venueDetailPhotosLoaded &&
-          <VenueDetailPageContent venuePhotos={venueDetailPhotos}
+          <VenueDetailPageContent venuePhotos={venueDetailPhotosData}
                                   venueTips={venueDetailData.tips.groups[0].items}/>)}
         <Footer/>
       </div>
@@ -55,6 +57,6 @@ class VenueDetailPage extends Component {
 
 export default connect((rootStoreState) => {
   return {
-    venueDetail: rootStoreState.venueDetailReducer
+    venueDetailReducer: rootStoreState.venueDetailReducer
   };
 })(VenueDetailPage);

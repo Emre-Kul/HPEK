@@ -1,8 +1,16 @@
 const initialState = {
-  venueDetailData: {},
-  venueDetailDataLoaded: false,
-  venueDetailPhotos: [],
-  venueDetailPhotosLoaded: false
+  venueDetail : {
+    venueDetailData: {},
+    venueDetailDataLoaded: false,
+    venueDetailErrorAccrued: false,
+    venueDetailError: ""
+  },
+  venueDetailPhotos : {
+    venueDetailPhotosData: [],
+    venueDetailPhotosLoaded: false,
+    venueDetailPhotosErrorAccrued: false,
+    venueDetailPhotosError: ""
+  }
 };
 
 export const venueDetailReducer = (state = initialState, action) => {
@@ -11,17 +19,17 @@ export const venueDetailReducer = (state = initialState, action) => {
   };
 
   switch (action.type) {
-    case "SET_VENUE_DETAIL": {
-      newState.venueDetailData = {
-        ...newState.venueDetailData,
+    case "FETCH_VENUE_DETAIL_FULFILLED": {
+      newState.venueDetail.venueDetailData = {
+        ...newState.venueDetail.venueDetailData,
         ...action.payload.venueDetailData
       };
-      newState.venueDetailDataLoaded = action.payload.venueDetailDataLoaded;
+      newState.venueDetail.venueDetailDataLoaded = true;
       break;
     }
-    case "SET_VENUE_PHOTOS": {
-      newState.venueDetailPhotos = action.payload.venueDetailPhotos;
-      newState.venueDetailPhotosLoaded = action.payload.venueDetailPhotosLoaded;
+    case "FETCH_VENUE_PHOTOS_FULFILLED": {
+      newState.venueDetailPhotos.venueDetailPhotosData = action.payload.venueDetailPhotos;
+      newState.venueDetailPhotos.venueDetailPhotosLoaded = true;
       break;
     }
     default:

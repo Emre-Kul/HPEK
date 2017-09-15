@@ -4,9 +4,9 @@ function addToSearchList(searchData) {
     payload: searchData
   };
 }
-function searchVenueStart() {
+function searchVenueStarted() {
   return {
-    type: "SEARCH_VENUE_START",
+    type: "SEARCH_VENUE_STARTED",
     payload: {
       venuesLoading: true,
       errorAccrued: false
@@ -34,7 +34,7 @@ function searchVenueRejected(rejectionReason){
 
 export {
   addToSearchList,
-  searchVenueStart,
+  searchVenueStarted,
   searchVenueFulfilled,
   searchVenueRejected
 };

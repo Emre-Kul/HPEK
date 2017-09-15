@@ -31,7 +31,7 @@ export const searchReducer = (state = initialState, action) => {
       }
       break;
     }
-    case "SEARCH_VENUE_START": {
+    case "SEARCH_VENUE_STARTED": {
       newState.searchVenueData = {
         ...newState.searchVenueData,
         ...action.payload

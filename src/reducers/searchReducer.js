@@ -21,13 +21,7 @@ export const searchReducer = (state = {
         }
       });
       if (!isRecentSearchExist) {
-        newState.recentSearchs = state.recentSearchs.concat([
-          {
-            id: action.payload.id,
-            searchQuery: action.payload.searchQuery,
-            searchLocation: action.payload.searchLocation
-          }
-        ]);
+        newState.recentSearchs = state.recentSearchs.concat([action.payload]);
       }
       break;
     }

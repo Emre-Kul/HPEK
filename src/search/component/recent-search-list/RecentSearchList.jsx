@@ -30,6 +30,6 @@ class RecentSearchList extends Component {
 
 export default connect((rootStoreState) => {
   return {
-    recentSearchs: rootStoreState.recentSearchs
+    recentSearchs: rootStoreState.searchReducer.recentSearchs
   };
 })(RecentSearchList);

@@ -4,7 +4,7 @@ export const venueDetailReducer = (state = {
   venueDetailPhotos: [],
   venueDetailPhotosLoaded: false
 }, action) => {
-  const newState = {...newState,...state};
+  const newState = {...{},...state};
 
   switch (action.type) {
     case "SET_VENUE_DETAIL": {

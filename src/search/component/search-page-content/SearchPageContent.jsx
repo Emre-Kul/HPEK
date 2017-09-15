@@ -34,7 +34,7 @@ class SearchPageContent extends Component {
 
 export default connect((rootStoreState) => {
   return {
-    venuesData: rootStoreState.searchVenueData
+    venuesData: rootStoreState.searchReducer.searchVenueData
   };
 })(SearchPageContent);
 

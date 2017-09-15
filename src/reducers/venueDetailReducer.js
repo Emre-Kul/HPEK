@@ -1,11 +1,12 @@
-export const venueDetailReducer = (state = {
+const initialState = {
   venueDetailData: {},
   venueDetailDataLoaded: false,
   venueDetailPhotos: [],
   venueDetailPhotosLoaded: false
-}, action) => {
+};
+
+export const venueDetailReducer = (state = initialState, action) => {
   const newState = {
-    ...{},
     ...state
   };
 

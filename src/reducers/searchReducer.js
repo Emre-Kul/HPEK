@@ -1,4 +1,4 @@
-export const searchReducer = (state = {
+const initialState = {
   recentSearchs: [],
   searchVenueData: {
     venuesLoading: true,
@@ -6,11 +6,12 @@ export const searchReducer = (state = {
     errorAccrued: false,
     error: ""
   }
-}, action) => {
+};
+
+export const searchReducer = (state = initialState, action) => {
   const newState = {
     recentSearchs: state.recentSearchs,
     searchVenueData: {
-      ...{},
       ...state.searchVenueData
     }
   };

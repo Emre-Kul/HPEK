@@ -1,13 +1,18 @@
 export const searchReducer = (state = {
   recentSearchs: [],
   searchVenueData: {
-    venuesLoading:true,
-    venues:[]
+    venuesLoading: true,
+    venues: [],
+    errorAccrued: false,
+    error: ""
   }
 }, action) => {
   const newState = {
     recentSearchs: state.recentSearchs,
-    searchVenueData: {...{},...state.searchVenueData}
+    searchVenueData: {
+      ...{},
+      ...state.searchVenueData
+    }
   };
 
   switch (action.type) {
@@ -26,7 +31,10 @@ export const searchReducer = (state = {
       break;
     }
     case "SEARCH_VENUE": {
-      newState.searchVenueData = action.payload;
+      newState.searchVenueData = {
+        ...newState.searchVenueData,
+        ...action.payload
+      };
       break;
     }
     default:

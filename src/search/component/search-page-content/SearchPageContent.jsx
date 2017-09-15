@@ -10,21 +10,17 @@ import "./search-page-content.scss";
 
 class SearchPageContent extends Component {
   static propTypes = {
-    venuesData: PropTypes.object,
-    warning: PropTypes.string
+    venuesData: PropTypes.object
   }
 
   render() {
-    const {venuesData, warning} = this.props;
-
-    const dataLoading = venuesData.venuesLoading;
-    const errorAccured = warning.status > 0;
+    const {venuesData} = this.props;
 
     return (
       <div className="search-page-content">
         <div className="search-page-content-card-container">
-          {(dataLoading || errorAccured) ?
-            <SearchPageContentMessage error={warning}/> :
+          {(venuesData.venuesLoading || venuesData.errorAccrued) ?
+            <SearchPageContentMessage error={venuesData.error}/> :
               venuesData.venues.map(venueData => (
                 <VenueSummaryCard key={venueData.venue.id}
                                   venue={venueData.venue}/>

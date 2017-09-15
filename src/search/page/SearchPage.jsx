@@ -24,9 +24,7 @@ class SearchPage extends Component {
 
     this.state = {
       lastSearch: "",
-      venuesData: [],
       searchHeaderPhoto: "",
-      warning: "",
       animateHeaderAtSearch: false
     };
 
@@ -55,14 +53,12 @@ class SearchPage extends Component {
 
       if (query + location !== lastSearch) {
         this.setState({
-          venuesData: [],
           searchHeaderPhoto: "",
-          warning: "",
           lastSearch: query + location
         });
         dispatch(actionSearchVenue({
-          venues: [],
-          venuesLoading: true
+          venuesLoading: true,
+          errorAccrued: false
         }));
         searchVenues(query, location, VENUE_SEARCH_LIMIT)
           .then((venuesResponse) => {
@@ -75,21 +71,23 @@ class SearchPage extends Component {
 
             dispatch(actionSearchVenue({
               venues: venuesResponse.venues,
-              venuesLoading: false
+              venuesLoading: false,
+              errorAccrued: false
             }));
+
             const {venues} = venuesResponse;
             const {prefix, suffix} = venues[0].venue.featuredPhotos.items[0];
             const searchHeaderPhoto = `${prefix}${SEARCH_HEADER_PHOTO_SIZE}${suffix}`;
 
             this.setState({
-              venuesData: venues,
               searchHeaderPhoto
             });
           })
           .catch((err) => {
-            this.setState({
-              warning: err.message
-            });
+            dispatch(actionSearchVenue({
+              errorAccrued: true,
+              error: err.message
+            }));
           });
       }
     }
@@ -100,7 +98,7 @@ class SearchPage extends Component {
   }
 
   render() {
-    const {animateHeaderAtSearch, searchHeaderPhoto, warning, venuesData} = this.state;
+    const {animateHeaderAtSearch, searchHeaderPhoto} = this.state;
     const isHomePage = this.props.match.url === "/";
 
     return (
@@ -110,7 +108,7 @@ class SearchPage extends Component {
                           searchHeaderPhoto={searchHeaderPhoto}
                           onHandleSearchFormSubmit={this.handleSearchFormSubmit}/>
         {(!isHomePage &&
-          <SearchPageContent warning={warning}/>)}
+          <SearchPageContent/>)}
         <Footer/>
       </div>
     );

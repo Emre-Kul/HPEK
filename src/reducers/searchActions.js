@@ -4,7 +4,14 @@ function actionAddToSearchList(searchData) {
     payload: searchData
   };
 }
+function actionSearchVenue(searchVenueData){
+  return {
+    type: "SEARCH_VENUE",
+    payload: searchVenueData
+  }
+}
 
 export {
-  actionAddToSearchList
+  actionAddToSearchList,
+  actionSearchVenue
 };

@@ -6,7 +6,7 @@ import Footer from "../../common/footer/Footer.jsx";
 import SearchPageHeader from "../component/search-page-header/SearchPageHeader.jsx";
 import SearchPageContent from "../component/search-page-content/SearchPageContent.jsx";
 import {searchVenues} from "../../api/fsApiHandler.js";
-import {actionAddToSearchList} from "../../reducers/searchActions.js";
+import {actionAddToSearchList, actionSearchVenue} from "../../reducers/searchActions.js";
 
 const VENUE_SEARCH_LIMIT = 10;
 const SEARCH_HEADER_PHOTO_SIZE = "1250x150";
@@ -60,12 +60,22 @@ class SearchPage extends Component {
           warning: "",
           lastSearch: query + location
         });
+        dispatch(actionSearchVenue({
+          venues: [],
+          venuesLoading: true
+        }));
         searchVenues(query, location, VENUE_SEARCH_LIMIT)
           .then((venuesResponse) => {
+
             dispatch(actionAddToSearchList({
               id: venuesResponse.searchId,
               searchQuery: query,
               searchLocation: location
+            }));
+
+            dispatch(actionSearchVenue({
+              venues: venuesResponse.venues,
+              venuesLoading: false
             }));
             const {venues} = venuesResponse;
             const {prefix, suffix} = venues[0].venue.featuredPhotos.items[0];
@@ -100,8 +110,7 @@ class SearchPage extends Component {
                           searchHeaderPhoto={searchHeaderPhoto}
                           onHandleSearchFormSubmit={this.handleSearchFormSubmit}/>
         {(!isHomePage &&
-          <SearchPageContent warning={warning}
-                             venuesData={venuesData}/>)}
+          <SearchPageContent warning={warning}/>)}
         <Footer/>
       </div>
     );

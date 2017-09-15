@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
 
 import VenueSummaryCard from "../venue-summary-card/VenueSummaryCard.jsx";
 import RecentSearchPanel from "../recent-search-panel/RecentSearchPanel.jsx";
@@ -9,14 +10,14 @@ import "./search-page-content.scss";
 
 class SearchPageContent extends Component {
   static propTypes = {
-    venuesData: PropTypes.array,
+    venuesData: PropTypes.object,
     warning: PropTypes.string
   }
 
   render() {
     const {venuesData, warning} = this.props;
 
-    const dataLoading = venuesData.length === 0;
+    const dataLoading = venuesData.venuesLoading;
     const errorAccured = warning.status > 0;
 
     return (
@@ -24,7 +25,7 @@ class SearchPageContent extends Component {
         <div className="search-page-content-card-container">
           {(dataLoading || errorAccured) ?
             <SearchPageContentMessage error={warning}/> :
-              venuesData.map(venueData => (
+              venuesData.venues.map(venueData => (
                 <VenueSummaryCard key={venueData.venue.id}
                                   venue={venueData.venue}/>
                 ))}
@@ -35,4 +36,9 @@ class SearchPageContent extends Component {
   }
 }
 
-export default SearchPageContent;
+export default connect((rootStoreState) => {
+  return {
+    venuesData: rootStoreState.searchVenueData
+  };
+})(SearchPageContent);
+

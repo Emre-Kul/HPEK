@@ -6,7 +6,7 @@ import Footer from "../../common/footer/Footer.jsx";
 import SearchPageHeader from "../component/search-page-header/SearchPageHeader.jsx";
 import SearchPageContent from "../component/search-page-content/SearchPageContent.jsx";
 import {searchVenues} from "../../api/fsApiHandler.js";
-import {actionAddToSearchList, actionSearchVenue} from "../../reducers/searchActions.js";
+import {addToSearchList, searchVenue} from "../../reducers/searchActions.js";
 
 const VENUE_SEARCH_LIMIT = 10;
 const SEARCH_HEADER_PHOTO_SIZE = "1250x150";
@@ -56,20 +56,20 @@ class SearchPage extends Component {
           searchHeaderPhoto: "",
           lastSearch: query + location
         });
-        dispatch(actionSearchVenue({
+        dispatch(searchVenue({
           venuesLoading: true,
           errorAccrued: false
         }));
         searchVenues(query, location, VENUE_SEARCH_LIMIT)
           .then((venuesResponse) => {
 
-            dispatch(actionAddToSearchList({
+            dispatch(addToSearchList({
               id: venuesResponse.searchId,
               searchQuery: query,
               searchLocation: location
             }));
 
-            dispatch(actionSearchVenue({
+            dispatch(searchVenue({
               venues: venuesResponse.venues,
               venuesLoading: false,
               errorAccrued: false
@@ -84,7 +84,7 @@ class SearchPage extends Component {
             });
           })
           .catch((err) => {
-            dispatch(actionSearchVenue({
+            dispatch(searchVenue({
               errorAccrued: true,
               error: err.message
             }));

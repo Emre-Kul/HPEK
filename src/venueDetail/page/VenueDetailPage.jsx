@@ -5,7 +5,7 @@ import Footer from "../../common/footer/Footer.jsx";
 import VenueDetailPageHeader from "../component/venue-detail-page-header/VenueDetailPageHeader.jsx";
 import VenueDetailPageContent from "../component/venue-detail-page-content/VenueDetailPageContent.jsx";
 import {getDetailOfVenue, getPhotosOfVenue} from "../../api/fsApiHandler.js";
-import {actionSetVenuePhotos, actionSetVenueDetails} from "../../reducers/venueDetailActions.js";
+import {setVenuePhotos, setVenueDetails} from "../../reducers/venueDetailActions.js";
 
 const VENUE_PHOTO_LIMIT = 10;
 
@@ -21,7 +21,7 @@ class VenueDetailPage extends Component {
     getDetailOfVenue(match.params.id)
         .then((venue) => {
 
-          this.props.dispatch(actionSetVenueDetails({
+          this.props.dispatch(setVenueDetails({
             venueDetailData: venue,
             venueDetailDataLoaded: true
           }));
@@ -29,7 +29,7 @@ class VenueDetailPage extends Component {
           return getPhotosOfVenue(venue.id, VENUE_PHOTO_LIMIT);
         })
         .then((photos) => {
-          this.props.dispatch(actionSetVenuePhotos({
+          this.props.dispatch(setVenuePhotos({
             venueDetailPhotos: photos,
             venueDetailPhotosLoaded: true
           }));

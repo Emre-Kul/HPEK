@@ -1,10 +1,10 @@
-function actionAddToSearchList(searchData) {
+function addToSearchList(searchData) {
   return {
     type: "ADD_TO_SEARCH_LIST",
     payload: searchData
   };
 }
-function actionSearchVenue(searchVenueData) {
+function searchVenue(searchVenueData) {
   return {
     type: "SEARCH_VENUE",
     payload: searchVenueData
@@ -12,6 +12,6 @@ function actionSearchVenue(searchVenueData) {
 }
 
 export {
-  actionAddToSearchList,
-  actionSearchVenue
+  addToSearchList,
+  searchVenue
 };

@@ -39,9 +39,7 @@ class VenueDetailPage extends Component {
         })
         .catch((err) => {
           console.log(err.message);
-          dispatch(fetchVenuePhotosRejected({
-            venueDetailPhotosError: err.message
-          }));
+          dispatch(fetchVenuePhotosRejected(err.message));
         });
     });
 

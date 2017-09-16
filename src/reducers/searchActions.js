@@ -7,21 +7,13 @@ function addToSearchList(searchData) {
 function searchVenueStarted() {
   return {
     type: "SEARCH_VENUE_STARTED",
-    payload: {
-      venuesLoading: true,
-      errorAccrued: false
-    }
   };
 }
 function searchVenueFulfilled(searchVenueData) {
   return {
     type: "SEARCH_VENUE_FULFILLED",
     payload: {
-      ...searchVenueData,
-      ...{
-        errorAccrued: false,
-        venuesLoading: false
-      }
+      ...searchVenueData
     }
   };
 }
@@ -29,7 +21,6 @@ function searchVenueRejected(rejectionReason) {
   return {
     type: "SEARCH_VENUE_REJECTED",
     payload: {
-      errorAccrued: true,
       error: rejectionReason
     }
   };

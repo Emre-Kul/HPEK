@@ -34,21 +34,31 @@ export const searchReducer = (state = initialState, action) => {
     case "SEARCH_VENUE_STARTED": {
       newState.searchVenueData = {
         ...newState.searchVenueData,
-        ...action.payload
+        ...{
+          venuesLoading: true,
+          errorAccrued: false
+        }
       };
       break;
     }
     case "SEARCH_VENUE_FULFILLED": {
       newState.searchVenueData = {
         ...newState.searchVenueData,
-        ...action.payload
+        ...action.payload,
+        ...{
+          errorAccrued: false,
+          venuesLoading: false
+        }
       };
       break;
     }
     case "SEARCH_VENUE_REJECTED": {
       newState.searchVenueData = {
         ...newState.searchVenueData,
-        ...action.payload
+        ...action.payload,
+        ...{
+          errorAccrued: true,
+        }
       };
       break;
     }

@@ -34,8 +34,10 @@ export const venueDetailReducer = (state = initialState, action) => {
         ...newState.venueDetail.venueDetailData,
         ...action.payload.venueDetailData
       };
-      newState.venueDetail.venueDetailDataLoaded = true;
-      newState.venueDetail.venueDetailErrorAccrued = false;
+      newState.venueDetail = {...newState.venueDetail,...{
+        venueDetailDataLoaded : true,
+        venueDetailErrorAccrued : false
+      }}
       break;
     }
     case "FETCH_VENUE_DETAIL_REJECTED": {

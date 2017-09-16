@@ -12,7 +12,9 @@ function fetchVenueDetailFulfilled(venueDetailData) {
 function fetchVenueDetailRejected(rejectionReason) {
   return {
     type: "FETCH_VENUE_DETAIL_REJECTED",
-    payload: rejectionReason
+    payload: {
+      venueDetailError: rejectionReason
+    }
   };
 }
 
@@ -32,7 +34,9 @@ function fetchVenuePhotosFulfilled(venuePhotosData) {
 function fetchVenuePhotosRejected(rejectionReason) {
   return {
     type: "FETCH_VENUE_PHOTOS_REJECTED",
-    payload: rejectionReason
+    payload: {
+      venueDetailPhotosError : rejectionReason
+    }
   };
 }
 export {

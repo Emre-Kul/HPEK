@@ -48,7 +48,6 @@ class VenueDetailPage extends Component {
   }
 
   render() {
-    console.log(this.props);
     const {venueDetailDataLoaded, venueDetailData} = this.props.venueDetailReducer.venueDetail;
     const {venueDetailPhotosLoaded, venueDetailPhotosData} = this.props.venueDetailReducer.venueDetailPhotos;
 

@@ -6,6 +6,10 @@ import VenueDetailPageHeader from "../component/venue-detail-page-header/VenueDe
 import VenueDetailPageContent from "../component/venue-detail-page-content/VenueDetailPageContent.jsx";
 import {getDetailOfVenue, getPhotosOfVenue} from "../../api/fsApiHandler.js";
 import {fetchVenuePhotosFulfilled, fetchVenueDetailFulfilled} from "../../reducers/venueDetailActions.js";
+import {
+  fetchVenueDetailStarted, fetchVenuePhotosRejected,
+  fetchVenuePhotosStarted
+} from "../../reducers/venueDetailActions";
 
 const VENUE_PHOTO_LIMIT = 10;
 
@@ -18,31 +22,36 @@ class VenueDetailPage extends Component {
   loadVenueData = () => {
     const {match} = this.props;
 
-    getDetailOfVenue(match.params.id)
+    this.props.dispatch((dispatch) => {
+      dispatch(fetchVenueDetailStarted());
+      getDetailOfVenue(match.params.id)
         .then((venue) => {
-
-          this.props.dispatch(fetchVenueDetailFulfilled({
-            venueDetailData: venue,
-            venueDetailDataLoaded: true
+          dispatch(fetchVenueDetailFulfilled({
+            venueDetailData: venue
           }));
-
+          dispatch(fetchVenuePhotosStarted());
           return getPhotosOfVenue(venue.id, VENUE_PHOTO_LIMIT);
         })
         .then((photos) => {
-          this.props.dispatch(fetchVenuePhotosFulfilled({
-            venueDetailPhotos: photos,
-            venueDetailPhotosLoaded: true
+          dispatch(fetchVenuePhotosFulfilled({
+            venueDetailPhotos: photos
           }));
         })
-        .catch(console.log);
+        .catch((err) => {
+          console.log(err.message);
+          dispatch(fetchVenuePhotosRejected({
+            venueDetailPhotosError: err.message
+          }));
+        });
+    });
 
   }
 
   render() {
-
+    console.log(this.props);
     const {venueDetailDataLoaded, venueDetailData} = this.props.venueDetailReducer.venueDetail;
-    const { venueDetailPhotosLoaded, venueDetailPhotosData} = this.props.venueDetailReducer.venueDetailPhotos;
-    console.log(venueDetailPhotosData);
+    const {venueDetailPhotosLoaded, venueDetailPhotosData} = this.props.venueDetailReducer.venueDetailPhotos;
+
     return (
       <div>
         {(venueDetailDataLoaded && <VenueDetailPageHeader venueInfo={venueDetailData}/>)}

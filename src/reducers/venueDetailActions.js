@@ -1,7 +1,6 @@
-function fetchVenueDetailStarted(venueDetailData) {
+function fetchVenueDetailStarted() {
   return {
-    type: "FETCH_VENUE_DETAIL_STARTED",
-    payload: venueDetailData
+    type: "FETCH_VENUE_DETAIL_STARTED"
   };
 }
 function fetchVenueDetailFulfilled(venueDetailData) {
@@ -10,17 +9,16 @@ function fetchVenueDetailFulfilled(venueDetailData) {
     payload: venueDetailData
   };
 }
-function fetchVenueDetailRejected(venueDetailData) {
+function fetchVenueDetailRejected(rejectionReason) {
   return {
     type: "FETCH_VENUE_DETAIL_REJECTED",
-    payload: venueDetailData
+    payload: rejectionReason
   };
 }
 
-function fetchVenuePhotosStarted(venuePhotosData) {
+function fetchVenuePhotosStarted() {
   return {
-    type: "FETCH_VENUE_PHOTOS_STARTED",
-    payload: venuePhotosData
+    type: "FETCH_VENUE_PHOTOS_STARTED"
   };
 }
 
@@ -31,10 +29,10 @@ function fetchVenuePhotosFulfilled(venuePhotosData) {
   };
 }
 
-function fetchVenuePhotosRejected(venuePhotosData) {
+function fetchVenuePhotosRejected(rejectionReason) {
   return {
     type: "FETCH_VENUE_PHOTOS_REJECTED",
-    payload: venuePhotosData
+    payload: rejectionReason
   };
 }
 export {

@@ -13,20 +13,23 @@ function searchVenueStarted() {
     }
   };
 }
-function searchVenueFulfilled(searchVenueData){
+function searchVenueFulfilled(searchVenueData) {
   return {
     type: "SEARCH_VENUE_FULFILLED",
-    payload: {...searchVenueData,...{
-      errorAccrued: false,
-      venuesLoading: false
-    }}
+    payload: {
+      ...searchVenueData,
+      ...{
+        errorAccrued: false,
+        venuesLoading: false
+      }
+    }
   };
 }
-function searchVenueRejected(rejectionReason){
+function searchVenueRejected(rejectionReason) {
   return {
     type: "SEARCH_VENUE_REJECTED",
     payload: {
-      errorAccrued : true,
+      errorAccrued: true,
       error: rejectionReason
     }
   };

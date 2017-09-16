@@ -6,7 +6,7 @@ import Footer from "../../common/footer/Footer.jsx";
 import SearchPageHeader from "../component/search-page-header/SearchPageHeader.jsx";
 import SearchPageContent from "../component/search-page-content/SearchPageContent.jsx";
 import {searchVenues} from "../../api/fsApiHandler.js";
-import {addToSearchList,searchVenueStarted, searchVenueFulfilled, searchVenueRejected} from "../../reducers/searchActions.js";
+import {addToSearchList, searchVenueStarted, searchVenueFulfilled, searchVenueRejected} from "../../reducers/searchActions.js";
 
 const VENUE_SEARCH_LIMIT = 10;
 const SEARCH_HEADER_PHOTO_SIZE = "1250x150";
@@ -40,7 +40,7 @@ class SearchPage extends Component {
 
   makeSearch = () => {
     const isHomePage = this.props.match.url === "/";
-    const {match, dispatch} = this.props;
+    const {match} = this.props;
     const {animateHeaderAtSearch, lastSearch} = this.state;
 
     if (isHomePage && !animateHeaderAtSearch) {
@@ -57,7 +57,7 @@ class SearchPage extends Component {
           lastSearch: query + location
         });
 
-        dispatch( (dispatch) => {
+        this.props.dispatch((dispatch) => {
           dispatch(searchVenueStarted());
           searchVenues(query, location, VENUE_SEARCH_LIMIT)
             .then((venuesResponse) => {

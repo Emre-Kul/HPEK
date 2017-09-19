@@ -20,26 +20,26 @@ class VenueDetailPage extends Component {
   }
 
   loadVenueData = () => {
-    const {match} = this.props;
+    const {match, dispatch} = this.props;
 
-    this.props.dispatch((dispatch) => {
-      dispatch(fetchVenueDetailStarted());
+    dispatch((dispatcher) => {
+      dispatcher(fetchVenueDetailStarted());
       getDetailOfVenue(match.params.id)
         .then((venue) => {
-          dispatch(fetchVenueDetailFulfilled({
+          dispatcher(fetchVenueDetailFulfilled({
             venueDetailData: venue
           }));
-          dispatch(fetchVenuePhotosStarted());
+          dispatcher(fetchVenuePhotosStarted());
           return getPhotosOfVenue(venue.id, VENUE_PHOTO_LIMIT);
         })
         .then((photos) => {
-          dispatch(fetchVenuePhotosFulfilled({
+          dispatcher(fetchVenuePhotosFulfilled({
             venueDetailPhotos: photos
           }));
         })
         .catch((err) => {
           console.log(err.message);
-          dispatch(fetchVenuePhotosRejected(err.message));
+          dispatcher(fetchVenuePhotosRejected(err.message));
         });
     });
 

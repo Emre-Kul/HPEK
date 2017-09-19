@@ -9,15 +9,15 @@ const initialState = {
 };
 
 export const searchReducer = (state = initialState, action) => {
-  const newState = {
-    recentSearchs: state.recentSearchs,
-    searchVenueData: {
-      ...state.searchVenueData
-    }
-  };
-
+  let newState;
   switch (action.type) {
     case "ADD_TO_SEARCH_LIST": {
+      newState = {
+        recentSearchs: [...state.recentSearchs],
+        searchVenueData: {
+          ...state.searchVenueData
+        }
+      };
       let isRecentSearchExist = false;
 
       state.recentSearchs.forEach((recentSearch) => {
@@ -32,8 +32,11 @@ export const searchReducer = (state = initialState, action) => {
       break;
     }
     case "SEARCH_VENUE_STARTED": {
+      newState = {
+        recentSearchs: [...state.recentSearchs]
+      };
       newState.searchVenueData = {
-        ...newState.searchVenueData,
+        ...state.searchVenueData,
         ...{
           venuesLoading: true,
           errorAccrued: false
@@ -42,8 +45,11 @@ export const searchReducer = (state = initialState, action) => {
       break;
     }
     case "SEARCH_VENUE_FULFILLED": {
+      newState = {
+        recentSearchs: [...state.recentSearchs]
+      };
       newState.searchVenueData = {
-        ...newState.searchVenueData,
+        ...state.searchVenueData,
         ...action.payload,
         ...{
           errorAccrued: false,
@@ -53,8 +59,11 @@ export const searchReducer = (state = initialState, action) => {
       break;
     }
     case "SEARCH_VENUE_REJECTED": {
+      newState = {
+        recentSearchs: [...state.recentSearchs]
+      };
       newState.searchVenueData = {
-        ...newState.searchVenueData,
+        ...state.searchVenueData,
         ...action.payload,
         ...{
           errorAccrued: true,
@@ -62,7 +71,14 @@ export const searchReducer = (state = initialState, action) => {
       };
       break;
     }
-    default:
+    default:{
+      newState = {
+        recentSearchs: [...state.recentSearchs],
+        searchVenueData: {
+          ...state.searchVenueData
+        }
+      };
+    }
       break;
   }
   return newState;

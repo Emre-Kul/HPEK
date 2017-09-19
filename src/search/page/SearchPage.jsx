@@ -40,7 +40,7 @@ class SearchPage extends Component {
 
   makeSearch = () => {
     const isHomePage = this.props.match.url === "/";
-    const {match} = this.props;
+    const {match, dispatch} = this.props;
     const {animateHeaderAtSearch, lastSearch} = this.state;
 
     if (isHomePage && !animateHeaderAtSearch) {
@@ -57,18 +57,18 @@ class SearchPage extends Component {
           lastSearch: query + location
         });
 
-        this.props.dispatch((dispatch) => {
-          dispatch(searchVenueStarted());
+        dispatch((dispatcher) => {
+          dispatcher(searchVenueStarted());
           searchVenues(query, location, VENUE_SEARCH_LIMIT)
             .then((venuesResponse) => {
 
-              dispatch(addToSearchList({
+              dispatcher(addToSearchList({
                 id: venuesResponse.searchId,
                 searchQuery: query,
                 searchLocation: location
               }));
 
-              dispatch(searchVenueFulfilled({
+              dispatcher(searchVenueFulfilled({
                 venues: venuesResponse.venues
               }));
 
@@ -81,7 +81,7 @@ class SearchPage extends Component {
               });
             })
             .catch((err) => {
-              dispatch(searchVenueRejected(err.message));
+              dispatcher(searchVenueRejected(err.message));
             });
         });
 
@@ -91,7 +91,8 @@ class SearchPage extends Component {
   }
 
   handleSearchFormSubmit = (query, location) => {
-    this.props.history.push(`/search/${query}/${location}`);
+    const {history} = this.props;
+    history.push(`/search/${query}/${location}`);
   }
 
   render() {

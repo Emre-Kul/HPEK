@@ -14,12 +14,10 @@ const initialState = {
 };
 
 export const venueDetailReducer = (state = initialState, action) => {
-  const newState = {
-    ...state
-  };
-
+  let newState;
   switch (action.type) {
     case "FETCH_VENUE_DETAIL_STARTED": {
+      newState = {...state};
       newState.venueDetail = {
         ...newState.venueDetail,
         ...{
@@ -30,6 +28,7 @@ export const venueDetailReducer = (state = initialState, action) => {
       break;
     }
     case "FETCH_VENUE_DETAIL_FULFILLED": {
+      newState = {...state};
       newState.venueDetail.venueDetailData = {
         ...newState.venueDetail.venueDetailData,
         ...action.payload.venueDetailData
@@ -41,6 +40,7 @@ export const venueDetailReducer = (state = initialState, action) => {
       break;
     }
     case "FETCH_VENUE_DETAIL_REJECTED": {
+      newState = {...state};
       newState.venueDetail = {
         ...newState.venueDetail,
         ...action.payload.venueDetail,
@@ -52,6 +52,7 @@ export const venueDetailReducer = (state = initialState, action) => {
     }
 
     case "FETCH_VENUE_PHOTOS_STARTED": {
+      newState = {...state};
       newState.venueDetailPhotos = {
         ...newState.venueDetailPhotos,
         ...{
@@ -62,6 +63,7 @@ export const venueDetailReducer = (state = initialState, action) => {
       break;
     }
     case "FETCH_VENUE_PHOTOS_FULFILLED": {
+      newState = {...state};
       newState.venueDetailPhotos.venueDetailPhotosData = [
         ...newState.venueDetailPhotos.venueDetailPhotosData,
         ...action.payload.venueDetailPhotos
@@ -70,6 +72,7 @@ export const venueDetailReducer = (state = initialState, action) => {
       break;
     }
     case "FETCH_VENUE_PHOTOS_REJECTED": {
+      newState = {...state};
       newState.venueDetailPhotos = {
         ...newState.venueDetailPhotos,
         ...action.payload,
@@ -79,7 +82,9 @@ export const venueDetailReducer = (state = initialState, action) => {
       };
       break;
     }
-    default:
+    default:{
+      newState = {...state};
+    }
       break;
   }
   return newState;

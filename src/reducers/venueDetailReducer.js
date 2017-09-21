@@ -56,6 +56,7 @@ export const venueDetailReducer = (state = initialState, action) => {
       newState.venueDetailPhotos = {
         ...newState.venueDetailPhotos,
         ...{
+          venueDetailPhotosData: [],
           venueDetailPhotosLoaded: false,
           venueDetailPhotosErrorAccrued: false
         }
@@ -65,7 +66,6 @@ export const venueDetailReducer = (state = initialState, action) => {
     case "FETCH_VENUE_PHOTOS_FULFILLED": {
       newState = {...state};
       newState.venueDetailPhotos.venueDetailPhotosData = [
-        ...newState.venueDetailPhotos.venueDetailPhotosData,
         ...action.payload.venueDetailPhotos
       ];
       newState.venueDetailPhotos.venueDetailPhotosLoaded = true;

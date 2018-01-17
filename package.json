@@ -4,7 +4,7 @@
   "description": "HPEK = Hipo Project Emre Kul",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node_modules/.bin/webpack",
+    "postinstall": "./node_modules/.bin/webpack",
     "start" : "node server.js", 
     "start-dev": "./node_modules/.bin/webpack-dev-server",
     "eslint": "./node_modules/.bin/eslint --ext .jsx,.js src/",

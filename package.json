@@ -4,9 +4,9 @@
   "description": "HPEK = Hipo Project Emre Kul",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "./node_modules/.bin/webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "start" : "node server.js", 
+    "start-dev": "./node_modules/.bin/webpack-dev-server",
     "eslint": "./node_modules/.bin/eslint --ext .jsx,.js src/",
     "eslint:fix": "./node_modules/.bin/eslint --fix --ext .jsx,.js src/"
   },

@@ -1,5 +1,9 @@
 HPEK = Hipo Project Emre Kul
 
-First-Run : npm install
+Site : https://hipo-emre-kul.herokuapp.com/
 
-Run : npm start
+Run : npm run start-dev
+Deploy : 
+	nmp run postinstall
+	npm run start
+
